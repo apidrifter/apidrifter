@@ -17,6 +17,9 @@ export { isRecord, type ParseOptions, parseDocument } from "./parse.js";
 export { formatLocation } from "./render/location.js";
 export { renderMarkdown } from "./render/markdown.js";
 export { renderText } from "./render/text.js";
+// Verification
+export { renderVerifyMarkdown } from "./render/verify-markdown.js";
+export { renderVerifyText } from "./render/verify-text.js";
 export { listRules, RULES, type RuleDefinition } from "./rules/registry.js";
 export { diffSchemas, type SchemaEvent } from "./schema/diff.js";
 export type { SchemaNode } from "./schema/model.js";
@@ -38,3 +41,28 @@ export {
   type Polarity,
   type Severity,
 } from "./types.js";
+export { inferSchema } from "./verify/infer.js";
+export { matchOperation, type OperationMatch, parseQuery } from "./verify/match.js";
+export { plan } from "./verify/plan.js";
+export { FINDING_RULES, findingSeverity, listFindingRules } from "./verify/rules.js";
+export { summarizeSchema } from "./verify/summary.js";
+export type {
+  FilledRequest,
+  Finding,
+  Observation,
+  ObservedRequest,
+  ObservedResponse,
+  PlannedParameter,
+  PlannedRequest,
+  VerifyCoverage,
+  VerifyOptions,
+  VerifyResult,
+} from "./verify/types.js";
+export {
+  compilePattern,
+  looksCatastrophic,
+  type Violation,
+  type ViolationKind,
+  validate,
+} from "./verify/validate.js";
+export { fingerprintFinding, validateVerifyConfig, verify } from "./verify/verify.js";
