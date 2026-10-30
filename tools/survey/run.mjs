@@ -68,9 +68,10 @@ async function runTarget(t) {
     if ((t.exclude ?? []).some((re) => new RegExp(re).test(p.operationKey))) continue;
     const v = {};
     const missing = [];
+    const perOp = (t.opValues ?? {})[p.operationKey] ?? {};
     for (const prm of p.parameters) {
       const key = `${prm.in}:${prm.name}`;
-      const given = values[key] ?? values[`${prm.in}:*`];
+      const given = perOp[key] ?? values[key] ?? values[`${prm.in}:*`];
       if (given !== undefined) v[key] = given;
       else if (prm.required && prm.example === undefined) missing.push(key);
     }
@@ -96,6 +97,7 @@ async function runTarget(t) {
     "--user-agent", UA,
     "--continue-on-error",
     "--timeout", "30000",
+    "--max-body-bytes", String(t.maxBodyBytes ?? 8 * 1024 * 1024),
     "--format", "json",
     "--observations-out", resolve(out, "observations.json"),
   ];

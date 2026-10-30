@@ -1,0 +1,215 @@
+[
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /api/v4/groups/{id}",
+      "part": "response",
+      "name": "429"
+    },
+    "message": "status 429 is not documented for \"GET /api/v4/groups/{id}\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 400, 404) from GET /api/v4/groups/{id}.",
+      "spec": "Add a \"429\" response under paths[\"/api/v4/groups/{id}\"].get.responses."
+    },
+    "observation": 1,
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
+    "actual": 429,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /api/v4/projects/{id}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/namespace/parent_id"
+    },
+    "message": "response body at /namespace/parent_id: value is null but the schema does not allow null",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /namespace/parent_id.",
+      "spec": "Allow null at paths[\"/api/v4/projects/{id}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"namespace\"].properties[\"parent_id\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 0,
+    "expected": [
+      "integer"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /api/v4/projects/{id}/issues",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json"
+    },
+    "message": "the response body: expected \"object\" but got array",
+    "fix": {
+      "implementation": "Return \"object\" in the response body.",
+      "spec": "Change the type at paths[\"/api/v4/projects/{id}/issues\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
+    },
+    "observation": 9,
+    "expected": [
+      "object"
+    ],
+    "actual": "array",
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /api/v4/projects/{id}/labels",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /api/v4/projects/{id}/labels\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 400, 404) from GET /api/v4/projects/{id}/labels.",
+      "spec": "Add a \"401\" response under paths[\"/api/v4/projects/{id}/labels\"].get.responses."
+    },
+    "observation": 10,
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /api/v4/projects/{id}/members",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /api/v4/projects/{id}/members\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 400, 404) from GET /api/v4/projects/{id}/members.",
+      "spec": "Add a \"401\" response under paths[\"/api/v4/projects/{id}/members\"].get.responses."
+    },
+    "observation": 12,
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /api/v4/projects/{id}/milestones",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /api/v4/projects/{id}/milestones\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 400, 404) from GET /api/v4/projects/{id}/milestones.",
+      "spec": "Add a \"401\" response under paths[\"/api/v4/projects/{id}/milestones\"].get.responses."
+    },
+    "observation": 14,
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /api/v4/projects/{id}/repository/contributors",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json"
+    },
+    "message": "the response body: expected \"object\" but got array",
+    "fix": {
+      "implementation": "Return \"object\" in the response body.",
+      "spec": "Change the type at paths[\"/api/v4/projects/{id}/repository/contributors\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
+    },
+    "observation": 6,
+    "expected": [
+      "object"
+    ],
+    "actual": "array",
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /api/v4/users/{id}",
+      "part": "response",
+      "name": "429"
+    },
+    "message": "status 429 is not documented for \"GET /api/v4/users/{id}\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 400, 404) from GET /api/v4/users/{id}.",
+      "spec": "Add a \"429\" response under paths[\"/api/v4/users/{id}\"].get.responses."
+    },
+    "observation": 2,
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
+    "actual": 429,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /api/v4/version",
+      "part": "response",
+      "name": "429"
+    },
+    "message": "status 429 is not documented for \"GET /api/v4/version\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 401) from GET /api/v4/version.",
+      "spec": "Add a \"429\" response under paths[\"/api/v4/version\"].get.responses."
+    },
+    "observation": 3,
+    "expected": [
+      "200",
+      "401"
+    ],
+    "actual": 429,
+    "review": "unreviewed"
+  }
+]

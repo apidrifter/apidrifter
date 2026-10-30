@@ -1,0 +1,46 @@
+[
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /cookies/delete",
+      "part": "response",
+      "name": "302"
+    },
+    "message": "status 302 is not documented for \"GET /cookies/delete\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /cookies/delete.",
+      "spec": "Add a \"302\" response under paths[\"/cookies/delete\"].get.responses."
+    },
+    "observation": 6,
+    "expected": [
+      "200"
+    ],
+    "actual": 302,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /cookies/set",
+      "part": "response",
+      "name": "302"
+    },
+    "message": "status 302 is not documented for \"GET /cookies/set\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /cookies/set.",
+      "spec": "Add a \"302\" response under paths[\"/cookies/set\"].get.responses."
+    },
+    "observation": 7,
+    "expected": [
+      "200"
+    ],
+    "actual": 302,
+    "review": "unreviewed"
+  }
+]

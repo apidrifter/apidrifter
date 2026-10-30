@@ -12,7 +12,8 @@
       "query:tags": "tag1"
     },
     "maxRequests": 20,
-    "delayMs": 500
+    "delayMs": 500,
+    "note": "Confirmed: GET /user/login returns a plain-text session string under application/json."
   },
   {
     "id": "apis-guru",
@@ -21,11 +22,22 @@
     "baseUrl": "https://api.apis.guru/v2",
     "values": {
       "path:provider": "apis.guru",
-      "path:api": "2.2.0",
-      "path:service": ""
+      "path:api": "2.2.0"
     },
     "maxRequests": 10,
-    "delayMs": 500
+    "delayMs": 500,
+    "maxBodyBytes": 67108864,
+    "note": "Confirmed: GET /specs/{provider}/{api}.json returns the OpenAPI document itself; the spec documents the API entry object (preferred, versions).",
+    "opValues": {
+      "GET /specs/{}/{}/{}.json": {
+        "path:provider": "azure.com",
+        "path:service": "network",
+        "path:api": "2015-05-01-preview"
+      }
+    },
+    "exclude": [
+      "^GET /specs/\\{\\}/\\{\\}/\\{\\}\\.json$"
+    ]
   },
   {
     "id": "pokeapi",
@@ -37,7 +49,8 @@
       "query:limit": 5
     },
     "maxRequests": 30,
-    "delayMs": 750
+    "delayMs": 750,
+    "note": "Confirmed: evolution-chain baby_trigger_item is null; the spec does not allow null."
   },
   {
     "id": "wikipedia-rest",
@@ -58,7 +71,8 @@
       "mobile-sections"
     ],
     "maxRequests": 25,
-    "delayMs": 1000
+    "delayMs": 1000,
+    "note": "Confirmed: media-list items carry undocumented leadImage and srcset; /page/lint returns an array where the spec says object; 400 errors come back as application/json, documented as application/problem+json."
   },
   {
     "id": "discourse-meta",
@@ -82,7 +96,8 @@
       "invite"
     ],
     "maxRequests": 25,
-    "delayMs": 1500
+    "delayMs": 1500,
+    "note": "Confirmed: category custom_fields holds plugin keys the spec forbids; topic tags are objects where the spec says strings; permission is null. The spec is generated from test fixtures and lags the live site."
   },
   {
     "id": "openlibrary",
@@ -101,7 +116,28 @@
       "query:title": "the hobbit"
     },
     "maxRequests": 20,
-    "delayMs": 1500
+    "delayMs": 1500,
+    "note": "Confirmed: /health returns text/plain, documented as application/json; the spec's own example for search.json spellcheck_count violates its schema. Account endpoints 303-redirect when logged out.",
+    "opValues": {
+      "GET /lists/{}/editions.json": {
+        "path:olid": "OL1L"
+      },
+      "GET /lists/{}/seeds.json": {
+        "path:olid": "OL1L"
+      },
+      "GET /lists/{}.json": {
+        "path:olid": "OL1L"
+      },
+      "GET /lists/{}/subjects.json": {
+        "path:olid": "OL1L"
+      },
+      "GET /series/{}/editions.json": {
+        "path:olid": "OL1L"
+      },
+      "GET /series/{}.json": {
+        "path:olid": "OL1L"
+      }
+    }
   },
   {
     "id": "github",
@@ -148,10 +184,13 @@
       "app/",
       "enterprises",
       "marketplace",
-      "advisories/\\{\\}"
+      "advisories/\\{\\}",
+      "protection",
+      "/branches/\\{\\}/"
     ],
     "maxRequests": 40,
-    "delayMs": 1500
+    "delayMs": 1500,
+    "note": "First run: gist file language is null but not nullable; event payloads match two oneOf branches. The rerun hit the anonymous rate limit (403) after nine successes, so this row understates GitHub; rerun with a token pending."
   },
   {
     "id": "gitea",
@@ -183,7 +222,8 @@
       "/orgs/\\{\\}/(members|teams|actions|secrets|variables|runners)"
     ],
     "maxRequests": 40,
-    "delayMs": 1000
+    "delayMs": 1000,
+    "note": "Confirmed: activity feed comment and user objects are null; User carries an undocumented username field. Swagger 2.0 cannot express null, so the null findings are partly a format limitation."
   },
   {
     "id": "codeberg",
@@ -215,7 +255,8 @@
       "/orgs/\\{\\}/(members|teams|actions|secrets|variables|runners)"
     ],
     "maxRequests": 40,
-    "delayMs": 1000
+    "delayMs": 1000,
+    "note": "Same drift as Gitea (Forgejo fork), plus repo.parent null on feeds."
   },
   {
     "id": "httpbin",
@@ -224,7 +265,7 @@
     "baseUrl": "https://httpbin.org",
     "values": {
       "path:codes": "200",
-      "path:value": "x",
+      "path:value": "aGVsbG8=",
       "path:n": "1",
       "query:freeform": "a"
     },
@@ -244,7 +285,16 @@
       "status"
     ],
     "maxRequests": 20,
-    "delayMs": 500
+    "delayMs": 500,
+    "note": "Confirmed: GET /cookies/set and /cookies/delete respond 302, documented as 200 only. Earlier input mistakes fixed.",
+    "opValues": {
+      "GET /cache/{}": {
+        "path:value": "60"
+      },
+      "GET /etag/{}": {
+        "path:etag": "abc"
+      }
+    }
   },
   {
     "id": "nager-date",
@@ -259,7 +309,8 @@
       "query:offset": 0
     },
     "maxRequests": 15,
-    "delayMs": 750
+    "delayMs": 750,
+    "note": "One 502 on LongWeekend during the run; transient, not drift."
   },
   {
     "id": "open-meteo",
@@ -274,13 +325,14 @@
       "query:current": "temperature_2m"
     },
     "maxRequests": 10,
-    "delayMs": 1000
+    "delayMs": 1000,
+    "note": "Minor: current_units.interval is undocumented."
   },
   {
     "id": "gitlab",
     "name": "GitLab REST API (gitlab.com, unauthenticated)",
     "spec": "https://gitlab.com/gitlab-org/gitlab/-/raw/master/doc/api/openapi/openapi_v3.yaml",
-    "baseUrl": "https://gitlab.com/api/v4",
+    "baseUrl": "https://gitlab.com",
     "values": {
       "path:id": "278964",
       "path:project_id": "278964",
@@ -350,17 +402,29 @@
       "notification_settings",
       "todos",
       "events",
-      "analytics"
+      "analytics",
+      "^GET /api/v4/ai",
+      "^GET /api/v4/application",
+      "^GET /api/v4/admin",
+      "^GET /api/v4/web_commits"
     ],
     "prefer": [
-      "^GET /projects/\\{\\}$",
-      "^GET /groups/\\{\\}$",
-      "^GET /users/\\{\\}$",
-      "^GET /projects/\\{\\}/repository",
-      "^GET /projects/\\{\\}/(issues|merge_requests|releases|tags|branches|members|languages|milestones|labels)$",
-      "^GET /version$"
+      "^GET /api/v4/projects/\\{\\}$",
+      "^GET /api/v4/groups/\\{\\}$",
+      "^GET /api/v4/users/\\{\\}$",
+      "^GET /api/v4/version$",
+      "^GET /api/v4/projects/\\{\\}/repository/(tree|branches|tags|commits|contributors)$",
+      "^GET /api/v4/projects/\\{\\}/(issues|merge_requests|releases|members|languages|milestones|labels|events)$",
+      "^GET /api/v4/groups/\\{\\}/(projects|subgroups|members)$",
+      "^GET /api/v4/projects$",
+      "^GET /api/v4/groups$",
+      "^GET /api/v4/users$",
+      "^GET /api/v4/snippets/public$",
+      "^GET /api/v4/namespaces",
+      "^GET /api/v4/avatar"
     ],
-    "maxRequests": 35,
-    "delayMs": 1000
+    "maxRequests": 15,
+    "delayMs": 5000,
+    "note": "Confirmed: GET /projects/{id}/issues and /repository/contributors return arrays where the generated spec says object; namespace.parent_id is null but not nullable. gitlab.com rate-limits anonymous clients after a dozen calls, so coverage is thin."
   }
 ]

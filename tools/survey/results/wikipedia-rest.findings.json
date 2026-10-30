@@ -1,0 +1,625 @@
+[
+  {
+    "class": "errors",
+    "id": "request-rejected-but-valid",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /data/lists/"
+    },
+    "message": "request to \"GET /data/lists/\" conformed to the spec but was rejected with 400",
+    "fix": {
+      "implementation": "Accept requests to GET /data/lists/ that conform to the spec; this one was rejected with 400.",
+      "spec": "Document the validation GET /data/lists/ performs (required fields, formats, constraints) so the spec reflects what is accepted."
+    },
+    "observation": 0,
+    "actual": 400,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-response-media-type",
+    "severity": "warning",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /data/lists/",
+      "part": "response",
+      "name": "400",
+      "mediaType": "application/json"
+    },
+    "message": "media type \"application/json\" is not documented for the 400 response",
+    "fix": {
+      "implementation": "Return one of application/problem+json from GET /data/lists/.",
+      "spec": "Add \"application/json\" under paths[\"/data/lists/\"].get.responses[\"default\"].content."
+    },
+    "observation": 0,
+    "expected": [
+      "application/problem+json"
+    ],
+    "actual": "application/json",
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "request-rejected-but-valid",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /data/lists/pages/{project}/{title}"
+    },
+    "message": "request to \"GET /data/lists/pages/{project}/{title}\" conformed to the spec but was rejected with 400",
+    "fix": {
+      "implementation": "Accept requests to GET /data/lists/pages/{project}/{title} that conform to the spec; this one was rejected with 400.",
+      "spec": "Document the validation GET /data/lists/pages/{project}/{title} performs (required fields, formats, constraints) so the spec reflects what is accepted."
+    },
+    "observation": 2,
+    "actual": 400,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-response-media-type",
+    "severity": "warning",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /data/lists/pages/{project}/{title}",
+      "part": "response",
+      "name": "400",
+      "mediaType": "application/json"
+    },
+    "message": "media type \"application/json\" is not documented for the 400 response",
+    "fix": {
+      "implementation": "Return one of application/problem+json from GET /data/lists/pages/{project}/{title}.",
+      "spec": "Add \"application/json\" under paths[\"/data/lists/pages/{project}/{title}\"].get.responses[\"default\"].content."
+    },
+    "observation": 2,
+    "expected": [
+      "application/problem+json"
+    ],
+    "actual": "application/json",
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "request-rejected-but-valid",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /data/lists/{id}/entries/"
+    },
+    "message": "request to \"GET /data/lists/{id}/entries/\" conformed to the spec but was rejected with 400",
+    "fix": {
+      "implementation": "Accept requests to GET /data/lists/{id}/entries/ that conform to the spec; this one was rejected with 400.",
+      "spec": "Document the validation GET /data/lists/{id}/entries/ performs (required fields, formats, constraints) so the spec reflects what is accepted."
+    },
+    "observation": 1,
+    "actual": 400,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-response-media-type",
+    "severity": "warning",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /data/lists/{id}/entries/",
+      "part": "response",
+      "name": "400",
+      "mediaType": "application/json"
+    },
+    "message": "media type \"application/json\" is not documented for the 400 response",
+    "fix": {
+      "implementation": "Return one of application/problem+json from GET /data/lists/{id}/entries/.",
+      "spec": "Add \"application/json\" under paths[\"/data/lists/{id}/entries/\"].get.responses[\"default\"].content."
+    },
+    "observation": 1,
+    "expected": [
+      "application/problem+json"
+    ],
+    "actual": "application/json",
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-response-media-type",
+    "severity": "warning",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/",
+      "part": "response",
+      "name": "404",
+      "mediaType": "application/json"
+    },
+    "message": "media type \"application/json\" is not documented for the 404 response",
+    "fix": {
+      "implementation": "Return one of application/problem+json from GET /page/.",
+      "spec": "Add \"application/json\" under paths[\"/page/\"].get.responses[\"default\"].content."
+    },
+    "observation": 3,
+    "expected": [
+      "application/problem+json"
+    ],
+    "actual": "application/json",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/lint/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json"
+    },
+    "message": "the response body: expected \"object\" but got array",
+    "fix": {
+      "implementation": "Return \"object\" in the response body.",
+      "spec": "Change the type at paths[\"/page/lint/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
+    },
+    "observation": 6,
+    "expected": [
+      "object"
+    ],
+    "actual": "array",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/lint/{title}/{revision}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json"
+    },
+    "message": "the response body: expected \"object\" but got array",
+    "fix": {
+      "implementation": "Return \"object\" in the response body.",
+      "spec": "Change the type at paths[\"/page/lint/{title}/{revision}\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
+    },
+    "observation": 7,
+    "expected": [
+      "object"
+    ],
+    "actual": "array",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/media-list/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/items/0/leadImage"
+    },
+    "message": "response body at /items/0/leadImage: property \"leadImage\" is not documented (and 34 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"leadImage\" from GET /page/media-list/{title} if it is not part of the contract.",
+      "spec": "Add \"leadImage\" to paths[\"/page/media-list/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"items\"].items.properties."
+    },
+    "observation": 8,
+    "actual": "leadImage",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/media-list/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/items/0/srcset"
+    },
+    "message": "response body at /items/0/srcset: property \"srcset\" is not documented (and 30 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"srcset\" from GET /page/media-list/{title} if it is not part of the contract.",
+      "spec": "Add \"srcset\" to paths[\"/page/media-list/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"items\"].items.properties."
+    },
+    "observation": 8,
+    "actual": "srcset",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/media-list/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/items/28/gallery_id"
+    },
+    "message": "response body at /items/28/gallery_id: property \"gallery_id\" is not documented (and 3 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"gallery_id\" from GET /page/media-list/{title} if it is not part of the contract.",
+      "spec": "Add \"gallery_id\" to paths[\"/page/media-list/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"items\"].items.properties."
+    },
+    "observation": 8,
+    "actual": "gallery_id",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/media-list/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/items/31/sources"
+    },
+    "message": "response body at /items/31/sources: property \"sources\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"sources\" from GET /page/media-list/{title} if it is not part of the contract.",
+      "spec": "Add \"sources\" to paths[\"/page/media-list/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"items\"].items.properties."
+    },
+    "observation": 8,
+    "actual": "sources",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/media-list/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/items/34/audio_type"
+    },
+    "message": "response body at /items/34/audio_type: property \"audio_type\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"audio_type\" from GET /page/media-list/{title} if it is not part of the contract.",
+      "spec": "Add \"audio_type\" to paths[\"/page/media-list/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"items\"].items.properties."
+    },
+    "observation": 8,
+    "actual": "audio_type",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/mobile-html-offline-resources/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json"
+    },
+    "message": "the response body: expected \"string\" but got array",
+    "fix": {
+      "implementation": "Return \"string\" in the response body.",
+      "spec": "Change the type at paths[\"/page/mobile-html-offline-resources/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
+    },
+    "observation": 10,
+    "expected": [
+      "string"
+    ],
+    "actual": "array",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/mobile-html-offline-resources/{title}/{revision}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json"
+    },
+    "message": "the response body: expected \"string\" but got array",
+    "fix": {
+      "implementation": "Return \"string\" in the response body.",
+      "spec": "Change the type at paths[\"/page/mobile-html-offline-resources/{title}/{revision}\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
+    },
+    "observation": 11,
+    "expected": [
+      "string"
+    ],
+    "actual": "array",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/summary/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/content_urls"
+    },
+    "message": "response body at /content_urls: property \"content_urls\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"content_urls\" from GET /page/summary/{title} if it is not part of the contract.",
+      "spec": "Add \"content_urls\" to paths[\"/page/summary/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 14,
+    "actual": "content_urls",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/summary/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/description_source"
+    },
+    "message": "response body at /description_source: property \"description_source\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"description_source\" from GET /page/summary/{title} if it is not part of the contract.",
+      "spec": "Add \"description_source\" to paths[\"/page/summary/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 14,
+    "actual": "description_source",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/summary/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/namespace"
+    },
+    "message": "response body at /namespace: property \"namespace\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"namespace\" from GET /page/summary/{title} if it is not part of the contract.",
+      "spec": "Add \"namespace\" to paths[\"/page/summary/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 14,
+    "actual": "namespace",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/summary/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/revision"
+    },
+    "message": "response body at /revision: property \"revision\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"revision\" from GET /page/summary/{title} if it is not part of the contract.",
+      "spec": "Add \"revision\" to paths[\"/page/summary/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 14,
+    "actual": "revision",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/summary/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/tid"
+    },
+    "message": "response body at /tid: property \"tid\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"tid\" from GET /page/summary/{title} if it is not part of the contract.",
+      "spec": "Add \"tid\" to paths[\"/page/summary/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 14,
+    "actual": "tid",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/summary/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/type"
+    },
+    "message": "response body at /type: property \"type\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"type\" from GET /page/summary/{title} if it is not part of the contract.",
+      "spec": "Add \"type\" to paths[\"/page/summary/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 14,
+    "actual": "type",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/summary/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/wikibase_item"
+    },
+    "message": "response body at /wikibase_item: property \"wikibase_item\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"wikibase_item\" from GET /page/summary/{title} if it is not part of the contract.",
+      "spec": "Add \"wikibase_item\" to paths[\"/page/summary/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 14,
+    "actual": "wikibase_item",
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-response-media-type",
+    "severity": "warning",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/talk/{title}",
+      "part": "response",
+      "name": "403",
+      "mediaType": "text/html"
+    },
+    "message": "media type \"text/html\" is not documented for the 403 response",
+    "fix": {
+      "implementation": "Return one of application/problem+json from GET /page/talk/{title}.",
+      "spec": "Add \"text/html\" under paths[\"/page/talk/{title}\"].get.responses[\"default\"].content."
+    },
+    "observation": 15,
+    "expected": [
+      "application/problem+json"
+    ],
+    "actual": "text/html",
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-response-media-type",
+    "severity": "warning",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/talk/{title}/{revision}",
+      "part": "response",
+      "name": "403",
+      "mediaType": "text/html"
+    },
+    "message": "media type \"text/html\" is not documented for the 403 response",
+    "fix": {
+      "implementation": "Return one of application/problem+json from GET /page/talk/{title}/{revision}.",
+      "spec": "Add \"text/html\" under paths[\"/page/talk/{title}/{revision}\"].get.responses[\"default\"].content."
+    },
+    "observation": 16,
+    "expected": [
+      "application/problem+json"
+    ],
+    "actual": "text/html",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/title/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/count"
+    },
+    "message": "response body at /count: required property \"count\" is missing",
+    "fix": {
+      "implementation": "Include \"count\" in the 200 response of GET /page/title/{title}.",
+      "spec": "Remove \"count\" from required at paths[\"/page/title/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema."
+    },
+    "observation": 17,
+    "expected": "count",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/title/{title}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/items"
+    },
+    "message": "response body at /items: expected \"object\" but got array",
+    "fix": {
+      "implementation": "Return \"object\" in response body at /items.",
+      "spec": "Change the type at paths[\"/page/title/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"items\"] to \"array\"."
+    },
+    "observation": 17,
+    "expected": [
+      "object"
+    ],
+    "actual": "array",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/title/{title}/{revision}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/count"
+    },
+    "message": "response body at /count: required property \"count\" is missing",
+    "fix": {
+      "implementation": "Include \"count\" in the 200 response of GET /page/title/{title}/{revision}.",
+      "spec": "Remove \"count\" from required at paths[\"/page/title/{title}/{revision}\"].get.responses[\"200\"].content[\"application/json\"].schema."
+    },
+    "observation": 18,
+    "expected": "count",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /page/title/{title}/{revision}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/items"
+    },
+    "message": "response body at /items: expected \"object\" but got array",
+    "fix": {
+      "implementation": "Return \"object\" in response body at /items.",
+      "spec": "Change the type at paths[\"/page/title/{title}/{revision}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"items\"] to \"array\"."
+    },
+    "observation": 18,
+    "expected": [
+      "object"
+    ],
+    "actual": "array",
+    "review": "unreviewed"
+  }
+]

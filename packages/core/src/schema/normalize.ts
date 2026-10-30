@@ -102,7 +102,12 @@ function applyKeywords(
   if (typeof rawType === "string") types = [rawType];
   else if (Array.isArray(rawType))
     types = rawType.filter((t): t is string => typeof t === "string");
-  if (raw["nullable"] === true) types = [...(types ?? []), "null"];
+  if (raw["nullable"] === true) {
+    node.nullable = true;
+    // With an explicit type, nullable widens the type set. Without one (a composition
+    // wrapper), the flag alone records it; the type set must stay unrestricted.
+    if (types !== undefined) types = [...types, "null"];
+  }
   if (types !== undefined) {
     const set = new Set(types);
     node.types = [...set].sort();

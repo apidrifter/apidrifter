@@ -1,0 +1,23 @@
+[
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /v1/forecast",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/current_units/interval"
+    },
+    "message": "response body at /current_units/interval: property \"interval\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"interval\" from GET /v1/forecast if it is not part of the contract.",
+      "spec": "Add \"interval\" to paths[\"/v1/forecast\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"current_units\"].properties."
+    },
+    "observation": 0,
+    "actual": "interval",
+    "review": "unreviewed"
+  }
+]

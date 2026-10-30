@@ -3,6 +3,7 @@ import { type CliIo, commonOptions, withFlags } from "../context.js";
 import {
   type FilledRequest,
   type Observation,
+  type PlannedRequest,
   plan,
   renderVerifyMarkdown,
   renderVerifyText,
@@ -11,6 +12,7 @@ import {
 } from "../core-verify.js";
 import { EXIT_OK, EXIT_THRESHOLD, InputError, UsageError } from "../errors.js";
 import {
+  type BuiltRequest,
   buildRequest,
   executeRequests,
   parseHeaderFlags,
@@ -107,15 +109,26 @@ export async function runCommand(args: ParsedArgs, io: CliIo): Promise<number> {
   const maxRequests = intFlag(args, "max-requests", Number.MAX_SAFE_INTEGER);
 
   const skipped: Skipped[] = [];
-  const requests = [];
-  for (const p of planned) {
-    if (methods !== undefined && !methods.includes(p.method.toUpperCase())) continue;
-    const entries = filledByKey.get(p.operationKey);
-    if (onlyFilled && entries === undefined) continue;
-    for (const entry of entries ?? [undefined]) {
-      const built = buildRequest(p, entry, baseCheck.url.href, headers);
-      if (built.ok) requests.push(built.request);
-      else skipped.push({ operationKey: p.operationKey, missing: built.missing });
+  const requests: BuiltRequest[] = [];
+  const plannedByKey = new Map(planned.map((p) => [p.operationKey, p] as const));
+  const allowed = (p: PlannedRequest) =>
+    methods === undefined || methods.includes(p.method.toUpperCase());
+  const add = (p: PlannedRequest, entry: FilledRequest | undefined) => {
+    const built = buildRequest(p, entry, baseCheck.url.href, headers);
+    if (built.ok) requests.push(built.request);
+    else skipped.push({ operationKey: p.operationKey, missing: built.missing });
+  };
+  if (onlyFilled) {
+    // The filled plan's order is the caller's priority; it decides what a budget keeps.
+    for (const entry of filled) {
+      const p = plannedByKey.get(entry.operationKey);
+      if (p === undefined || !allowed(p)) continue;
+      add(p, entry);
+    }
+  } else {
+    for (const p of planned) {
+      if (!allowed(p)) continue;
+      for (const entry of filledByKey.get(p.operationKey) ?? [undefined]) add(p, entry);
     }
   }
   const budgeted = requests.slice(0, maxRequests);

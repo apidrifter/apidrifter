@@ -35,6 +35,7 @@ export function summarizeSchema(node: SchemaNode | undefined, depth = 0): unknow
   ] as const) {
     if (node[k] !== undefined) out[k] = node[k];
   }
+  if (node.nullable && !(node.types ?? []).includes("null")) out["nullable"] = true;
   if (node.deprecated) out["deprecated"] = true;
   if (node.readOnly) out["readOnly"] = true;
   if (node.writeOnly) out["writeOnly"] = true;

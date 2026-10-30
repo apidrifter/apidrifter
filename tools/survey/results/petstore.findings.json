@@ -1,0 +1,21 @@
+[
+  {
+    "class": "body",
+    "id": "response-body-not-json",
+    "severity": "warning",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /user/login",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json"
+    },
+    "message": "the 200 response is documented as \"application/json\" but the body is not valid JSON",
+    "fix": {
+      "implementation": "Return valid JSON from GET /user/login for the 200 response.",
+      "spec": "Change the media type at paths[\"/user/login\"].get.responses[\"200\"].content to what is actually returned."
+    },
+    "observation": 6,
+    "review": "unreviewed"
+  }
+]
