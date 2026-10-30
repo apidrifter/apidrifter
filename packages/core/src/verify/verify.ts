@@ -65,8 +65,8 @@ export function verify(
 }
 
 /**
- * The same defect in every array element, or in every observation of an operation, is one
- * finding. Keep the first occurrence and say how many more there were.
+ * The same defect in every array element, every key of a map, or every observation of an
+ * operation, is one finding. Keep the first occurrence and say how many more there were.
  */
 function collapseRepeats(findings: Finding[]): Finding[] {
   const groups = new Map<string, { first: Finding; more: number }>();
@@ -79,8 +79,9 @@ function collapseRepeats(findings: Finding[]): Finding[] {
       loc.part ?? "",
       loc.name ?? "",
       loc.mediaType ?? "",
-      (loc.pointer ?? "").replace(/\/\d+(?=\/|$)/g, "/*"),
-      f.message.replace(/\/\d+(?=\/|$)/g, "/*"),
+      // The spec-side fix names the schema location, which is the same for every array
+      // element and every key of a map-like object. Group on that, not on the value path.
+      f.fix.spec,
     ]);
     const g = groups.get(key);
     if (g === undefined) groups.set(key, { first: f, more: 0 });

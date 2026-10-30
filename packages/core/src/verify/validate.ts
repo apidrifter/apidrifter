@@ -147,6 +147,9 @@ function walk(node: SchemaNode, value: unknown, ctx: Ctx, p: string): void {
     }
     return;
   }
+  // Null is accepted wherever the schema allows it, whatever else it says (a nullable
+  // oneOf wrapper, or a type list containing "null").
+  if (value === null && (node.nullable || (node.types?.includes("null") ?? false))) return;
   ctx.depth++;
   const registered = node.ref !== undefined && !ctx.ancestors.has(node.ref);
   if (registered && node.ref !== undefined) ctx.ancestors.set(node.ref, node);

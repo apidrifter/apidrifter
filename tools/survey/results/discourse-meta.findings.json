@@ -1,0 +1,2860 @@
+[
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/available_groups"
+    },
+    "message": "response body at /category/available_groups: required property \"available_groups\" is missing",
+    "fix": {
+      "implementation": "Include \"available_groups\" in the 200 response of GET /c/{id}/show.json.",
+      "spec": "Remove \"available_groups\" from required at paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"]."
+    },
+    "observation": 1,
+    "expected": "available_groups",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/can_delete"
+    },
+    "message": "response body at /category/can_delete: required property \"can_delete\" is missing",
+    "fix": {
+      "implementation": "Include \"can_delete\" in the 200 response of GET /c/{id}/show.json.",
+      "spec": "Remove \"can_delete\" from required at paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"]."
+    },
+    "observation": 1,
+    "expected": "can_delete",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/can_edit"
+    },
+    "message": "response body at /category/can_edit: required property \"can_edit\" is missing",
+    "fix": {
+      "implementation": "Include \"can_edit\" in the 200 response of GET /c/{id}/show.json.",
+      "spec": "Remove \"can_edit\" from required at paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"]."
+    },
+    "observation": 1,
+    "expected": "can_edit",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/custom_fields/activity_pub_default_visibility"
+    },
+    "message": "response body at /category/custom_fields/activity_pub_default_visibility: property \"activity_pub_default_visibility\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"activity_pub_default_visibility\" from GET /c/{id}/show.json; the spec forbids unknown properties here.",
+      "spec": "Add \"activity_pub_default_visibility\" to paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"].properties[\"custom_fields\"].properties or allow additionalProperties."
+    },
+    "observation": 1,
+    "actual": "activity_pub_default_visibility",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/custom_fields/activity_pub_post_object_type"
+    },
+    "message": "response body at /category/custom_fields/activity_pub_post_object_type: property \"activity_pub_post_object_type\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"activity_pub_post_object_type\" from GET /c/{id}/show.json; the spec forbids unknown properties here.",
+      "spec": "Add \"activity_pub_post_object_type\" to paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"].properties[\"custom_fields\"].properties or allow additionalProperties."
+    },
+    "observation": 1,
+    "actual": "activity_pub_post_object_type",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/custom_fields/activity_pub_publication_type"
+    },
+    "message": "response body at /category/custom_fields/activity_pub_publication_type: property \"activity_pub_publication_type\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"activity_pub_publication_type\" from GET /c/{id}/show.json; the spec forbids unknown properties here.",
+      "spec": "Add \"activity_pub_publication_type\" to paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"].properties[\"custom_fields\"].properties or allow additionalProperties."
+    },
+    "observation": 1,
+    "actual": "activity_pub_publication_type",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/custom_fields/enable_accepted_answers"
+    },
+    "message": "response body at /category/custom_fields/enable_accepted_answers: property \"enable_accepted_answers\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"enable_accepted_answers\" from GET /c/{id}/show.json; the spec forbids unknown properties here.",
+      "spec": "Add \"enable_accepted_answers\" to paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"].properties[\"custom_fields\"].properties or allow additionalProperties."
+    },
+    "observation": 1,
+    "actual": "enable_accepted_answers",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/custom_fields/enable_open_filter"
+    },
+    "message": "response body at /category/custom_fields/enable_open_filter: property \"enable_open_filter\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"enable_open_filter\" from GET /c/{id}/show.json; the spec forbids unknown properties here.",
+      "spec": "Add \"enable_open_filter\" to paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"].properties[\"custom_fields\"].properties or allow additionalProperties."
+    },
+    "observation": 1,
+    "actual": "enable_open_filter",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/custom_fields/enable_unassigned_filter"
+    },
+    "message": "response body at /category/custom_fields/enable_unassigned_filter: property \"enable_unassigned_filter\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"enable_unassigned_filter\" from GET /c/{id}/show.json; the spec forbids unknown properties here.",
+      "spec": "Add \"enable_unassigned_filter\" to paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"].properties[\"custom_fields\"].properties or allow additionalProperties."
+    },
+    "observation": 1,
+    "actual": "enable_unassigned_filter",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/custom_fields/prioritize_open_filter"
+    },
+    "message": "response body at /category/custom_fields/prioritize_open_filter: property \"prioritize_open_filter\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"prioritize_open_filter\" from GET /c/{id}/show.json; the spec forbids unknown properties here.",
+      "spec": "Add \"prioritize_open_filter\" to paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"].properties[\"custom_fields\"].properties or allow additionalProperties."
+    },
+    "observation": 1,
+    "actual": "prioritize_open_filter",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/disable_topic_resorting"
+    },
+    "message": "response body at /category/disable_topic_resorting: property \"disable_topic_resorting\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"disable_topic_resorting\" from GET /c/{id}/show.json; the spec forbids unknown properties here.",
+      "spec": "Add \"disable_topic_resorting\" to paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"].properties or allow additionalProperties."
+    },
+    "observation": 1,
+    "actual": "disable_topic_resorting",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/doc_index_topic_id"
+    },
+    "message": "response body at /category/doc_index_topic_id: property \"doc_index_topic_id\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"doc_index_topic_id\" from GET /c/{id}/show.json; the spec forbids unknown properties here.",
+      "spec": "Add \"doc_index_topic_id\" to paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"].properties or allow additionalProperties."
+    },
+    "observation": 1,
+    "actual": "doc_index_topic_id",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/email_in"
+    },
+    "message": "response body at /category/email_in: required property \"email_in\" is missing",
+    "fix": {
+      "implementation": "Include \"email_in\" in the 200 response of GET /c/{id}/show.json.",
+      "spec": "Remove \"email_in\" from required at paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"]."
+    },
+    "observation": 1,
+    "expected": "email_in",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/email_in_allow_strangers"
+    },
+    "message": "response body at /category/email_in_allow_strangers: required property \"email_in_allow_strangers\" is missing",
+    "fix": {
+      "implementation": "Include \"email_in_allow_strangers\" in the 200 response of GET /c/{id}/show.json.",
+      "spec": "Remove \"email_in_allow_strangers\" from required at paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"]."
+    },
+    "observation": 1,
+    "expected": "email_in_allow_strangers",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/group_permissions"
+    },
+    "message": "response body at /category/group_permissions: required property \"group_permissions\" is missing",
+    "fix": {
+      "implementation": "Include \"group_permissions\" in the 200 response of GET /c/{id}/show.json.",
+      "spec": "Remove \"group_permissions\" from required at paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"]."
+    },
+    "observation": 1,
+    "expected": "group_permissions",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/has_chat_channels"
+    },
+    "message": "response body at /category/has_chat_channels: property \"has_chat_channels\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"has_chat_channels\" from GET /c/{id}/show.json; the spec forbids unknown properties here.",
+      "spec": "Add \"has_chat_channels\" to paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"].properties or allow additionalProperties."
+    },
+    "observation": 1,
+    "actual": "has_chat_channels",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/moderating_group_ids"
+    },
+    "message": "response body at /category/moderating_group_ids: property \"moderating_group_ids\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"moderating_group_ids\" from GET /c/{id}/show.json; the spec forbids unknown properties here.",
+      "spec": "Add \"moderating_group_ids\" to paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"].properties or allow additionalProperties."
+    },
+    "observation": 1,
+    "actual": "moderating_group_ids",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/notification_level"
+    },
+    "message": "response body at /category/notification_level: required property \"notification_level\" is missing",
+    "fix": {
+      "implementation": "Include \"notification_level\" in the 200 response of GET /c/{id}/show.json.",
+      "spec": "Remove \"notification_level\" from required at paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"]."
+    },
+    "observation": 1,
+    "expected": "notification_level",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/parent_category_id"
+    },
+    "message": "response body at /category/parent_category_id: property \"parent_category_id\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"parent_category_id\" from GET /c/{id}/show.json; the spec forbids unknown properties here.",
+      "spec": "Add \"parent_category_id\" to paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"].properties or allow additionalProperties."
+    },
+    "observation": 1,
+    "actual": "parent_category_id",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{id}/show.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category/sort_topics_by_event_start_date"
+    },
+    "message": "response body at /category/sort_topics_by_event_start_date: property \"sort_topics_by_event_start_date\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"sort_topics_by_event_start_date\" from GET /c/{id}/show.json; the spec forbids unknown properties here.",
+      "spec": "Add \"sort_topics_by_event_start_date\" to paths[\"/c/{id}/show.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category\"].properties or allow additionalProperties."
+    },
+    "observation": 1,
+    "actual": "sort_topics_by_event_start_date",
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /c/{slug}/{id}.json",
+      "part": "response",
+      "name": "301"
+    },
+    "message": "status 301 is not documented for \"GET /c/{slug}/{id}.json\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /c/{slug}/{id}.json.",
+      "spec": "Add a \"301\" response under paths[\"/c/{slug}/{id}.json\"].get.responses."
+    },
+    "observation": 0,
+    "expected": [
+      "200"
+    ],
+    "actual": 301,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /categories.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category_list/categories/0/can_edit"
+    },
+    "message": "response body at /category_list/categories/0/can_edit: required property \"can_edit\" is missing (and 9 more like it)",
+    "fix": {
+      "implementation": "Include \"can_edit\" in the 200 response of GET /categories.json.",
+      "spec": "Remove \"can_edit\" from required at paths[\"/categories.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category_list\"].properties[\"categories\"].items."
+    },
+    "observation": 2,
+    "expected": "can_edit",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /categories.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category_list/categories/0/custom_fields"
+    },
+    "message": "response body at /category_list/categories/0/custom_fields: property \"custom_fields\" is not allowed (and 9 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"custom_fields\" from GET /categories.json; the spec forbids unknown properties here.",
+      "spec": "Add \"custom_fields\" to paths[\"/categories.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category_list\"].properties[\"categories\"].items.properties or allow additionalProperties."
+    },
+    "observation": 2,
+    "actual": "custom_fields",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /categories.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category_list/categories/0/disable_topic_resorting"
+    },
+    "message": "response body at /category_list/categories/0/disable_topic_resorting: property \"disable_topic_resorting\" is not allowed (and 9 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"disable_topic_resorting\" from GET /categories.json; the spec forbids unknown properties here.",
+      "spec": "Add \"disable_topic_resorting\" to paths[\"/categories.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category_list\"].properties[\"categories\"].items.properties or allow additionalProperties."
+    },
+    "observation": 2,
+    "actual": "disable_topic_resorting",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /categories.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category_list/categories/0/doc_index_topic_id"
+    },
+    "message": "response body at /category_list/categories/0/doc_index_topic_id: property \"doc_index_topic_id\" is not allowed (and 9 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"doc_index_topic_id\" from GET /categories.json; the spec forbids unknown properties here.",
+      "spec": "Add \"doc_index_topic_id\" to paths[\"/categories.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category_list\"].properties[\"categories\"].items.properties or allow additionalProperties."
+    },
+    "observation": 2,
+    "actual": "doc_index_topic_id",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /categories.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category_list/categories/0/permission"
+    },
+    "message": "response body at /category_list/categories/0/permission: value is null but the schema does not allow null (and 9 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /category_list/categories/0/permission.",
+      "spec": "Allow null at paths[\"/categories.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category_list\"].properties[\"categories\"].items.properties[\"permission\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 2,
+    "expected": [
+      "integer"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /categories.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category_list/categories/0/sort_topics_by_event_start_date"
+    },
+    "message": "response body at /category_list/categories/0/sort_topics_by_event_start_date: property \"sort_topics_by_event_start_date\" is not allowed (and 9 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"sort_topics_by_event_start_date\" from GET /categories.json; the spec forbids unknown properties here.",
+      "spec": "Add \"sort_topics_by_event_start_date\" to paths[\"/categories.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category_list\"].properties[\"categories\"].items.properties or allow additionalProperties."
+    },
+    "observation": 2,
+    "actual": "sort_topics_by_event_start_date",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /categories.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/category_list/categories/6/doc_category_index"
+    },
+    "message": "response body at /category_list/categories/6/doc_category_index: property \"doc_category_index\" is not allowed (and 1 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"doc_category_index\" from GET /categories.json; the spec forbids unknown properties here.",
+      "spec": "Add \"doc_category_index\" to paths[\"/categories.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category_list\"].properties[\"categories\"].items.properties or allow additionalProperties."
+    },
+    "observation": 2,
+    "actual": "doc_category_index",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /discourse-post-event/events.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/events/0/at_capacity"
+    },
+    "message": "response body at /events/0/at_capacity: required property \"at_capacity\" is missing (and 16 more like it)",
+    "fix": {
+      "implementation": "Include \"at_capacity\" in the 200 response of GET /discourse-post-event/events.json.",
+      "spec": "Remove \"at_capacity\" from required at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items."
+    },
+    "observation": 4,
+    "expected": "at_capacity",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /discourse-post-event/events.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/events/0/can_act_on_discourse_post_event"
+    },
+    "message": "response body at /events/0/can_act_on_discourse_post_event: required property \"can_act_on_discourse_post_event\" is missing (and 16 more like it)",
+    "fix": {
+      "implementation": "Include \"can_act_on_discourse_post_event\" in the 200 response of GET /discourse-post-event/events.json.",
+      "spec": "Remove \"can_act_on_discourse_post_event\" from required at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items."
+    },
+    "observation": 4,
+    "expected": "can_act_on_discourse_post_event",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /discourse-post-event/events.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/events/0/can_update_attendance"
+    },
+    "message": "response body at /events/0/can_update_attendance: required property \"can_update_attendance\" is missing (and 16 more like it)",
+    "fix": {
+      "implementation": "Include \"can_update_attendance\" in the 200 response of GET /discourse-post-event/events.json.",
+      "spec": "Remove \"can_update_attendance\" from required at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items."
+    },
+    "observation": 4,
+    "expected": "can_update_attendance",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /discourse-post-event/events.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/events/0/is_closed"
+    },
+    "message": "response body at /events/0/is_closed: required property \"is_closed\" is missing (and 16 more like it)",
+    "fix": {
+      "implementation": "Include \"is_closed\" in the 200 response of GET /discourse-post-event/events.json.",
+      "spec": "Remove \"is_closed\" from required at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items."
+    },
+    "observation": 4,
+    "expected": "is_closed",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /discourse-post-event/events.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/events/0/is_expired"
+    },
+    "message": "response body at /events/0/is_expired: required property \"is_expired\" is missing (and 16 more like it)",
+    "fix": {
+      "implementation": "Include \"is_expired\" in the 200 response of GET /discourse-post-event/events.json.",
+      "spec": "Remove \"is_expired\" from required at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items."
+    },
+    "observation": 4,
+    "expected": "is_expired",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /discourse-post-event/events.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/events/0/is_ongoing"
+    },
+    "message": "response body at /events/0/is_ongoing: required property \"is_ongoing\" is missing (and 16 more like it)",
+    "fix": {
+      "implementation": "Include \"is_ongoing\" in the 200 response of GET /discourse-post-event/events.json.",
+      "spec": "Remove \"is_ongoing\" from required at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items."
+    },
+    "observation": 4,
+    "expected": "is_ongoing",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /discourse-post-event/events.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/events/0/is_private"
+    },
+    "message": "response body at /events/0/is_private: required property \"is_private\" is missing (and 16 more like it)",
+    "fix": {
+      "implementation": "Include \"is_private\" in the 200 response of GET /discourse-post-event/events.json.",
+      "spec": "Remove \"is_private\" from required at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items."
+    },
+    "observation": 4,
+    "expected": "is_private",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /discourse-post-event/events.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/events/0/is_public"
+    },
+    "message": "response body at /events/0/is_public: required property \"is_public\" is missing (and 16 more like it)",
+    "fix": {
+      "implementation": "Include \"is_public\" in the 200 response of GET /discourse-post-event/events.json.",
+      "spec": "Remove \"is_public\" from required at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items."
+    },
+    "observation": 4,
+    "expected": "is_public",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /discourse-post-event/events.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/events/0/is_standalone"
+    },
+    "message": "response body at /events/0/is_standalone: required property \"is_standalone\" is missing (and 16 more like it)",
+    "fix": {
+      "implementation": "Include \"is_standalone\" in the 200 response of GET /discourse-post-event/events.json.",
+      "spec": "Remove \"is_standalone\" from required at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items."
+    },
+    "observation": 4,
+    "expected": "is_standalone",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /discourse-post-event/events.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/events/0/post/topic/tags/0"
+    },
+    "message": "response body at /events/0/post/topic/tags/0: expected \"string\" but got object (and 16 more like it)",
+    "fix": {
+      "implementation": "Return \"string\" in response body at /events/0/post/topic/tags/0.",
+      "spec": "Change the type at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items.properties[\"post\"].properties[\"topic\"].properties[\"tags\"].items to \"object\"."
+    },
+    "observation": 4,
+    "expected": [
+      "string"
+    ],
+    "actual": "object",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /discourse-post-event/events.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/events/0/should_display_invitees"
+    },
+    "message": "response body at /events/0/should_display_invitees: required property \"should_display_invitees\" is missing (and 16 more like it)",
+    "fix": {
+      "implementation": "Include \"should_display_invitees\" in the 200 response of GET /discourse-post-event/events.json.",
+      "spec": "Remove \"should_display_invitees\" from required at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items."
+    },
+    "observation": 4,
+    "expected": "should_display_invitees",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /discourse-post-event/events.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/events/0/status"
+    },
+    "message": "response body at /events/0/status: required property \"status\" is missing (and 16 more like it)",
+    "fix": {
+      "implementation": "Include \"status\" in the 200 response of GET /discourse-post-event/events.json.",
+      "spec": "Remove \"status\" from required at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items."
+    },
+    "observation": 4,
+    "expected": "status",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /groups.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/groups/0/bio_raw"
+    },
+    "message": "response body at /groups/0/bio_raw: required property \"bio_raw\" is missing (and 20 more like it)",
+    "fix": {
+      "implementation": "Include \"bio_raw\" in the 200 response of GET /groups.json.",
+      "spec": "Remove \"bio_raw\" from required at paths[\"/groups.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"groups\"].items."
+    },
+    "observation": 5,
+    "expected": "bio_raw",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /groups.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/groups/0/can_admin_group"
+    },
+    "message": "response body at /groups/0/can_admin_group: required property \"can_admin_group\" is missing (and 20 more like it)",
+    "fix": {
+      "implementation": "Include \"can_admin_group\" in the 200 response of GET /groups.json.",
+      "spec": "Remove \"can_admin_group\" from required at paths[\"/groups.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"groups\"].items."
+    },
+    "observation": 5,
+    "expected": "can_admin_group",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /groups.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/groups/0/display_name"
+    },
+    "message": "response body at /groups/0/display_name: required property \"display_name\" is missing (and 20 more like it)",
+    "fix": {
+      "implementation": "Include \"display_name\" in the 200 response of GET /groups.json.",
+      "spec": "Remove \"display_name\" from required at paths[\"/groups.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"groups\"].items."
+    },
+    "observation": 5,
+    "expected": "display_name",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /groups.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/groups/0/has_messages"
+    },
+    "message": "response body at /groups/0/has_messages: required property \"has_messages\" is missing (and 20 more like it)",
+    "fix": {
+      "implementation": "Include \"has_messages\" in the 200 response of GET /groups.json.",
+      "spec": "Remove \"has_messages\" from required at paths[\"/groups.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"groups\"].items."
+    },
+    "observation": 5,
+    "expected": "has_messages",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /groups.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/groups/0/incoming_email"
+    },
+    "message": "response body at /groups/0/incoming_email: required property \"incoming_email\" is missing (and 20 more like it)",
+    "fix": {
+      "implementation": "Include \"incoming_email\" in the 200 response of GET /groups.json.",
+      "spec": "Remove \"incoming_email\" from required at paths[\"/groups.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"groups\"].items."
+    },
+    "observation": 5,
+    "expected": "incoming_email",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /groups.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/groups/10/grant_trust_level"
+    },
+    "message": "response body at /groups/10/grant_trust_level: expected \"null, string\" but got integer (and 4 more like it)",
+    "fix": {
+      "implementation": "Return \"null, string\" in response body at /groups/10/grant_trust_level.",
+      "spec": "Change the type at paths[\"/groups.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"groups\"].items.properties[\"grant_trust_level\"] to \"integer\"."
+    },
+    "observation": 5,
+    "expected": [
+      "null",
+      "string"
+    ],
+    "actual": "integer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /groups/by-id/{id}.json",
+      "part": "response",
+      "name": "404"
+    },
+    "message": "status 404 is not documented for \"GET /groups/by-id/{id}.json\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /groups/by-id/{id}.json.",
+      "spec": "Add a \"404\" response under paths[\"/groups/by-id/{id}.json\"].get.responses."
+    },
+    "observation": 8,
+    "expected": [
+      "200"
+    ],
+    "actual": 404,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /groups/{name}.json",
+      "part": "response",
+      "name": "404"
+    },
+    "message": "status 404 is not documented for \"GET /groups/{name}.json\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /groups/{name}.json.",
+      "spec": "Add a \"404\" response under paths[\"/groups/{name}.json\"].get.responses."
+    },
+    "observation": 6,
+    "expected": [
+      "200"
+    ],
+    "actual": 404,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /groups/{name}/members.json",
+      "part": "response",
+      "name": "404"
+    },
+    "message": "status 404 is not documented for \"GET /groups/{name}/members.json\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /groups/{name}/members.json.",
+      "spec": "Add a \"404\" response under paths[\"/groups/{name}/members.json\"].get.responses."
+    },
+    "observation": 7,
+    "expected": [
+      "200"
+    ],
+    "actual": 404,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/accepted_answer"
+    },
+    "message": "response body at /latest_posts/0/accepted_answer: property \"accepted_answer\" is not allowed (and 49 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"accepted_answer\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"accepted_answer\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "accepted_answer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/can_accept_answer"
+    },
+    "message": "response body at /latest_posts/0/can_accept_answer: property \"can_accept_answer\" is not allowed (and 49 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"can_accept_answer\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"can_accept_answer\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "can_accept_answer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/can_unaccept_answer"
+    },
+    "message": "response body at /latest_posts/0/can_unaccept_answer: property \"can_unaccept_answer\" is not allowed (and 49 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"can_unaccept_answer\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"can_unaccept_answer\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "can_unaccept_answer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/current_user_reaction"
+    },
+    "message": "response body at /latest_posts/0/current_user_reaction: property \"current_user_reaction\" is not allowed (and 49 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"current_user_reaction\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"current_user_reaction\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "current_user_reaction",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/current_user_used_main_reaction"
+    },
+    "message": "response body at /latest_posts/0/current_user_used_main_reaction: property \"current_user_used_main_reaction\" is not allowed (and 49 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"current_user_used_main_reaction\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"current_user_used_main_reaction\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "current_user_used_main_reaction",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/customer_flair_customer"
+    },
+    "message": "response body at /latest_posts/0/customer_flair_customer: property \"customer_flair_customer\" is not allowed (and 49 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"customer_flair_customer\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"customer_flair_customer\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "customer_flair_customer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/event"
+    },
+    "message": "response body at /latest_posts/0/event: property \"event\" is not allowed (and 49 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"event\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"event\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "event",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/flair_group_id"
+    },
+    "message": "response body at /latest_posts/0/flair_group_id: expected \"null, string\" but got integer (and 32 more like it)",
+    "fix": {
+      "implementation": "Return \"null, string\" in response body at /latest_posts/0/flair_group_id.",
+      "spec": "Change the type at paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties[\"flair_group_id\"] to \"integer\"."
+    },
+    "observation": 9,
+    "expected": [
+      "null",
+      "string"
+    ],
+    "actual": "integer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/is_localized"
+    },
+    "message": "response body at /latest_posts/0/is_localized: property \"is_localized\" is not allowed (and 49 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"is_localized\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"is_localized\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "is_localized",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/language"
+    },
+    "message": "response body at /latest_posts/0/language: property \"language\" is not allowed (and 49 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"language\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"language\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "language",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/locale"
+    },
+    "message": "response body at /latest_posts/0/locale: property \"locale\" is not allowed (and 49 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"locale\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"locale\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "locale",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/reaction_users_count"
+    },
+    "message": "response body at /latest_posts/0/reaction_users_count: property \"reaction_users_count\" is not allowed (and 49 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"reaction_users_count\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"reaction_users_count\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "reaction_users_count",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/reactions"
+    },
+    "message": "response body at /latest_posts/0/reactions: property \"reactions\" is not allowed (and 49 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"reactions\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"reactions\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "reactions",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/reply_to_post_number"
+    },
+    "message": "response body at /latest_posts/0/reply_to_post_number: expected \"null, string\" but got integer (and 24 more like it)",
+    "fix": {
+      "implementation": "Return \"null, string\" in response body at /latest_posts/0/reply_to_post_number.",
+      "spec": "Change the type at paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties[\"reply_to_post_number\"] to \"integer\"."
+    },
+    "observation": 9,
+    "expected": [
+      "null",
+      "string"
+    ],
+    "actual": "integer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/reply_to_user"
+    },
+    "message": "response body at /latest_posts/0/reply_to_user: property \"reply_to_user\" is not allowed (and 19 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"reply_to_user\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"reply_to_user\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "reply_to_user",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/reviewable_id"
+    },
+    "message": "response body at /latest_posts/0/reviewable_id: required property \"reviewable_id\" is missing (and 49 more like it)",
+    "fix": {
+      "implementation": "Include \"reviewable_id\" in the 200 response of GET /posts.json.",
+      "spec": "Remove \"reviewable_id\" from required at paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items."
+    },
+    "observation": 9,
+    "expected": "reviewable_id",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/reviewable_score_count"
+    },
+    "message": "response body at /latest_posts/0/reviewable_score_count: required property \"reviewable_score_count\" is missing (and 49 more like it)",
+    "fix": {
+      "implementation": "Include \"reviewable_score_count\" in the 200 response of GET /posts.json.",
+      "spec": "Remove \"reviewable_score_count\" from required at paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items."
+    },
+    "observation": 9,
+    "expected": "reviewable_score_count",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/reviewable_score_pending_count"
+    },
+    "message": "response body at /latest_posts/0/reviewable_score_pending_count: required property \"reviewable_score_pending_count\" is missing (and 49 more like it)",
+    "fix": {
+      "implementation": "Include \"reviewable_score_pending_count\" in the 200 response of GET /posts.json.",
+      "spec": "Remove \"reviewable_score_pending_count\" from required at paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items."
+    },
+    "observation": 9,
+    "expected": "reviewable_score_pending_count",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/title_is_group"
+    },
+    "message": "response body at /latest_posts/0/title_is_group: property \"title_is_group\" is not allowed (and 34 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"title_is_group\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"title_is_group\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "title_is_group",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/0/topic_accepted_answer"
+    },
+    "message": "response body at /latest_posts/0/topic_accepted_answer: property \"topic_accepted_answer\" is not allowed (and 49 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"topic_accepted_answer\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"topic_accepted_answer\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "topic_accepted_answer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/1/actions_summary/0/can_act"
+    },
+    "message": "response body at /latest_posts/1/actions_summary/0/can_act: required property \"can_act\" is missing (and 20 more like it)",
+    "fix": {
+      "implementation": "Include \"can_act\" in the 200 response of GET /posts.json.",
+      "spec": "Remove \"can_act\" from required at paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties[\"actions_summary\"].items."
+    },
+    "observation": 9,
+    "expected": "can_act",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/1/actions_summary/0/count"
+    },
+    "message": "response body at /latest_posts/1/actions_summary/0/count: property \"count\" is not allowed (and 20 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"count\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"count\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties[\"actions_summary\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "count",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/17/localization_outdated"
+    },
+    "message": "response body at /latest_posts/17/localization_outdated: property \"localization_outdated\" is not allowed (and 2 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"localization_outdated\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"localization_outdated\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "localization_outdated",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/49/group_moderator"
+    },
+    "message": "response body at /latest_posts/49/group_moderator: property \"group_moderator\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"group_moderator\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"group_moderator\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "group_moderator",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/6/calendar_details"
+    },
+    "message": "response body at /latest_posts/6/calendar_details: property \"calendar_details\" is not allowed (and 6 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"calendar_details\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"calendar_details\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "calendar_details",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/latest_posts/6/can_vote"
+    },
+    "message": "response body at /latest_posts/6/can_vote: property \"can_vote\" is not allowed (and 6 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"can_vote\" from GET /posts.json; the spec forbids unknown properties here.",
+      "spec": "Add \"can_vote\" to paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties or allow additionalProperties."
+    },
+    "observation": 9,
+    "actual": "can_vote",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/accepted_answer"
+    },
+    "message": "response body at /accepted_answer: property \"accepted_answer\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"accepted_answer\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"accepted_answer\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "accepted_answer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/badges_granted"
+    },
+    "message": "response body at /badges_granted: property \"badges_granted\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"badges_granted\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"badges_granted\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "badges_granted",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/calendar_details"
+    },
+    "message": "response body at /calendar_details: property \"calendar_details\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"calendar_details\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"calendar_details\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "calendar_details",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/can_accept_answer"
+    },
+    "message": "response body at /can_accept_answer: property \"can_accept_answer\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"can_accept_answer\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"can_accept_answer\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "can_accept_answer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/can_unaccept_answer"
+    },
+    "message": "response body at /can_unaccept_answer: property \"can_unaccept_answer\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"can_unaccept_answer\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"can_unaccept_answer\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "can_unaccept_answer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/can_vote"
+    },
+    "message": "response body at /can_vote: property \"can_vote\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"can_vote\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"can_vote\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "can_vote",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/current_user_reaction"
+    },
+    "message": "response body at /current_user_reaction: property \"current_user_reaction\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"current_user_reaction\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"current_user_reaction\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "current_user_reaction",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/current_user_used_main_reaction"
+    },
+    "message": "response body at /current_user_used_main_reaction: property \"current_user_used_main_reaction\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"current_user_used_main_reaction\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"current_user_used_main_reaction\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "current_user_used_main_reaction",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/customer_flair_customer"
+    },
+    "message": "response body at /customer_flair_customer: property \"customer_flair_customer\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"customer_flair_customer\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"customer_flair_customer\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "customer_flair_customer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/event"
+    },
+    "message": "response body at /event: property \"event\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"event\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"event\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "event",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/is_localized"
+    },
+    "message": "response body at /is_localized: property \"is_localized\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"is_localized\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"is_localized\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "is_localized",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/language"
+    },
+    "message": "response body at /language: property \"language\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"language\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"language\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "language",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/locale"
+    },
+    "message": "response body at /locale: property \"locale\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"locale\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"locale\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "locale",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/reaction_users_count"
+    },
+    "message": "response body at /reaction_users_count: property \"reaction_users_count\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"reaction_users_count\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"reaction_users_count\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "reaction_users_count",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/reactions"
+    },
+    "message": "response body at /reactions: property \"reactions\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"reactions\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"reactions\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "reactions",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/reviewable_id"
+    },
+    "message": "response body at /reviewable_id: required property \"reviewable_id\" is missing",
+    "fix": {
+      "implementation": "Include \"reviewable_id\" in the 200 response of GET /posts/{id}.json.",
+      "spec": "Remove \"reviewable_id\" from required at paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema."
+    },
+    "observation": 10,
+    "expected": "reviewable_id",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/reviewable_score_count"
+    },
+    "message": "response body at /reviewable_score_count: required property \"reviewable_score_count\" is missing",
+    "fix": {
+      "implementation": "Include \"reviewable_score_count\" in the 200 response of GET /posts/{id}.json.",
+      "spec": "Remove \"reviewable_score_count\" from required at paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema."
+    },
+    "observation": 10,
+    "expected": "reviewable_score_count",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/reviewable_score_pending_count"
+    },
+    "message": "response body at /reviewable_score_pending_count: required property \"reviewable_score_pending_count\" is missing",
+    "fix": {
+      "implementation": "Include \"reviewable_score_pending_count\" in the 200 response of GET /posts/{id}.json.",
+      "spec": "Remove \"reviewable_score_pending_count\" from required at paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema."
+    },
+    "observation": 10,
+    "expected": "reviewable_score_pending_count",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /posts/{id}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/topic_accepted_answer"
+    },
+    "message": "response body at /topic_accepted_answer: property \"topic_accepted_answer\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"topic_accepted_answer\" from GET /posts/{id}.json if it is not part of the contract.",
+      "spec": "Add \"topic_accepted_answer\" to paths[\"/posts/{id}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties."
+    },
+    "observation": 10,
+    "actual": "topic_accepted_answer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/anonymous_default_navigation_menu_tags"
+    },
+    "message": "response body at /anonymous_default_navigation_menu_tags: property \"anonymous_default_navigation_menu_tags\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"anonymous_default_navigation_menu_tags\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"anonymous_default_navigation_menu_tags\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "anonymous_default_navigation_menu_tags",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/anonymous_sidebar_sections"
+    },
+    "message": "response body at /anonymous_sidebar_sections: property \"anonymous_sidebar_sections\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"anonymous_sidebar_sections\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"anonymous_sidebar_sections\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "anonymous_sidebar_sections",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/can_see_styleguide"
+    },
+    "message": "response body at /can_see_styleguide: property \"can_see_styleguide\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"can_see_styleguide\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"can_see_styleguide\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "can_see_styleguide",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/categories/0/disable_topic_resorting"
+    },
+    "message": "response body at /categories/0/disable_topic_resorting: property \"disable_topic_resorting\" is not allowed (and 43 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"disable_topic_resorting\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"disable_topic_resorting\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"categories\"].items.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "disable_topic_resorting",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/categories/0/doc_index_topic_id"
+    },
+    "message": "response body at /categories/0/doc_index_topic_id: property \"doc_index_topic_id\" is not allowed (and 43 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"doc_index_topic_id\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"doc_index_topic_id\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"categories\"].items.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "doc_index_topic_id",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/categories/0/permission"
+    },
+    "message": "response body at /categories/0/permission: value is null but the schema does not allow null (and 43 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /categories/0/permission.",
+      "spec": "Allow null at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"categories\"].items.properties[\"permission\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 13,
+    "expected": [
+      "integer"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/categories/0/sort_topics_by_event_start_date"
+    },
+    "message": "response body at /categories/0/sort_topics_by_event_start_date: property \"sort_topics_by_event_start_date\" is not allowed (and 43 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"sort_topics_by_event_start_date\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"sort_topics_by_event_start_date\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"categories\"].items.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "sort_topics_by_event_start_date",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/categories/18/can_vote"
+    },
+    "message": "response body at /categories/18/can_vote: property \"can_vote\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"can_vote\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"can_vote\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"categories\"].items.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "can_vote",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/categories/2/sort_ascending"
+    },
+    "message": "response body at /categories/2/sort_ascending: expected \"null, string\" but got boolean (and 1 more like it)",
+    "fix": {
+      "implementation": "Return \"null, string\" in response body at /categories/2/sort_ascending.",
+      "spec": "Change the type at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"categories\"].items.properties[\"sort_ascending\"] to \"boolean\"."
+    },
+    "observation": 13,
+    "expected": [
+      "null",
+      "string"
+    ],
+    "actual": "boolean",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/categories/28/doc_category_index"
+    },
+    "message": "response body at /categories/28/doc_category_index: property \"doc_category_index\" is not allowed (and 13 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"doc_category_index\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"doc_category_index\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"categories\"].items.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "doc_category_index",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/default_gamification_leaderboard_id"
+    },
+    "message": "response body at /default_gamification_leaderboard_id: property \"default_gamification_leaderboard_id\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"default_gamification_leaderboard_id\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"default_gamification_leaderboard_id\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "default_gamification_leaderboard_id",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/discourse_math_bundle_url"
+    },
+    "message": "response body at /discourse_math_bundle_url: property \"discourse_math_bundle_url\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"discourse_math_bundle_url\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"discourse_math_bundle_url\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "discourse_math_bundle_url",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/docs_legacy_path"
+    },
+    "message": "response body at /docs_legacy_path: property \"docs_legacy_path\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"docs_legacy_path\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"docs_legacy_path\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "docs_legacy_path",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/homepage_options/1/path"
+    },
+    "message": "response body at /homepage_options/1/path: value is null but the schema does not allow null",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /homepage_options/1/path.",
+      "spec": "Allow null at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"homepage_options\"].items.properties[\"path\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 13,
+    "expected": [
+      "string"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/hosting_tier"
+    },
+    "message": "response body at /hosting_tier: property \"hosting_tier\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"hosting_tier\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"hosting_tier\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "hosting_tier",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/live_assets_path"
+    },
+    "message": "response body at /live_assets_path: property \"live_assets_path\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"live_assets_path\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"live_assets_path\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "live_assets_path",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/live_livekit_agent_bot_id"
+    },
+    "message": "response body at /live_livekit_agent_bot_id: property \"live_livekit_agent_bot_id\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"live_livekit_agent_bot_id\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"live_livekit_agent_bot_id\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "live_livekit_agent_bot_id",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/live_livekit_per_room_available"
+    },
+    "message": "response body at /live_livekit_per_room_available: property \"live_livekit_per_room_available\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"live_livekit_per_room_available\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"live_livekit_per_room_available\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "live_livekit_per_room_available",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/live_public_access"
+    },
+    "message": "response body at /live_public_access: property \"live_public_access\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"live_public_access\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"live_public_access\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "live_public_access",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/live_reaction_emojis"
+    },
+    "message": "response body at /live_reaction_emojis: property \"live_reaction_emojis\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"live_reaction_emojis\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"live_reaction_emojis\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "live_reaction_emojis",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/live_reactions_allow_any_emoji"
+    },
+    "message": "response body at /live_reactions_allow_any_emoji: property \"live_reactions_allow_any_emoji\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"live_reactions_allow_any_emoji\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"live_reactions_allow_any_emoji\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "live_reactions_allow_any_emoji",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/live_video_available"
+    },
+    "message": "response body at /live_video_available: property \"live_video_available\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"live_video_available\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"live_video_available\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "live_video_available",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/privacy_policy_url"
+    },
+    "message": "response body at /privacy_policy_url: property \"privacy_policy_url\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"privacy_policy_url\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"privacy_policy_url\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "privacy_policy_url",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/system_user_avatar_template"
+    },
+    "message": "response body at /system_user_avatar_template: property \"system_user_avatar_template\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"system_user_avatar_template\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"system_user_avatar_template\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "system_user_avatar_template",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/tos_url"
+    },
+    "message": "response body at /tos_url: property \"tos_url\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"tos_url\" from GET /site.json; the spec forbids unknown properties here.",
+      "spec": "Add \"tos_url\" to paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 13,
+    "actual": "tos_url",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/watched_words_link"
+    },
+    "message": "response body at /watched_words_link: expected \"null, string\" but got object",
+    "fix": {
+      "implementation": "Return \"null, string\" in response body at /watched_words_link.",
+      "spec": "Change the type at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"watched_words_link\"] to \"object\"."
+    },
+    "observation": 13,
+    "expected": [
+      "null",
+      "string"
+    ],
+    "actual": "object",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-type-mismatch",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /site.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/watched_words_replace"
+    },
+    "message": "response body at /watched_words_replace: expected \"null, string\" but got object",
+    "fix": {
+      "implementation": "Return \"null, string\" in response body at /watched_words_replace.",
+      "spec": "Change the type at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"watched_words_replace\"] to \"object\"."
+    },
+    "observation": 13,
+    "expected": [
+      "null",
+      "string"
+    ],
+    "actual": "object",
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /tag/{name}.json",
+      "part": "response",
+      "name": "404"
+    },
+    "message": "status 404 is not documented for \"GET /tag/{name}.json\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /tag/{name}.json.",
+      "spec": "Add a \"404\" response under paths[\"/tag/{name}.json\"].get.responses."
+    },
+    "observation": 17,
+    "expected": [
+      "200"
+    ],
+    "actual": 404,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /tag_groups.json",
+      "part": "response",
+      "name": "404"
+    },
+    "message": "status 404 is not documented for \"GET /tag_groups.json\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /tag_groups.json.",
+      "spec": "Add a \"404\" response under paths[\"/tag_groups.json\"].get.responses."
+    },
+    "observation": 15,
+    "expected": [
+      "200"
+    ],
+    "actual": 404,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /tag_groups/{id}.json",
+      "part": "response",
+      "name": "404"
+    },
+    "message": "status 404 is not documented for \"GET /tag_groups/{id}.json\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /tag_groups/{id}.json.",
+      "spec": "Add a \"404\" response under paths[\"/tag_groups/{id}.json\"].get.responses."
+    },
+    "observation": 16,
+    "expected": [
+      "200"
+    ],
+    "actual": 404,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /tags.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/extras/tag_groups"
+    },
+    "message": "response body at /extras/tag_groups: property \"tag_groups\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"tag_groups\" from GET /tags.json if it is not part of the contract.",
+      "spec": "Add \"tag_groups\" to paths[\"/tags.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"extras\"].properties."
+    },
+    "observation": 18,
+    "actual": "tag_groups",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /tags.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/tags/0/description"
+    },
+    "message": "response body at /tags/0/description: property \"description\" is not documented (and 166 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"description\" from GET /tags.json if it is not part of the contract.",
+      "spec": "Add \"description\" to paths[\"/tags.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"tags\"].items.properties."
+    },
+    "observation": 18,
+    "actual": "description",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /tags.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/tags/0/pm_only"
+    },
+    "message": "response body at /tags/0/pm_only: property \"pm_only\" is not documented (and 166 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"pm_only\" from GET /tags.json if it is not part of the contract.",
+      "spec": "Add \"pm_only\" to paths[\"/tags.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"tags\"].items.properties."
+    },
+    "observation": 18,
+    "actual": "pm_only",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /tags.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/tags/0/slug"
+    },
+    "message": "response body at /tags/0/slug: property \"slug\" is not documented (and 166 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"slug\" from GET /tags.json if it is not part of the contract.",
+      "spec": "Add \"slug\" to paths[\"/tags.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"tags\"].items.properties."
+    },
+    "observation": 18,
+    "actual": "slug",
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /u/{username}/emails.json",
+      "part": "response",
+      "name": "403"
+    },
+    "message": "status 403 is not documented for \"GET /u/{username}/emails.json\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /u/{username}/emails.json.",
+      "spec": "Add a \"403\" response under paths[\"/u/{username}/emails.json\"].get.responses."
+    },
+    "observation": 19,
+    "expected": [
+      "200"
+    ],
+    "actual": 403,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /user-badges/{username}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/badges/0/show_in_post_header"
+    },
+    "message": "response body at /badges/0/show_in_post_header: property \"show_in_post_header\" is not allowed (and 2 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"show_in_post_header\" from GET /user-badges/{username}.json; the spec forbids unknown properties here.",
+      "spec": "Add \"show_in_post_header\" to paths[\"/user-badges/{username}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"badges\"].items.properties or allow additionalProperties."
+    },
+    "observation": 20,
+    "actual": "show_in_post_header",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /user-badges/{username}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/granted_bies/0/flair_name"
+    },
+    "message": "response body at /granted_bies/0/flair_name: required property \"flair_name\" is missing",
+    "fix": {
+      "implementation": "Include \"flair_name\" in the 200 response of GET /user-badges/{username}.json.",
+      "spec": "Remove \"flair_name\" from required at paths[\"/user-badges/{username}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"granted_bies\"].items."
+    },
+    "observation": 20,
+    "expected": "flair_name",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /user-badges/{username}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/user_badges/5/post_number"
+    },
+    "message": "response body at /user_badges/5/post_number: property \"post_number\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"post_number\" from GET /user-badges/{username}.json; the spec forbids unknown properties here.",
+      "spec": "Add \"post_number\" to paths[\"/user-badges/{username}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"user_badges\"].items.properties or allow additionalProperties."
+    },
+    "observation": 20,
+    "actual": "post_number",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /user-badges/{username}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/user_badges/5/topic_id"
+    },
+    "message": "response body at /user_badges/5/topic_id: property \"topic_id\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"topic_id\" from GET /user-badges/{username}.json; the spec forbids unknown properties here.",
+      "spec": "Add \"topic_id\" to paths[\"/user-badges/{username}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"user_badges\"].items.properties or allow additionalProperties."
+    },
+    "observation": 20,
+    "actual": "topic_id",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /user-badges/{username}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/user_badges/5/topic_title"
+    },
+    "message": "response body at /user_badges/5/topic_title: property \"topic_title\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"topic_title\" from GET /user-badges/{username}.json; the spec forbids unknown properties here.",
+      "spec": "Add \"topic_title\" to paths[\"/user-badges/{username}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"user_badges\"].items.properties or allow additionalProperties."
+    },
+    "observation": 20,
+    "actual": "topic_title",
+    "review": "unreviewed"
+  }
+]

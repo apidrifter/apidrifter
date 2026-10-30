@@ -1,0 +1,1236 @@
+[
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /actions/run",
+      "part": "response",
+      "name": "403"
+    },
+    "message": "status 403 is not documented for \"GET /actions/run\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /actions/run.",
+      "spec": "Add a \"403\" response under paths[\"/actions/run\"].get.responses."
+    },
+    "observation": 0,
+    "expected": [
+      "200"
+    ],
+    "actual": 403,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /activitypub/actor",
+      "part": "response",
+      "name": "404"
+    },
+    "message": "status 404 is not documented for \"GET /activitypub/actor\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /activitypub/actor.",
+      "spec": "Add a \"404\" response under paths[\"/activitypub/actor\"].get.responses."
+    },
+    "observation": 1,
+    "expected": [
+      "200"
+    ],
+    "actual": 404,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /nodeinfo",
+      "part": "response",
+      "name": "404"
+    },
+    "message": "status 404 is not documented for \"GET /nodeinfo\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /nodeinfo.",
+      "spec": "Add a \"404\" response under paths[\"/nodeinfo\"].get.responses."
+    },
+    "observation": 8,
+    "expected": [
+      "200"
+    ],
+    "actual": 404,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/activities/feeds",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/act_user/username"
+    },
+    "message": "response body at /0/act_user/username: property \"username\" is not documented (and 29 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"username\" from GET /orgs/{org}/activities/feeds if it is not part of the contract.",
+      "spec": "Add \"username\" to paths[\"/orgs/{org}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"act_user\"].properties."
+    },
+    "observation": 11,
+    "actual": "username",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/activities/feeds",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/comment/user"
+    },
+    "message": "response body at /0/comment/user: value is null but the schema does not allow null (and 14 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/comment/user.",
+      "spec": "Allow null at paths[\"/orgs/{org}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"comment\"].properties[\"user\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 11,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/activities/feeds",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/repo/owner/username"
+    },
+    "message": "response body at /0/repo/owner/username: property \"username\" is not documented (and 29 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"username\" from GET /orgs/{org}/activities/feeds if it is not part of the contract.",
+      "spec": "Add \"username\" to paths[\"/orgs/{org}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repo\"].properties[\"owner\"].properties."
+    },
+    "observation": 11,
+    "actual": "username",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/activities/feeds",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/repo/parent"
+    },
+    "message": "response body at /0/repo/parent: value is null but the schema does not allow null (and 29 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/repo/parent.",
+      "spec": "Allow null at paths[\"/orgs/{org}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repo\"].properties[\"parent\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 11,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/activities/feeds",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/repo/repo_transfer"
+    },
+    "message": "response body at /0/repo/repo_transfer: value is null but the schema does not allow null (and 29 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/repo/repo_transfer.",
+      "spec": "Allow null at paths[\"/orgs/{org}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repo\"].properties[\"repo_transfer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 11,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/activities/feeds",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/5/comment"
+    },
+    "message": "response body at /5/comment: value is null but the schema does not allow null (and 14 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /5/comment.",
+      "spec": "Allow null at paths[\"/orgs/{org}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"comment\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 11,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/labels/{id}",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /orgs/{org}/labels/{id}\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 404) from GET /orgs/{org}/labels/{id}.",
+      "spec": "Add a \"401\" response under paths[\"/orgs/{org}/labels/{id}\"].get.responses."
+    },
+    "observation": 13,
+    "expected": [
+      "200",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/list_blocked",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /orgs/{org}/list_blocked\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /orgs/{org}/list_blocked.",
+      "spec": "Add a \"401\" response under paths[\"/orgs/{org}/list_blocked\"].get.responses."
+    },
+    "observation": 14,
+    "expected": [
+      "200"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/public_members",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/username"
+    },
+    "message": "response body at /0/username: property \"username\" is not documented (and 29 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"username\" from GET /orgs/{org}/public_members if it is not part of the contract.",
+      "spec": "Add \"username\" to paths[\"/orgs/{org}/public_members\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties."
+    },
+    "observation": 15,
+    "actual": "username",
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/quota",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /orgs/{org}/quota\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 403, 404) from GET /orgs/{org}/quota.",
+      "spec": "Add a \"401\" response under paths[\"/orgs/{org}/quota\"].get.responses."
+    },
+    "observation": 17,
+    "expected": [
+      "200",
+      "403",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/quota/artifacts",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /orgs/{org}/quota/artifacts\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 403, 404) from GET /orgs/{org}/quota/artifacts.",
+      "spec": "Add a \"401\" response under paths[\"/orgs/{org}/quota/artifacts\"].get.responses."
+    },
+    "observation": 18,
+    "expected": [
+      "200",
+      "403",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/quota/attachments",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /orgs/{org}/quota/attachments\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 403, 404) from GET /orgs/{org}/quota/attachments.",
+      "spec": "Add a \"401\" response under paths[\"/orgs/{org}/quota/attachments\"].get.responses."
+    },
+    "observation": 19,
+    "expected": [
+      "200",
+      "403",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/quota/packages",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /orgs/{org}/quota/packages\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 403, 404) from GET /orgs/{org}/quota/packages.",
+      "spec": "Add a \"401\" response under paths[\"/orgs/{org}/quota/packages\"].get.responses."
+    },
+    "observation": 20,
+    "expected": [
+      "200",
+      "403",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/repos",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/owner/username"
+    },
+    "message": "response body at /0/owner/username: property \"username\" is not documented (and 19 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"username\" from GET /orgs/{org}/repos if it is not part of the contract.",
+      "spec": "Add \"username\" to paths[\"/orgs/{org}/repos\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"owner\"].properties."
+    },
+    "observation": 21,
+    "actual": "username",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/repos",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/parent"
+    },
+    "message": "response body at /0/parent: value is null but the schema does not allow null (and 19 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/parent.",
+      "spec": "Allow null at paths[\"/orgs/{org}/repos\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"parent\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 21,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /orgs/{org}/repos",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/repo_transfer"
+    },
+    "message": "response body at /0/repo_transfer: value is null but the schema does not allow null (and 19 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/repo_transfer.",
+      "spec": "Allow null at paths[\"/orgs/{org}/repos\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repo_transfer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 21,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /packages/{owner}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/creator/username"
+    },
+    "message": "response body at /0/creator/username: property \"username\" is not documented (and 29 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"username\" from GET /packages/{owner} if it is not part of the contract.",
+      "spec": "Add \"username\" to paths[\"/packages/{owner}\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"creator\"].properties."
+    },
+    "observation": 22,
+    "actual": "username",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /packages/{owner}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/owner/username"
+    },
+    "message": "response body at /0/owner/username: property \"username\" is not documented (and 29 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"username\" from GET /packages/{owner} if it is not part of the contract.",
+      "spec": "Add \"username\" to paths[\"/packages/{owner}\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"owner\"].properties."
+    },
+    "observation": 22,
+    "actual": "username",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /packages/{owner}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/repository/owner/username"
+    },
+    "message": "response body at /0/repository/owner/username: property \"username\" is not documented (and 29 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"username\" from GET /packages/{owner} if it is not part of the contract.",
+      "spec": "Add \"username\" to paths[\"/packages/{owner}\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repository\"].properties[\"owner\"].properties."
+    },
+    "observation": 22,
+    "actual": "username",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /packages/{owner}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/repository/parent"
+    },
+    "message": "response body at /0/repository/parent: value is null but the schema does not allow null (and 29 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/repository/parent.",
+      "spec": "Allow null at paths[\"/packages/{owner}\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repository\"].properties[\"parent\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 22,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /packages/{owner}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/repository/repo_transfer"
+    },
+    "message": "response body at /0/repository/repo_transfer: value is null but the schema does not allow null (and 29 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/repository/repo_transfer.",
+      "spec": "Allow null at paths[\"/packages/{owner}\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repository\"].properties[\"repo_transfer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 22,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/owner/username"
+    },
+    "message": "response body at /owner/username: property \"username\" is not documented",
+    "fix": {
+      "implementation": "Stop returning \"username\" from GET /repos/{owner}/{repo} if it is not part of the contract.",
+      "spec": "Add \"username\" to paths[\"/repos/{owner}/{repo}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"owner\"].properties."
+    },
+    "observation": 23,
+    "actual": "username",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/parent"
+    },
+    "message": "response body at /parent: value is null but the schema does not allow null",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /parent.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"parent\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 23,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/repo_transfer"
+    },
+    "message": "response body at /repo_transfer: value is null but the schema does not allow null",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /repo_transfer.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"repo_transfer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 23,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/actions/runners",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /repos/{owner}/{repo}/actions/runners\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 400, 404) from GET /repos/{owner}/{repo}/actions/runners.",
+      "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/runners\"].get.responses."
+    },
+    "observation": 25,
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/actions/runners/jobs",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /repos/{owner}/{repo}/actions/runners/jobs\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 403) from GET /repos/{owner}/{repo}/actions/runners/jobs.",
+      "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/runners/jobs\"].get.responses."
+    },
+    "observation": 26,
+    "expected": [
+      "200",
+      "403"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "input",
+    "id": "deprecated-operation-in-use",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/actions/runners/registration-token"
+    },
+    "message": "\"GET /repos/{owner}/{repo}/actions/runners/registration-token\" is deprecated in the spec but still in use",
+    "fix": {
+      "implementation": "Migrate callers of GET /repos/{owner}/{repo}/actions/runners/registration-token to its replacement before removing it.",
+      "spec": "Remove deprecated: true from paths[\"/repos/{owner}/{repo}/actions/runners/registration-token\"].get if the operation is still supported."
+    },
+    "observation": 27,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/actions/runners/registration-token",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /repos/{owner}/{repo}/actions/runners/registration-token\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /repos/{owner}/{repo}/actions/runners/registration-token.",
+      "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/runners/registration-token\"].get.responses."
+    },
+    "observation": 27,
+    "expected": [
+      "200"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/actions/secrets",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /repos/{owner}/{repo}/actions/secrets\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 404) from GET /repos/{owner}/{repo}/actions/secrets.",
+      "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/secrets\"].get.responses."
+    },
+    "observation": 28,
+    "expected": [
+      "200",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/actions/variables",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /repos/{owner}/{repo}/actions/variables\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 400, 404) from GET /repos/{owner}/{repo}/actions/variables.",
+      "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/variables\"].get.responses."
+    },
+    "observation": 29,
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/activities/feeds",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/act_user/username"
+    },
+    "message": "response body at /0/act_user/username: property \"username\" is not documented (and 29 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"username\" from GET /repos/{owner}/{repo}/activities/feeds if it is not part of the contract.",
+      "spec": "Add \"username\" to paths[\"/repos/{owner}/{repo}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"act_user\"].properties."
+    },
+    "observation": 30,
+    "actual": "username",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/activities/feeds",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/comment/user"
+    },
+    "message": "response body at /0/comment/user: value is null but the schema does not allow null (and 24 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/comment/user.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"comment\"].properties[\"user\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 30,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/activities/feeds",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/repo/owner/username"
+    },
+    "message": "response body at /0/repo/owner/username: property \"username\" is not documented (and 29 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"username\" from GET /repos/{owner}/{repo}/activities/feeds if it is not part of the contract.",
+      "spec": "Add \"username\" to paths[\"/repos/{owner}/{repo}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repo\"].properties[\"owner\"].properties."
+    },
+    "observation": 30,
+    "actual": "username",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/activities/feeds",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/repo/parent"
+    },
+    "message": "response body at /0/repo/parent: value is null but the schema does not allow null (and 29 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/repo/parent.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repo\"].properties[\"parent\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 30,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/activities/feeds",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/repo/repo_transfer"
+    },
+    "message": "response body at /0/repo/repo_transfer: value is null but the schema does not allow null (and 29 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/repo/repo_transfer.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repo\"].properties[\"repo_transfer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 30,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/activities/feeds",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/6/comment"
+    },
+    "message": "response body at /6/comment: value is null but the schema does not allow null (and 4 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /6/comment.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"comment\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 30,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/assignees",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /repos/{owner}/{repo}/assignees\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 404) from GET /repos/{owner}/{repo}/assignees.",
+      "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/assignees\"].get.responses."
+    },
+    "observation": 31,
+    "expected": [
+      "200",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/branch_protections",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /repos/{owner}/{repo}/branch_protections\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200) from GET /repos/{owner}/{repo}/branch_protections.",
+      "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branch_protections\"].get.responses."
+    },
+    "observation": 32,
+    "expected": [
+      "200"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/branch_protections/{name}",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /repos/{owner}/{repo}/branch_protections/{name}\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 404) from GET /repos/{owner}/{repo}/branch_protections/{name}.",
+      "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branch_protections/{name}\"].get.responses."
+    },
+    "observation": 33,
+    "expected": [
+      "200",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/branches",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/commit/added"
+    },
+    "message": "response body at /0/commit/added: value is null but the schema does not allow null (and 29 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/commit/added.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"added\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 34,
+    "expected": [
+      "array"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/branches",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/commit/modified"
+    },
+    "message": "response body at /0/commit/modified: value is null but the schema does not allow null (and 29 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/commit/modified.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"modified\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 34,
+    "expected": [
+      "array"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/branches",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/commit/removed"
+    },
+    "message": "response body at /0/commit/removed: value is null but the schema does not allow null (and 29 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/commit/removed.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"removed\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 34,
+    "expected": [
+      "array"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/branches",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/commit/verification/signer"
+    },
+    "message": "response body at /0/commit/verification/signer: value is null but the schema does not allow null (and 17 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/commit/verification/signer.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"verification\"].properties[\"signer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 34,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/branches/{branch}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/commit/added"
+    },
+    "message": "response body at /commit/added: value is null but the schema does not allow null",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /commit/added.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches/{branch}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"commit\"].properties[\"added\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 35,
+    "expected": [
+      "array"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/branches/{branch}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/commit/modified"
+    },
+    "message": "response body at /commit/modified: value is null but the schema does not allow null",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /commit/modified.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches/{branch}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"commit\"].properties[\"modified\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 35,
+    "expected": [
+      "array"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/branches/{branch}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/commit/removed"
+    },
+    "message": "response body at /commit/removed: value is null but the schema does not allow null",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /commit/removed.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches/{branch}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"commit\"].properties[\"removed\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 35,
+    "expected": [
+      "array"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/branches/{branch}",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/commit/verification/signer"
+    },
+    "message": "response body at /commit/verification/signer: value is null but the schema does not allow null",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /commit/verification/signer.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches/{branch}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"commit\"].properties[\"verification\"].properties[\"signer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 35,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "errors",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/collaborators",
+      "part": "response",
+      "name": "401"
+    },
+    "message": "status 401 is not documented for \"GET /repos/{owner}/{repo}/collaborators\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 404) from GET /repos/{owner}/{repo}/collaborators.",
+      "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/collaborators\"].get.responses."
+    },
+    "observation": 36,
+    "expected": [
+      "200",
+      "404"
+    ],
+    "actual": 401,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/commits",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/author/username"
+    },
+    "message": "response body at /0/author/username: property \"username\" is not documented (and 29 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"username\" from GET /repos/{owner}/{repo}/commits if it is not part of the contract.",
+      "spec": "Add \"username\" to paths[\"/repos/{owner}/{repo}/commits\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"author\"].properties."
+    },
+    "observation": 37,
+    "actual": "username",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/commits",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/commit/verification/signer"
+    },
+    "message": "response body at /0/commit/verification/signer: value is null but the schema does not allow null (and 26 more like it)",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /0/commit/verification/signer.",
+      "spec": "Allow null at paths[\"/repos/{owner}/{repo}/commits\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"verification\"].properties[\"signer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 37,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-undocumented-property",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /repos/{owner}/{repo}/commits",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/0/committer/username"
+    },
+    "message": "response body at /0/committer/username: property \"username\" is not documented (and 29 more like it)",
+    "fix": {
+      "implementation": "Stop returning \"username\" from GET /repos/{owner}/{repo}/commits if it is not part of the contract.",
+      "spec": "Add \"username\" to paths[\"/repos/{owner}/{repo}/commits\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"committer\"].properties."
+    },
+    "observation": 37,
+    "actual": "username",
+    "review": "unreviewed"
+  }
+]

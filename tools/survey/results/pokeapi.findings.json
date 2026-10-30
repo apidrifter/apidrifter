@@ -1,0 +1,26 @@
+[
+  {
+    "class": "body",
+    "id": "response-null-not-allowed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /api/v2/evolution-chain/{id}/",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/baby_trigger_item"
+    },
+    "message": "response body at /baby_trigger_item: value is null but the schema does not allow null",
+    "fix": {
+      "implementation": "Return a non-null value in response body at /baby_trigger_item.",
+      "spec": "Allow null at paths[\"/api/v2/evolution-chain/{id}/\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"baby_trigger_item\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
+    },
+    "observation": 25,
+    "expected": [
+      "object"
+    ],
+    "actual": null,
+    "review": "unreviewed"
+  }
+]

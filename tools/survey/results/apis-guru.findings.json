@@ -1,0 +1,275 @@
+[
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /specs/{provider}/{api}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/externalDocs"
+    },
+    "message": "response body at /externalDocs: property \"externalDocs\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"externalDocs\" from GET /specs/{provider}/{api}.json; the spec forbids unknown properties here.",
+      "spec": "Add \"externalDocs\" to paths[\"/specs/{provider}/{api}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 5,
+    "actual": "externalDocs",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /specs/{provider}/{api}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/info"
+    },
+    "message": "response body at /info: property \"info\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"info\" from GET /specs/{provider}/{api}.json; the spec forbids unknown properties here.",
+      "spec": "Add \"info\" to paths[\"/specs/{provider}/{api}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 5,
+    "actual": "info",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /specs/{provider}/{api}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/link"
+    },
+    "message": "response body at /link: property \"link\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"link\" from GET /specs/{provider}/{api}.json; the spec forbids unknown properties here.",
+      "spec": "Add \"link\" to paths[\"/specs/{provider}/{api}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 5,
+    "actual": "link",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /specs/{provider}/{api}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/openapiVer"
+    },
+    "message": "response body at /openapiVer: property \"openapiVer\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"openapiVer\" from GET /specs/{provider}/{api}.json; the spec forbids unknown properties here.",
+      "spec": "Add \"openapiVer\" to paths[\"/specs/{provider}/{api}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 5,
+    "actual": "openapiVer",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /specs/{provider}/{api}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/preferred"
+    },
+    "message": "response body at /preferred: required property \"preferred\" is missing",
+    "fix": {
+      "implementation": "Include \"preferred\" in the 200 response of GET /specs/{provider}/{api}.json.",
+      "spec": "Remove \"preferred\" from required at paths[\"/specs/{provider}/{api}.json\"].get.responses[\"200\"].content[\"application/json\"].schema."
+    },
+    "observation": 5,
+    "expected": "preferred",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /specs/{provider}/{api}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/swaggerUrl"
+    },
+    "message": "response body at /swaggerUrl: property \"swaggerUrl\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"swaggerUrl\" from GET /specs/{provider}/{api}.json; the spec forbids unknown properties here.",
+      "spec": "Add \"swaggerUrl\" to paths[\"/specs/{provider}/{api}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 5,
+    "actual": "swaggerUrl",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /specs/{provider}/{api}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/swaggerYamlUrl"
+    },
+    "message": "response body at /swaggerYamlUrl: property \"swaggerYamlUrl\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"swaggerYamlUrl\" from GET /specs/{provider}/{api}.json; the spec forbids unknown properties here.",
+      "spec": "Add \"swaggerYamlUrl\" to paths[\"/specs/{provider}/{api}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 5,
+    "actual": "swaggerYamlUrl",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /specs/{provider}/{api}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/updated"
+    },
+    "message": "response body at /updated: property \"updated\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"updated\" from GET /specs/{provider}/{api}.json; the spec forbids unknown properties here.",
+      "spec": "Add \"updated\" to paths[\"/specs/{provider}/{api}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties or allow additionalProperties."
+    },
+    "observation": 5,
+    "actual": "updated",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /specs/{provider}/{api}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/versions"
+    },
+    "message": "response body at /versions: required property \"versions\" is missing",
+    "fix": {
+      "implementation": "Include \"versions\" in the 200 response of GET /specs/{provider}/{api}.json.",
+      "spec": "Remove \"versions\" from required at paths[\"/specs/{provider}/{api}.json\"].get.responses[\"200\"].content[\"application/json\"].schema."
+    },
+    "observation": 5,
+    "expected": "versions",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /{provider}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/apis/added"
+    },
+    "message": "response body at /apis/added: required property \"added\" is missing",
+    "fix": {
+      "implementation": "Include \"added\" in the 200 response of GET /{provider}.json.",
+      "spec": "Remove \"added\" from required at paths[\"/{provider}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"apis\"]."
+    },
+    "observation": 0,
+    "expected": "added",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-forbidden-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /{provider}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/apis/apis.guru"
+    },
+    "message": "response body at /apis/apis.guru: property \"apis.guru\" is not allowed",
+    "fix": {
+      "implementation": "Stop returning \"apis.guru\" from GET /{provider}.json; the spec forbids unknown properties here.",
+      "spec": "Add \"apis.guru\" to paths[\"/{provider}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"apis\"].properties or allow additionalProperties."
+    },
+    "observation": 0,
+    "actual": "apis.guru",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /{provider}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/apis/preferred"
+    },
+    "message": "response body at /apis/preferred: required property \"preferred\" is missing",
+    "fix": {
+      "implementation": "Include \"preferred\" in the 200 response of GET /{provider}.json.",
+      "spec": "Remove \"preferred\" from required at paths[\"/{provider}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"apis\"]."
+    },
+    "observation": 0,
+    "expected": "preferred",
+    "review": "unreviewed"
+  },
+  {
+    "class": "body",
+    "id": "response-missing-required-property",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /{provider}.json",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/apis/versions"
+    },
+    "message": "response body at /apis/versions: required property \"versions\" is missing",
+    "fix": {
+      "implementation": "Include \"versions\" in the 200 response of GET /{provider}.json.",
+      "spec": "Remove \"versions\" from required at paths[\"/{provider}.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"apis\"]."
+    },
+    "observation": 0,
+    "expected": "versions",
+    "review": "unreviewed"
+  }
+]

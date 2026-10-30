@@ -1,0 +1,25 @@
+[
+  {
+    "class": "server",
+    "id": "undocumented-status",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /api/v3/LongWeekend/{year}/{countryCode}",
+      "part": "response",
+      "name": "502"
+    },
+    "message": "status 502 is not documented for \"GET /api/v3/LongWeekend/{year}/{countryCode}\"",
+    "fix": {
+      "implementation": "Return one of the documented statuses (200, 404) from GET /api/v3/LongWeekend/{year}/{countryCode}.",
+      "spec": "Add a \"502\" response under paths[\"/api/v3/LongWeekend/{year}/{countryCode}\"].get.responses."
+    },
+    "observation": 3,
+    "expected": [
+      "200",
+      "404"
+    ],
+    "actual": 502,
+    "review": "unreviewed"
+  }
+]

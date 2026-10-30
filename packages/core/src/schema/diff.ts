@@ -136,8 +136,8 @@ function typeRelation(
 }
 
 function diffTypes(b: SchemaNode, a: SchemaNode, ctx: Ctx, p: string): void {
-  const bNull = b.types?.includes("null") ?? false;
-  const aNull = a.types?.includes("null") ?? false;
+  const bNull = (b.types?.includes("null") ?? false) || b.nullable;
+  const aNull = (a.types?.includes("null") ?? false) || a.nullable;
   if (!bNull && aNull)
     emit(ctx, "nullable-added", p, "the value may now be null", undefined, undefined);
   if (bNull && !aNull && b.types !== undefined && a.types !== undefined) {

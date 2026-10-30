@@ -6,6 +6,11 @@
 export interface SchemaNode {
   /** Sorted. Includes "null" when the value may be null. Undefined means any type. */
   types?: string[];
+  /**
+   * OpenAPI 3.0 `nullable: true` on a schema with no `type` (typically a oneOf/anyOf
+   * wrapper). Means "null is also allowed" without restricting the other types.
+   */
+  nullable: boolean;
   format?: string;
   enum?: unknown[];
   hasConst: boolean;
@@ -53,6 +58,7 @@ export function emptySchema(): SchemaNode {
     properties: new Map(),
     required: new Set(),
     additionalProperties: true,
+    nullable: false,
     hasDefault: false,
     deprecated: false,
     readOnly: false,
