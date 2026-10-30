@@ -1,0 +1,37 @@
+{
+  "tools": [
+    {
+      "name": "search",
+      "description": "Search the web",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "q"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "hits": {
+            "type": "array"
+          },
+          "took": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "hits"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    }
+  ]
+}

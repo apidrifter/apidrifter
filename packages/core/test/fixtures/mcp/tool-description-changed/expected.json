@@ -1,0 +1,12 @@
+[
+  {
+    "id": "tool-description-changed",
+    "severity": "warning",
+    "location": {
+      "kind": "tool",
+      "subject": "search",
+      "part": "description"
+    },
+    "message": "description of tool \"search\" changed"
+  }
+]

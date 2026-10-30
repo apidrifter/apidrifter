@@ -1,0 +1,22 @@
+[
+  {
+    "id": "security-scheme-added",
+    "severity": "info",
+    "location": {
+      "kind": "document",
+      "part": "security",
+      "name": "apiKey"
+    },
+    "message": "security scheme \"apiKey\" was added"
+  },
+  {
+    "id": "security-added",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /pets",
+      "part": "security"
+    },
+    "message": "authentication is now required"
+  }
+]

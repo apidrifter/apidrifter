@@ -88,7 +88,7 @@ export function normalizeOpenApi(doc: Record<string, unknown>, limits: Limits): 
     for (const [path, rawItem] of Object.entries(paths)) {
       const item = deref(ctx, rawItem);
       if (item === undefined) continue;
-      const pathParams = collectParameters(ctx, item["parameters"]);
+      const pathParams = collectParameters(ctx, item["parameters"], path);
       for (const method of METHODS) {
         const rawOp = item[method];
         if (!isRecord(rawOp)) continue;
@@ -123,7 +123,7 @@ function normalizeOperation(
   if (typeof raw["operationId"] === "string") op.operationId = raw["operationId"];
   if (typeof raw["summary"] === "string") op.summary = raw["summary"];
   if (typeof raw["description"] === "string") op.description = raw["description"];
-  for (const [k, p] of collectParameters(ctx, raw["parameters"])) op.parameters.set(k, p);
+  for (const [k, p] of collectParameters(ctx, raw["parameters"], path)) op.parameters.set(k, p);
 
   const body = deref(ctx, raw["requestBody"]);
   if (body !== undefined) op.requestBody = normalizeRequestBody(ctx, body);
@@ -141,7 +141,17 @@ function normalizeOperation(
   return op;
 }
 
-function collectParameters(ctx: NormalizeContext, raw: unknown): Map<string, Parameter> {
+/** Position of `{name}` in a path template, or -1. Path parameters are identified by position so renames are invisible. */
+function pathParamIndex(path: string, name: string): number {
+  const names = [...path.matchAll(/\{([^}]*)\}/g)].map((m) => m[1] ?? "");
+  return names.indexOf(name);
+}
+
+function collectParameters(
+  ctx: NormalizeContext,
+  raw: unknown,
+  path: string,
+): Map<string, Parameter> {
   const out = new Map<string, Parameter>();
   if (!Array.isArray(raw)) return out;
   for (const rawParam of raw) {
@@ -150,8 +160,9 @@ function collectParameters(ctx: NormalizeContext, raw: unknown): Map<string, Par
     const name = p["name"];
     const where = p["in"];
     if (typeof name !== "string" || typeof where !== "string") continue;
+    const index = where === "path" ? pathParamIndex(path, name) : -1;
     const param: Parameter = {
-      key: `${where}:${name}`,
+      key: index >= 0 ? `path:#${index}` : `${where}:${name}`,
       in: where,
       name,
       // Path parameters are always required per the spec, whatever the document says.

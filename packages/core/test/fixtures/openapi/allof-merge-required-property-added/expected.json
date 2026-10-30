@@ -1,0 +1,14 @@
+[
+  {
+    "id": "request-property-required-property-added",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "POST /pets",
+      "part": "requestBody",
+      "mediaType": "application/json",
+      "pointer": "/properties/age"
+    },
+    "message": "required property \"age\" was added"
+  }
+]

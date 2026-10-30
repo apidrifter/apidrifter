@@ -1,0 +1,22 @@
+[
+  {
+    "id": "tool-description-changed",
+    "severity": "warning",
+    "location": {
+      "kind": "tool",
+      "subject": "search",
+      "part": "description"
+    },
+    "message": "description of tool \"search\" changed"
+  },
+  {
+    "id": "tool-description-injection-suspected",
+    "severity": "warning",
+    "location": {
+      "kind": "tool",
+      "subject": "search",
+      "part": "description"
+    },
+    "message": "new description of tool \"search\" looks aimed at the agent: contains a pseudo-system tag; demands priority over other tools"
+  }
+]

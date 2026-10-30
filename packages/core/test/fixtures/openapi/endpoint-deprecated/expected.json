@@ -1,0 +1,11 @@
+[
+  {
+    "id": "endpoint-deprecated",
+    "severity": "warning",
+    "location": {
+      "kind": "operation",
+      "subject": "DELETE /pets/{id}"
+    },
+    "message": "operation was marked deprecated"
+  }
+]

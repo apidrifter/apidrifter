@@ -1,0 +1,14 @@
+[
+  {
+    "id": "response-media-type-removed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /pets",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/xml"
+    },
+    "message": "response is no longer returned as \"application/xml\""
+  }
+]

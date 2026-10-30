@@ -37,7 +37,7 @@ export function parseDocument(text: string, options: ParseOptions = {}): unknown
     const msg = err instanceof Error ? err.message : "unknown error";
     throw new DriftwatchError("parse-failed", `could not parse document: ${msg.slice(0, 200)}`);
   }
-  if (value === null || typeof value !== "object") {
+  if (value === null || typeof value !== "object" || Array.isArray(value)) {
     throw new DriftwatchError("parse-failed", "document is not an object");
   }
   enforceShape(value, limits);

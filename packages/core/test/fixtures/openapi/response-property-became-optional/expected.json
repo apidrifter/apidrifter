@@ -1,0 +1,15 @@
+[
+  {
+    "id": "response-property-property-became-optional",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "POST /pets",
+      "part": "response",
+      "name": "201",
+      "mediaType": "application/json",
+      "pointer": "/properties/nickname"
+    },
+    "message": "property \"nickname\" became optional"
+  }
+]

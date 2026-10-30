@@ -1,0 +1,12 @@
+[
+  {
+    "id": "tool-annotation-changed",
+    "severity": "warning",
+    "location": {
+      "kind": "tool",
+      "subject": "search",
+      "part": "annotations"
+    },
+    "message": "annotations of tool \"search\" changed"
+  }
+]

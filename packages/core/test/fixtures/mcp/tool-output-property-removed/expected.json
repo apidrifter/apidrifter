@@ -1,0 +1,13 @@
+[
+  {
+    "id": "tool-output-property-property-removed",
+    "severity": "breaking",
+    "location": {
+      "kind": "tool",
+      "subject": "search",
+      "part": "output",
+      "pointer": "/properties/took"
+    },
+    "message": "property \"took\" was removed"
+  }
+]

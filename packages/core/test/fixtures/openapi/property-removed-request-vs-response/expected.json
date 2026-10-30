@@ -1,0 +1,27 @@
+[
+  {
+    "id": "request-property-property-removed",
+    "severity": "warning",
+    "location": {
+      "kind": "operation",
+      "subject": "POST /pets",
+      "part": "requestBody",
+      "mediaType": "application/json",
+      "pointer": "/properties/nickname"
+    },
+    "message": "property \"nickname\" was removed"
+  },
+  {
+    "id": "response-property-property-removed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "POST /pets",
+      "part": "response",
+      "name": "201",
+      "mediaType": "application/json",
+      "pointer": "/properties/nickname"
+    },
+    "message": "property \"nickname\" was removed"
+  }
+]

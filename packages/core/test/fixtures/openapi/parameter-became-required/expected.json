@@ -1,0 +1,13 @@
+[
+  {
+    "id": "request-parameter-became-required",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /pets",
+      "part": "parameter",
+      "name": "query:limit"
+    },
+    "message": "query parameter \"limit\" became required"
+  }
+]

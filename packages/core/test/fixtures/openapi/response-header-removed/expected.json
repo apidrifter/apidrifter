@@ -1,0 +1,13 @@
+[
+  {
+    "id": "response-header-removed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /pets",
+      "part": "responseHeader",
+      "name": "x-total-count"
+    },
+    "message": "response header \"x-total-count\" was removed"
+  }
+]

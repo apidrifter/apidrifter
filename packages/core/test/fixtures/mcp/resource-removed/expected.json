@@ -1,0 +1,11 @@
+[
+  {
+    "id": "resource-removed",
+    "severity": "breaking",
+    "location": {
+      "kind": "resource",
+      "subject": "file:///license"
+    },
+    "message": "resource \"file:///license\" was removed"
+  }
+]

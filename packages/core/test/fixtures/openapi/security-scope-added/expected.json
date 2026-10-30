@@ -1,0 +1,13 @@
+[
+  {
+    "id": "security-scope-added",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /pets",
+      "part": "security",
+      "name": "oauth"
+    },
+    "message": "scope \"write\" is now required for \"oauth\""
+  }
+]

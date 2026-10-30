@@ -1,0 +1,13 @@
+[
+  {
+    "id": "request-parameter-added",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /pets/{id}",
+      "part": "parameter",
+      "name": "query:verbose"
+    },
+    "message": "query parameter \"verbose\" was added"
+  }
+]

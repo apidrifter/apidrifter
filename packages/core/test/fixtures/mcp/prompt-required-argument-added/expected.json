@@ -1,0 +1,13 @@
+[
+  {
+    "id": "prompt-required-argument-added",
+    "severity": "breaking",
+    "location": {
+      "kind": "prompt",
+      "subject": "summarize",
+      "part": "argument",
+      "name": "style"
+    },
+    "message": "required argument \"style\" was added"
+  }
+]

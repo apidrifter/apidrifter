@@ -1,0 +1,15 @@
+[
+  {
+    "id": "response-property-nullable-added",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /pets",
+      "part": "response",
+      "name": "200",
+      "mediaType": "application/json",
+      "pointer": "/properties/nickname"
+    },
+    "message": "the value may now be null"
+  }
+]

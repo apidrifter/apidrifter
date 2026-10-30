@@ -1,0 +1,24 @@
+[
+  {
+    "id": "request-required-parameter-added",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /pets",
+      "part": "parameter",
+      "name": "query:limit"
+    },
+    "message": "required query parameter \"limit\" was added"
+  },
+  {
+    "id": "request-parameter-added",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /pets",
+      "part": "parameter",
+      "name": "query:offset"
+    },
+    "message": "query parameter \"offset\" was added"
+  }
+]

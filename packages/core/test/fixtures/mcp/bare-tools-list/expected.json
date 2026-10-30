@@ -1,0 +1,11 @@
+[
+  {
+    "id": "tool-added",
+    "severity": "info",
+    "location": {
+      "kind": "tool",
+      "subject": "fetch"
+    },
+    "message": "tool \"fetch\" was added"
+  }
+]
