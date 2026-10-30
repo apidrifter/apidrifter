@@ -182,6 +182,70 @@ describe("plan and run", () => {
     }
   });
 
+  it("run honors --methods, several filled entries per operation and --max-requests", async () => {
+    const seen: string[] = [];
+    const fetchImpl = (async (input: string | URL | Request) => {
+      seen.push(String(input));
+      return new Response(JSON.stringify({ id: 1 }), {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      });
+    }) as typeof fetch;
+    const filled = [
+      { operationKey: "GET /pets", values: { "query:page": 1 } },
+      { operationKey: "GET /pets", values: { "query:page": 2 } },
+      { operationKey: "GET /pets", values: { "query:page": 3 } },
+    ];
+    await writeFile(join(dir, "filled.json"), JSON.stringify(filled));
+    const io = makeIo(dir, fetchImpl);
+    const code = await main(
+      [
+        "run",
+        "base.json",
+        "--base-url",
+        "http://localhost:9999",
+        "--plan",
+        "filled.json",
+        "--methods",
+        "GET",
+        "--max-requests",
+        "2",
+        "--user-agent",
+        "survey/1",
+      ],
+      io,
+    );
+    expect(code).toBe(EXIT_OK);
+    expect(seen.length).toBe(2);
+    const result = JSON.parse(io.out.join("")) as { overBudget: number; findings: unknown[] };
+    expect(result.overBudget).toBe(1);
+    expect(result.findings).toEqual([]);
+    const none = makeIo(dir, fetchImpl);
+    seen.length = 0;
+    expect(
+      await main(
+        ["run", "base.json", "--base-url", "http://localhost:9999", "--methods", "POST"],
+        none,
+      ),
+    ).toBe(EXIT_OK);
+    expect(seen).toEqual([]);
+  });
+
+  it("run records transport failures with --continue-on-error", async () => {
+    const fetchImpl = (async () => {
+      throw new Error("connection refused");
+    }) as typeof fetch;
+    const io = makeIo(dir, fetchImpl);
+    const code = await main(
+      ["run", "base.json", "--base-url", "http://localhost:9999", "--continue-on-error"],
+      io,
+    );
+    expect(code).toBe(EXIT_OK);
+    const result = JSON.parse(io.out.join("")) as { failures: Array<{ reason: string }> };
+    expect(result.failures).toHaveLength(1);
+    expect(result.failures[0]?.reason).toMatch(/connection refused/);
+  });
+
   it("run rejects a non-localhost http base url", async () => {
     const io = makeIo(dir);
     expect(await main(["run", "base.json", "--base-url", "http://api.example.com"], io)).toBe(

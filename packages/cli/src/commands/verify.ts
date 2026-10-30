@@ -1,4 +1,4 @@
-import { flag, flagAll, intFlag, type ParsedArgs, rejectUnknownFlags } from "../args.js";
+import { flag, flagAll, hasFlag, intFlag, type ParsedArgs, rejectUnknownFlags } from "../args.js";
 import { type CliIo, commonOptions, withFlags } from "../context.js";
 import {
   type FilledRequest,
@@ -10,7 +10,12 @@ import {
   verify,
 } from "../core-verify.js";
 import { EXIT_OK, EXIT_THRESHOLD, InputError, UsageError } from "../errors.js";
-import { buildRequest, executeRequests, parseHeaderFlags } from "../executor.js";
+import {
+  buildRequest,
+  executeRequests,
+  parseHeaderFlags,
+  type RequestFailure,
+} from "../executor.js";
 import { loadDocument, loadJsonFile, writeTextFile } from "../io.js";
 import { exceeds, type Format } from "../output.js";
 import { checkUrl } from "../url-policy.js";
@@ -23,7 +28,15 @@ const RUN_FLAGS = withFlags(
   "bearer-env",
   "max-body-bytes",
   "observations-out",
+  "methods",
+  "only-filled",
+  "max-requests",
+  "delay-ms",
+  "user-agent",
+  "continue-on-error",
 );
+/** Boolean flags of the run command, registered with the parser by cli.ts. */
+export const RUN_BOOLEANS: ReadonlySet<string> = new Set(["only-filled", "continue-on-error"]);
 const VERIFY_FLAGS = withFlags("observations");
 
 export interface Skipped {
@@ -79,20 +92,45 @@ export async function runCommand(args: ParsedArgs, io: CliIo): Promise<number> {
 
   const filledPath = flag(args, "plan");
   const filled = filledPath === undefined ? [] : await loadFilled(filledPath, io);
-  const filledByKey = new Map(filled.map((f) => [f.operationKey, f] as const));
+  // Several filled entries for one operation mean several observations of it.
+  const filledByKey = new Map<string, FilledRequest[]>();
+  for (const f of filled) {
+    const list = filledByKey.get(f.operationKey) ?? [];
+    list.push(f);
+    filledByKey.set(f.operationKey, list);
+  }
+  const methods = flag(args, "methods")
+    ?.split(",")
+    .map((m) => m.trim().toUpperCase())
+    .filter((m) => m.length > 0);
+  const onlyFilled = hasFlag(args, "only-filled");
+  const maxRequests = intFlag(args, "max-requests", Number.MAX_SAFE_INTEGER);
 
   const skipped: Skipped[] = [];
   const requests = [];
   for (const p of planned) {
-    const built = buildRequest(p, filledByKey.get(p.operationKey), baseCheck.url.href, headers);
-    if (built.ok) requests.push(built.request);
-    else skipped.push({ operationKey: p.operationKey, missing: built.missing });
+    if (methods !== undefined && !methods.includes(p.method.toUpperCase())) continue;
+    const entries = filledByKey.get(p.operationKey);
+    if (onlyFilled && entries === undefined) continue;
+    for (const entry of entries ?? [undefined]) {
+      const built = buildRequest(p, entry, baseCheck.url.href, headers);
+      if (built.ok) requests.push(built.request);
+      else skipped.push({ operationKey: p.operationKey, missing: built.missing });
+    }
   }
+  const budgeted = requests.slice(0, maxRequests);
+  const overBudget = requests.length - budgeted.length;
 
-  const observations = await executeRequests(requests, {
+  const failures: RequestFailure[] = [];
+  const userAgent = flag(args, "user-agent");
+  const observations = await executeRequests(budgeted, {
     timeoutMs,
     maxBodyBytes,
     redact,
+    delayMs: intFlag(args, "delay-ms", 0),
+    continueOnError: hasFlag(args, "continue-on-error"),
+    failures,
+    ...(userAgent === undefined ? {} : { userAgent }),
     ...(io.fetchImpl === undefined ? {} : { fetchImpl: io.fetchImpl }),
   });
   const observationsOut = flag(args, "observations-out");
@@ -101,7 +139,7 @@ export async function runCommand(args: ParsedArgs, io: CliIo): Promise<number> {
   }
 
   const result = await verify(spec, observations, { config });
-  io.stdout(await renderVerify(result, format, skipped));
+  io.stdout(await renderVerify(result, format, skipped, failures, overBudget));
   return exceeds(result.summary, level) ? EXIT_THRESHOLD : EXIT_OK;
 }
 
@@ -124,18 +162,38 @@ export async function renderVerify(
   result: VerifyResult,
   format: Format,
   skipped: Skipped[],
+  failures: RequestFailure[] = [],
+  overBudget = 0,
 ): Promise<string> {
-  if (format === "json") return `${JSON.stringify({ ...result, skipped }, null, 2)}\n`;
+  if (format === "json") {
+    return `${JSON.stringify({ ...result, skipped, failures, overBudget }, null, 2)}\n`;
+  }
   const body =
     format === "markdown" ? await renderVerifyMarkdown(result) : await renderVerifyText(result);
-  if (skipped.length === 0) return body;
-  const lines = skipped.map((s) =>
-    format === "markdown"
-      ? `- skipped \`${s.operationKey}\`: missing values for ${s.missing.join(", ")}`
-      : `skipped ${s.operationKey}: missing values for ${s.missing.join(", ")}`,
-  );
-  const heading = format === "markdown" ? `\n### Skipped (${skipped.length})\n\n` : "\n";
-  return `${body}${heading}${lines.join("\n")}\n`;
+  const md = format === "markdown";
+  const sections: string[] = [];
+  if (skipped.length > 0) {
+    const lines = skipped.map((s) =>
+      md
+        ? `- skipped \`${s.operationKey}\`: missing values for ${s.missing.join(", ")}`
+        : `skipped ${s.operationKey}: missing values for ${s.missing.join(", ")}`,
+    );
+    sections.push(`${md ? `\n### Skipped (${skipped.length})\n\n` : "\n"}${lines.join("\n")}\n`);
+  }
+  if (failures.length > 0) {
+    const lines = failures.map((f) =>
+      md
+        ? `- failed \`${f.method} ${f.path}\`: ${f.reason}`
+        : `failed ${f.method} ${f.path}: ${f.reason}`,
+    );
+    sections.push(
+      `${md ? `\n### Failed requests (${failures.length})\n\n` : "\n"}${lines.join("\n")}\n`,
+    );
+  }
+  if (overBudget > 0) {
+    sections.push(`${md ? "\n" : "\n"}${overBudget} request(s) not sent: over --max-requests\n`);
+  }
+  return `${body}${sections.join("")}`;
 }
 
 function fetchOpts(args: ParsedArgs, io: CliIo) {
