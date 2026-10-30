@@ -129,6 +129,43 @@ export interface ExecuteOptions {
   /** Extra header names (lowercase) to redact in stored observations. */
   redact?: ReadonlySet<string>;
   now?: () => string;
+  /** Pause between requests, so surveys of third-party APIs stay polite. */
+  delayMs?: number;
+  /** Sent as the User-Agent header when the request does not set one. */
+  userAgent?: string;
+  /** Record transport failures in `failures` and keep going instead of throwing. */
+  continueOnError?: boolean;
+  /** Receives one entry per request that could not be completed (only with continueOnError). */
+  failures?: RequestFailure[];
+}
+
+export interface RequestFailure {
+  operationKey: string;
+  method: string;
+  path: string;
+  reason: string;
+}
+
+const MAX_RETRY_AFTER_MS = 30_000;
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function send(
+  fetchImpl: typeof fetch,
+  req: BuiltRequest,
+  headers: Record<string, string>,
+  timeoutMs: number,
+): Promise<Response> {
+  const init: RequestInit = {
+    method: req.method,
+    headers,
+    redirect: "manual",
+    signal: AbortSignal.timeout(timeoutMs),
+  };
+  if (req.body !== undefined) init.body = req.body;
+  return fetchImpl(req.url, init);
 }
 
 /** Execute built requests one at a time and return observations with secrets redacted. */
@@ -140,19 +177,40 @@ export async function executeRequests(
   const redact = new Set([...SENSITIVE_HEADERS, ...(options.redact ?? [])]);
   const now = options.now ?? (() => new Date().toISOString());
   const observations: Observation[] = [];
+  let first = true;
   for (const req of requests) {
+    if (!first && options.delayMs !== undefined && options.delayMs > 0)
+      await sleep(options.delayMs);
+    first = false;
+    const headers = { ...req.headers };
+    if (options.userAgent !== undefined && headers["user-agent"] === undefined) {
+      headers["user-agent"] = options.userAgent;
+    }
     let res: Response;
     try {
-      const init: RequestInit = {
-        method: req.method,
-        headers: req.headers,
-        redirect: "manual",
-        signal: AbortSignal.timeout(options.timeoutMs),
-      };
-      if (req.body !== undefined) init.body = req.body;
-      res = await fetchImpl(req.url, init);
+      res = await send(fetchImpl, req, headers, options.timeoutMs);
+      // One polite retry on 429, honoring a bounded Retry-After.
+      if (res.status === 429) {
+        const retryAfter = Number(res.headers.get("retry-after") ?? "1");
+        const wait = Math.min(
+          Number.isFinite(retryAfter) ? retryAfter * 1000 : 1000,
+          MAX_RETRY_AFTER_MS,
+        );
+        await sleep(wait);
+        res = await send(fetchImpl, req, headers, options.timeoutMs);
+      }
     } catch (err) {
-      throw new InputError(`request ${req.method} ${req.path} failed: ${errorMessage(err)}`);
+      const reason = errorMessage(err);
+      if (options.continueOnError) {
+        options.failures?.push({
+          operationKey: req.operationKey,
+          method: req.method,
+          path: req.path,
+          reason,
+        });
+        continue;
+      }
+      throw new InputError(`request ${req.method} ${req.path} failed: ${reason}`);
     }
     const responseMediaType = res.headers.get("content-type") ?? undefined;
     const text = await readBounded(res, options.maxBodyBytes, `${req.method} ${req.path}`);
