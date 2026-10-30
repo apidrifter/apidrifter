@@ -7,3 +7,4 @@ coverage/
 !.env.example
 .DS_Store
 tools/oracle/work/
+.claude/worktrees/

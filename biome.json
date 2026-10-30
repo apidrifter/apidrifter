@@ -16,7 +16,7 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "preset": "recommended",
       "suspicious": {
         "noExplicitAny": "error"
       },
@@ -40,7 +40,9 @@
       "!**/dist",
       "!**/node_modules",
       "!**/fixtures/**/*.json",
-      "!pnpm-lock.yaml"
+      "!pnpm-lock.yaml",
+      "!.claude",
+      "!**/.claude"
     ]
   }
 }
