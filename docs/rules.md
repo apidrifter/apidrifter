@@ -1,8 +1,10 @@
 # Rules reference
 
-Generated from `packages/core/src/rules/registry.ts`. Do not edit by hand.
+Generated from `packages/core/src/rules/registry.ts` and `packages/core/src/verify/rules.ts`. Do not edit by hand.
 
-357 rules. Severity is the default and can be overridden in config.
+## Change rules
+
+357 rules reported by `diff`. Severity is the default and can be overridden in config.
 
 | ID                                                      | Severity | Source  | Description                                                                                                  |
 | ------------------------------------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------ |
@@ -363,3 +365,36 @@ Generated from `packages/core/src/rules/registry.ts`. Do not edit by hand.
 | `tool-output-schema-removed`                            | warning  | mcp     | A tool no longer declares an output schema.                                                                  |
 | `tool-removed`                                          | breaking | mcp     | A tool was removed.                                                                                          |
 | `tool-title-changed`                                    | info     | mcp     | A tool's title changed.                                                                                      |
+
+## Finding rules
+
+26 findings reported by `verify`. Each finding carries a fix for either source of truth.
+
+| ID                                   | Severity | Source  | Description                                                                                                |
+| ------------------------------------ | -------- | ------- | ---------------------------------------------------------------------------------------------------------- |
+| `deprecated-operation-in-use`        | info     | openapi | An observed request used an operation the spec marks deprecated.                                           |
+| `pattern-not-checked`                | info     | openapi | A pattern in the spec was skipped because it was too long, failed to compile or looked unsafe to evaluate. |
+| `request-accepted-but-invalid`       | warning  | openapi | The request violated the spec but the implementation accepted it with a 2xx.                               |
+| `request-constraint-violation`       | info     | openapi | An observed request value violated a bound, length, pattern, format, multipleOf or uniqueness constraint.  |
+| `request-enum-violation`             | info     | openapi | An observed request value was outside the enum or const the spec declares.                                 |
+| `request-missing-body`               | info     | openapi | The observed request omitted a request body the spec marks required.                                       |
+| `request-missing-required-parameter` | info     | openapi | The observed request omitted a parameter the spec marks required.                                          |
+| `request-missing-required-property`  | info     | openapi | The observed request body omitted a property the spec marks required.                                      |
+| `request-rejected-but-valid`         | breaking | openapi | The request conformed to the spec but the implementation rejected it with 400 or 422.                      |
+| `request-schema-violation`           | info     | openapi | An observed request value did not satisfy a oneOf, anyOf, allOf or not constraint.                         |
+| `request-type-mismatch`              | info     | openapi | An observed request value had a different type than the spec declares.                                     |
+| `request-undocumented-media-type`    | info     | openapi | The observed request body used a media type the spec does not document.                                    |
+| `request-undocumented-property`      | info     | openapi | The observed request contained a property the spec does not document or forbids.                           |
+| `response-body-not-json`             | warning  | openapi | The spec documents a JSON response but the body could not be parsed as JSON.                               |
+| `response-composition-violation`     | breaking | openapi | A response value did not satisfy a oneOf, anyOf, allOf or not constraint.                                  |
+| `response-constraint-violation`      | warning  | openapi | A response value violated a bound, length, pattern, format, multipleOf or uniqueness constraint.           |
+| `response-enum-violation`            | breaking | openapi | A response value was outside the enum or const the spec declares.                                          |
+| `response-forbidden-property`        | breaking | openapi | The response contained a property the spec forbids (additionalProperties: false).                          |
+| `response-header-missing`            | warning  | openapi | A response header the spec marks required was absent.                                                      |
+| `response-missing-required-property` | breaking | openapi | A property the spec marks required was absent from the response.                                           |
+| `response-null-not-allowed`          | breaking | openapi | A response value was null where the spec does not allow null.                                              |
+| `response-type-mismatch`             | breaking | openapi | A response value had a different type than the spec declares.                                              |
+| `response-undocumented-property`     | info     | openapi | The response contained a property the spec does not document.                                              |
+| `undocumented-operation`             | warning  | openapi | An observed request matched no operation in the spec.                                                      |
+| `undocumented-response-media-type`   | warning  | openapi | The implementation returned a media type the spec does not document for that status.                       |
+| `undocumented-status`                | breaking | openapi | The implementation returned a status the spec does not document and there is no default response.          |

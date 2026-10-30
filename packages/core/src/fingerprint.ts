@@ -21,7 +21,7 @@ export function fingerprint(change: Change): string {
   return fnv1a64(canonical);
 }
 
-function stable(v: unknown): unknown {
+export function stable(v: unknown): unknown {
   if (Array.isArray(v)) return v.map(stable);
   if (v !== null && typeof v === "object") {
     const out: Record<string, unknown> = {};
@@ -33,7 +33,7 @@ function stable(v: unknown): unknown {
   return v;
 }
 
-function fnv1a64(input: string): string {
+export function fnv1a64(input: string): string {
   let h = 0xcbf29ce484222325n;
   const prime = 0x100000001b3n;
   const mask = 0xffffffffffffffffn;

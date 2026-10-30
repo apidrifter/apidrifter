@@ -2,12 +2,24 @@ import { fingerprint } from "./fingerprint.js";
 import { RULES } from "./rules/registry.js";
 import type { Change, Config, Severity } from "./types.js";
 import { DriftwatchError } from "./types.js";
+import { FINDING_RULES } from "./verify/rules.js";
 
 const SEVERITIES: ReadonlySet<string> = new Set(["breaking", "warning", "info", "ignore"]);
 const MAX_PATTERN = 256;
 
-/** Validate a config object from an untrusted file. Throws `invalid-config`. */
-export function validateConfig(raw: unknown): Config {
+function defaultKnownIds(): ReadonlySet<string> {
+  return new Set([...RULES.keys(), ...FINDING_RULES.keys()]);
+}
+
+/**
+ * Validate a config object from an untrusted file. Throws `invalid-config`. `knownIds`
+ * defaults to every change rule and finding rule, so one config file serves both diffing
+ * and verification.
+ */
+export function validateConfig(
+  raw: unknown,
+  knownIds: ReadonlySet<string> = defaultKnownIds(),
+): Config {
   if (raw === undefined || raw === null) return {};
   if (typeof raw !== "object" || Array.isArray(raw)) {
     throw new DriftwatchError("invalid-config", "config must be an object");
@@ -30,7 +42,7 @@ export function validateConfig(raw: unknown): Config {
           `severity for ${id} must be breaking, warning, info or ignore`,
         );
       }
-      if (!RULES.has(id)) throw new DriftwatchError("invalid-config", `unknown rule id ${id}`);
+      if (!knownIds.has(id)) throw new DriftwatchError("invalid-config", `unknown rule id ${id}`);
       sev[id] = level as Severity | "ignore";
     }
     config.severity = sev;
@@ -45,7 +57,7 @@ export function validateConfig(raw: unknown): Config {
     if (igObj["ids"] !== undefined) {
       ignore.ids = stringList(igObj["ids"], "ignore.ids");
       for (const id of ignore.ids)
-        if (!RULES.has(id)) throw new DriftwatchError("invalid-config", `unknown rule id ${id}`);
+        if (!knownIds.has(id)) throw new DriftwatchError("invalid-config", `unknown rule id ${id}`);
     }
     if (igObj["subjects"] !== undefined) {
       ignore.subjects = stringList(igObj["subjects"], "ignore.subjects");

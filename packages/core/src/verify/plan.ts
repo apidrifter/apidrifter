@@ -47,7 +47,9 @@ function planOperation(
     const schema = summarizeSchema(p.schema);
     if (schema !== undefined) planned.schema = schema;
     const example =
-      ex?.parameters.get(p.key) ?? (p.schema?.hasDefault ? p.schema.default : undefined);
+      ex?.parameters.get(p.key) ??
+      ex?.parameters.get(`${p.in}:${p.name}`) ??
+      (p.schema?.hasDefault ? p.schema.default : undefined);
     if (example !== undefined) planned.example = clip(example, limits.maxValueBytes);
     parameters.push(planned);
   }

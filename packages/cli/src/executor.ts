@@ -1,6 +1,6 @@
+import type { FilledRequest, Observation, PlannedRequest } from "@driftwatch/core";
 import { InputError } from "./errors.js";
 import { errorMessage, readBounded } from "./fetch-text.js";
-import type { FilledRequest, Observation, PlannedRequest } from "./verify-types.js";
 
 export interface BuiltRequest {
   operationKey: string;
@@ -49,7 +49,8 @@ export function buildRequest(
 
   for (const p of planned.parameters) {
     const key = `${p.in}:${p.name}`;
-    const value = values[key];
+    // Filled values win; otherwise fall back to the example the spec itself provides.
+    const value = values[key] ?? p.example;
     if (value === undefined) {
       if (p.required) missing.push(key);
       continue;
@@ -65,7 +66,8 @@ export function buildRequest(
     }
   }
   for (const m of path.matchAll(/\{([^}]+)\}/g)) missing.push(`path:${m[1] ?? ""}`);
-  if (planned.body?.required && filled?.body === undefined) missing.push("body");
+  if (planned.body?.required && (filled?.body ?? planned.body?.example) === undefined)
+    missing.push("body");
   if (missing.length > 0) return { ok: false, missing: [...new Set(missing)] };
 
   for (const [k, v] of Object.entries(filled?.headers ?? {})) headers[k.toLowerCase()] = v;
@@ -84,10 +86,11 @@ export function buildRequest(
     query,
     headers,
   };
-  if (filled?.body !== undefined) {
-    const mediaType = filled.mediaType ?? planned.body?.mediaType ?? "application/json";
+  const body = filled?.body ?? planned.body?.example;
+  if (body !== undefined) {
+    const mediaType = filled?.mediaType ?? planned.body?.mediaType ?? "application/json";
     built.mediaType = mediaType;
-    built.body = isJsonMediaType(mediaType) ? JSON.stringify(filled.body) : scalar(filled.body);
+    built.body = isJsonMediaType(mediaType) ? JSON.stringify(body) : scalar(body);
     headers["content-type"] = mediaType;
   }
   return { ok: true, request: built };

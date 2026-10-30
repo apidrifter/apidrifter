@@ -143,18 +143,49 @@ describe("driftwatch diff/breaking/changelog", () => {
   });
 });
 
-describe("verify commands without the engine", () => {
-  // The verify engine lands in core on a parallel branch. Until it is merged these commands
-  // must fail cleanly with exit 2 and a clear message rather than crash.
-  it("plan reports a clear error when core lacks the verify engine", async () => {
+describe("plan and run", () => {
+  it("plan prints a request per operation with expected statuses", async () => {
     const io = makeIo(dir);
-    const code = await main(["plan", "base.json"], io);
-    if (code === EXIT_OK) return; // engine present after merge; covered by engine tests
-    expect(code).toBe(EXIT_USAGE);
-    expect(io.err.join("")).toMatch(/verify engine/);
+    expect(await main(["plan", "base.json"], io)).toBe(EXIT_OK);
+    const plans = JSON.parse(io.out.join("")) as Array<{
+      operationKey: string;
+      expectedStatuses: string[];
+    }>;
+    expect(plans.map((p) => p.operationKey)).toEqual(["GET /pets"]);
+    expect(plans[0]?.expectedStatuses).toEqual(["200"]);
   });
 
-  it.skip("run executes the plan and verifies responses (needs the verify engine)", () => {
-    // TODO after merge: write filled plan, mock fetch, assert findings and skipped list.
+  it("run executes the plan, verifies responses and reports fixes for both sides", async () => {
+    const seen: string[] = [];
+    const fetchImpl = (async (input: string | URL | Request) => {
+      seen.push(String(input));
+      return new Response(JSON.stringify({ id: "not-an-integer", extra: true }), {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      });
+    }) as typeof fetch;
+    const io = makeIo(dir, fetchImpl);
+    const code = await main(["run", "base.json", "--base-url", "http://localhost:9999"], io);
+    expect(code).toBe(EXIT_THRESHOLD);
+    expect(seen).toEqual(["http://localhost:9999/pets"]);
+    const result = JSON.parse(io.out.join("")) as {
+      findings: Array<{ id: string; fix: { implementation: string; spec: string } }>;
+      coverage: { operations: number; observed: number };
+    };
+    const ids = result.findings.map((f) => f.id);
+    expect(ids).toContain("response-type-mismatch");
+    expect(ids).toContain("response-undocumented-property");
+    expect(result.coverage).toEqual({ operations: 1, observed: 1, unmatchedObservations: 0 });
+    for (const f of result.findings) {
+      expect(f.fix.implementation.length).toBeGreaterThan(0);
+      expect(f.fix.spec.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("run rejects a non-localhost http base url", async () => {
+    const io = makeIo(dir);
+    expect(await main(["run", "base.json", "--base-url", "http://api.example.com"], io)).toBe(
+      EXIT_USAGE,
+    );
   });
 });

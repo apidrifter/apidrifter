@@ -10,7 +10,9 @@ const HEADINGS: Record<Severity, string> = {
 
 /** Escape text for safe inclusion in Markdown. Third-party strings never render as markup. */
 function esc(s: string): string {
-  return s.replace(/[\\`*_{}[\]()#+\-.!|<>]/g, "\\$&");
+  // Only characters that can open inline markup or HTML. Punctuation that matters solely at
+  // line start (lists, headings) is left alone because our text never starts a line.
+  return s.replace(/[\\`*_[\]<>]/g, "\\$&");
 }
 
 export function renderMarkdown(result: DiffResult, options: { title?: string } = {}): string {

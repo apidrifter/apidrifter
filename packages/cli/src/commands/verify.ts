@@ -11,7 +11,7 @@ import {
 } from "../core-verify.js";
 import { EXIT_OK, EXIT_THRESHOLD, InputError, UsageError } from "../errors.js";
 import { buildRequest, executeRequests, parseHeaderFlags } from "../executor.js";
-import { loadDocument, writeTextFile } from "../io.js";
+import { loadDocument, loadJsonFile, writeTextFile } from "../io.js";
 import { exceeds, type Format } from "../output.js";
 import { checkUrl } from "../url-policy.js";
 
@@ -146,7 +146,7 @@ function fetchOpts(args: ParsedArgs, io: CliIo) {
 }
 
 async function loadFilled(path: string, io: CliIo): Promise<FilledRequest[]> {
-  const raw = await loadDocument(path, { cwd: io.cwd });
+  const raw = await loadJsonFile(path, io.cwd);
   const list = Array.isArray(raw)
     ? raw
     : isObject(raw) && Array.isArray(raw["requests"])
@@ -162,7 +162,7 @@ async function loadFilled(path: string, io: CliIo): Promise<FilledRequest[]> {
 }
 
 async function loadObservations(path: string, io: CliIo): Promise<Observation[]> {
-  const raw = await loadDocument(path, { cwd: io.cwd });
+  const raw = await loadJsonFile(path, io.cwd);
   const list = Array.isArray(raw)
     ? raw
     : isObject(raw) && Array.isArray(raw["observations"])
