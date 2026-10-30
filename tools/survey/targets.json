@@ -1,0 +1,366 @@
+[
+  {
+    "id": "petstore",
+    "name": "Swagger Petstore (reference demo)",
+    "spec": "https://petstore3.swagger.io/api/v3/openapi.json",
+    "baseUrl": "https://petstore3.swagger.io/api/v3",
+    "values": {
+      "path:petId": 1,
+      "path:orderId": 1,
+      "path:username": "user1",
+      "query:status": "available",
+      "query:tags": "tag1"
+    },
+    "maxRequests": 20,
+    "delayMs": 500
+  },
+  {
+    "id": "apis-guru",
+    "name": "APIs.guru directory API",
+    "spec": "https://api.apis.guru/v2/openapi.yaml",
+    "baseUrl": "https://api.apis.guru/v2",
+    "values": {
+      "path:provider": "apis.guru",
+      "path:api": "2.2.0",
+      "path:service": ""
+    },
+    "maxRequests": 10,
+    "delayMs": 500
+  },
+  {
+    "id": "pokeapi",
+    "name": "PokeAPI",
+    "spec": "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/openapi.yml",
+    "baseUrl": "https://pokeapi.co",
+    "values": {
+      "path:id": "1",
+      "query:limit": 5
+    },
+    "maxRequests": 30,
+    "delayMs": 750
+  },
+  {
+    "id": "wikipedia-rest",
+    "name": "Wikimedia REST API (en.wikipedia.org)",
+    "spec": "https://en.wikipedia.org/api/rest_v1/?spec",
+    "baseUrl": "https://en.wikipedia.org/api/rest_v1",
+    "values": {
+      "path:title": "Earth",
+      "path:yyyy": "2024",
+      "path:mm": "01",
+      "path:dd": "15",
+      "path:revision": "1",
+      "path:domain": "en.wikipedia.org",
+      "path:format": "html"
+    },
+    "exclude": [
+      "stash",
+      "mobile-sections"
+    ],
+    "maxRequests": 25,
+    "delayMs": 1000
+  },
+  {
+    "id": "discourse-meta",
+    "name": "Discourse (meta.discourse.org)",
+    "spec": "https://docs.discourse.org/openapi.json",
+    "baseUrl": "https://meta.discourse.org",
+    "values": {
+      "path:id": "1",
+      "path:topic_id": "1",
+      "path:category_id": "1",
+      "path:username": "system",
+      "path:slug": "general",
+      "path:post_id": "1",
+      "path:name": "general"
+    },
+    "exclude": [
+      "admin",
+      "private",
+      "notifications",
+      "session",
+      "invite"
+    ],
+    "maxRequests": 25,
+    "delayMs": 1500
+  },
+  {
+    "id": "openlibrary",
+    "name": "Open Library",
+    "spec": "https://openlibrary.org/openapi.json",
+    "baseUrl": "https://openlibrary.org",
+    "values": {
+      "query:q": "the lord of the rings",
+      "path:olid": "OL45804W",
+      "path:isbn": "9780140328721",
+      "query:bibkeys": "ISBN:9780140328721",
+      "query:format": "json",
+      "path:key": "OL45804W",
+      "path:author": "OL23919A",
+      "query:author": "tolkien",
+      "query:title": "the hobbit"
+    },
+    "maxRequests": 20,
+    "delayMs": 1500
+  },
+  {
+    "id": "github",
+    "name": "GitHub REST API (unauthenticated)",
+    "spec": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
+    "baseUrl": "https://api.github.com",
+    "values": {
+      "path:owner": "octocat",
+      "path:repo": "Hello-World",
+      "path:username": "octocat",
+      "path:org": "github",
+      "path:gist_id": "aa5a315d61ae9438b18d",
+      "path:ref": "master",
+      "path:path": "README",
+      "path:issue_number": "1",
+      "path:pull_number": "1",
+      "path:release_id": "1",
+      "path:comment_id": "1",
+      "path:commit_sha": "7fd1a60b01f91b314f59955a4e4d4e80d8edf11d",
+      "path:tree_sha": "master",
+      "path:license": "mit",
+      "path:gitignore_name": "Node",
+      "path:key": "mit",
+      "path:branch": "master",
+      "path:tag": "v1.0"
+    },
+    "prefer": [
+      "^GET /repos/\\{\\}$",
+      "^GET /users/\\{\\}$",
+      "^GET /orgs/\\{\\}$",
+      "^GET /gists/\\{\\}$",
+      "^GET /meta$",
+      "^GET /emojis$",
+      "^GET /licenses",
+      "^GET /gitignore",
+      "^GET /repos/\\{\\}/\\{\\}/(commits|branches|tags|releases|issues|pulls|contents|topics|languages|contributors|license|readme)"
+    ],
+    "exclude": [
+      "search",
+      "rate_limit",
+      "/user/",
+      "notifications",
+      "installation",
+      "app/",
+      "enterprises",
+      "marketplace",
+      "advisories/\\{\\}"
+    ],
+    "maxRequests": 40,
+    "delayMs": 1500
+  },
+  {
+    "id": "gitea",
+    "name": "Gitea (gitea.com, self-served Swagger 2.0)",
+    "spec": "https://gitea.com/swagger.v1.json",
+    "baseUrl": "https://gitea.com/api/v1",
+    "values": {
+      "path:owner": "gitea",
+      "path:repo": "tea",
+      "path:username": "gitea",
+      "path:org": "gitea",
+      "path:ref": "main",
+      "path:filepath": "README.md",
+      "path:index": "1",
+      "path:id": "1",
+      "path:sha": "main",
+      "path:branch": "main",
+      "path:tag": "v0.9.0",
+      "path:topic": "cli",
+      "path:name": "gitea"
+    },
+    "exclude": [
+      "admin",
+      "notifications",
+      "/user/",
+      "settings",
+      "hooks",
+      "keys",
+      "/orgs/\\{\\}/(members|teams|actions|secrets|variables|runners)"
+    ],
+    "maxRequests": 40,
+    "delayMs": 1000
+  },
+  {
+    "id": "codeberg",
+    "name": "Forgejo (codeberg.org, self-served Swagger 2.0)",
+    "spec": "https://codeberg.org/swagger.v1.json",
+    "baseUrl": "https://codeberg.org/api/v1",
+    "values": {
+      "path:owner": "forgejo",
+      "path:repo": "forgejo",
+      "path:username": "forgejo",
+      "path:org": "forgejo",
+      "path:ref": "forgejo",
+      "path:filepath": "README.md",
+      "path:index": "1",
+      "path:id": "1",
+      "path:sha": "forgejo",
+      "path:branch": "forgejo",
+      "path:tag": "v1.21.0-0",
+      "path:topic": "forge",
+      "path:name": "forgejo"
+    },
+    "exclude": [
+      "admin",
+      "notifications",
+      "/user/",
+      "settings",
+      "hooks",
+      "keys",
+      "/orgs/\\{\\}/(members|teams|actions|secrets|variables|runners)"
+    ],
+    "maxRequests": 40,
+    "delayMs": 1000
+  },
+  {
+    "id": "httpbin",
+    "name": "httpbin.org (self-served Swagger 2.0)",
+    "spec": "https://httpbin.org/spec.json",
+    "baseUrl": "https://httpbin.org",
+    "values": {
+      "path:codes": "200",
+      "path:value": "x",
+      "path:n": "1",
+      "query:freeform": "a"
+    },
+    "exclude": [
+      "delay",
+      "drip",
+      "range",
+      "stream",
+      "bytes",
+      "redirect",
+      "image",
+      "deny",
+      "basic-auth",
+      "digest-auth",
+      "bearer",
+      "hidden-basic-auth",
+      "status"
+    ],
+    "maxRequests": 20,
+    "delayMs": 500
+  },
+  {
+    "id": "nager-date",
+    "name": "Nager.Date public holidays",
+    "spec": "https://date.nager.at/openapi/community-v3.json",
+    "baseUrl": "https://date.nager.at",
+    "values": {
+      "path:year": 2024,
+      "path:countryCode": "US",
+      "path:countrycode": "US",
+      "query:countryCode": "US",
+      "query:offset": 0
+    },
+    "maxRequests": 15,
+    "delayMs": 750
+  },
+  {
+    "id": "open-meteo",
+    "name": "Open-Meteo forecast API",
+    "spec": "https://raw.githubusercontent.com/open-meteo/open-meteo/main/openapi/forecast.yml",
+    "baseUrl": "https://api.open-meteo.com",
+    "values": {
+      "query:latitude": 52.52,
+      "query:longitude": 13.41,
+      "query:hourly": "temperature_2m",
+      "query:daily": "temperature_2m_max",
+      "query:current": "temperature_2m"
+    },
+    "maxRequests": 10,
+    "delayMs": 1000
+  },
+  {
+    "id": "gitlab",
+    "name": "GitLab REST API (gitlab.com, unauthenticated)",
+    "spec": "https://gitlab.com/gitlab-org/gitlab/-/raw/master/doc/api/openapi/openapi_v3.yaml",
+    "baseUrl": "https://gitlab.com/api/v4",
+    "values": {
+      "path:id": "278964",
+      "path:project_id": "278964",
+      "path:group_id": "9970",
+      "path:user_id": "1",
+      "path:merge_request_iid": "1",
+      "path:issue_iid": "1",
+      "path:sha": "master",
+      "path:ref": "master",
+      "path:branch": "master",
+      "path:file_path": "README.md",
+      "path:tag_name": "v16.0.0-ee",
+      "path:username": "gitlab-bot",
+      "path:milestone_id": "1",
+      "path:release_id": "1",
+      "path:note_id": "1",
+      "path:pipeline_id": "1",
+      "path:job_id": "1",
+      "path:environment_id": "1",
+      "path:key": "1",
+      "path:label_id": "1",
+      "path:snippet_id": "1",
+      "path:epic_iid": "1",
+      "path:wiki_slug": "home",
+      "path:package_id": "1",
+      "path:badge_id": "1",
+      "path:hook_id": "1",
+      "path:deploy_key_id": "1",
+      "path:member_id": "1",
+      "path:board_id": "1",
+      "path:list_id": "1",
+      "path:iid": "1",
+      "path:commit_sha": "master",
+      "path:version_id": "1"
+    },
+    "exclude": [
+      "admin",
+      "/user/",
+      "/users/\\{\\}/(keys|gpg|emails|impersonation|memberships|projects/\\{\\}/)",
+      "registry",
+      "/import",
+      "/export",
+      "job_token",
+      "runners",
+      "hooks",
+      "deploy_tokens",
+      "deploy_keys",
+      "integrations",
+      "variables",
+      "audit",
+      "access_tokens",
+      "ci_lint",
+      "templates",
+      "usage_data",
+      "geo",
+      "metrics",
+      "/keys",
+      "personal_access",
+      "avatar",
+      "invitations",
+      "broadcast",
+      "applications",
+      "features",
+      "license",
+      "sidekiq",
+      "system",
+      "notification_settings",
+      "todos",
+      "events",
+      "analytics"
+    ],
+    "prefer": [
+      "^GET /projects/\\{\\}$",
+      "^GET /groups/\\{\\}$",
+      "^GET /users/\\{\\}$",
+      "^GET /projects/\\{\\}/repository",
+      "^GET /projects/\\{\\}/(issues|merge_requests|releases|tags|branches|members|languages|milestones|labels)$",
+      "^GET /version$"
+    ],
+    "maxRequests": 35,
+    "delayMs": 1000
+  }
+]
