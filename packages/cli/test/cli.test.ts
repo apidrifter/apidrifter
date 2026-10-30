@@ -1,0 +1,160 @@
+import { mkdtemp, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { beforeAll, describe, expect, it } from "vitest";
+import { main } from "../src/cli.js";
+import type { CliIo } from "../src/context.js";
+import { EXIT_OK, EXIT_THRESHOLD, EXIT_USAGE } from "../src/errors.js";
+
+const base = {
+  openapi: "3.1.0",
+  info: { title: "Pets", version: "1" },
+  paths: {
+    "/pets": {
+      get: {
+        responses: {
+          "200": {
+            description: "ok",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: { id: { type: "integer" } },
+                  required: ["id"],
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
+const broken = JSON.parse(JSON.stringify(base)) as typeof base;
+broken.paths["/pets"].get.responses["200"].content["application/json"].schema.properties.id.type =
+  "string";
+
+const added = JSON.parse(JSON.stringify(base)) as typeof base;
+added.info.version = "1.1";
+
+function makeIo(cwd: string, fetchImpl?: typeof fetch): CliIo & { out: string[]; err: string[] } {
+  const out: string[] = [];
+  const err: string[] = [];
+  const io: CliIo & { out: string[]; err: string[] } = {
+    out,
+    err,
+    stdout: (t) => {
+      out.push(t);
+    },
+    stderr: (t) => {
+      err.push(t);
+    },
+    isTTY: false,
+    cwd,
+    env: {},
+  };
+  if (fetchImpl !== undefined) io.fetchImpl = fetchImpl;
+  return io;
+}
+
+let dir: string;
+
+beforeAll(async () => {
+  dir = await mkdtemp(join(tmpdir(), "driftwatch-cli-"));
+  await writeFile(join(dir, "base.json"), JSON.stringify(base));
+  await writeFile(join(dir, "broken.json"), JSON.stringify(broken));
+  await writeFile(join(dir, "added.json"), JSON.stringify(added));
+  await writeFile(
+    join(dir, "config.json"),
+    JSON.stringify({ severity: { "api-version-changed": "breaking" } }),
+  );
+});
+
+describe("driftwatch diff/breaking/changelog", () => {
+  it("exits 1 on a breaking change and prints json when not a TTY", async () => {
+    const io = makeIo(dir);
+    const code = await main(["breaking", "base.json", "broken.json"], io);
+    expect(code).toBe(EXIT_THRESHOLD);
+    const result = JSON.parse(io.out.join(""));
+    expect(result.changes.map((c: { id: string }) => c.id)).toEqual([
+      "response-property-type-changed",
+    ]);
+    expect(result.summary.breaking).toBe(1);
+  });
+
+  it("exits 0 on a clean diff and honors --fail-on", async () => {
+    expect(await main(["diff", "base.json", "added.json"], makeIo(dir))).toBe(EXIT_OK);
+    expect(await main(["diff", "base.json", "added.json", "--fail-on", "info"], makeIo(dir))).toBe(
+      EXIT_THRESHOLD,
+    );
+  });
+
+  it("applies a config file that escalates a rule", async () => {
+    const io = makeIo(dir);
+    expect(await main(["breaking", "base.json", "added.json", "--config", "config.json"], io)).toBe(
+      EXIT_THRESHOLD,
+    );
+    expect(io.out.join("")).toContain("api-version-changed");
+  });
+
+  it("renders markdown for changelog", async () => {
+    const io = makeIo(dir);
+    expect(await main(["changelog", "base.json", "broken.json"], io)).toBe(EXIT_THRESHOLD);
+    expect(io.out.join("")).toMatch(/^## /);
+    expect(io.out.join("")).toContain("response-property-type-changed");
+  });
+
+  it("returns usage errors for bad invocations", async () => {
+    expect(await main(["diff", "base.json"], makeIo(dir))).toBe(EXIT_USAGE);
+    expect(await main(["diff", "base.json", "broken.json", "--bogus", "1"], makeIo(dir))).toBe(
+      EXIT_USAGE,
+    );
+    expect(await main(["nonsense"], makeIo(dir))).toBe(EXIT_USAGE);
+    expect(await main([], makeIo(dir))).toBe(EXIT_USAGE);
+    expect(await main(["--help"], makeIo(dir))).toBe(EXIT_OK);
+    expect(await main(["diff", "base.json", "missing.json"], makeIo(dir))).toBe(EXIT_USAGE);
+  });
+
+  it("rejects plain http URLs that are not local", async () => {
+    const io = makeIo(dir);
+    expect(await main(["diff", "base.json", "http://example.com/spec.json"], io)).toBe(EXIT_USAGE);
+    expect(io.err.join("")).toMatch(/localhost/);
+  });
+
+  it("fetches https inputs through the policy with manual redirects", async () => {
+    const calls: string[] = [];
+    const fetchImpl = (async (input: string | URL | Request) => {
+      const url = String(input);
+      calls.push(url);
+      if (url === "https://specs.example.com/old.json") {
+        return new Response(null, { status: 301, headers: { location: "/new.json" } });
+      }
+      return new Response(JSON.stringify(broken), { status: 200 });
+    }) as typeof fetch;
+    const io = makeIo(dir, fetchImpl);
+    expect(await main(["breaking", "base.json", "https://specs.example.com/old.json"], io)).toBe(
+      EXIT_THRESHOLD,
+    );
+    expect(calls).toEqual([
+      "https://specs.example.com/old.json",
+      "https://specs.example.com/new.json",
+    ]);
+  });
+});
+
+describe("verify commands without the engine", () => {
+  // The verify engine lands in core on a parallel branch. Until it is merged these commands
+  // must fail cleanly with exit 2 and a clear message rather than crash.
+  it("plan reports a clear error when core lacks the verify engine", async () => {
+    const io = makeIo(dir);
+    const code = await main(["plan", "base.json"], io);
+    if (code === EXIT_OK) return; // engine present after merge; covered by engine tests
+    expect(code).toBe(EXIT_USAGE);
+    expect(io.err.join("")).toMatch(/verify engine/);
+  });
+
+  it.skip("run executes the plan and verifies responses (needs the verify engine)", () => {
+    // TODO after merge: write filled plan, mock fetch, assert findings and skipped list.
+  });
+});
