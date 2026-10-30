@@ -1,0 +1,27 @@
+[
+  {
+    "id": "request-property-enum-value-removed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "POST /pets",
+      "part": "requestBody",
+      "mediaType": "application/json",
+      "pointer": "/properties/status"
+    },
+    "message": "enum value \"\\\"c\\\"\" was removed"
+  },
+  {
+    "id": "response-property-enum-value-added",
+    "severity": "warning",
+    "location": {
+      "kind": "operation",
+      "subject": "POST /pets",
+      "part": "response",
+      "name": "201",
+      "mediaType": "application/json",
+      "pointer": "/properties/status"
+    },
+    "message": "enum value \"\\\"c\\\"\" was added"
+  }
+]

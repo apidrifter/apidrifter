@@ -1,0 +1,11 @@
+[
+  {
+    "id": "endpoint-added",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "POST /pets"
+    },
+    "message": "operation was added"
+  }
+]

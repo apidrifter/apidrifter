@@ -1,0 +1,27 @@
+[
+  {
+    "id": "request-property-property-added",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "POST /tree",
+      "part": "requestBody",
+      "mediaType": "application/json",
+      "pointer": "/properties/label"
+    },
+    "message": "property \"label\" was added"
+  },
+  {
+    "id": "response-property-property-added",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "POST /tree",
+      "part": "response",
+      "name": "201",
+      "mediaType": "application/json",
+      "pointer": "/properties/label"
+    },
+    "message": "property \"label\" was added"
+  }
+]

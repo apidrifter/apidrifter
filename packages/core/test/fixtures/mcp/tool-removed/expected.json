@@ -1,0 +1,11 @@
+[
+  {
+    "id": "tool-removed",
+    "severity": "breaking",
+    "location": {
+      "kind": "tool",
+      "subject": "fetch"
+    },
+    "message": "tool \"fetch\" was removed"
+  }
+]

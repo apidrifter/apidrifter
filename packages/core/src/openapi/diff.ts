@@ -285,7 +285,7 @@ function diffParameters(
   out: Change[],
 ): void {
   for (const [key, aParam] of a.parameters) {
-    const pLoc: Location = { ...loc, part: "parameter", name: key };
+    const pLoc: Location = { ...loc, part: "parameter", name: `${aParam.in}:${aParam.name}` };
     const bParam = b.parameters.get(key);
     if (bParam === undefined) {
       const id = aParam.required ? "request-required-parameter-added" : "request-parameter-added";
@@ -307,7 +307,7 @@ function diffParameters(
       makeChange(
         "request-parameter-removed",
         SRC,
-        { ...loc, part: "parameter", name: key },
+        { ...loc, part: "parameter", name: `${bParam.in}:${bParam.name}` },
         `${bParam.in} parameter ${quote(bParam.name)} was removed`,
       ),
     );

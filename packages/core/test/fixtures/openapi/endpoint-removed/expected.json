@@ -1,0 +1,11 @@
+[
+  {
+    "id": "endpoint-removed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "DELETE /pets/{id}"
+    },
+    "message": "operation was removed without prior deprecation"
+  }
+]

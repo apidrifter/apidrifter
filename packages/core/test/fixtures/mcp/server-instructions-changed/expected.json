@@ -1,0 +1,10 @@
+[
+  {
+    "id": "server-instructions-changed",
+    "severity": "warning",
+    "location": {
+      "kind": "server"
+    },
+    "message": "server instructions changed"
+  }
+]

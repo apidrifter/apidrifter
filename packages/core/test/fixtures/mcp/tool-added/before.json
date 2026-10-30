@@ -1,0 +1,49 @@
+{
+  "driftwatch": 1,
+  "kind": "mcp",
+  "server": {
+    "name": "demo",
+    "version": "1.0.0",
+    "capabilities": {
+      "tools": {}
+    }
+  },
+  "tools": [
+    {
+      "name": "search",
+      "description": "Search the web",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "q"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "hits": {
+            "type": "array"
+          },
+          "took": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "hits"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    }
+  ],
+  "resources": [],
+  "resourceTemplates": [],
+  "prompts": []
+}

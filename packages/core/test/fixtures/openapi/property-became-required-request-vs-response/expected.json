@@ -1,0 +1,27 @@
+[
+  {
+    "id": "request-property-property-became-required",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "POST /pets",
+      "part": "requestBody",
+      "mediaType": "application/json",
+      "pointer": "/properties/name"
+    },
+    "message": "property \"name\" became required"
+  },
+  {
+    "id": "response-property-property-became-required",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "POST /pets",
+      "part": "response",
+      "name": "201",
+      "mediaType": "application/json",
+      "pointer": "/properties/count"
+    },
+    "message": "property \"count\" became required"
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "tool-input-property-required-property-added",
+    "severity": "breaking",
+    "location": {
+      "kind": "tool",
+      "subject": "search",
+      "part": "input",
+      "pointer": "/properties/lang"
+    },
+    "message": "required property \"lang\" was added"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "security-scheme-added",
+    "severity": "info",
+    "location": {
+      "kind": "document",
+      "part": "security",
+      "name": "bearer"
+    },
+    "message": "security scheme \"bearer\" was added"
+  },
+  {
+    "id": "security-requirement-added",
+    "severity": "info",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /pets",
+      "part": "security",
+      "name": "bearer"
+    },
+    "message": "authentication alternative \"bearer\" was added"
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "response-removed",
+    "severity": "breaking",
+    "location": {
+      "kind": "operation",
+      "subject": "GET /pets",
+      "part": "response",
+      "name": "404"
+    },
+    "message": "response \"404\" was removed"
+  }
+]
