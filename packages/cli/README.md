@@ -40,7 +40,7 @@ The requests the spec implies, as JSON, with the parameter and body slots a call
 
 ### `driftwatch run <spec> --base-url <url> [--plan filled.json]`
 
-Build requests from the plan and the filled values, execute them, verify the responses against the spec, and report findings with a fix for each side (spec as truth, implementation as truth). Operations whose required slots are not filled are skipped and listed as `skipped <operation>: missing values for ...` so an agent knows what to supply next.
+Build requests from the plan and the filled values, execute them, verify the responses against the spec, and report findings with a fix for each side (spec as truth, implementation as truth). Values come from the filled plan first, then from `example`, `examples` or `default` in the spec. Operations whose required slots are still empty are skipped and listed as `skipped <operation>: missing values for ...` so an agent knows what to supply next.
 
 The filled plan is an array of `{ operationKey, values, body, mediaType, headers }` where `values` is keyed by `in:name` (`path:petId`, `query:limit`, `header:X-Tenant`, `cookie:session`).
 
@@ -70,21 +70,21 @@ Example client configuration:
 
 ## Common options
 
-| Flag | Meaning |
-|------|---------|
-| `--format json\|markdown\|text` | Default: text on a terminal, json otherwise. |
-| `--config <file>` | Severity overrides, ignores and baseline. `driftwatch.config.json` or `.driftwatch.yaml` in the working directory is loaded automatically. |
-| `--fail-on breaking\|warning\|info` | Exit 1 when anything at or above this level is found. Default `breaking`. |
-| `--timeout <ms>` | Network timeout. Default 30000. |
+| Flag                                | Meaning                                                                                                                                    |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `--format json\|markdown\|text`     | Default: text on a terminal, json otherwise.                                                                                               |
+| `--config <file>`                   | Severity overrides, ignores and baseline. `driftwatch.config.json` or `.driftwatch.yaml` in the working directory is loaded automatically. |
+| `--fail-on breaking\|warning\|info` | Exit 1 when anything at or above this level is found. Default `breaking`.                                                                  |
+| `--timeout <ms>`                    | Network timeout. Default 30000.                                                                                                            |
 
 ## Exit codes
 
-| Code | Meaning |
-|------|---------|
-| 0 | Nothing at or above the `--fail-on` level. |
-| 1 | Threshold exceeded. |
-| 2 | Usage or input error (bad flags, missing file, URL rejected by policy). |
-| 3 | The engine refused a document (too large, too deep, unsupported kind). |
+| Code | Meaning                                                                 |
+| ---- | ----------------------------------------------------------------------- |
+| 0    | Nothing at or above the `--fail-on` level.                              |
+| 1    | Threshold exceeded.                                                     |
+| 2    | Usage or input error (bad flags, missing file, URL rejected by policy). |
+| 3    | The engine refused a document (too large, too deep, unsupported kind).  |
 
 ## Configuration
 

@@ -49,6 +49,20 @@ export function parseText(text: string, format: TextFormat, label: string): unkn
   }
 }
 
+/**
+ * Load a local JSON file whose top level may be an array (filled plans, observations).
+ * Same size limit as documents; JSON only, no YAML.
+ */
+export async function loadJsonFile(input: string, cwd: string): Promise<unknown> {
+  const { text } = await readTextInput(input, { cwd });
+  try {
+    return JSON.parse(text) as unknown;
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : "invalid JSON";
+    throw new InputError(`${input}: ${msg.slice(0, 200)}`);
+  }
+}
+
 /** Load a local path or URL and parse it as JSON or YAML. */
 export async function loadDocument(input: string, options: LoadOptions): Promise<unknown> {
   const { text, format } = await readTextInput(input, options);

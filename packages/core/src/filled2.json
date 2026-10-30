@@ -1,0 +1,4 @@
+[
+  { "operationKey": "GET /pets", "values": { "query:limit": 10 } },
+  { "operationKey": "GET /pets/{}", "values": { "path:petId": 999 } }
+]

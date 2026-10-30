@@ -1,3 +1,4 @@
+import type { PlannedRequest } from "@driftwatch/core";
 import { describe, expect, it } from "vitest";
 import {
   buildRequest,
@@ -6,7 +7,6 @@ import {
   parseHeaderFlags,
   REDACTED,
 } from "../src/executor.js";
-import type { PlannedRequest } from "../src/verify-types.js";
 
 const planned: PlannedRequest = {
   operationKey: "GET /pets/{}",

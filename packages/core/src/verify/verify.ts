@@ -1,20 +1,14 @@
-import { compileSubjectPattern } from "../config.js";
+import { compileSubjectPattern, validateConfig } from "../config.js";
+import { fnv1a64, stable } from "../fingerprint.js";
 import { enforceShape, resolveLimits } from "../limits.js";
 import type { Operation, Parameter, Response, Surface } from "../openapi/model.js";
 import { isOpenApiDocument, normalizeMediaType, normalizeOpenApi } from "../openapi/normalize.js";
 import { locationKey } from "../render/location.js";
-import { RULES } from "../rules/registry.js";
 import type { SchemaNode } from "../schema/model.js";
 import { clip, quote, safeString } from "../text.js";
-import {
-  type Config,
-  DriftwatchError,
-  type Limits,
-  type Location,
-  type Severity,
-} from "../types.js";
+import { type Config, DriftwatchError, type Limits, type Location } from "../types.js";
 import { matchOperation } from "./match.js";
-import { FINDING_RULES, findingSeverity } from "./rules.js";
+import { findingSeverity } from "./rules.js";
 import type { Finding, Observation, VerifyOptions, VerifyResult } from "./types.js";
 import { COMPOSITION_KINDS, CONSTRAINT_KINDS, type Violation, validate } from "./validate.js";
 
@@ -53,7 +47,7 @@ export function verify(
     findings.push(...out.findings);
   });
 
-  const finalized = findings.map((f) => finalize(f, limits));
+  const finalized = collapseRepeats(findings.map((f) => finalize(f, limits)));
   finalized.sort(compareFindings);
   const applied = applyFindingConfig(finalized, config);
   const summary = { breaking: 0, warning: 0, info: 0, suppressed: applied.suppressed };
@@ -68,6 +62,33 @@ export function verify(
       unmatchedObservations: unmatched,
     },
   };
+}
+
+/**
+ * The same defect in every array element, or in every observation of an operation, is one
+ * finding. Keep the first occurrence and say how many more there were.
+ */
+function collapseRepeats(findings: Finding[]): Finding[] {
+  const groups = new Map<string, { first: Finding; more: number }>();
+  for (const f of findings) {
+    const loc = f.location;
+    const key = JSON.stringify([
+      f.id,
+      loc.kind,
+      loc.subject ?? "",
+      loc.part ?? "",
+      loc.name ?? "",
+      loc.mediaType ?? "",
+      (loc.pointer ?? "").replace(/\/\d+(?=\/|$)/g, "/*"),
+      f.message.replace(/\/\d+(?=\/|$)/g, "/*"),
+    ]);
+    const g = groups.get(key);
+    if (g === undefined) groups.set(key, { first: f, more: 0 });
+    else g.more++;
+  }
+  return [...groups.values()].map(({ first, more }) =>
+    more === 0 ? first : { ...first, message: `${first.message} (and ${more} more like it)` },
+  );
 }
 
 function isObservation(v: unknown): v is Observation {
@@ -206,7 +227,7 @@ function verifyRequest(
   const headers = lowerKeys(obs.request.headers);
 
   for (const param of op.parameters.values()) {
-    const loc: Location = { ...base, part: "parameter", name: param.key };
+    const loc: Location = { ...base, part: "parameter", name: `${param.in}:${param.name}` };
     const raw = parameterValue(param, pathParams, query, headers);
     if (raw === undefined) {
       if (param.required && param.in !== "cookie") {
@@ -587,6 +608,9 @@ function responseFinding(
   specSchema: string,
 ): Finding {
   const at = schemaPath(specSchema, v.pointer);
+  // For properties that are missing or unknown the pointer names the property; the fix
+  // belongs on the object schema that holds it.
+  const parentAt = schemaPath(specSchema, parentPointer(v.pointer));
   const where = v.pointer === "" ? "the response body" : `response body at ${v.pointer}`;
   const subject = `${op.method} ${op.path}`;
   let id: string;
@@ -596,17 +620,17 @@ function responseFinding(
     case "required":
       id = "response-missing-required-property";
       impl = `Include ${quote(v.expected)} in the ${status} response of ${subject}.`;
-      spec = `Remove ${quote(v.expected)} from required at ${at}.`;
+      spec = `Remove ${quote(v.expected)} from required at ${parentAt}.`;
       break;
     case "undocumented-property":
       id = "response-undocumented-property";
       impl = `Stop returning ${quote(v.actual)} from ${subject} if it is not part of the contract.`;
-      spec = `Add ${quote(v.actual)} to ${at}.properties.`;
+      spec = `Add ${quote(v.actual)} to ${parentAt}.properties.`;
       break;
     case "forbidden-property":
       id = "response-forbidden-property";
       impl = `Stop returning ${quote(v.actual)} from ${subject}; the spec forbids unknown properties here.`;
-      spec = `Add ${quote(v.actual)} to ${at}.properties or allow additionalProperties.`;
+      spec = `Add ${quote(v.actual)} to ${parentAt}.properties or allow additionalProperties.`;
       break;
     case "type":
       id = "response-type-mismatch";
@@ -701,6 +725,11 @@ function specPath(op: Operation): string {
   return `paths["${op.path}"].${op.method.toLowerCase()}`;
 }
 
+function parentPointer(pointer: string): string {
+  const i = pointer.lastIndexOf("/");
+  return i <= 0 ? "" : pointer.slice(0, i);
+}
+
 /** Map a pointer into a VALUE to a readable path into the SCHEMA that describes it. */
 function schemaPath(specSchema: string, valuePointer: string): string {
   if (valuePointer === "") return specSchema;
@@ -747,63 +776,11 @@ function compareFindings(a: Finding, b: Finding): number {
 }
 
 // ---------------------------------------------------------------------------
-// Config: same semantics as `applyConfig`, but IDs may be finding IDs.
+// Config: same semantics as `applyConfig`, over finding IDs.
 
-const SEVERITIES: ReadonlySet<string> = new Set(["breaking", "warning", "info", "ignore"]);
-
-function knownId(id: string): boolean {
-  return RULES.has(id) || FINDING_RULES.has(id);
-}
-
+/** Kept for API compatibility; `validateConfig` now accepts finding IDs as well. */
 export function validateVerifyConfig(raw: unknown): Config {
-  if (raw === undefined || raw === null) return {};
-  if (typeof raw !== "object" || Array.isArray(raw))
-    throw new DriftwatchError("invalid-config", "config must be an object");
-  const obj = raw as Record<string, unknown>;
-  const config: Config = {};
-  if (obj["severity"] !== undefined) {
-    const sev = obj["severity"];
-    if (typeof sev !== "object" || sev === null || Array.isArray(sev))
-      throw new DriftwatchError("invalid-config", "severity must be an object");
-    const out: Record<string, Severity | "ignore"> = {};
-    for (const [id, level] of Object.entries(sev as Record<string, unknown>)) {
-      if (typeof level !== "string" || !SEVERITIES.has(level))
-        throw new DriftwatchError(
-          "invalid-config",
-          `severity for ${id} must be breaking, warning, info or ignore`,
-        );
-      if (!knownId(id)) throw new DriftwatchError("invalid-config", `unknown rule id ${id}`);
-      out[id] = level as Severity | "ignore";
-    }
-    config.severity = out;
-  }
-  if (obj["ignore"] !== undefined) {
-    const ig = obj["ignore"];
-    if (typeof ig !== "object" || ig === null || Array.isArray(ig))
-      throw new DriftwatchError("invalid-config", "ignore must be an object");
-    const igObj = ig as Record<string, unknown>;
-    const ignore: NonNullable<Config["ignore"]> = {};
-    if (igObj["ids"] !== undefined) {
-      ignore.ids = stringList(igObj["ids"], "ignore.ids");
-      for (const id of ignore.ids)
-        if (!knownId(id)) throw new DriftwatchError("invalid-config", `unknown rule id ${id}`);
-    }
-    if (igObj["subjects"] !== undefined) {
-      ignore.subjects = stringList(igObj["subjects"], "ignore.subjects");
-      for (const p of ignore.subjects)
-        if (p.length > 256)
-          throw new DriftwatchError("invalid-config", "ignore.subjects pattern too long");
-    }
-    config.ignore = ignore;
-  }
-  if (obj["baseline"] !== undefined) config.baseline = stringList(obj["baseline"], "baseline");
-  return config;
-}
-
-function stringList(v: unknown, name: string): string[] {
-  if (!Array.isArray(v) || !v.every((x) => typeof x === "string"))
-    throw new DriftwatchError("invalid-config", `${name} must be a list of strings`);
-  return v as string[];
+  return validateConfig(raw);
 }
 
 function applyFindingConfig(
@@ -846,26 +823,4 @@ export function fingerprintFinding(f: Finding): string {
     stable(f.actual),
   ]);
   return fnv1a64(canonical);
-}
-
-function stable(v: unknown): unknown {
-  if (Array.isArray(v)) return v.map(stable);
-  if (v !== null && typeof v === "object") {
-    const out: Record<string, unknown> = {};
-    for (const k of Object.keys(v as Record<string, unknown>).sort())
-      out[k] = stable((v as Record<string, unknown>)[k]);
-    return out;
-  }
-  return v;
-}
-
-function fnv1a64(input: string): string {
-  let h = 0xcbf29ce484222325n;
-  const prime = 0x100000001b3n;
-  const mask = 0xffffffffffffffffn;
-  for (const b of new TextEncoder().encode(input)) {
-    h ^= BigInt(b);
-    h = (h * prime) & mask;
-  }
-  return h.toString(16).padStart(16, "0");
 }
