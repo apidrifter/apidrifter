@@ -44,7 +44,8 @@ const HARD = new Set([
   "response-body-not-json",
   "undocumented-response-media-type",
 ]);
-const INPUT_PREFIX = /^(request-|undocumented-operation|pattern-not-checked|deprecated-operation-in-use)/;
+const INPUT_PREFIX =
+  /^(request-|undocumented-operation|pattern-not-checked|deprecated-operation-in-use)/;
 const SWAGGER2 = new Set(["gitea", "codeberg", "httpbin"]);
 
 function isInputFinding(f) {
@@ -80,7 +81,17 @@ const lines = [
   "| API | Spec | Ops in spec | GET sent | 2xx | body | hard | media | errors | server | input | Reviewer note |",
   "|-----|------|-------------|----------|-----|------|------|-------|--------|--------|-------|---------------|",
 ];
-const totals = { apis: 0, withBody: 0, withHard: 0, body: 0, hard: 0, media: 0, errors: 0, server: 0, input: 0 };
+const totals = {
+  apis: 0,
+  withBody: 0,
+  withHard: 0,
+  body: 0,
+  hard: 0,
+  media: 0,
+  errors: 0,
+  server: 0,
+  input: 0,
+};
 const summaryRows = [];
 
 for (const t of targets) {
@@ -121,7 +132,10 @@ for (const t of targets) {
   lines.push(
     `| ${t.name} | [spec](${t.spec}) | ${r.coverage.operations} | ${sent} | ${ok} | ${counts.body} | ${counts.hard} | ${counts.media} | ${counts.errors} | ${counts.server} | ${counts.input} | ${t.note ?? ""} |`,
   );
-  await writeFile(resolve(resDir, `${t.id}.findings.json`), `${JSON.stringify(findings, null, 2)}\n`);
+  await writeFile(
+    resolve(resDir, `${t.id}.findings.json`),
+    `${JSON.stringify(findings, null, 2)}\n`,
+  );
   const trimmed = obs.map((o, i) => ({
     index: i,
     operationKey: o.operationKey,
@@ -132,7 +146,10 @@ for (const t of targets) {
     mediaType: o.response.mediaType ?? null,
     capturedAt: o.capturedAt ?? null,
   }));
-  await writeFile(resolve(resDir, `${t.id}.observations.json`), `${JSON.stringify(trimmed, null, 2)}\n`);
+  await writeFile(
+    resolve(resDir, `${t.id}.observations.json`),
+    `${JSON.stringify(trimmed, null, 2)}\n`,
+  );
   summaryRows.push({
     id: t.id,
     name: t.name,
