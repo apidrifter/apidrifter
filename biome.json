@@ -45,7 +45,9 @@
       "!**/.claude",
       "!**/*.astro",
       "!**/.astro",
-      "!**/*.mdx"
+      "!**/*.mdx",
+      "!tools/survey/results/**",
+      "!.changeset/*.md"
     ]
   }
 }
