@@ -20,11 +20,12 @@ No analytics, no third-party scripts, no external fonts.
 
 ## Deploy
 
-Hosted on Cloudflare Pages, connected to the `apidrifter/apidrifter` repository. Project settings:
+Hosted on Cloudflare Workers as static assets, connected to the `apidrifter/apidrifter` repository (Workers Builds). Project settings:
 
 - Build command: `pnpm --filter @apidrifter/web build`
-- Build output directory: `apps/web/dist`
+- Deploy command: `npx wrangler deploy` (reads `wrangler.jsonc` at the repository root, which points at `apps/web/dist`)
+- Preview command: `npx wrangler versions upload`
 - Node version: from the repository `.nvmrc`
 - Custom domains: `apidrifter.com`, and `www.apidrifter.com` which `public/_redirects` sends to the apex
 
-Every push to `main` deploys; every pull request gets a preview URL. Security headers live in `public/_headers`.
+Every push to `main` deploys; every pull request gets a preview. Security headers live in `public/_headers`.
