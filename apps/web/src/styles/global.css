@@ -553,3 +553,84 @@ details.group > summary .blurb {
     margin-top: 8px;
   }
 }
+
+/* SEO/GEO pass additions */
+.forms {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.forms li {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg-raised);
+}
+.faq {
+  margin: 0;
+}
+.faq dt {
+  font-weight: 600;
+  margin-top: 1.1rem;
+}
+.faq dd {
+  margin: 0.3rem 0 0;
+  color: var(--fg-muted);
+}
+.toc {
+  margin: 1rem 0 1.5rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg-raised);
+  font-size: 0.95rem;
+}
+.toc ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.cite {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+.cite pre {
+  font-size: 0.85rem;
+}
+.group-section {
+  margin-top: 2rem;
+}
+.group-count {
+  font-family: var(--mono);
+  font-size: 0.8em;
+  color: var(--fg-muted);
+  margin-left: 0.4rem;
+}
+.group-section details > summary {
+  cursor: pointer;
+  color: var(--fg-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+table.rules td:first-child {
+  white-space: nowrap;
+}
+table.rules tr:target {
+  outline: 2px solid var(--accent);
+}
+.sev-breaking {
+  color: var(--danger);
+}
+.sev-warning {
+  color: var(--warn);
+}
+.sev-info {
+  color: var(--info);
+}
+.doc-foot {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}

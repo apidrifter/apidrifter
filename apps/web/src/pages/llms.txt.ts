@@ -13,8 +13,9 @@ export const GET: APIRoute = async () => {
     "",
     `> ${SITE.tagline} ${SITE.description}`,
     "",
-    "Open source (Apache-2.0). CLI package: `apidrifter` on npm. Engine package: `@apidrifter/core`.",
+    `Open source (Apache-2.0). CLI package: \`apidrifter\` on npm (${SITE.npm}). Engine package: \`@apidrifter/core\`.`,
     `Repository: ${SITE.repo}`,
+    `Full text of this site in one Markdown file: ${SITE.url}/llms-full.txt`,
     "",
     "## Commands",
     "",
@@ -32,10 +33,16 @@ export const GET: APIRoute = async () => {
     "## Research",
     "",
     ...posts.map(
-      (p) => `- [${p.data.title}](${SITE.url}/research/${p.id}/): ${p.data.description}`,
+      (p) =>
+        `- [${p.data.title}](${SITE.url}/research/${p.id}/): ${p.data.description} Markdown twin: ${SITE.url}/research/${p.id}/index.md`,
     ),
     "",
-    `Survey data: ${summary.totals.withHard} of ${summary.totals.apis} surveyed public APIs had hard spec violations on successful responses (${summary.totals.hard} distinct schema locations). Per-API pages: ${SITE.url}/research/<post>/<api-id>/. Raw JSON: ${SITE.resultsUrl}`,
+    `Survey data: ${summary.totals.withHard} of ${summary.totals.apis} surveyed public APIs had hard spec violations on successful responses (${summary.totals.hard} distinct schema locations). Per-API pages: ${SITE.url}/research/<post>/<api-id>/ with Markdown twins at .../index.md. Raw JSON: ${SITE.resultsUrl}`,
+    "",
+    "## Optional",
+    "",
+    `- [Full text](${SITE.url}/llms-full.txt): all research posts, per-API summaries and the CLI reference in one file.`,
+    `- [RSS](${SITE.url}/research/rss.xml): new research posts.`,
     "",
   ];
   return new Response(lines.join("\n"), {

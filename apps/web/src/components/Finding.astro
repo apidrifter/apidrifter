@@ -10,12 +10,13 @@ const { finding: f } = Astro.props;
 const group = groupKey(f);
 const expected = clipJson(f.expected);
 const actual = clipJson(f.actual);
+const ruleHref = /^[a-z0-9-]+$/.test(f.id) ? `/docs/rules/#${f.id}` : undefined;
 ---
 
 <article class="finding">
   <div class="head">
     <span class:list={["badge", `badge-${group}`]}>{group === "hard" ? "hard" : f.class}</span>
-    <code>{f.id}</code>
+    {ruleHref !== undefined ? <a href={ruleHref}><code>{f.id}</code></a> : <code>{f.id}</code>}
     <span class="badge badge-input">{f.severity}</span>
   </div>
   <div class="loc">{formatLocation(f.location)}</div>

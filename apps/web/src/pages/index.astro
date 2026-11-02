@@ -1,5 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
+import { FAQ } from "../lib/faq";
+import { faqPage, organization, softwareApplication, website } from "../lib/jsonld";
 import { SITE } from "../lib/site";
 import { loadSummary } from "../lib/survey";
 import { getCollection } from "astro:content";
@@ -9,9 +11,14 @@ const posts = (await getCollection("research", (p) => !p.data.draft && p.data.su
   (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
 const surveyPost = posts[0];
+const postBase = surveyPost === undefined ? "/research/" : `/research/${surveyPost.id}/`;
+const exampleApis = ["discourse-meta", "github"]
+  .map((id) => summary.apis.find((a) => a.id === id))
+  .filter((a) => a !== undefined);
+const jsonld = [organization(), website(), softwareApplication(), faqPage(FAQ)];
 ---
 
-<Base title={SITE.name} description={SITE.description}>
+<Base title={SITE.homeTitle} description={SITE.description} bareTitle jsonld={jsonld}>
   <section class="hero">
     <h1>{SITE.tagline}</h1>
     <p class="lede">
@@ -36,7 +43,7 @@ const surveyPost = posts[0];
   </section>
 
   <section>
-    <h2>How it works</h2>
+    <h2 id="how-it-works">How it works</h2>
     <div class="steps">
       <div class="step">
         <div class="n">01</div>
@@ -62,18 +69,47 @@ const surveyPost = posts[0];
         <p>
           Every finding carries two fixes: what to change in the implementation if the spec is
           the truth, and what to change in the spec if the implementation is. Humans read it;
-          agents act on it.
+          agents act on it. The <a href="/docs/rules/">rules reference</a> lists every finding
+          the engine can report.
         </p>
       </div>
     </div>
   </section>
 
   <section>
-    <h2>Also a spec differ</h2>
+    <h2 id="what-is-api-drift">What is API drift?</h2>
+    <p>
+      API drift is the gap between what an API&rsquo;s published OpenAPI document says and what
+      the live implementation actually does: a field typed as an integer that arrives as a
+      string, a required property that is sometimes missing, a null the schema forbids, a
+      status code nobody documented. It breaks generated clients, typed SDKs, mocks and
+      contract tests, because all of them trust the document. It appears whenever a spec is
+      written by hand and maintained separately from the code, or generated once and edited
+      afterwards.
+    </p>
+    <ul class="forms">
+      <li>
+        <b>Spec ahead of implementation.</b> The document describes fields or responses the
+        server does not produce yet, or never will.
+      </li>
+      <li>
+        <b>Implementation ahead of spec.</b> The server changed and the document was not
+        updated, which is the most common form in our <a href={postBase}>survey of public APIs</a>.
+      </li>
+      <li>
+        <b>Both drifting from an older version.</b> Spec and server each moved in different
+        directions from a shared ancestor, so neither is a reliable description of the other.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 id="spec-differ">Also a spec differ</h2>
     <p>
       The same engine compares two versions of a spec and classifies every change as breaking,
       warning or info, knowing that a field becoming required is breaking in a request and
-      harmless in a response.
+      harmless in a response. The <a href="/docs/design/">design document</a> explains this
+      polarity model.
     </p>
     <pre><code>npx apidrifter breaking old.yaml new.yaml   # exit 1 on breaking changes, for CI
 npx apidrifter mcp snapshot https://mcp.example.com/mcp --out before.json
@@ -99,14 +135,39 @@ npx apidrifter mcp diff before.json https://mcp.example.com/mcp</code></pre>
           reproducible.
         </p>
         <p>
-          <a href={`/research/${surveyPost.id}/`}>Read the survey</a>
+          <a href={postBase}>Read the survey</a>
+          {exampleApis.length > 0 && (
+            <>
+              {" "}&middot; examples:{" "}
+              {exampleApis.map((a, i) => (
+                <>
+                  {i > 0 && ", "}
+                  <a href={`${postBase}${a.id}/`}>{a.name}</a>
+                </>
+              ))}
+            </>
+          )}
         </p>
       </section>
     )
   }
 
   <section>
-    <h2>Install</h2>
+    <h2 id="faq">Frequently asked questions</h2>
+    <dl class="faq">
+      {
+        FAQ.map((item) => (
+          <>
+            <dt>{item.q}</dt>
+            <dd>{item.a}</dd>
+          </>
+        ))
+      }
+    </dl>
+  </section>
+
+  <section>
+    <h2 id="install">Install</h2>
     <pre><code>npm install -g apidrifter    # or run it with npx, as above</code></pre>
     <p class="muted small">
       Node 22.12 or newer. Apache-2.0. The CLI sends requests only where you point it; URLs
@@ -116,7 +177,8 @@ npx apidrifter mcp diff before.json https://mcp.example.com/mcp</code></pre>
     <p>
       <a href="/docs/cli/">CLI reference</a> &middot; <a href="/docs/rules/">Rules reference</a>
       &middot; <a href="/docs/design/">Design</a> &middot;
-      <a href={SITE.repo} rel="noopener">GitHub</a>
+      <a href={SITE.repo} rel="noopener">GitHub</a> &middot;
+      <a href={SITE.npm} rel="noopener">npm</a>
     </p>
   </section>
 </Base>

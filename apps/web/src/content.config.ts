@@ -7,6 +7,8 @@ const research = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "./src/content/research" }),
   schema: z.object({
     title: z.string(),
+    /** Optional shorter title for the browser tab and search results. */
+    shortTitle: z.string().optional(),
     description: z.string(),
     date: z.coerce.date(),
     survey: z.boolean().default(false),

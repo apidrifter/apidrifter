@@ -1,7 +1,9 @@
 ---
 import SurveyTable from "../../../components/SurveyTable.astro";
 import Base from "../../../layouts/Base.astro";
-import { isoDate } from "../../../lib/site";
+import { breadcrumbs, dataset, techArticle } from "../../../lib/jsonld";
+import { SITE, isoDate } from "../../../lib/site";
+import { loadSummary } from "../../../lib/survey";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -10,13 +12,88 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+const url = `${SITE.url}/research/${post.id}/`;
+const published = isoDate(post.data.date);
+const summary = post.data.survey ? await loadSummary() : undefined;
+const modified = summary !== undefined ? summary.generatedAt.slice(0, 10) : published;
+const toc = headings.filter((h) => h.depth === 2);
+const jsonld = [
+  techArticle({
+    url,
+    headline: post.data.title,
+    description: post.data.description,
+    datePublished: published,
+    dateModified: modified,
+    ...(post.data.survey ? { isBasedOn: SITE.resultsUrl } : {}),
+  }),
+  breadcrumbs([
+    { name: SITE.name, url: `${SITE.url}/` },
+    { name: "Research", url: `${SITE.url}/research/` },
+    { name: post.data.title, url },
+  ]),
+  ...(summary !== undefined
+    ? [
+        dataset({
+          url,
+          name: "Public API conformance survey",
+          description: `Read-only requests to ${summary.totals.apis} public APIs that publish an OpenAPI document, verified against those documents: every request sent, every finding, and a fix for each side.`,
+          dateCreated: summary.generatedAt,
+        }),
+      ]
+    : []),
+];
+const bibKey = `apidrifter${published.slice(0, 4)}${post.id.replace(/[^a-z0-9]/g, "").slice(0, 12)}`;
 ---
 
-<Base title={post.data.title} description={post.data.description} wide={post.data.survey}>
+<Base
+  title={post.data.shortTitle ?? post.data.title}
+  description={post.data.description}
+  wide={post.data.survey}
+  jsonld={jsonld}
+  markdownAlternate={`/research/${post.id}/index.md`}
+  article={{ published, modified }}
+>
   <article class="prose">
     <h1>{post.data.title}</h1>
-    <p class="post-meta">{isoDate(post.data.date)} &middot; <a href="/research/">Research</a></p>
+    <p class="post-meta">
+      Published <time datetime={published}>{published}</time>
+      {summary !== undefined && (
+        <>
+          {" "}&middot; data generated <time datetime={summary.generatedAt}>{summary.generatedAt.slice(0, 10)}</time>
+        </>
+      )}
+      {" "}&middot; by {SITE.name} &middot; <a href="/research/">Research</a> &middot;
+      <a href={`/research/${post.id}/index.md`}>Markdown</a>
+    </p>
+    {
+      toc.length > 0 && (
+        <nav class="toc" aria-label="Contents">
+          <ol>
+            {toc.map((h) => (
+              <li>
+                <a href={`#${h.slug}`}>{h.text}</a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )
+    }
     <Content components={{ SurveyTable }} />
+
+    <section class="cite">
+      <h2 id="cite-this">Cite this</h2>
+      <p>
+        {SITE.name} ({published.slice(0, 4)}). <i>{post.data.title}</i>. {url}
+      </p>
+      <pre><code>{`@techreport{${bibKey},
+  title        = {${post.data.title}},
+  author       = {{${SITE.name}}},
+  year         = {${published.slice(0, 4)}},
+  month        = {${published.slice(5, 7)}},
+  url          = {${url}},
+  note         = {Data and method: ${SITE.resultsUrl}}
+}`}</code></pre>
+    </section>
   </article>
 </Base>
