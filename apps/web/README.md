@@ -17,3 +17,14 @@ Where things live:
 - `src/pages/llms.txt.ts`: the agent-readable index.
 
 No analytics, no third-party scripts, no external fonts.
+
+## Deploy
+
+Hosted on Cloudflare Pages, connected to the `apidrifter/apidrifter` repository. Project settings:
+
+- Build command: `pnpm --filter @apidrifter/web build`
+- Build output directory: `apps/web/dist`
+- Node version: from the repository `.nvmrc`
+- Custom domains: `apidrifter.com`, and `www.apidrifter.com` which `public/_redirects` sends to the apex
+
+Every push to `main` deploys; every pull request gets a preview URL. Security headers live in `public/_headers`.
