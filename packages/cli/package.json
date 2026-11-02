@@ -1,6 +1,7 @@
 {
   "name": "apidrifter",
   "version": "0.1.0",
+  "mcpName": "com.apidrifter/apidrifter",
   "description": "Diff OpenAPI documents and MCP servers, classify breaking changes, fail CI.",
   "keywords": [
     "openapi",
