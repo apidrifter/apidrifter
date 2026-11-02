@@ -1,4 +1,4 @@
-import type { FilledRequest, Observation, PlannedRequest } from "@driftwatch/core";
+import type { FilledRequest, Observation, PlannedRequest } from "@apidrifter/core";
 import { InputError } from "./errors.js";
 import { errorMessage, readBounded } from "./fetch-text.js";
 

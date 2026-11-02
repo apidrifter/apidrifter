@@ -1,11 +1,11 @@
 {
-  "name": "driftwatch",
+  "name": "apidrifter",
   "version": "0.1.0",
   "description": "Diff OpenAPI documents and MCP servers, classify breaking changes, fail CI.",
   "license": "Apache-2.0",
   "type": "module",
   "bin": {
-    "driftwatch": "./dist/bin.js"
+    "apidrifter": "./dist/bin.js"
   },
   "exports": {
     ".": {
@@ -23,7 +23,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@driftwatch/core": "workspace:*",
+    "@apidrifter/core": "workspace:*",
     "@modelcontextprotocol/sdk": "1.32.2",
     "zod": "4.6.7"
   },

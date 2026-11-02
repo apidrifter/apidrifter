@@ -8,8 +8,8 @@ We will acknowledge a report within 3 business days and aim to ship a fix for co
 
 ## Scope
 
-- `@driftwatch/core`: parsing and diffing untrusted OpenAPI and MCP documents. Resource exhaustion, incorrect classification that hides a breaking change, and anything that lets a document influence output outside its own data fields are all in scope.
-- `driftwatch` CLI: URL fetching, MCP server spawning, output rendering.
+- `@apidrifter/core`: parsing and diffing untrusted OpenAPI and MCP documents. Resource exhaustion, incorrect classification that hides a breaking change, and anything that lets a document influence output outside its own data fields are all in scope.
+- `apidrifter` CLI: URL fetching, MCP server spawning, output rendering.
 - Hosted service: authentication, tenancy isolation, SSRF in fetching and webhooks, secret handling, rate limiting.
 
 ## Design

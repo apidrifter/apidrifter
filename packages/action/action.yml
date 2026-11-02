@@ -1,4 +1,4 @@
-name: "Driftwatch"
+name: "Apidrifter"
 description: "Fail on breaking API changes between two OpenAPI documents or MCP snapshots, with a changelog in the job summary and optionally on the pull request."
 branding:
   icon: "git-pull-request"
@@ -16,11 +16,11 @@ inputs:
     required: false
     default: "breaking"
   config:
-    description: "Path to a driftwatch config file"
+    description: "Path to a apidrifter config file"
     required: false
     default: ""
   version:
-    description: "driftwatch npm version to run"
+    description: "apidrifter npm version to run"
     required: false
     default: "0.1.0"
   github-token:
@@ -47,8 +47,8 @@ runs:
         set -euo pipefail
         args=()
         if [ -n "$DW_CONFIG" ]; then args+=(--config "$DW_CONFIG"); fi
-        npx --yes "driftwatch@${DW_VERSION}" changelog "$DW_BEFORE" "$DW_AFTER" --fail-on info "${args[@]}" > driftwatch-changelog.md || true
-        cat driftwatch-changelog.md >> "$GITHUB_STEP_SUMMARY"
+        npx --yes "apidrifter@${DW_VERSION}" changelog "$DW_BEFORE" "$DW_AFTER" --fail-on info "${args[@]}" > apidrifter-changelog.md || true
+        cat apidrifter-changelog.md >> "$GITHUB_STEP_SUMMARY"
 
     - id: breaking
       shell: bash
@@ -62,9 +62,9 @@ runs:
         set -uo pipefail
         args=()
         if [ -n "$DW_CONFIG" ]; then args+=(--config "$DW_CONFIG"); fi
-        npx --yes "driftwatch@${DW_VERSION}" diff "$DW_BEFORE" "$DW_AFTER" --format json --fail-on "$DW_FAIL_ON" "${args[@]}" > driftwatch-result.json
+        npx --yes "apidrifter@${DW_VERSION}" diff "$DW_BEFORE" "$DW_AFTER" --format json --fail-on "$DW_FAIL_ON" "${args[@]}" > apidrifter-result.json
         status=$?
-        count=$(node -e 'const r=JSON.parse(require("fs").readFileSync("driftwatch-result.json","utf8"));process.stdout.write(String(r.summary.breaking))' 2>/dev/null || echo 0)
+        count=$(node -e 'const r=JSON.parse(require("fs").readFileSync("apidrifter-result.json","utf8"));process.stdout.write(String(r.summary.breaking))' 2>/dev/null || echo 0)
         echo "breaking=$count" >> "$GITHUB_OUTPUT"
         echo "status=$status" >> "$GITHUB_OUTPUT"
 
@@ -75,13 +75,13 @@ runs:
         PR_NUMBER: ${{ github.event.pull_request.number }}
       run: |
         set -euo pipefail
-        gh pr comment "$PR_NUMBER" --body-file driftwatch-changelog.md
+        gh pr comment "$PR_NUMBER" --body-file apidrifter-changelog.md
 
     - shell: bash
       env:
         DW_STATUS: ${{ steps.breaking.outputs.status }}
       run: |
         if [ "$DW_STATUS" != "0" ]; then
-          echo "driftwatch found changes at or above the fail-on level"
+          echo "apidrifter found changes at or above the fail-on level"
           exit 1
         fi

@@ -1,6 +1,6 @@
 import { readFile, stat, writeFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
-import { DriftwatchError, parseDocument } from "@driftwatch/core";
+import { ApidrifterError, parseDocument } from "@apidrifter/core";
 import { InputError } from "./errors.js";
 import { type FetchTextOptions, fetchText } from "./fetch-text.js";
 import { isUrlLike } from "./url-policy.js";
@@ -44,7 +44,7 @@ export function parseText(text: string, format: TextFormat, label: string): unkn
   try {
     return parseDocument(text, { format });
   } catch (err) {
-    if (err instanceof DriftwatchError) throw new InputError(`${label}: ${err.message}`);
+    if (err instanceof ApidrifterError) throw new InputError(`${label}: ${err.message}`);
     throw err;
   }
 }

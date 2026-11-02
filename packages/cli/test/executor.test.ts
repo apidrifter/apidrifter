@@ -1,4 +1,4 @@
-import type { PlannedRequest } from "@driftwatch/core";
+import type { PlannedRequest } from "@apidrifter/core";
 import { describe, expect, it } from "vitest";
 import {
   buildRequest,

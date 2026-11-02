@@ -4,7 +4,7 @@ import { isOpenApiDocument, normalizeOpenApi, normalizePath } from "../openapi/n
 import { isRecord } from "../parse.js";
 import { resolveLocalRef } from "../schema/normalize.js";
 import { clip } from "../text.js";
-import { DriftwatchError, type Limits } from "../types.js";
+import { ApidrifterError, type Limits } from "../types.js";
 import { summarizeSchema } from "./summary.js";
 import type { PlannedParameter, PlannedRequest } from "./types.js";
 
@@ -23,7 +23,7 @@ export function plan(spec: unknown, options: { limits?: Partial<Limits> } = {}):
   const limits = resolveLimits(options.limits);
   enforceShape(spec, limits);
   if (!isOpenApiDocument(spec)) {
-    throw new DriftwatchError("unsupported-document", "plan requires an OpenAPI 3.x document");
+    throw new ApidrifterError("unsupported-document", "plan requires an OpenAPI 3.x document");
   }
   const surface = normalizeOpenApi(spec, limits);
   const examples = collectExamples(spec, limits);

@@ -1,4 +1,4 @@
-import type { Config } from "@driftwatch/core";
+import type { Config } from "@apidrifter/core";
 import type { ParsedArgs } from "./args.js";
 import { flag } from "./args.js";
 import { loadConfig } from "./config.js";

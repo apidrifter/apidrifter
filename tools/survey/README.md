@@ -13,7 +13,7 @@ Rules of engagement, enforced by the runner:
 Findings in `results/` are raw engine output until a human marks each one `confirmed`, `disputed` or `our-bug`. Only confirmed findings are published anywhere, and small projects get a fixing pull request before anything is written about them.
 
 ```
-pnpm --filter @driftwatch/core build && pnpm --filter driftwatch build
+pnpm --filter @apidrifter/core build && pnpm --filter apidrifter build
 node tools/survey/run.mjs            # all targets
 node tools/survey/run.mjs petstore   # one target
 node tools/survey/report.mjs         # results/summary.md

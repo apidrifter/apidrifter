@@ -1,5 +1,5 @@
 {
-  "name": "@driftwatch/core",
+  "name": "@apidrifter/core",
   "version": "0.1.0",
   "description": "Pure, deterministic breaking-change engine for OpenAPI documents and MCP servers. No I/O.",
   "license": "Apache-2.0",

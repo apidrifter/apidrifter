@@ -37,7 +37,7 @@ const spec = (idType: string) =>
 let dir: string;
 
 beforeAll(async () => {
-  dir = await mkdtemp(join(tmpdir(), "driftwatch-serve-"));
+  dir = await mkdtemp(join(tmpdir(), "apidrifter-serve-"));
   await writeFile(join(dir, "a.json"), spec("integer"));
   await writeFile(join(dir, "b.json"), spec("string"));
 });

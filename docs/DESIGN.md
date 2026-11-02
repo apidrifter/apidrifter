@@ -1,6 +1,6 @@
-# Driftwatch design
+# API Drifter design
 
-Driftwatch tells you when an API you depend on changes, and whether that change will break you. It covers OpenAPI documents and MCP servers with one engine, ships as an open-source CLI, and runs as a hosted service that watches public and private sources and alerts humans and agents.
+API Drifter tells you when an API you depend on changes, and whether that change will break you. It covers OpenAPI documents and MCP servers with one engine, ships as an open-source CLI, and runs as a hosted service that watches public and private sources and alerts humans and agents.
 
 This document is the standing opinion on how it is built. It is short on purpose. If a decision is not here, it is open; if it is here, change the document before changing the code.
 
@@ -8,8 +8,8 @@ This document is the standing opinion on how it is built. It is short on purpose
 
 Three surfaces, one engine:
 
-1. **Engine** (`@driftwatch/core`). Pure TypeScript. Takes two documents, returns a typed, classified, deterministic list of changes. No I/O.
-2. **CLI and CI** (`driftwatch`, GitHub Action). Diff files and URLs, snapshot MCP servers, fail builds on breaking changes.
+1. **Engine** (`@apidrifter/core`). Pure TypeScript. Takes two documents, returns a typed, classified, deterministic list of changes. No I/O.
+2. **CLI and CI** (`apidrifter`, GitHub Action). Diff files and URLs, snapshot MCP servers, fail builds on breaking changes.
 3. **Hosted** (`apps/web`, `apps/worker`). A public catalog of APIs and MCP servers with full change history, watches and alerts for private and public sources, and an MCP server so agents can ask "what changed since."
 
 Non-goals, so they do not creep in: hosting API documentation, mocking, linting style rules, generating SDKs, runtime traffic monitoring.
@@ -28,17 +28,17 @@ Non-goals, so they do not creep in: hosting API documentation, mocking, linting 
 
 - **License: Apache-2.0 for the whole repository**, including the hosted apps. The moat is the catalog data, the history and the operation, not the code. A copyleft license would cost adoption and buy little.
 - **Contributions under the Developer Certificate of Origin** (sign-off on commits). No contributor license agreement.
-- **One monorepo**, pnpm workspaces. Packages publish to npm under the `@driftwatch` scope; the CLI publishes as `driftwatch`. Apps do not publish.
+- **One monorepo**, pnpm workspaces. Packages publish to npm under the `@apidrifter` scope; the CLI publishes as `apidrifter`. Apps do not publish.
 - **Versioning with Changesets.** Semver. The change ID list is part of the public API: adding an ID is a minor, removing or changing the meaning of one is a major.
 - **Releases only from CI** with npm provenance. Nobody publishes from a laptop.
 - **The name is a placeholder** and lives in exactly one place (`package.json` names and the CLI binary). Renaming is a find-and-replace.
 
 ```
-driftwatch/
+apidrifter/
   docs/            design, rules reference, threat model, ADRs
   packages/
     core/          engine: model, diff, rules, render
-    cli/           driftwatch binary
+    cli/           apidrifter binary
     action/        GitHub Action (thin wrapper over cli)
   apps/
     web/           public catalog, dashboard, HTTP API, MCP server
@@ -86,7 +86,7 @@ Where our rule matches an oasdiff check in meaning, we use the same ID, so exist
 
 ### 4.4 Configuration
 
-Users can adjust severity per rule, ignore paths, operations or tools by pattern, and set a baseline of accepted changes. Configuration is a plain object in the core; the CLI reads it from `driftwatch.config.json` or `.driftwatch.yaml`. Configuration can only make the engine quieter or louder, never change what it detects.
+Users can adjust severity per rule, ignore paths, operations or tools by pattern, and set a baseline of accepted changes. Configuration is a plain object in the core; the CLI reads it from `apidrifter.config.json` or `.apidrifter.yaml`. Configuration can only make the engine quieter or louder, never change what it detects.
 
 ### 4.5 Determinism and limits
 
@@ -95,11 +95,11 @@ Output is sorted by location then ID. Objects in `before` and `after` are trunca
 ## 5. CLI
 
 ```
-driftwatch diff <before> <after>          all changes, json or markdown
-driftwatch breaking <before> <after>      breaking only, exit 1 if any
-driftwatch changelog <before> <after>     markdown changelog
-driftwatch mcp snapshot <url|cmd>         write a tools/resources/prompts snapshot
-driftwatch mcp diff <snapshot> <url|cmd>  diff a server against a snapshot
+apidrifter diff <before> <after>          all changes, json or markdown
+apidrifter breaking <before> <after>      breaking only, exit 1 if any
+apidrifter changelog <before> <after>     markdown changelog
+apidrifter mcp snapshot <url|cmd>         write a tools/resources/prompts snapshot
+apidrifter mcp diff <snapshot> <url|cmd>  diff a server against a snapshot
 ```
 
 Inputs are local paths or `https://` URLs. The CLI applies the same parsing limits as the hosted fetcher. The GitHub Action wraps `breaking` and `changelog` and posts the result as a pull request comment.
@@ -234,10 +234,10 @@ Validation is done by our own validator over the normalized schema model, not by
 
 ### 11.3 Surfaces
 
-- `driftwatch plan <spec>`: emit the request plan as JSON.
-- `driftwatch run <spec> --base-url <url> [--plan filled.json]`: execute, collect observations, verify, report. Exit 1 on breaking findings.
-- `driftwatch verify <spec> --observations <file>`: verify from recorded observations only.
-- `driftwatch serve`: MCP server exposing plan, run, verify, diff, breaking and changelog as tools, so an agent in any client can drive the loop.
+- `apidrifter plan <spec>`: emit the request plan as JSON.
+- `apidrifter run <spec> --base-url <url> [--plan filled.json]`: execute, collect observations, verify, report. Exit 1 on breaking findings.
+- `apidrifter verify <spec> --observations <file>`: verify from recorded observations only.
+- `apidrifter serve`: MCP server exposing plan, run, verify, diff, breaking and changelog as tools, so an agent in any client can drive the loop.
 
 The CLI may target `http://localhost` because it runs on the user's machine. The hosted worker keeps its HTTPS-only, SSRF-checked fetcher and never executes user-defined requests in version one.
 

@@ -1,4 +1,4 @@
-import { diff } from "@driftwatch/core";
+import { diff } from "@apidrifter/core";
 import { flag, flagAll, hasFlag, intFlag, type ParsedArgs, rejectUnknownFlags } from "../args.js";
 import { type CliIo, commonOptions, withFlags } from "../context.js";
 import { EXIT_OK, EXIT_THRESHOLD, UsageError } from "../errors.js";
@@ -27,7 +27,7 @@ export async function mcpSnapshotCommand(args: ParsedArgs, io: CliIo): Promise<n
   rejectUnknownFlags(args, SNAPSHOT_FLAGS);
   const [positional, extra] = args.positionals;
   if (extra !== undefined)
-    throw new UsageError("usage: driftwatch mcp snapshot <url> | --stdio -- <command>");
+    throw new UsageError("usage: apidrifter mcp snapshot <url> | --stdio -- <command>");
   const target = targetFrom(positional, args, io);
   const snapshot = await snapshotMcp(target, { timeoutMs: intFlag(args, "timeout", 30_000) });
   const text = `${JSON.stringify(snapshot, null, 2)}\n`;
@@ -45,7 +45,7 @@ export async function mcpDiffCommand(args: ParsedArgs, io: CliIo): Promise<numbe
   const [snapshotPath, second, extra] = args.positionals;
   if (snapshotPath === undefined || extra !== undefined) {
     throw new UsageError(
-      "usage: driftwatch mcp diff <snapshot> <url | snapshot> | --stdio -- <command>",
+      "usage: apidrifter mcp diff <snapshot> <url | snapshot> | --stdio -- <command>",
     );
   }
   const before = await loadDocument(snapshotPath, { cwd: io.cwd });

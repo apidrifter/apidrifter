@@ -1,5 +1,5 @@
 import { readFile } from "node:fs/promises";
-import { type DiffResult, diff, listRules, renderMarkdown } from "@driftwatch/core";
+import { type DiffResult, diff, listRules, renderMarkdown } from "@apidrifter/core";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
@@ -21,7 +21,7 @@ import { checkUrl } from "./url-policy.js";
 import { VERSION } from "./version.js";
 
 /**
- * `driftwatch serve`: the same engine as an MCP server over stdio, so an agent can drive
+ * `apidrifter serve`: the same engine as an MCP server over stdio, so an agent can drive
  * the diff and verify loop from any client. Paths are confined to the working directory,
  * URLs go through the same policy as the CLI, and summaries carry counts and IDs only;
  * third-party text stays inside the structured result.
@@ -123,7 +123,7 @@ function verifySummary(r: VerifyResult): string {
 }
 
 export function createServer(options: ServeOptions): McpServer {
-  const server = new McpServer({ name: "driftwatch", version: VERSION });
+  const server = new McpServer({ name: "apidrifter", version: VERSION });
 
   const runDiff = async (before: DocInput, after: DocInput, kind?: "openapi" | "mcp") => {
     const [b, a] = await Promise.all([loadDocInput(before, options), loadDocInput(after, options)]);

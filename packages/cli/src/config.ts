@@ -1,10 +1,10 @@
 import { access } from "node:fs/promises";
 import { resolve } from "node:path";
-import { type Config, DriftwatchError, validateConfig } from "@driftwatch/core";
+import { type Config, ApidrifterError, validateConfig } from "@apidrifter/core";
 import { InputError } from "./errors.js";
 import { loadDocument } from "./io.js";
 
-const AUTO_FILES = ["driftwatch.config.json", ".driftwatch.yaml", ".driftwatch.yml"];
+const AUTO_FILES = ["apidrifter.config.json", ".apidrifter.yaml", ".apidrifter.yml"];
 
 /** Load config from `--config`, or from a conventional file in cwd, or return `{}`. */
 export async function loadConfig(explicit: string | undefined, cwd: string): Promise<Config> {
@@ -25,7 +25,7 @@ export async function loadConfig(explicit: string | undefined, cwd: string): Pro
   try {
     return validateConfig(raw);
   } catch (err) {
-    if (err instanceof DriftwatchError) throw new InputError(`${path}: ${err.message}`);
+    if (err instanceof ApidrifterError) throw new InputError(`${path}: ${err.message}`);
     throw err;
   }
 }

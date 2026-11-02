@@ -1,4 +1,4 @@
-import { DriftwatchError } from "@driftwatch/core";
+import { ApidrifterError } from "@apidrifter/core";
 import { hasFlag, type ParsedArgs, parseArgs } from "./args.js";
 import { breakingCommand, changelogCommand, diffCommand } from "./commands/diff.js";
 import { MCP_BOOLEANS, mcpDiffCommand, mcpSnapshotCommand } from "./commands/mcp.js";
@@ -8,25 +8,25 @@ import { EXIT_ENGINE, EXIT_OK, EXIT_USAGE, InputError, UsageError } from "./erro
 import { serveCommand } from "./serve.js";
 import { VERSION } from "./version.js";
 
-export const HELP = `driftwatch ${VERSION}
+export const HELP = `apidrifter ${VERSION}
 
 Usage:
-  driftwatch diff <before> <after>            all changes between two specs or MCP snapshots
-  driftwatch breaking <before> <after>        breaking changes only (exit 1 if any)
-  driftwatch changelog <before> <after>       markdown changelog
-  driftwatch mcp snapshot <url> [--out f]     snapshot a remote MCP server
-  driftwatch mcp snapshot --stdio -- <cmd>    snapshot a local stdio MCP server
-  driftwatch mcp diff <snapshot> <url|file>   diff a snapshot against a server or snapshot
-  driftwatch plan <spec> [--out f]            requests the spec implies, with slots to fill
-  driftwatch run <spec> --base-url <url>      execute requests, verify responses, report
-  driftwatch verify <spec> --observations f   verify recorded observations
-  driftwatch serve                            run as an MCP server over stdio
+  apidrifter diff <before> <after>            all changes between two specs or MCP snapshots
+  apidrifter breaking <before> <after>        breaking changes only (exit 1 if any)
+  apidrifter changelog <before> <after>       markdown changelog
+  apidrifter mcp snapshot <url> [--out f]     snapshot a remote MCP server
+  apidrifter mcp snapshot --stdio -- <cmd>    snapshot a local stdio MCP server
+  apidrifter mcp diff <snapshot> <url|file>   diff a snapshot against a server or snapshot
+  apidrifter plan <spec> [--out f]            requests the spec implies, with slots to fill
+  apidrifter run <spec> --base-url <url>      execute requests, verify responses, report
+  apidrifter verify <spec> --observations f   verify recorded observations
+  apidrifter serve                            run as an MCP server over stdio
 
 Inputs are file paths or https:// URLs (http:// only for localhost).
 
 Common options:
   --format json|markdown|text   default: text on a terminal, json otherwise
-  --config <file>               driftwatch.config.json or .driftwatch.yaml (auto-loaded from cwd)
+  --config <file>               apidrifter.config.json or .apidrifter.yaml (auto-loaded from cwd)
   --fail-on breaking|warning|info   exit 1 at or above this level (default breaking)
   --timeout <ms>                network timeout (default 30000)
   --kind openapi|mcp            force the document kind for diff/breaking/changelog
@@ -91,10 +91,10 @@ export async function main(argv: readonly string[], io: CliIo): Promise<number> 
         const mcpArgs: ParsedArgs = { ...sub, positionals: mcpPositionals };
         if (mcpCommand === "snapshot") return await mcpSnapshotCommand(mcpArgs, io);
         if (mcpCommand === "diff") return await mcpDiffCommand(mcpArgs, io);
-        throw new UsageError("usage: driftwatch mcp <snapshot|diff> ...");
+        throw new UsageError("usage: apidrifter mcp <snapshot|diff> ...");
       }
       default:
-        throw new UsageError(`unknown command ${command}; run driftwatch --help`);
+        throw new UsageError(`unknown command ${command}; run apidrifter --help`);
     }
   } catch (err) {
     return report(err, io);
@@ -103,15 +103,15 @@ export async function main(argv: readonly string[], io: CliIo): Promise<number> 
 
 function report(err: unknown, io: CliIo): number {
   if (err instanceof UsageError || err instanceof InputError) {
-    io.stderr(`driftwatch: ${err.message}\n`);
+    io.stderr(`apidrifter: ${err.message}\n`);
     return EXIT_USAGE;
   }
-  if (err instanceof DriftwatchError) {
-    io.stderr(`driftwatch: ${err.code}: ${err.message}\n`);
+  if (err instanceof ApidrifterError) {
+    io.stderr(`apidrifter: ${err.code}: ${err.message}\n`);
     return EXIT_ENGINE;
   }
   const message = err instanceof Error ? err.message : String(err);
-  io.stderr(`driftwatch: unexpected error: ${message}\n`);
+  io.stderr(`apidrifter: unexpected error: ${message}\n`);
   return EXIT_ENGINE;
 }
 

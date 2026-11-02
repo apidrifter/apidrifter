@@ -1,4 +1,4 @@
-// Compares an oasdiff changelog (JSON) with a Driftwatch DiffResult and writes a
+// Compares an oasdiff changelog (JSON) with a Apidrifter DiffResult and writes a
 // Markdown report of disagreements.
 import { readFileSync } from "node:fs";
 
@@ -21,7 +21,7 @@ const dwEntries = dw.changes.map((c) => {
   const op = subject
     ? `${subject.split(" ")[0]} ${normPath(subject.split(" ").slice(1).join(" "))}`
     : "document";
-  return { tool: "driftwatch", id: c.id, severity: c.severity, op, text: c.message };
+  return { tool: "apidrifter", id: c.id, severity: c.severity, op, text: c.message };
 });
 
 const key = (e) => `${e.op}|${e.id}`;
@@ -32,7 +32,7 @@ const onlyOas = oasEntries.filter((e) => !dwByKey.has(key(e)));
 const onlyDw = dwEntries.filter((e) => !oasByKey.has(key(e)));
 const severityDiff = oasEntries
   .filter((e) => dwByKey.has(key(e)) && dwByKey.get(key(e)).severity !== e.severity)
-  .map((e) => ({ ...e, driftwatch: dwByKey.get(key(e)).severity }));
+  .map((e) => ({ ...e, apidrifter: dwByKey.get(key(e)).severity }));
 
 const opsOas = new Set(oasEntries.map((e) => e.op));
 const opsDw = new Set(dwEntries.map((e) => e.op));
@@ -41,16 +41,16 @@ const opsOnlyDw = [...opsDw].filter((o) => !opsOas.has(o)).sort();
 
 const lines = [];
 lines.push("# Oracle report", "");
-lines.push(`oasdiff: ${oasEntries.length} entries. driftwatch: ${dwEntries.length} entries.`, "");
+lines.push(`oasdiff: ${oasEntries.length} entries. apidrifter: ${dwEntries.length} entries.`, "");
 lines.push(`## Operations with changes only in oasdiff (${opsOnlyOas.length})`, "");
 for (const o of opsOnlyOas) lines.push(`- ${o}`);
-lines.push("", `## Operations with changes only in driftwatch (${opsOnlyDw.length})`, "");
+lines.push("", `## Operations with changes only in apidrifter (${opsOnlyDw.length})`, "");
 for (const o of opsOnlyDw) lines.push(`- ${o}`);
 lines.push("", `## Matching IDs with different severity (${severityDiff.length})`, "");
 for (const e of severityDiff)
-  lines.push(`- ${e.op} ${e.id}: oasdiff=${e.severity} driftwatch=${e.driftwatch}`);
+  lines.push(`- ${e.op} ${e.id}: oasdiff=${e.severity} apidrifter=${e.apidrifter}`);
 lines.push("", `## Entries only in oasdiff (${onlyOas.length})`, "");
 for (const e of onlyOas) lines.push(`- ${e.severity} ${e.op} ${e.id}: ${e.text}`);
-lines.push("", `## Entries only in driftwatch (${onlyDw.length})`, "");
+lines.push("", `## Entries only in apidrifter (${onlyDw.length})`, "");
 for (const e of onlyDw) lines.push(`- ${e.severity} ${e.op} ${e.id}: ${e.text}`);
 process.stdout.write(`${lines.join("\n")}\n`);

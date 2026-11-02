@@ -1,6 +1,6 @@
 # Public API conformance survey
 
-Read-only GET requests against public APIs that publish their own OpenAPI document, checked with `driftwatch run`.
+Read-only GET requests against public APIs that publish their own OpenAPI document, checked with `apidrifter run`.
 
 Columns: **body** = successful responses whose body does not match the documented schema (the headline number);
 **media** = successful responses in an undocumented media type; **errors** = undocumented 3xx/4xx statuses, usually

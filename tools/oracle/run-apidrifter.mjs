@@ -4,7 +4,7 @@ import { pathToFileURL } from "node:url";
 
 const [root, before, after] = process.argv.slice(2);
 if (!root || !before || !after) {
-  console.error("usage: run-driftwatch.mjs <repo-root> <before.json> <after.json>");
+  console.error("usage: run-apidrifter.mjs <repo-root> <before.json> <after.json>");
   process.exit(2);
 }
 const core = await import(pathToFileURL(`${root}/packages/core/dist/src/index.js`).href);

@@ -1,4 +1,4 @@
-import { type DiffResult, diff, renderMarkdown } from "@driftwatch/core";
+import { type DiffResult, diff, renderMarkdown } from "@apidrifter/core";
 import { flag, intFlag, type ParsedArgs, rejectUnknownFlags } from "../args.js";
 import { type CliIo, commonOptions, withFlags } from "../context.js";
 import { EXIT_OK, EXIT_THRESHOLD, UsageError } from "../errors.js";
@@ -11,7 +11,7 @@ async function loadPair(args: ParsedArgs, io: CliIo, command: string): Promise<D
   rejectUnknownFlags(args, FLAGS);
   const [before, after, extra] = args.positionals;
   if (before === undefined || after === undefined || extra !== undefined) {
-    throw new UsageError(`usage: driftwatch ${command} <before> <after>`);
+    throw new UsageError(`usage: apidrifter ${command} <before> <after>`);
   }
   const { config } = await commonOptions(args, io);
   const timeoutMs = intFlag(args, "timeout", 30_000);

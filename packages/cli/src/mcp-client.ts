@@ -1,4 +1,4 @@
-import type { McpSnapshotDocument } from "@driftwatch/core";
+import type { McpSnapshotDocument } from "@apidrifter/core";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
@@ -62,7 +62,7 @@ export async function snapshotMcp(
           env: target.env,
           stderr: "ignore",
         });
-  const client = new Client({ name: "driftwatch", version: VERSION });
+  const client = new Client({ name: "apidrifter", version: VERSION });
   const requestOptions = { timeout: options.timeoutMs };
   try {
     try {
@@ -82,7 +82,7 @@ export async function snapshotMcp(
     if (instructions !== undefined) server.instructions = instructions;
 
     const snapshot: McpSnapshotDocument = {
-      driftwatch: 1,
+      apidrifter: 1,
       kind: "mcp",
       capturedAt: (options.now ?? (() => new Date().toISOString()))(),
       server,
