@@ -1,6 +1,7 @@
 [
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -15,12 +16,24 @@
       "spec": "Add a \"302\" response under paths[\"/cookies/delete\"].get.responses."
     },
     "observation": 6,
-    "expected": ["200"],
+    "expected": [
+      "200"
+    ],
     "actual": 302,
+    "request": {
+      "method": "GET",
+      "path": "/cookies/delete",
+      "query": {
+        "freeform": "a"
+      },
+      "status": 302,
+      "mediaType": "text/html; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -35,8 +48,19 @@
       "spec": "Add a \"302\" response under paths[\"/cookies/set\"].get.responses."
     },
     "observation": 7,
-    "expected": ["200"],
+    "expected": [
+      "200"
+    ],
     "actual": 302,
+    "request": {
+      "method": "GET",
+      "path": "/cookies/set",
+      "query": {
+        "freeform": "a"
+      },
+      "status": 302,
+      "mediaType": "text/html; charset=utf-8"
+    },
     "review": "unreviewed"
   }
 ]

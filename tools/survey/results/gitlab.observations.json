@@ -1,0 +1,233 @@
+[
+  {
+    "index": 0,
+    "operationKey": "GET /api/v4/projects/{}",
+    "method": "GET",
+    "path": "/api/v4/projects/278964",
+    "query": {
+      "license": "false",
+      "statistics": "false",
+      "with_custom_attributes": "false"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:21:28.106Z"
+  },
+  {
+    "index": 1,
+    "operationKey": "GET /api/v4/groups/{}",
+    "method": "GET",
+    "path": "/api/v4/groups/278964",
+    "query": {
+      "with_custom_attributes": "false",
+      "with_projects": "true"
+    },
+    "status": 429,
+    "mediaType": "text/plain",
+    "capturedAt": "2026-10-30T22:22:03.545Z"
+  },
+  {
+    "index": 2,
+    "operationKey": "GET /api/v4/users/{}",
+    "method": "GET",
+    "path": "/api/v4/users/278964",
+    "query": {
+      "with_custom_attributes": "false"
+    },
+    "status": 429,
+    "mediaType": "text/plain",
+    "capturedAt": "2026-10-30T22:22:39.033Z"
+  },
+  {
+    "index": 3,
+    "operationKey": "GET /api/v4/version",
+    "method": "GET",
+    "path": "/api/v4/version",
+    "query": {},
+    "status": 429,
+    "mediaType": "text/plain",
+    "capturedAt": "2026-10-30T22:23:14.389Z"
+  },
+  {
+    "index": 4,
+    "operationKey": "GET /api/v4/projects/{}/repository/branches",
+    "method": "GET",
+    "path": "/api/v4/projects/278964/repository/branches",
+    "query": {
+      "page": "1",
+      "per_page": "20"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:23:20.187Z"
+  },
+  {
+    "index": 5,
+    "operationKey": "GET /api/v4/projects/{}/repository/commits",
+    "method": "GET",
+    "path": "/api/v4/projects/278964/repository/commits",
+    "query": {
+      "author": "John Smith",
+      "order": "default",
+      "page": "1",
+      "pagination": "legacy",
+      "path": "README.md",
+      "per_page": "20",
+      "ref_name": "v1.1.0",
+      "since": "2021-09-20T11:50:22.001Z",
+      "trailers": "false",
+      "until": "2021-09-20T11:50:22.001Z"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:23:25.500Z"
+  },
+  {
+    "index": 6,
+    "operationKey": "GET /api/v4/projects/{}/repository/contributors",
+    "method": "GET",
+    "path": "/api/v4/projects/278964/repository/contributors",
+    "query": {
+      "order_by": "commits",
+      "page": "1",
+      "per_page": "20",
+      "ref": "main",
+      "sort": "asc"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:23:30.949Z"
+  },
+  {
+    "index": 7,
+    "operationKey": "GET /api/v4/projects/{}/repository/tags",
+    "method": "GET",
+    "path": "/api/v4/projects/278964/repository/tags",
+    "query": {
+      "order_by": "updated",
+      "page": "1",
+      "per_page": "20",
+      "sort": "desc"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:23:36.480Z"
+  },
+  {
+    "index": 8,
+    "operationKey": "GET /api/v4/projects/{}/repository/tree",
+    "method": "GET",
+    "path": "/api/v4/projects/278964/repository/tree",
+    "query": {
+      "page": "1",
+      "page_token": "a1e8f8d745cc87e3a9248358d9352bb7f9a0aeba",
+      "pagination": "legacy",
+      "path": "files/html",
+      "per_page": "20",
+      "recursive": "false",
+      "ref": "main",
+      "with_last_commit": "false"
+    },
+    "status": 404,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:23:41.794Z"
+  },
+  {
+    "index": 9,
+    "operationKey": "GET /api/v4/projects/{}/issues",
+    "method": "GET",
+    "path": "/api/v4/projects/278964/issues",
+    "query": {
+      "order_by": "created_at",
+      "page": "1",
+      "per_page": "20",
+      "sort": "desc",
+      "state": "all",
+      "with_labels_details": "false"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:23:47.278Z"
+  },
+  {
+    "index": 10,
+    "operationKey": "GET /api/v4/projects/{}/labels",
+    "method": "GET",
+    "path": "/api/v4/projects/278964/labels",
+    "query": {
+      "include_ancestor_groups": "true",
+      "page": "1",
+      "per_page": "20",
+      "with_counts": "false"
+    },
+    "status": 401,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:23:52.509Z"
+  },
+  {
+    "index": 11,
+    "operationKey": "GET /api/v4/projects/{}/languages",
+    "method": "GET",
+    "path": "/api/v4/projects/278964/languages",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:23:57.794Z"
+  },
+  {
+    "index": 12,
+    "operationKey": "GET /api/v4/projects/{}/members",
+    "method": "GET",
+    "path": "/api/v4/projects/278964/members",
+    "query": {
+      "page": "1",
+      "per_page": "20"
+    },
+    "status": 401,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:24:03.036Z"
+  },
+  {
+    "index": 13,
+    "operationKey": "GET /api/v4/projects/{}/merge_requests",
+    "method": "GET",
+    "path": "/api/v4/projects/278964/merge_requests",
+    "query": {
+      "created_after": "2019-03-15T08:00:00Z",
+      "created_before": "2019-03-15T08:00:00Z",
+      "deployed_after": "2019-03-15T08:00:00Z",
+      "deployed_before": "2019-03-15T08:00:00Z",
+      "environment": "production",
+      "in": "title,description",
+      "merged_after": "2019-03-15T08:00:00Z",
+      "merged_before": "2019-03-15T08:00:00Z",
+      "order_by": "created_at",
+      "page": "1",
+      "per_page": "20",
+      "sort": "desc",
+      "state": "all",
+      "updated_after": "2019-03-15T08:00:00Z",
+      "updated_before": "2019-03-15T08:00:00Z",
+      "with_labels_details": "false",
+      "with_merge_status_recheck": "false"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:24:08.409Z"
+  },
+  {
+    "index": 14,
+    "operationKey": "GET /api/v4/projects/{}/milestones",
+    "method": "GET",
+    "path": "/api/v4/projects/278964/milestones",
+    "query": {
+      "page": "1",
+      "per_page": "20",
+      "sort": "due_date_asc",
+      "state": "all"
+    },
+    "status": 401,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:24:13.686Z"
+  }
+]

@@ -1,6 +1,7 @@
 [
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -18,10 +19,18 @@
     },
     "observation": 5,
     "actual": "externalDocs",
+    "request": {
+      "method": "GET",
+      "path": "/specs/apis.guru/2.2.0.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -39,10 +48,18 @@
     },
     "observation": 5,
     "actual": "info",
+    "request": {
+      "method": "GET",
+      "path": "/specs/apis.guru/2.2.0.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -60,10 +77,18 @@
     },
     "observation": 5,
     "actual": "link",
+    "request": {
+      "method": "GET",
+      "path": "/specs/apis.guru/2.2.0.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -81,10 +106,18 @@
     },
     "observation": 5,
     "actual": "openapiVer",
+    "request": {
+      "method": "GET",
+      "path": "/specs/apis.guru/2.2.0.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -102,10 +135,18 @@
     },
     "observation": 5,
     "expected": "preferred",
+    "request": {
+      "method": "GET",
+      "path": "/specs/apis.guru/2.2.0.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -123,10 +164,18 @@
     },
     "observation": 5,
     "actual": "swaggerUrl",
+    "request": {
+      "method": "GET",
+      "path": "/specs/apis.guru/2.2.0.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -144,10 +193,18 @@
     },
     "observation": 5,
     "actual": "swaggerYamlUrl",
+    "request": {
+      "method": "GET",
+      "path": "/specs/apis.guru/2.2.0.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -165,10 +222,18 @@
     },
     "observation": 5,
     "actual": "updated",
+    "request": {
+      "method": "GET",
+      "path": "/specs/apis.guru/2.2.0.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -186,10 +251,18 @@
     },
     "observation": 5,
     "expected": "versions",
+    "request": {
+      "method": "GET",
+      "path": "/specs/apis.guru/2.2.0.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -207,10 +280,18 @@
     },
     "observation": 0,
     "expected": "added",
+    "request": {
+      "method": "GET",
+      "path": "/apis.guru.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -228,10 +309,18 @@
     },
     "observation": 0,
     "actual": "apis.guru",
+    "request": {
+      "method": "GET",
+      "path": "/apis.guru.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -249,10 +338,18 @@
     },
     "observation": 0,
     "expected": "preferred",
+    "request": {
+      "method": "GET",
+      "path": "/apis.guru.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -270,6 +367,13 @@
     },
     "observation": 0,
     "expected": "versions",
+    "request": {
+      "method": "GET",
+      "path": "/apis.guru.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   }
 ]

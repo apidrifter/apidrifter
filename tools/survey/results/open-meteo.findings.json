@@ -1,6 +1,7 @@
 [
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -18,6 +19,27 @@
     },
     "observation": 0,
     "actual": "interval",
+    "request": {
+      "method": "GET",
+      "path": "/v1/forecast",
+      "query": {
+        "azimuth": "0",
+        "current": "temperature_2m",
+        "daily": "temperature_2m_max",
+        "forecast_days": "7",
+        "hourly": "temperature_2m",
+        "latitude": "52.52",
+        "longitude": "13.41",
+        "past_days": "0",
+        "precipitation_unit": "mm",
+        "temperature_unit": "celsius",
+        "tilt": "0",
+        "timeformat": "iso8601",
+        "wind_speed_unit": "kmh"
+      },
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   }
 ]

@@ -1,0 +1,404 @@
+[
+  {
+    "index": 0,
+    "operationKey": "GET /gitignore/templates",
+    "method": "GET",
+    "path": "/gitignore/templates",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:11.993Z"
+  },
+  {
+    "index": 1,
+    "operationKey": "GET /gitignore/templates/{}",
+    "method": "GET",
+    "path": "/gitignore/templates/gitea",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:13.085Z"
+  },
+  {
+    "index": 2,
+    "operationKey": "GET /label/templates",
+    "method": "GET",
+    "path": "/label/templates",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:14.174Z"
+  },
+  {
+    "index": 3,
+    "operationKey": "GET /label/templates/{}",
+    "method": "GET",
+    "path": "/label/templates/gitea",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:15.255Z"
+  },
+  {
+    "index": 4,
+    "operationKey": "GET /licenses",
+    "method": "GET",
+    "path": "/licenses",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:16.343Z"
+  },
+  {
+    "index": 5,
+    "operationKey": "GET /licenses/{}",
+    "method": "GET",
+    "path": "/licenses/gitea",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:17.428Z"
+  },
+  {
+    "index": 6,
+    "operationKey": "GET /orgs",
+    "method": "GET",
+    "path": "/orgs",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:18.732Z"
+  },
+  {
+    "index": 7,
+    "operationKey": "GET /orgs/{}",
+    "method": "GET",
+    "path": "/orgs/gitea",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:19.823Z"
+  },
+  {
+    "index": 8,
+    "operationKey": "GET /orgs/{}/activities/feeds",
+    "method": "GET",
+    "path": "/orgs/gitea/activities/feeds",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:21.671Z"
+  },
+  {
+    "index": 9,
+    "operationKey": "GET /orgs/{}/blocks",
+    "method": "GET",
+    "path": "/orgs/gitea/blocks",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:22.765Z"
+  },
+  {
+    "index": 10,
+    "operationKey": "GET /orgs/{}/blocks/{}",
+    "method": "GET",
+    "path": "/orgs/gitea/blocks/gitea",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:23.857Z"
+  },
+  {
+    "index": 11,
+    "operationKey": "GET /orgs/{}/labels",
+    "method": "GET",
+    "path": "/orgs/gitea/labels",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:24.946Z"
+  },
+  {
+    "index": 12,
+    "operationKey": "GET /orgs/{}/labels/{}",
+    "method": "GET",
+    "path": "/orgs/gitea/labels/1",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:26.038Z"
+  },
+  {
+    "index": 13,
+    "operationKey": "GET /orgs/{}/projects",
+    "method": "GET",
+    "path": "/orgs/gitea/projects",
+    "query": {
+      "state": "open"
+    },
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:27.128Z"
+  },
+  {
+    "index": 14,
+    "operationKey": "GET /orgs/{}/projects/{}",
+    "method": "GET",
+    "path": "/orgs/gitea/projects/1",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:28.218Z"
+  },
+  {
+    "index": 15,
+    "operationKey": "GET /orgs/{}/projects/{}/columns",
+    "method": "GET",
+    "path": "/orgs/gitea/projects/1/columns",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:29.305Z"
+  },
+  {
+    "index": 16,
+    "operationKey": "GET /orgs/{}/public_members",
+    "method": "GET",
+    "path": "/orgs/gitea/public_members",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:30.417Z"
+  },
+  {
+    "index": 17,
+    "operationKey": "GET /orgs/{}/public_members/{}",
+    "method": "GET",
+    "path": "/orgs/gitea/public_members/gitea",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:31.508Z"
+  },
+  {
+    "index": 18,
+    "operationKey": "GET /orgs/{}/repos",
+    "method": "GET",
+    "path": "/orgs/gitea/repos",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:32.685Z"
+  },
+  {
+    "index": 19,
+    "operationKey": "GET /packages/{}",
+    "method": "GET",
+    "path": "/packages/gitea",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:33.776Z"
+  },
+  {
+    "index": 20,
+    "operationKey": "GET /repos/{}/{}",
+    "method": "GET",
+    "path": "/repos/gitea/tea",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:34.869Z"
+  },
+  {
+    "index": 21,
+    "operationKey": "GET /repos/{}/{}/actions/artifacts",
+    "method": "GET",
+    "path": "/repos/gitea/tea/actions/artifacts",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:35.955Z"
+  },
+  {
+    "index": 22,
+    "operationKey": "GET /repos/{}/{}/actions/jobs",
+    "method": "GET",
+    "path": "/repos/gitea/tea/actions/jobs",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:37.048Z"
+  },
+  {
+    "index": 23,
+    "operationKey": "GET /repos/{}/{}/actions/runners",
+    "method": "GET",
+    "path": "/repos/gitea/tea/actions/runners",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:38.137Z"
+  },
+  {
+    "index": 24,
+    "operationKey": "GET /repos/{}/{}/actions/runs",
+    "method": "GET",
+    "path": "/repos/gitea/tea/actions/runs",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:39.241Z"
+  },
+  {
+    "index": 25,
+    "operationKey": "GET /repos/{}/{}/actions/secrets",
+    "method": "GET",
+    "path": "/repos/gitea/tea/actions/secrets",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:40.379Z"
+  },
+  {
+    "index": 26,
+    "operationKey": "GET /repos/{}/{}/actions/tasks",
+    "method": "GET",
+    "path": "/repos/gitea/tea/actions/tasks",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:42.367Z"
+  },
+  {
+    "index": 27,
+    "operationKey": "GET /repos/{}/{}/actions/variables",
+    "method": "GET",
+    "path": "/repos/gitea/tea/actions/variables",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:43.464Z"
+  },
+  {
+    "index": 28,
+    "operationKey": "GET /repos/{}/{}/actions/workflows",
+    "method": "GET",
+    "path": "/repos/gitea/tea/actions/workflows",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:44.551Z"
+  },
+  {
+    "index": 29,
+    "operationKey": "GET /repos/{}/{}/activities/feeds",
+    "method": "GET",
+    "path": "/repos/gitea/tea/activities/feeds",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:50.287Z"
+  },
+  {
+    "index": 30,
+    "operationKey": "GET /repos/{}/{}/assignees",
+    "method": "GET",
+    "path": "/repos/gitea/tea/assignees",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:51.376Z"
+  },
+  {
+    "index": 31,
+    "operationKey": "GET /repos/{}/{}/branch_protections",
+    "method": "GET",
+    "path": "/repos/gitea/tea/branch_protections",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:52.485Z"
+  },
+  {
+    "index": 32,
+    "operationKey": "GET /repos/{}/{}/branch_protections/{}",
+    "method": "GET",
+    "path": "/repos/gitea/tea/branch_protections/gitea",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:53.574Z"
+  },
+  {
+    "index": 33,
+    "operationKey": "GET /repos/{}/{}/branches",
+    "method": "GET",
+    "path": "/repos/gitea/tea/branches",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:54.718Z"
+  },
+  {
+    "index": 34,
+    "operationKey": "GET /repos/{}/{}/branches/{}",
+    "method": "GET",
+    "path": "/repos/gitea/tea/branches/main",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:55.816Z"
+  },
+  {
+    "index": 35,
+    "operationKey": "GET /repos/{}/{}/collaborators",
+    "method": "GET",
+    "path": "/repos/gitea/tea/collaborators",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:56.921Z"
+  },
+  {
+    "index": 36,
+    "operationKey": "GET /repos/{}/{}/commits",
+    "method": "GET",
+    "path": "/repos/gitea/tea/commits",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:58.355Z"
+  },
+  {
+    "index": 37,
+    "operationKey": "GET /repos/{}/{}/commits/{}/pull",
+    "method": "GET",
+    "path": "/repos/gitea/tea/commits/main/pull",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:42:59.448Z"
+  },
+  {
+    "index": 38,
+    "operationKey": "GET /repos/{}/{}/commits/{}/status",
+    "method": "GET",
+    "path": "/repos/gitea/tea/commits/main/status",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:00.556Z"
+  },
+  {
+    "index": 39,
+    "operationKey": "GET /repos/{}/{}/commits/{}/statuses",
+    "method": "GET",
+    "path": "/repos/gitea/tea/commits/main/statuses",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:03.203Z"
+  }
+]

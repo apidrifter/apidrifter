@@ -1,0 +1,464 @@
+[
+  {
+    "index": 0,
+    "operationKey": "GET /users/{}",
+    "method": "GET",
+    "path": "/users/octocat",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:23.394Z"
+  },
+  {
+    "index": 1,
+    "operationKey": "GET /orgs/{}",
+    "method": "GET",
+    "path": "/orgs/github",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:25.061Z"
+  },
+  {
+    "index": 2,
+    "operationKey": "GET /gists/{}",
+    "method": "GET",
+    "path": "/gists/aa5a315d61ae9438b18d",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:26.694Z"
+  },
+  {
+    "index": 3,
+    "operationKey": "GET /meta",
+    "method": "GET",
+    "path": "/meta",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:28.303Z"
+  },
+  {
+    "index": 4,
+    "operationKey": "GET /emojis",
+    "method": "GET",
+    "path": "/emojis",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:29.950Z"
+  },
+  {
+    "index": 5,
+    "operationKey": "GET /licenses",
+    "method": "GET",
+    "path": "/licenses",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:31.591Z"
+  },
+  {
+    "index": 6,
+    "operationKey": "GET /licenses/{}",
+    "method": "GET",
+    "path": "/licenses/mit",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:33.219Z"
+  },
+  {
+    "index": 7,
+    "operationKey": "GET /gitignore/templates",
+    "method": "GET",
+    "path": "/gitignore/templates",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:34.883Z"
+  },
+  {
+    "index": 8,
+    "operationKey": "GET /repos/{}/{}/branches",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/branches",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:36.539Z"
+  },
+  {
+    "index": 9,
+    "operationKey": "GET /repos/{}/{}/branches/{}",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/branches/master",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:38.302Z"
+  },
+  {
+    "index": 10,
+    "operationKey": "GET /repos/{}/{}/branches/{}/protection",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/branches/master/protection",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:39.890Z"
+  },
+  {
+    "index": 11,
+    "operationKey": "GET /repos/{}/{}/branches/{}/protection/enforce_admins",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/branches/master/protection/enforce_admins",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:41.472Z"
+  },
+  {
+    "index": 12,
+    "operationKey": "GET /repos/{}/{}/branches/{}/protection/required_pull_request_reviews",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/branches/master/protection/required_pull_request_reviews",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:43.055Z"
+  },
+  {
+    "index": 13,
+    "operationKey": "GET /repos/{}/{}/branches/{}/protection/required_signatures",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/branches/master/protection/required_signatures",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:44.640Z"
+  },
+  {
+    "index": 14,
+    "operationKey": "GET /repos/{}/{}/branches/{}/protection/required_status_checks",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/branches/master/protection/required_status_checks",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:46.222Z"
+  },
+  {
+    "index": 15,
+    "operationKey": "GET /repos/{}/{}/branches/{}/protection/required_status_checks/contexts",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/branches/master/protection/required_status_checks/contexts",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:47.807Z"
+  },
+  {
+    "index": 16,
+    "operationKey": "GET /repos/{}/{}/branches/{}/protection/restrictions",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/branches/master/protection/restrictions",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:49.392Z"
+  },
+  {
+    "index": 17,
+    "operationKey": "GET /repos/{}/{}/branches/{}/protection/restrictions/apps",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/branches/master/protection/restrictions/apps",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:50.998Z"
+  },
+  {
+    "index": 18,
+    "operationKey": "GET /repos/{}/{}/branches/{}/protection/restrictions/teams",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/branches/master/protection/restrictions/teams",
+    "query": {},
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:52.555Z"
+  },
+  {
+    "index": 19,
+    "operationKey": "GET /repos/{}/{}/branches/{}/protection/restrictions/users",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/branches/master/protection/restrictions/users",
+    "query": {},
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:54.112Z"
+  },
+  {
+    "index": 20,
+    "operationKey": "GET /repos/{}/{}/commits",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/commits",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:55.667Z"
+  },
+  {
+    "index": 21,
+    "operationKey": "GET /repos/{}/{}/commits/{}",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/commits/master",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:57.222Z"
+  },
+  {
+    "index": 22,
+    "operationKey": "GET /repos/{}/{}/commits/{}/branches-where-head",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/commits/7fd1a60b01f91b314f59955a4e4d4e80d8edf11d/branches-where-head",
+    "query": {},
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:20:58.776Z"
+  },
+  {
+    "index": 23,
+    "operationKey": "GET /repos/{}/{}/commits/{}/check-runs",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/commits/master/check-runs",
+    "query": {
+      "filter": "latest",
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:00.332Z"
+  },
+  {
+    "index": 24,
+    "operationKey": "GET /repos/{}/{}/commits/{}/check-suites",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/commits/master/check-suites",
+    "query": {
+      "app_id": "1",
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:01.894Z"
+  },
+  {
+    "index": 25,
+    "operationKey": "GET /repos/{}/{}/commits/{}/comments",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/commits/7fd1a60b01f91b314f59955a4e4d4e80d8edf11d/comments",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:03.445Z"
+  },
+  {
+    "index": 26,
+    "operationKey": "GET /repos/{}/{}/commits/{}/pulls",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/commits/7fd1a60b01f91b314f59955a4e4d4e80d8edf11d/pulls",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:04.999Z"
+  },
+  {
+    "index": 27,
+    "operationKey": "GET /repos/{}/{}/commits/{}/status",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/commits/master/status",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:06.561Z"
+  },
+  {
+    "index": 28,
+    "operationKey": "GET /repos/{}/{}/commits/{}/statuses",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/commits/master/statuses",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:08.113Z"
+  },
+  {
+    "index": 29,
+    "operationKey": "GET /repos/{}/{}/contents/{}",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/contents/README",
+    "query": {},
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:09.681Z"
+  },
+  {
+    "index": 30,
+    "operationKey": "GET /repos/{}/{}/contributors",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/contributors",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:11.238Z"
+  },
+  {
+    "index": 31,
+    "operationKey": "GET /repos/{}/{}/issues",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/issues",
+    "query": {
+      "direction": "desc",
+      "page": "1",
+      "per_page": "30",
+      "sort": "created",
+      "state": "open"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:12.791Z"
+  },
+  {
+    "index": 32,
+    "operationKey": "GET /repos/{}/{}/issues/{}",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/issues/1",
+    "query": {},
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:14.357Z"
+  },
+  {
+    "index": 33,
+    "operationKey": "GET /repos/{}/{}/issues/{}/artifacts",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/issues/1/artifacts",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:15.912Z"
+  },
+  {
+    "index": 34,
+    "operationKey": "GET /repos/{}/{}/issues/{}/comments",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/issues/1/comments",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:17.470Z"
+  },
+  {
+    "index": 35,
+    "operationKey": "GET /repos/{}/{}/issues/{}/dependencies/blocked_by",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/issues/1/dependencies/blocked_by",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:19.025Z"
+  },
+  {
+    "index": 36,
+    "operationKey": "GET /repos/{}/{}/issues/{}/dependencies/blocking",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/issues/1/dependencies/blocking",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:20.577Z"
+  },
+  {
+    "index": 37,
+    "operationKey": "GET /repos/{}/{}/issues/{}/events",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/issues/1/events",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:22.131Z"
+  },
+  {
+    "index": 38,
+    "operationKey": "GET /repos/{}/{}/issues/{}/issue-field-values",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/issues/1/issue-field-values",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:23.693Z"
+  },
+  {
+    "index": 39,
+    "operationKey": "GET /repos/{}/{}/issues/{}/labels",
+    "method": "GET",
+    "path": "/repos/octocat/Hello-World/issues/1/labels",
+    "query": {
+      "page": "1",
+      "per_page": "30"
+    },
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T22:21:25.246Z"
+  }
+]

@@ -1,0 +1,208 @@
+[
+  {
+    "index": 0,
+    "operationKey": "GET /anything",
+    "method": "GET",
+    "path": "/anything",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:44.477Z"
+  },
+  {
+    "index": 1,
+    "operationKey": "GET /base64/{}",
+    "method": "GET",
+    "path": "/base64/aGVsbG8%3D",
+    "query": {},
+    "status": 200,
+    "mediaType": "text/plain",
+    "capturedAt": "2026-10-30T22:10:45.035Z"
+  },
+  {
+    "index": 2,
+    "operationKey": "GET /brotli",
+    "method": "GET",
+    "path": "/brotli",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:45.600Z"
+  },
+  {
+    "index": 3,
+    "operationKey": "GET /cache",
+    "method": "GET",
+    "path": "/cache",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:46.154Z"
+  },
+  {
+    "index": 4,
+    "operationKey": "GET /cache/{}",
+    "method": "GET",
+    "path": "/cache/60",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:46.718Z"
+  },
+  {
+    "index": 5,
+    "operationKey": "GET /cookies",
+    "method": "GET",
+    "path": "/cookies",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:47.275Z"
+  },
+  {
+    "index": 6,
+    "operationKey": "GET /cookies/delete",
+    "method": "GET",
+    "path": "/cookies/delete",
+    "query": {
+      "freeform": "a"
+    },
+    "status": 302,
+    "mediaType": "text/html; charset=utf-8",
+    "capturedAt": "2026-10-30T22:10:47.843Z"
+  },
+  {
+    "index": 7,
+    "operationKey": "GET /cookies/set",
+    "method": "GET",
+    "path": "/cookies/set",
+    "query": {
+      "freeform": "a"
+    },
+    "status": 302,
+    "mediaType": "text/html; charset=utf-8",
+    "capturedAt": "2026-10-30T22:10:48.398Z"
+  },
+  {
+    "index": 8,
+    "operationKey": "GET /deflate",
+    "method": "GET",
+    "path": "/deflate",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:48.958Z"
+  },
+  {
+    "index": 9,
+    "operationKey": "GET /encoding/utf8",
+    "method": "GET",
+    "path": "/encoding/utf8",
+    "query": {},
+    "status": 200,
+    "mediaType": "text/html; charset=utf-8",
+    "capturedAt": "2026-10-30T22:10:49.561Z"
+  },
+  {
+    "index": 10,
+    "operationKey": "GET /get",
+    "method": "GET",
+    "path": "/get",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:50.116Z"
+  },
+  {
+    "index": 11,
+    "operationKey": "GET /gzip",
+    "method": "GET",
+    "path": "/gzip",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:50.670Z"
+  },
+  {
+    "index": 12,
+    "operationKey": "GET /headers",
+    "method": "GET",
+    "path": "/headers",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:51.223Z"
+  },
+  {
+    "index": 13,
+    "operationKey": "GET /html",
+    "method": "GET",
+    "path": "/html",
+    "query": {},
+    "status": 200,
+    "mediaType": "text/html; charset=utf-8",
+    "capturedAt": "2026-10-30T22:10:51.778Z"
+  },
+  {
+    "index": 14,
+    "operationKey": "GET /ip",
+    "method": "GET",
+    "path": "/ip",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:52.337Z"
+  },
+  {
+    "index": 15,
+    "operationKey": "GET /json",
+    "method": "GET",
+    "path": "/json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:52.893Z"
+  },
+  {
+    "index": 16,
+    "operationKey": "GET /response-headers",
+    "method": "GET",
+    "path": "/response-headers",
+    "query": {
+      "freeform": "a"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:53.448Z"
+  },
+  {
+    "index": 17,
+    "operationKey": "GET /robots.txt",
+    "method": "GET",
+    "path": "/robots.txt",
+    "query": {},
+    "status": 200,
+    "mediaType": "text/plain",
+    "capturedAt": "2026-10-30T22:10:54.006Z"
+  },
+  {
+    "index": 18,
+    "operationKey": "GET /user-agent",
+    "method": "GET",
+    "path": "/user-agent",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:54.561Z"
+  },
+  {
+    "index": 19,
+    "operationKey": "GET /uuid",
+    "method": "GET",
+    "path": "/uuid",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:10:55.125Z"
+  }
+]

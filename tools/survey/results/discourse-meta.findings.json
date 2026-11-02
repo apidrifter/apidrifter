@@ -1,6 +1,7 @@
 [
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -18,10 +19,18 @@
     },
     "observation": 1,
     "expected": "available_groups",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -39,10 +48,18 @@
     },
     "observation": 1,
     "expected": "can_delete",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -60,10 +77,18 @@
     },
     "observation": 1,
     "expected": "can_edit",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -81,10 +106,18 @@
     },
     "observation": 1,
     "actual": "activity_pub_default_visibility",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -102,10 +135,18 @@
     },
     "observation": 1,
     "actual": "activity_pub_post_object_type",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -123,10 +164,18 @@
     },
     "observation": 1,
     "actual": "activity_pub_publication_type",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -144,10 +193,18 @@
     },
     "observation": 1,
     "actual": "enable_accepted_answers",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -165,10 +222,18 @@
     },
     "observation": 1,
     "actual": "enable_open_filter",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -186,10 +251,18 @@
     },
     "observation": 1,
     "actual": "enable_unassigned_filter",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -207,10 +280,18 @@
     },
     "observation": 1,
     "actual": "prioritize_open_filter",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -228,10 +309,18 @@
     },
     "observation": 1,
     "actual": "disable_topic_resorting",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -249,10 +338,18 @@
     },
     "observation": 1,
     "actual": "doc_index_topic_id",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -270,10 +367,18 @@
     },
     "observation": 1,
     "expected": "email_in",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -291,10 +396,18 @@
     },
     "observation": 1,
     "expected": "email_in_allow_strangers",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -312,10 +425,18 @@
     },
     "observation": 1,
     "expected": "group_permissions",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -333,10 +454,18 @@
     },
     "observation": 1,
     "actual": "has_chat_channels",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -354,10 +483,18 @@
     },
     "observation": 1,
     "actual": "moderating_group_ids",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -375,10 +512,18 @@
     },
     "observation": 1,
     "expected": "notification_level",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -396,10 +541,18 @@
     },
     "observation": 1,
     "actual": "parent_category_id",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -417,10 +570,18 @@
     },
     "observation": 1,
     "actual": "sort_topics_by_event_start_date",
+    "request": {
+      "method": "GET",
+      "path": "/c/1/show.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -435,12 +596,22 @@
       "spec": "Add a \"301\" response under paths[\"/c/{slug}/{id}.json\"].get.responses."
     },
     "observation": 0,
-    "expected": ["200"],
+    "expected": [
+      "200"
+    ],
     "actual": 301,
+    "request": {
+      "method": "GET",
+      "path": "/c/general/1.json",
+      "query": {},
+      "status": 301,
+      "mediaType": "text/html; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -458,10 +629,18 @@
     },
     "observation": 2,
     "expected": "can_edit",
+    "request": {
+      "method": "GET",
+      "path": "/categories.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -479,10 +658,18 @@
     },
     "observation": 2,
     "actual": "custom_fields",
+    "request": {
+      "method": "GET",
+      "path": "/categories.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -500,10 +687,18 @@
     },
     "observation": 2,
     "actual": "disable_topic_resorting",
+    "request": {
+      "method": "GET",
+      "path": "/categories.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -521,10 +716,18 @@
     },
     "observation": 2,
     "actual": "doc_index_topic_id",
+    "request": {
+      "method": "GET",
+      "path": "/categories.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -541,12 +744,22 @@
       "spec": "Allow null at paths[\"/categories.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category_list\"].properties[\"categories\"].items.properties[\"permission\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 2,
-    "expected": ["integer"],
+    "expected": [
+      "integer"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/categories.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -564,10 +777,18 @@
     },
     "observation": 2,
     "actual": "sort_topics_by_event_start_date",
+    "request": {
+      "method": "GET",
+      "path": "/categories.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -585,10 +806,18 @@
     },
     "observation": 2,
     "actual": "doc_category_index",
+    "request": {
+      "method": "GET",
+      "path": "/categories.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -606,10 +835,18 @@
     },
     "observation": 4,
     "expected": "at_capacity",
+    "request": {
+      "method": "GET",
+      "path": "/discourse-post-event/events.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -627,10 +864,18 @@
     },
     "observation": 4,
     "expected": "can_act_on_discourse_post_event",
+    "request": {
+      "method": "GET",
+      "path": "/discourse-post-event/events.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -648,10 +893,18 @@
     },
     "observation": 4,
     "expected": "can_update_attendance",
+    "request": {
+      "method": "GET",
+      "path": "/discourse-post-event/events.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -669,10 +922,18 @@
     },
     "observation": 4,
     "expected": "is_closed",
+    "request": {
+      "method": "GET",
+      "path": "/discourse-post-event/events.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -690,10 +951,18 @@
     },
     "observation": 4,
     "expected": "is_expired",
+    "request": {
+      "method": "GET",
+      "path": "/discourse-post-event/events.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -711,10 +980,18 @@
     },
     "observation": 4,
     "expected": "is_ongoing",
+    "request": {
+      "method": "GET",
+      "path": "/discourse-post-event/events.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -732,10 +1009,18 @@
     },
     "observation": 4,
     "expected": "is_private",
+    "request": {
+      "method": "GET",
+      "path": "/discourse-post-event/events.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -753,10 +1038,18 @@
     },
     "observation": 4,
     "expected": "is_public",
+    "request": {
+      "method": "GET",
+      "path": "/discourse-post-event/events.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -774,10 +1067,18 @@
     },
     "observation": 4,
     "expected": "is_standalone",
+    "request": {
+      "method": "GET",
+      "path": "/discourse-post-event/events.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -794,12 +1095,22 @@
       "spec": "Change the type at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items.properties[\"post\"].properties[\"topic\"].properties[\"tags\"].items to \"object\"."
     },
     "observation": 4,
-    "expected": ["string"],
+    "expected": [
+      "string"
+    ],
     "actual": "object",
+    "request": {
+      "method": "GET",
+      "path": "/discourse-post-event/events.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -817,10 +1128,18 @@
     },
     "observation": 4,
     "expected": "should_display_invitees",
+    "request": {
+      "method": "GET",
+      "path": "/discourse-post-event/events.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -838,10 +1157,18 @@
     },
     "observation": 4,
     "expected": "status",
+    "request": {
+      "method": "GET",
+      "path": "/discourse-post-event/events.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -859,10 +1186,18 @@
     },
     "observation": 5,
     "expected": "bio_raw",
+    "request": {
+      "method": "GET",
+      "path": "/groups.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -880,10 +1215,18 @@
     },
     "observation": 5,
     "expected": "can_admin_group",
+    "request": {
+      "method": "GET",
+      "path": "/groups.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -901,10 +1244,18 @@
     },
     "observation": 5,
     "expected": "display_name",
+    "request": {
+      "method": "GET",
+      "path": "/groups.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -922,10 +1273,18 @@
     },
     "observation": 5,
     "expected": "has_messages",
+    "request": {
+      "method": "GET",
+      "path": "/groups.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -943,10 +1302,18 @@
     },
     "observation": 5,
     "expected": "incoming_email",
+    "request": {
+      "method": "GET",
+      "path": "/groups.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -963,12 +1330,23 @@
       "spec": "Change the type at paths[\"/groups.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"groups\"].items.properties[\"grant_trust_level\"] to \"integer\"."
     },
     "observation": 5,
-    "expected": ["null", "string"],
+    "expected": [
+      "null",
+      "string"
+    ],
     "actual": "integer",
+    "request": {
+      "method": "GET",
+      "path": "/groups.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -983,12 +1361,22 @@
       "spec": "Add a \"404\" response under paths[\"/groups/by-id/{id}.json\"].get.responses."
     },
     "observation": 8,
-    "expected": ["200"],
+    "expected": [
+      "200"
+    ],
     "actual": 404,
+    "request": {
+      "method": "GET",
+      "path": "/groups/by-id/1.json",
+      "query": {},
+      "status": 404,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -1003,12 +1391,22 @@
       "spec": "Add a \"404\" response under paths[\"/groups/{name}.json\"].get.responses."
     },
     "observation": 6,
-    "expected": ["200"],
+    "expected": [
+      "200"
+    ],
     "actual": 404,
+    "request": {
+      "method": "GET",
+      "path": "/groups/general.json",
+      "query": {},
+      "status": 404,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -1023,12 +1421,22 @@
       "spec": "Add a \"404\" response under paths[\"/groups/{name}/members.json\"].get.responses."
     },
     "observation": 7,
-    "expected": ["200"],
+    "expected": [
+      "200"
+    ],
     "actual": 404,
+    "request": {
+      "method": "GET",
+      "path": "/groups/general/members.json",
+      "query": {},
+      "status": 404,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1046,10 +1454,18 @@
     },
     "observation": 9,
     "actual": "accepted_answer",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1067,10 +1483,18 @@
     },
     "observation": 9,
     "actual": "can_accept_answer",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1088,10 +1512,18 @@
     },
     "observation": 9,
     "actual": "can_unaccept_answer",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1109,10 +1541,18 @@
     },
     "observation": 9,
     "actual": "current_user_reaction",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1130,10 +1570,18 @@
     },
     "observation": 9,
     "actual": "current_user_used_main_reaction",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1151,10 +1599,18 @@
     },
     "observation": 9,
     "actual": "customer_flair_customer",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1172,10 +1628,18 @@
     },
     "observation": 9,
     "actual": "event",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -1192,12 +1656,23 @@
       "spec": "Change the type at paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties[\"flair_group_id\"] to \"integer\"."
     },
     "observation": 9,
-    "expected": ["null", "string"],
+    "expected": [
+      "null",
+      "string"
+    ],
     "actual": "integer",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1215,10 +1690,18 @@
     },
     "observation": 9,
     "actual": "is_localized",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1236,10 +1719,18 @@
     },
     "observation": 9,
     "actual": "language",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1257,10 +1748,18 @@
     },
     "observation": 9,
     "actual": "locale",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1278,10 +1777,18 @@
     },
     "observation": 9,
     "actual": "reaction_users_count",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1299,10 +1806,18 @@
     },
     "observation": 9,
     "actual": "reactions",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -1319,12 +1834,23 @@
       "spec": "Change the type at paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties[\"reply_to_post_number\"] to \"integer\"."
     },
     "observation": 9,
-    "expected": ["null", "string"],
+    "expected": [
+      "null",
+      "string"
+    ],
     "actual": "integer",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1342,10 +1868,18 @@
     },
     "observation": 9,
     "actual": "reply_to_user",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -1363,10 +1897,18 @@
     },
     "observation": 9,
     "expected": "reviewable_id",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -1384,10 +1926,18 @@
     },
     "observation": 9,
     "expected": "reviewable_score_count",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -1405,10 +1955,18 @@
     },
     "observation": 9,
     "expected": "reviewable_score_pending_count",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1426,10 +1984,18 @@
     },
     "observation": 9,
     "actual": "title_is_group",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1447,10 +2013,18 @@
     },
     "observation": 9,
     "actual": "topic_accepted_answer",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -1468,10 +2042,18 @@
     },
     "observation": 9,
     "expected": "can_act",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1489,10 +2071,18 @@
     },
     "observation": 9,
     "actual": "count",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1510,10 +2100,18 @@
     },
     "observation": 9,
     "actual": "localization_outdated",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1531,10 +2129,18 @@
     },
     "observation": 9,
     "actual": "group_moderator",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1552,10 +2158,18 @@
     },
     "observation": 9,
     "actual": "calendar_details",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1573,10 +2187,18 @@
     },
     "observation": 9,
     "actual": "can_vote",
+    "request": {
+      "method": "GET",
+      "path": "/posts.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1594,10 +2216,18 @@
     },
     "observation": 10,
     "actual": "accepted_answer",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1615,10 +2245,18 @@
     },
     "observation": 10,
     "actual": "badges_granted",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1636,10 +2274,18 @@
     },
     "observation": 10,
     "actual": "calendar_details",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1657,10 +2303,18 @@
     },
     "observation": 10,
     "actual": "can_accept_answer",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1678,10 +2332,18 @@
     },
     "observation": 10,
     "actual": "can_unaccept_answer",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1699,10 +2361,18 @@
     },
     "observation": 10,
     "actual": "can_vote",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1720,10 +2390,18 @@
     },
     "observation": 10,
     "actual": "current_user_reaction",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1741,10 +2419,18 @@
     },
     "observation": 10,
     "actual": "current_user_used_main_reaction",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1762,10 +2448,18 @@
     },
     "observation": 10,
     "actual": "customer_flair_customer",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1783,10 +2477,18 @@
     },
     "observation": 10,
     "actual": "event",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1804,10 +2506,18 @@
     },
     "observation": 10,
     "actual": "is_localized",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1825,10 +2535,18 @@
     },
     "observation": 10,
     "actual": "language",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1846,10 +2564,18 @@
     },
     "observation": 10,
     "actual": "locale",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1867,10 +2593,18 @@
     },
     "observation": 10,
     "actual": "reaction_users_count",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1888,10 +2622,18 @@
     },
     "observation": 10,
     "actual": "reactions",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -1909,10 +2651,18 @@
     },
     "observation": 10,
     "expected": "reviewable_id",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -1930,10 +2680,18 @@
     },
     "observation": 10,
     "expected": "reviewable_score_count",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -1951,10 +2709,18 @@
     },
     "observation": 10,
     "expected": "reviewable_score_pending_count",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -1972,10 +2738,18 @@
     },
     "observation": 10,
     "actual": "topic_accepted_answer",
+    "request": {
+      "method": "GET",
+      "path": "/posts/1.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -1993,10 +2767,18 @@
     },
     "observation": 13,
     "actual": "anonymous_default_navigation_menu_tags",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2014,10 +2796,18 @@
     },
     "observation": 13,
     "actual": "anonymous_sidebar_sections",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2035,10 +2825,18 @@
     },
     "observation": 13,
     "actual": "can_see_styleguide",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2056,10 +2854,18 @@
     },
     "observation": 13,
     "actual": "disable_topic_resorting",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2077,10 +2883,18 @@
     },
     "observation": 13,
     "actual": "doc_index_topic_id",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -2097,12 +2911,22 @@
       "spec": "Allow null at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"categories\"].items.properties[\"permission\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 13,
-    "expected": ["integer"],
+    "expected": [
+      "integer"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2120,10 +2944,18 @@
     },
     "observation": 13,
     "actual": "sort_topics_by_event_start_date",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2141,10 +2973,18 @@
     },
     "observation": 13,
     "actual": "can_vote",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -2161,12 +3001,23 @@
       "spec": "Change the type at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"categories\"].items.properties[\"sort_ascending\"] to \"boolean\"."
     },
     "observation": 13,
-    "expected": ["null", "string"],
+    "expected": [
+      "null",
+      "string"
+    ],
     "actual": "boolean",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2184,10 +3035,18 @@
     },
     "observation": 13,
     "actual": "doc_category_index",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2205,10 +3064,18 @@
     },
     "observation": 13,
     "actual": "default_gamification_leaderboard_id",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2226,10 +3093,18 @@
     },
     "observation": 13,
     "actual": "discourse_math_bundle_url",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2247,10 +3122,18 @@
     },
     "observation": 13,
     "actual": "docs_legacy_path",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -2267,12 +3150,22 @@
       "spec": "Allow null at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"homepage_options\"].items.properties[\"path\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 13,
-    "expected": ["string"],
+    "expected": [
+      "string"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2290,10 +3183,18 @@
     },
     "observation": 13,
     "actual": "hosting_tier",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2311,10 +3212,18 @@
     },
     "observation": 13,
     "actual": "live_assets_path",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2332,10 +3241,18 @@
     },
     "observation": 13,
     "actual": "live_livekit_agent_bot_id",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2353,10 +3270,18 @@
     },
     "observation": 13,
     "actual": "live_livekit_per_room_available",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2374,10 +3299,18 @@
     },
     "observation": 13,
     "actual": "live_public_access",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2395,10 +3328,18 @@
     },
     "observation": 13,
     "actual": "live_reaction_emojis",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2416,10 +3357,18 @@
     },
     "observation": 13,
     "actual": "live_reactions_allow_any_emoji",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2437,10 +3386,18 @@
     },
     "observation": 13,
     "actual": "live_video_available",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2458,10 +3415,18 @@
     },
     "observation": 13,
     "actual": "privacy_policy_url",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2479,10 +3444,18 @@
     },
     "observation": 13,
     "actual": "system_user_avatar_template",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2500,10 +3473,18 @@
     },
     "observation": 13,
     "actual": "tos_url",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -2520,12 +3501,23 @@
       "spec": "Change the type at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"watched_words_link\"] to \"object\"."
     },
     "observation": 13,
-    "expected": ["null", "string"],
+    "expected": [
+      "null",
+      "string"
+    ],
     "actual": "object",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -2542,12 +3534,23 @@
       "spec": "Change the type at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"watched_words_replace\"] to \"object\"."
     },
     "observation": 13,
-    "expected": ["null", "string"],
+    "expected": [
+      "null",
+      "string"
+    ],
     "actual": "object",
+    "request": {
+      "method": "GET",
+      "path": "/site.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -2562,12 +3565,22 @@
       "spec": "Add a \"404\" response under paths[\"/tag/{name}.json\"].get.responses."
     },
     "observation": 17,
-    "expected": ["200"],
+    "expected": [
+      "200"
+    ],
     "actual": 404,
+    "request": {
+      "method": "GET",
+      "path": "/tag/general.json",
+      "query": {},
+      "status": 404,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -2582,12 +3595,22 @@
       "spec": "Add a \"404\" response under paths[\"/tag_groups.json\"].get.responses."
     },
     "observation": 15,
-    "expected": ["200"],
+    "expected": [
+      "200"
+    ],
     "actual": 404,
+    "request": {
+      "method": "GET",
+      "path": "/tag_groups.json",
+      "query": {},
+      "status": 404,
+      "mediaType": "text/html; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -2602,12 +3625,22 @@
       "spec": "Add a \"404\" response under paths[\"/tag_groups/{id}.json\"].get.responses."
     },
     "observation": 16,
-    "expected": ["200"],
+    "expected": [
+      "200"
+    ],
     "actual": 404,
+    "request": {
+      "method": "GET",
+      "path": "/tag_groups/1.json",
+      "query": {},
+      "status": 404,
+      "mediaType": "text/html; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -2625,10 +3658,18 @@
     },
     "observation": 18,
     "actual": "tag_groups",
+    "request": {
+      "method": "GET",
+      "path": "/tags.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -2646,10 +3687,18 @@
     },
     "observation": 18,
     "actual": "description",
+    "request": {
+      "method": "GET",
+      "path": "/tags.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -2667,10 +3716,18 @@
     },
     "observation": 18,
     "actual": "pm_only",
+    "request": {
+      "method": "GET",
+      "path": "/tags.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -2688,10 +3745,18 @@
     },
     "observation": 18,
     "actual": "slug",
+    "request": {
+      "method": "GET",
+      "path": "/tags.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -2706,12 +3771,22 @@
       "spec": "Add a \"403\" response under paths[\"/u/{username}/emails.json\"].get.responses."
     },
     "observation": 19,
-    "expected": ["200"],
+    "expected": [
+      "200"
+    ],
     "actual": 403,
+    "request": {
+      "method": "GET",
+      "path": "/u/system/emails.json",
+      "query": {},
+      "status": 403,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2729,10 +3804,18 @@
     },
     "observation": 20,
     "actual": "show_in_post_header",
+    "request": {
+      "method": "GET",
+      "path": "/user-badges/system.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -2750,10 +3833,18 @@
     },
     "observation": 20,
     "expected": "flair_name",
+    "request": {
+      "method": "GET",
+      "path": "/user-badges/system.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2771,10 +3862,18 @@
     },
     "observation": 20,
     "actual": "post_number",
+    "request": {
+      "method": "GET",
+      "path": "/user-badges/system.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2792,10 +3891,18 @@
     },
     "observation": 20,
     "actual": "topic_id",
+    "request": {
+      "method": "GET",
+      "path": "/user-badges/system.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-forbidden-property",
     "severity": "breaking",
     "location": {
@@ -2813,6 +3920,13 @@
     },
     "observation": 20,
     "actual": "topic_title",
+    "request": {
+      "method": "GET",
+      "path": "/user-badges/system.json",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8"
+    },
     "review": "unreviewed"
   }
 ]

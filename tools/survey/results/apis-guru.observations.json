@@ -1,0 +1,62 @@
+[
+  {
+    "index": 0,
+    "operationKey": "GET /{}.json",
+    "method": "GET",
+    "path": "/apis.guru.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:35.133Z"
+  },
+  {
+    "index": 1,
+    "operationKey": "GET /{}/services.json",
+    "method": "GET",
+    "path": "/apis.guru/services.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:35.908Z"
+  },
+  {
+    "index": 2,
+    "operationKey": "GET /list.json",
+    "method": "GET",
+    "path": "/list.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:36.967Z"
+  },
+  {
+    "index": 3,
+    "operationKey": "GET /metrics.json",
+    "method": "GET",
+    "path": "/metrics.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:37.744Z"
+  },
+  {
+    "index": 4,
+    "operationKey": "GET /providers.json",
+    "method": "GET",
+    "path": "/providers.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:38.500Z"
+  },
+  {
+    "index": 5,
+    "operationKey": "GET /specs/{}/{}.json",
+    "method": "GET",
+    "path": "/specs/apis.guru/2.2.0.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:39.318Z"
+  }
+]

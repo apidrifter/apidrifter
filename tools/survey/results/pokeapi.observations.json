@@ -1,0 +1,332 @@
+[
+  {
+    "index": 0,
+    "operationKey": "GET /api/v2/ability",
+    "method": "GET",
+    "path": "/api/v2/ability/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:10.165Z"
+  },
+  {
+    "index": 1,
+    "operationKey": "GET /api/v2/ability/{}",
+    "method": "GET",
+    "path": "/api/v2/ability/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:10.957Z"
+  },
+  {
+    "index": 2,
+    "operationKey": "GET /api/v2/berry",
+    "method": "GET",
+    "path": "/api/v2/berry/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:12.072Z"
+  },
+  {
+    "index": 3,
+    "operationKey": "GET /api/v2/berry-firmness",
+    "method": "GET",
+    "path": "/api/v2/berry-firmness/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:13.100Z"
+  },
+  {
+    "index": 4,
+    "operationKey": "GET /api/v2/berry-firmness/{}",
+    "method": "GET",
+    "path": "/api/v2/berry-firmness/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:13.896Z"
+  },
+  {
+    "index": 5,
+    "operationKey": "GET /api/v2/berry-flavor",
+    "method": "GET",
+    "path": "/api/v2/berry-flavor/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:15.138Z"
+  },
+  {
+    "index": 6,
+    "operationKey": "GET /api/v2/berry-flavor/{}",
+    "method": "GET",
+    "path": "/api/v2/berry-flavor/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:15.933Z"
+  },
+  {
+    "index": 7,
+    "operationKey": "GET /api/v2/berry/{}",
+    "method": "GET",
+    "path": "/api/v2/berry/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:16.726Z"
+  },
+  {
+    "index": 8,
+    "operationKey": "GET /api/v2/characteristic",
+    "method": "GET",
+    "path": "/api/v2/characteristic/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:17.877Z"
+  },
+  {
+    "index": 9,
+    "operationKey": "GET /api/v2/characteristic/{}",
+    "method": "GET",
+    "path": "/api/v2/characteristic/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:18.714Z"
+  },
+  {
+    "index": 10,
+    "operationKey": "GET /api/v2/contest-effect",
+    "method": "GET",
+    "path": "/api/v2/contest-effect/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:19.853Z"
+  },
+  {
+    "index": 11,
+    "operationKey": "GET /api/v2/contest-effect/{}",
+    "method": "GET",
+    "path": "/api/v2/contest-effect/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:20.643Z"
+  },
+  {
+    "index": 12,
+    "operationKey": "GET /api/v2/contest-type",
+    "method": "GET",
+    "path": "/api/v2/contest-type/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:21.659Z"
+  },
+  {
+    "index": 13,
+    "operationKey": "GET /api/v2/contest-type/{}",
+    "method": "GET",
+    "path": "/api/v2/contest-type/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:22.455Z"
+  },
+  {
+    "index": 14,
+    "operationKey": "GET /api/v2/currency",
+    "method": "GET",
+    "path": "/api/v2/currency/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:23.547Z"
+  },
+  {
+    "index": 15,
+    "operationKey": "GET /api/v2/currency/{}",
+    "method": "GET",
+    "path": "/api/v2/currency/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:24.342Z"
+  },
+  {
+    "index": 16,
+    "operationKey": "GET /api/v2/egg-group",
+    "method": "GET",
+    "path": "/api/v2/egg-group/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:25.410Z"
+  },
+  {
+    "index": 17,
+    "operationKey": "GET /api/v2/egg-group/{}",
+    "method": "GET",
+    "path": "/api/v2/egg-group/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:26.202Z"
+  },
+  {
+    "index": 18,
+    "operationKey": "GET /api/v2/encounter-condition",
+    "method": "GET",
+    "path": "/api/v2/encounter-condition/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:27.108Z"
+  },
+  {
+    "index": 19,
+    "operationKey": "GET /api/v2/encounter-condition-value",
+    "method": "GET",
+    "path": "/api/v2/encounter-condition-value/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:28.142Z"
+  },
+  {
+    "index": 20,
+    "operationKey": "GET /api/v2/encounter-condition-value/{}",
+    "method": "GET",
+    "path": "/api/v2/encounter-condition-value/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:28.932Z"
+  },
+  {
+    "index": 21,
+    "operationKey": "GET /api/v2/encounter-condition/{}",
+    "method": "GET",
+    "path": "/api/v2/encounter-condition/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:29.729Z"
+  },
+  {
+    "index": 22,
+    "operationKey": "GET /api/v2/encounter-method",
+    "method": "GET",
+    "path": "/api/v2/encounter-method/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:30.760Z"
+  },
+  {
+    "index": 23,
+    "operationKey": "GET /api/v2/encounter-method/{}",
+    "method": "GET",
+    "path": "/api/v2/encounter-method/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:31.547Z"
+  },
+  {
+    "index": 24,
+    "operationKey": "GET /api/v2/evolution-chain",
+    "method": "GET",
+    "path": "/api/v2/evolution-chain/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:32.663Z"
+  },
+  {
+    "index": 25,
+    "operationKey": "GET /api/v2/evolution-chain/{}",
+    "method": "GET",
+    "path": "/api/v2/evolution-chain/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:33.457Z"
+  },
+  {
+    "index": 26,
+    "operationKey": "GET /api/v2/evolution-trigger",
+    "method": "GET",
+    "path": "/api/v2/evolution-trigger/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:34.425Z"
+  },
+  {
+    "index": 27,
+    "operationKey": "GET /api/v2/evolution-trigger/{}",
+    "method": "GET",
+    "path": "/api/v2/evolution-trigger/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:35.214Z"
+  },
+  {
+    "index": 28,
+    "operationKey": "GET /api/v2/evolution-variable",
+    "method": "GET",
+    "path": "/api/v2/evolution-variable/",
+    "query": {
+      "limit": "5"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:36.353Z"
+  },
+  {
+    "index": 29,
+    "operationKey": "GET /api/v2/evolution-variable/{}",
+    "method": "GET",
+    "path": "/api/v2/evolution-variable/1/",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:38:37.147Z"
+  }
+]

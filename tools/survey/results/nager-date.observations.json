@@ -1,0 +1,86 @@
+[
+  {
+    "index": 0,
+    "operationKey": "GET /api/v3/AvailableCountries",
+    "method": "GET",
+    "path": "/api/v3/AvailableCountries",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:45:27.558Z"
+  },
+  {
+    "index": 1,
+    "operationKey": "GET /api/v3/CountryInfo/{}",
+    "method": "GET",
+    "path": "/api/v3/CountryInfo/US",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:45:28.360Z"
+  },
+  {
+    "index": 2,
+    "operationKey": "GET /api/v3/IsTodayPublicHoliday/{}",
+    "method": "GET",
+    "path": "/api/v3/IsTodayPublicHoliday/US",
+    "query": {
+      "offset": "0"
+    },
+    "status": 204,
+    "mediaType": null,
+    "capturedAt": "2026-10-30T21:45:32.642Z"
+  },
+  {
+    "index": 3,
+    "operationKey": "GET /api/v3/LongWeekend/{}/{}",
+    "method": "GET",
+    "path": "/api/v3/LongWeekend/2024/US",
+    "query": {
+      "availableBridgeDays": "1"
+    },
+    "status": 502,
+    "mediaType": "text/html; charset=UTF-8",
+    "capturedAt": "2026-10-30T21:45:36.590Z"
+  },
+  {
+    "index": 4,
+    "operationKey": "GET /api/v3/NextPublicHolidays/{}",
+    "method": "GET",
+    "path": "/api/v3/NextPublicHolidays/US",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:45:40.526Z"
+  },
+  {
+    "index": 5,
+    "operationKey": "GET /api/v3/NextPublicHolidaysWorldwide",
+    "method": "GET",
+    "path": "/api/v3/NextPublicHolidaysWorldwide",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:45:45.340Z"
+  },
+  {
+    "index": 6,
+    "operationKey": "GET /api/v3/PublicHolidays/{}/{}",
+    "method": "GET",
+    "path": "/api/v3/PublicHolidays/2024/US",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:45:46.141Z"
+  },
+  {
+    "index": 7,
+    "operationKey": "GET /api/v3/Version",
+    "method": "GET",
+    "path": "/api/v3/Version",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:45:50.080Z"
+  }
+]

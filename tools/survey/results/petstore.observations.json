@@ -1,0 +1,86 @@
+[
+  {
+    "index": 0,
+    "operationKey": "GET /pet/{}",
+    "method": "GET",
+    "path": "/pet/1",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/xml",
+    "capturedAt": "2026-10-30T21:37:28.417Z"
+  },
+  {
+    "index": 1,
+    "operationKey": "GET /pet/findByStatus",
+    "method": "GET",
+    "path": "/pet/findByStatus",
+    "query": {
+      "status": "available"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:37:29.005Z"
+  },
+  {
+    "index": 2,
+    "operationKey": "GET /pet/findByTags",
+    "method": "GET",
+    "path": "/pet/findByTags",
+    "query": {
+      "tags": "tag1"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:37:29.567Z"
+  },
+  {
+    "index": 3,
+    "operationKey": "GET /store/inventory",
+    "method": "GET",
+    "path": "/store/inventory",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:37:30.130Z"
+  },
+  {
+    "index": 4,
+    "operationKey": "GET /store/order/{}",
+    "method": "GET",
+    "path": "/store/order/1",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/xml",
+    "capturedAt": "2026-10-30T21:37:30.684Z"
+  },
+  {
+    "index": 5,
+    "operationKey": "GET /user/{}",
+    "method": "GET",
+    "path": "/user/user1",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:37:31.243Z"
+  },
+  {
+    "index": 6,
+    "operationKey": "GET /user/login",
+    "method": "GET",
+    "path": "/user/login",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:37:31.800Z"
+  },
+  {
+    "index": 7,
+    "operationKey": "GET /user/logout",
+    "method": "GET",
+    "path": "/user/logout",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:37:32.362Z"
+  }
+]

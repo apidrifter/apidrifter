@@ -1,6 +1,7 @@
 [
   {
     "class": "server",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -15,8 +16,20 @@
       "spec": "Add a \"502\" response under paths[\"/api/v3/LongWeekend/{year}/{countryCode}\"].get.responses."
     },
     "observation": 3,
-    "expected": ["200", "404"],
+    "expected": [
+      "200",
+      "404"
+    ],
     "actual": 502,
+    "request": {
+      "method": "GET",
+      "path": "/api/v3/LongWeekend/2024/US",
+      "query": {
+        "availableBridgeDays": "1"
+      },
+      "status": 502,
+      "mediaType": "text/html; charset=UTF-8"
+    },
     "review": "unreviewed"
   }
 ]

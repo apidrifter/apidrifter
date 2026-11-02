@@ -1,6 +1,7 @@
 [
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -15,12 +16,25 @@
       "spec": "Add a \"303\" response under paths[\"/account/loan-history.json\"].get.responses."
     },
     "observation": 0,
-    "expected": ["200", "422"],
+    "expected": [
+      "200",
+      "422"
+    ],
     "actual": 303,
+    "request": {
+      "method": "GET",
+      "path": "/account/loan-history.json",
+      "query": {
+        "page": "1"
+      },
+      "status": 303,
+      "mediaType": "text/html"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -35,12 +49,22 @@
       "spec": "Add a \"303\" response under paths[\"/account/loans.json\"].get.responses."
     },
     "observation": 1,
-    "expected": ["200"],
+    "expected": [
+      "200"
+    ],
     "actual": 303,
+    "request": {
+      "method": "GET",
+      "path": "/account/loans.json",
+      "query": {},
+      "status": 303,
+      "mediaType": "text/html"
+    },
     "review": "unreviewed"
   },
   {
     "class": "media",
+    "strict": true,
     "id": "undocumented-response-media-type",
     "severity": "warning",
     "location": {
@@ -56,12 +80,22 @@
       "spec": "Add \"text/plain\" under paths[\"/health\"].get.responses[\"200\"].content."
     },
     "observation": 3,
-    "expected": ["application/json"],
+    "expected": [
+      "application/json"
+    ],
     "actual": "text/plain",
+    "request": {
+      "method": "GET",
+      "path": "/health",
+      "query": {},
+      "status": 200,
+      "mediaType": "text/plain"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -76,12 +110,23 @@
       "spec": "Add a \"401\" response under paths[\"/import/preview.json\"].get.responses."
     },
     "observation": 4,
-    "expected": ["200", "422"],
+    "expected": [
+      "200",
+      "422"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/import/preview.json",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -96,12 +141,26 @@
       "spec": "Add a \"404\" response under paths[\"/lists/{olid}/editions.json\"].get.responses."
     },
     "observation": 6,
-    "expected": ["200", "422"],
+    "expected": [
+      "200",
+      "422"
+    ],
     "actual": 404,
+    "request": {
+      "method": "GET",
+      "path": "/lists/OL1L/editions.json",
+      "query": {
+        "limit": "50",
+        "offset": "0"
+      },
+      "status": 404,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -116,12 +175,23 @@
       "spec": "Add a \"404\" response under paths[\"/lists/{olid}/seeds.json\"].get.responses."
     },
     "observation": 7,
-    "expected": ["200", "422"],
+    "expected": [
+      "200",
+      "422"
+    ],
     "actual": 404,
+    "request": {
+      "method": "GET",
+      "path": "/lists/OL1L/seeds.json",
+      "query": {},
+      "status": 404,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -136,12 +206,25 @@
       "spec": "Add a \"404\" response under paths[\"/lists/{olid}/subjects.json\"].get.responses."
     },
     "observation": 8,
-    "expected": ["200", "422"],
+    "expected": [
+      "200",
+      "422"
+    ],
     "actual": 404,
+    "request": {
+      "method": "GET",
+      "path": "/lists/OL1L/subjects.json",
+      "query": {
+        "limit": "20"
+      },
+      "status": 404,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -156,12 +239,23 @@
       "spec": "Add a \"401\" response under paths[\"/reading-goal.json\"].get.responses."
     },
     "observation": 10,
-    "expected": ["200", "422"],
+    "expected": [
+      "200",
+      "422"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/reading-goal.json",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "input",
+    "strict": false,
     "id": "request-accepted-but-invalid",
     "severity": "warning",
     "location": {
@@ -175,10 +269,66 @@
     },
     "observation": 11,
     "actual": 200,
+    "request": {
+      "method": "GET",
+      "path": "/search.json",
+      "query": {
+        "author": "tolkien",
+        "author_facet": [],
+        "author_key": [],
+        "fields": [
+          "author_key",
+          "author_name",
+          "cover_edition_key",
+          "cover_height",
+          "cover_i",
+          "cover_width",
+          "ebook_access",
+          "edition_count",
+          "first_publish_year",
+          "has_fulltext",
+          "ia",
+          "ia_collection",
+          "id_cita_press",
+          "id_librivox",
+          "id_openstax",
+          "id_project_gutenberg",
+          "id_project_runeberg",
+          "id_standard_ebooks",
+          "id_wikisource",
+          "key",
+          "language",
+          "lending_edition_s",
+          "lending_identifier_s",
+          "public_scan_b",
+          "series_key",
+          "series_name",
+          "series_position",
+          "subtitle",
+          "title"
+        ],
+        "first_publish_year": [],
+        "language": [],
+        "limit": "100",
+        "person_facet": [],
+        "place_facet": [],
+        "public_scan_b": [],
+        "publisher_facet": [],
+        "q": "the lord of the rings",
+        "query": "{\"q\": \"mark\"}",
+        "spellcheck_count": "3",
+        "subject_facet": [],
+        "time_facet": [],
+        "title": "the hobbit"
+      },
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "input",
+    "strict": false,
     "id": "request-schema-violation",
     "severity": "info",
     "location": {
@@ -193,10 +343,66 @@
       "spec": "Adjust the composition at paths[\"/search.json\"].get.parameters[spellcheck_count].schema to describe what is sent."
     },
     "observation": 11,
+    "request": {
+      "method": "GET",
+      "path": "/search.json",
+      "query": {
+        "author": "tolkien",
+        "author_facet": [],
+        "author_key": [],
+        "fields": [
+          "author_key",
+          "author_name",
+          "cover_edition_key",
+          "cover_height",
+          "cover_i",
+          "cover_width",
+          "ebook_access",
+          "edition_count",
+          "first_publish_year",
+          "has_fulltext",
+          "ia",
+          "ia_collection",
+          "id_cita_press",
+          "id_librivox",
+          "id_openstax",
+          "id_project_gutenberg",
+          "id_project_runeberg",
+          "id_standard_ebooks",
+          "id_wikisource",
+          "key",
+          "language",
+          "lending_edition_s",
+          "lending_identifier_s",
+          "public_scan_b",
+          "series_key",
+          "series_name",
+          "series_position",
+          "subtitle",
+          "title"
+        ],
+        "first_publish_year": [],
+        "language": [],
+        "limit": "100",
+        "person_facet": [],
+        "place_facet": [],
+        "public_scan_b": [],
+        "publisher_facet": [],
+        "q": "the lord of the rings",
+        "query": "{\"q\": \"mark\"}",
+        "spellcheck_count": "3",
+        "subject_facet": [],
+        "time_facet": [],
+        "title": "the hobbit"
+      },
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -211,12 +417,40 @@
       "spec": "Add a \"404\" response under paths[\"/search/editions.json\"].get.responses."
     },
     "observation": 13,
-    "expected": ["200", "422"],
+    "expected": [
+      "200",
+      "422"
+    ],
     "actual": 404,
+    "request": {
+      "method": "GET",
+      "path": "/search/editions.json",
+      "query": {
+        "fields": [
+          "cover_i",
+          "ebook_access",
+          "isbn",
+          "key",
+          "language",
+          "publish_date",
+          "publisher",
+          "subtitle",
+          "title",
+          "work_key"
+        ],
+        "limit": "100",
+        "q": "the lord of the rings",
+        "sort": "",
+        "work_key": "/works/OL82536W"
+      },
+      "status": 404,
+      "mediaType": null
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -231,12 +465,26 @@
       "spec": "Add a \"404\" response under paths[\"/series/{olid}/editions.json\"].get.responses."
     },
     "observation": 17,
-    "expected": ["200", "422"],
+    "expected": [
+      "200",
+      "422"
+    ],
     "actual": 404,
+    "request": {
+      "method": "GET",
+      "path": "/series/OL1L/editions.json",
+      "query": {
+        "limit": "50",
+        "offset": "0"
+      },
+      "status": 404,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "input",
+    "strict": false,
     "id": "request-constraint-violation",
     "severity": "info",
     "location": {
@@ -253,10 +501,18 @@
     "observation": 18,
     "expected": "OL\\d+L",
     "actual": "OL45804W",
+    "request": {
+      "method": "GET",
+      "path": "/series/OL45804W/seeds.json",
+      "query": {},
+      "status": 422,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "input",
+    "strict": false,
     "id": "request-constraint-violation",
     "severity": "info",
     "location": {
@@ -273,6 +529,15 @@
     "observation": 19,
     "expected": "OL\\d+L",
     "actual": "OL45804W",
+    "request": {
+      "method": "GET",
+      "path": "/series/OL45804W/subjects.json",
+      "query": {
+        "limit": "20"
+      },
+      "status": 422,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   }
 ]
