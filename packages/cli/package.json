@@ -2,7 +2,28 @@
   "name": "apidrifter",
   "version": "0.1.0",
   "description": "Diff OpenAPI documents and MCP servers, classify breaking changes, fail CI.",
+  "keywords": [
+    "openapi",
+    "mcp",
+    "api",
+    "cli",
+    "diff",
+    "breaking-changes",
+    "contract-testing",
+    "spec-drift",
+    "verification"
+  ],
   "license": "Apache-2.0",
+  "author": "apidrifter",
+  "homepage": "https://apidrifter.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apidrifter/apidrifter.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/apidrifter/apidrifter/issues"
+  },
   "type": "module",
   "bin": {
     "apidrifter": "./dist/bin.js"
@@ -15,7 +36,8 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
