@@ -1,0 +1,55 @@
+---
+/** One survey finding. Every string here is third-party text; rely on Astro's escaping. */
+import { clipJson, type Finding, formatLocation, formatRequest, groupKey } from "../lib/survey";
+
+interface Props {
+  finding: Finding;
+}
+
+const { finding: f } = Astro.props;
+const group = groupKey(f);
+const expected = clipJson(f.expected);
+const actual = clipJson(f.actual);
+---
+
+<article class="finding">
+  <div class="head">
+    <span class:list={["badge", `badge-${group}`]}>{group === "hard" ? "hard" : f.class}</span>
+    <code>{f.id}</code>
+    <span class="badge badge-input">{f.severity}</span>
+  </div>
+  <div class="loc">{formatLocation(f.location)}</div>
+  <p class="msg">{f.message}</p>
+  {
+    f.request !== undefined && (
+      <div class="req">
+        {formatRequest(f.request)} &rarr; {f.request.status}
+        {f.request.mediaType !== null && ` ${f.request.mediaType}`}
+      </div>
+    )
+  }
+  {
+    (expected !== undefined || actual !== undefined) && (
+      <div class="ea">
+        {expected !== undefined && (
+          <span>
+            expected <code>{expected}</code>{" "}
+          </span>
+        )}
+        {actual !== undefined && (
+          <span>
+            actual <code>{actual}</code>
+          </span>
+        )}
+      </div>
+    )
+  }
+  <ul class="fixes">
+    <li>
+      <b>If the spec is the source of truth:</b> {f.fix.implementation}
+    </li>
+    <li>
+      <b>If the implementation is the source of truth:</b> {f.fix.spec}
+    </li>
+  </ul>
+</article>

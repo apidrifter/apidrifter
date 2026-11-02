@@ -1,0 +1,122 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE } from "../lib/site";
+import { loadSummary } from "../lib/survey";
+import { getCollection } from "astro:content";
+
+const summary = await loadSummary();
+const posts = (await getCollection("research", (p) => !p.data.draft && p.data.survey)).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+const surveyPost = posts[0];
+---
+
+<Base title={SITE.name} description={SITE.description}>
+  <section class="hero">
+    <h1>{SITE.tagline}</h1>
+    <p class="lede">
+      An open-source CLI and MCP server that runs your OpenAPI spec against a live
+      implementation and tells you which side to fix.
+    </p>
+
+    <div class="cmds">
+      <div class="cmd">
+        <pre><code>npx apidrifter plan openapi.yaml</code></pre>
+        <span class="cap">Turn the spec into a request plan with the slots an agent or you fill in.</span>
+      </div>
+      <div class="cmd">
+        <pre><code>npx apidrifter run openapi.yaml --base-url http://localhost:3000</code></pre>
+        <span class="cap">Execute the plan against a running server and verify every response.</span>
+      </div>
+      <div class="cmd">
+        <pre><code>npx apidrifter serve</code></pre>
+        <span class="cap">The same loop as an MCP server, so any agent can drive it.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>Plan</h3>
+        <p>
+          The engine reads the spec and proposes one request per operation, with the parameters,
+          body and auth it needs. Values come from the spec&rsquo;s own examples; an agent or a
+          small file supplies the rest.
+        </p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>Run</h3>
+        <p>
+          Requests go to your dev, staging or production server. Responses are matched to the
+          operation and validated: status, media type, headers and body, with the schema&rsquo;s
+          direction taken into account.
+        </p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>Report</h3>
+        <p>
+          Every finding carries two fixes: what to change in the implementation if the spec is
+          the truth, and what to change in the spec if the implementation is. Humans read it;
+          agents act on it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Also a spec differ</h2>
+    <p>
+      The same engine compares two versions of a spec and classifies every change as breaking,
+      warning or info, knowing that a field becoming required is breaking in a request and
+      harmless in a response.
+    </p>
+    <pre><code>npx apidrifter breaking old.yaml new.yaml   # exit 1 on breaking changes, for CI
+npx apidrifter mcp snapshot https://mcp.example.com/mcp --out before.json
+npx apidrifter mcp diff before.json https://mcp.example.com/mcp</code></pre>
+    <p>
+      MCP servers are covered too: tools, resources and prompts are snapshotted and diffed, and
+      a changed tool description is tracked as a change, because descriptions are what agents
+      act on.
+    </p>
+  </section>
+
+  {
+    surveyPost !== undefined && (
+      <section class="teaser">
+        <p class="big">
+          {summary.totals.withHard} of {summary.totals.apis} public APIs do not match their own
+          spec.
+        </p>
+        <p>
+          We sent read-only requests to {summary.totals.apis} public APIs that publish an OpenAPI
+          document and found {summary.totals.hard} hard violations on successful responses:
+          wrong types, missing required fields, nulls the schema forbids. Every request is
+          reproducible.
+        </p>
+        <p>
+          <a href={`/research/${surveyPost.id}/`}>Read the survey</a>
+        </p>
+      </section>
+    )
+  }
+
+  <section>
+    <h2>Install</h2>
+    <pre><code>npm install -g apidrifter    # or run it with npx, as above</code></pre>
+    <p class="muted small">
+      Node 22.12 or newer. Apache-2.0. The CLI sends requests only where you point it; URLs
+      other than localhost must be HTTPS. Secrets passed as headers are never written to
+      output.
+    </p>
+    <p>
+      <a href="/docs/cli/">CLI reference</a> &middot; <a href="/docs/rules/">Rules reference</a>
+      &middot; <a href="/docs/design/">Design</a> &middot;
+      <a href={SITE.repo} rel="noopener">GitHub</a>
+    </p>
+  </section>
+</Base>

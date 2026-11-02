@@ -1,0 +1,26 @@
+{
+  "name": "@apidrifter/web",
+  "version": "0.0.0",
+  "private": true,
+  "description": "apidrifter.com: landing page, research and docs. Static Astro site deployed to GitHub Pages.",
+  "type": "module",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "8.1.2",
+    "@astrojs/rss": "4.0.19",
+    "@astrojs/sitemap": "3.7.4",
+    "astro": "7.4.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}

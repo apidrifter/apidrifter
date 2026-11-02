@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://apidrifter.com/sitemap-index.xml

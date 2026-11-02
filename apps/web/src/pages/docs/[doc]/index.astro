@@ -1,0 +1,28 @@
+---
+import Base from "../../../layouts/Base.astro";
+import { DOC_PAGES } from "../../../lib/site";
+import { getEntry, render } from "astro:content";
+
+export async function getStaticPaths() {
+  return DOC_PAGES.map((d) => ({ params: { doc: d.id }, props: { page: d } }));
+}
+
+const { page } = Astro.props;
+const entry = await getEntry("docs", page.id);
+if (entry === undefined) throw new Error(`missing doc entry ${page.id}`);
+const { Content } = await render(entry);
+---
+
+<Base title={page.title} description={page.description} wide={page.id === "rules"}>
+  <p class="post-meta">
+    {DOC_PAGES.map((d, i) => (
+      <>
+        {i > 0 && " \u00B7 "}
+        {d.id === page.id ? <strong>{d.title}</strong> : <a href={`/docs/${d.id}/`}>{d.title}</a>}
+      </>
+    ))}
+  </p>
+  <article class="doc prose">
+    <Content />
+  </article>
+</Base>
