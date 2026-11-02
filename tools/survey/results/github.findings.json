@@ -16,10 +16,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branches/{branch}/protection\"].get.responses."
     },
     "observation": 10,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 401,
     "request": {
       "method": "GET",
@@ -47,9 +44,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins\"].get.responses."
     },
     "observation": 11,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 401,
     "request": {
       "method": "GET",
@@ -77,9 +72,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews\"].get.responses."
     },
     "observation": 12,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 401,
     "request": {
       "method": "GET",
@@ -107,10 +100,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures\"].get.responses."
     },
     "observation": 13,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 401,
     "request": {
       "method": "GET",
@@ -138,10 +128,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks\"].get.responses."
     },
     "observation": 14,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 401,
     "request": {
       "method": "GET",
@@ -169,10 +156,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts\"].get.responses."
     },
     "observation": 15,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 401,
     "request": {
       "method": "GET",
@@ -200,10 +184,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branches/{branch}/protection/restrictions\"].get.responses."
     },
     "observation": 16,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 401,
     "request": {
       "method": "GET",
@@ -231,10 +212,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps\"].get.responses."
     },
     "observation": 17,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 401,
     "request": {
       "method": "GET",
@@ -262,10 +240,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams\"].get.responses."
     },
     "observation": 18,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -293,10 +268,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users\"].get.responses."
     },
     "observation": 19,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -324,15 +296,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/commits\"].get.responses."
     },
     "observation": 20,
-    "expected": [
-      "200",
-      "400",
-      "404",
-      "409",
-      "422",
-      "429",
-      "500"
-    ],
+    "expected": ["200", "400", "404", "409", "422", "429", "500"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -363,11 +327,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head\"].get.responses."
     },
     "observation": 22,
-    "expected": [
-      "200",
-      "409",
-      "422"
-    ],
+    "expected": ["200", "409", "422"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -395,9 +355,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/commits/{commit_sha}/comments\"].get.responses."
     },
     "observation": 25,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -428,10 +386,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/commits/{commit_sha}/pulls\"].get.responses."
     },
     "observation": 26,
-    "expected": [
-      "200",
-      "409"
-    ],
+    "expected": ["200", "409"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -462,15 +417,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/commits/{ref}\"].get.responses."
     },
     "observation": 21,
-    "expected": [
-      "200",
-      "404",
-      "409",
-      "422",
-      "429",
-      "500",
-      "503"
-    ],
+    "expected": ["200", "404", "409", "422", "429", "500", "503"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -501,9 +448,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/commits/{ref}/check-runs\"].get.responses."
     },
     "observation": 23,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -535,9 +480,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/commits/{ref}/check-suites\"].get.responses."
     },
     "observation": 24,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -569,10 +512,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/commits/{ref}/status\"].get.responses."
     },
     "observation": 27,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -603,10 +543,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/commits/{ref}/statuses\"].get.responses."
     },
     "observation": 28,
-    "expected": [
-      "200",
-      "301"
-    ],
+    "expected": ["200", "301"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -637,12 +574,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/issues\"].get.responses."
     },
     "observation": 31,
-    "expected": [
-      "200",
-      "301",
-      "404",
-      "422"
-    ],
+    "expected": ["200", "301", "404", "422"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -676,13 +608,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/issues/{issue_number}\"].get.responses."
     },
     "observation": 32,
-    "expected": [
-      "200",
-      "301",
-      "304",
-      "404",
-      "410"
-    ],
+    "expected": ["200", "301", "304", "404", "410"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -710,12 +636,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/issues/{issue_number}/artifacts\"].get.responses."
     },
     "observation": 33,
-    "expected": [
-      "200",
-      "404",
-      "410",
-      "503"
-    ],
+    "expected": ["200", "404", "410", "503"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -746,11 +667,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/issues/{issue_number}/comments\"].get.responses."
     },
     "observation": 34,
-    "expected": [
-      "200",
-      "404",
-      "410"
-    ],
+    "expected": ["200", "404", "410"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -781,12 +698,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by\"].get.responses."
     },
     "observation": 35,
-    "expected": [
-      "200",
-      "301",
-      "404",
-      "410"
-    ],
+    "expected": ["200", "301", "404", "410"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -817,12 +729,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocking\"].get.responses."
     },
     "observation": 36,
-    "expected": [
-      "200",
-      "301",
-      "404",
-      "410"
-    ],
+    "expected": ["200", "301", "404", "410"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -853,10 +760,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/issues/{issue_number}/events\"].get.responses."
     },
     "observation": 37,
-    "expected": [
-      "200",
-      "410"
-    ],
+    "expected": ["200", "410"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -887,12 +791,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/issues/{issue_number}/issue-field-values\"].get.responses."
     },
     "observation": 38,
-    "expected": [
-      "200",
-      "301",
-      "404",
-      "410"
-    ],
+    "expected": ["200", "301", "404", "410"],
     "actual": 403,
     "request": {
       "method": "GET",
@@ -923,12 +822,7 @@
       "spec": "Add a \"403\" response under paths[\"/repos/{owner}/{repo}/issues/{issue_number}/labels\"].get.responses."
     },
     "observation": 39,
-    "expected": [
-      "200",
-      "301",
-      "404",
-      "410"
-    ],
+    "expected": ["200", "301", "404", "410"],
     "actual": 403,
     "request": {
       "method": "GET",

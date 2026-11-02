@@ -44,9 +44,7 @@
       "spec": "Add \"application/json\" under paths[\"/data/lists/\"].get.responses[\"default\"].content."
     },
     "observation": 0,
-    "expected": [
-      "application/problem+json"
-    ],
+    "expected": ["application/problem+json"],
     "actual": "application/json",
     "request": {
       "method": "GET",
@@ -102,9 +100,7 @@
       "spec": "Add \"application/json\" under paths[\"/data/lists/pages/{project}/{title}\"].get.responses[\"default\"].content."
     },
     "observation": 2,
-    "expected": [
-      "application/problem+json"
-    ],
+    "expected": ["application/problem+json"],
     "actual": "application/json",
     "request": {
       "method": "GET",
@@ -160,9 +156,7 @@
       "spec": "Add \"application/json\" under paths[\"/data/lists/{id}/entries/\"].get.responses[\"default\"].content."
     },
     "observation": 1,
-    "expected": [
-      "application/problem+json"
-    ],
+    "expected": ["application/problem+json"],
     "actual": "application/json",
     "request": {
       "method": "GET",
@@ -193,9 +187,7 @@
       "spec": "Add \"application/json\" under paths[\"/page/\"].get.responses[\"default\"].content."
     },
     "observation": 3,
-    "expected": [
-      "application/problem+json"
-    ],
+    "expected": ["application/problem+json"],
     "actual": "application/json",
     "request": {
       "method": "GET",
@@ -224,9 +216,7 @@
       "spec": "Change the type at paths[\"/page/lint/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
     },
     "observation": 6,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": "array",
     "request": {
       "method": "GET",
@@ -255,9 +245,7 @@
       "spec": "Change the type at paths[\"/page/lint/{title}/{revision}\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
     },
     "observation": 7,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": "array",
     "request": {
       "method": "GET",
@@ -431,9 +419,7 @@
       "spec": "Change the type at paths[\"/page/mobile-html-offline-resources/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
     },
     "observation": 10,
-    "expected": [
-      "string"
-    ],
+    "expected": ["string"],
     "actual": "array",
     "request": {
       "method": "GET",
@@ -462,9 +448,7 @@
       "spec": "Change the type at paths[\"/page/mobile-html-offline-resources/{title}/{revision}\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
     },
     "observation": 11,
-    "expected": [
-      "string"
-    ],
+    "expected": ["string"],
     "actual": "array",
     "request": {
       "method": "GET",
@@ -696,9 +680,7 @@
       "spec": "Add \"text/html\" under paths[\"/page/talk/{title}\"].get.responses[\"default\"].content."
     },
     "observation": 15,
-    "expected": [
-      "application/problem+json"
-    ],
+    "expected": ["application/problem+json"],
     "actual": "text/html",
     "request": {
       "method": "GET",
@@ -727,9 +709,7 @@
       "spec": "Add \"text/html\" under paths[\"/page/talk/{title}/{revision}\"].get.responses[\"default\"].content."
     },
     "observation": 16,
-    "expected": [
-      "application/problem+json"
-    ],
+    "expected": ["application/problem+json"],
     "actual": "text/html",
     "request": {
       "method": "GET",
@@ -788,9 +768,7 @@
       "spec": "Change the type at paths[\"/page/title/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"items\"] to \"array\"."
     },
     "observation": 17,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": "array",
     "request": {
       "method": "GET",
@@ -849,9 +827,7 @@
       "spec": "Change the type at paths[\"/page/title/{title}/{revision}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"items\"] to \"array\"."
     },
     "observation": 18,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": "array",
     "request": {
       "method": "GET",

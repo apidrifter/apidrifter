@@ -16,9 +16,7 @@
       "spec": "Add a \"302\" response under paths[\"/cookies/delete\"].get.responses."
     },
     "observation": 6,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 302,
     "request": {
       "method": "GET",
@@ -48,9 +46,7 @@
       "spec": "Add a \"302\" response under paths[\"/cookies/set\"].get.responses."
     },
     "observation": 7,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 302,
     "request": {
       "method": "GET",
