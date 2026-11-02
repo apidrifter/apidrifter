@@ -10,6 +10,20 @@ npx apidrifter run ./openapi.yaml --base-url http://localhost:3000 --plan filled
 
 Inputs are file paths or `https://` URLs. Plain `http://` is accepted only for localhost, because the CLI's job includes hitting your dev server. Documents are parsed with the engine's size, depth and reference limits; YAML is parsed with the core schema only.
 
+## Use it from an agent
+
+`apidrifter serve` runs the same capabilities as an MCP server over stdio.
+
+Claude Code: `claude mcp add apidrifter -- npx -y apidrifter serve`
+
+Any client that takes a JSON config:
+
+```json
+{ "mcpServers": { "apidrifter": { "command": "npx", "args": ["-y", "apidrifter", "serve"] } } }
+```
+
+Tools: `plan_requests`, `run_requests`, `verify_observations`, `diff_specs`, `breaking_changes`, `changelog`, `mcp_snapshot`, `mcp_diff`, `list_rules`.
+
 ## Commands
 
 ### `apidrifter diff <before> <after>`
