@@ -215,6 +215,7 @@ Short records of choices that were argued. Append, do not edit.
 - **Normalize before diff.** Diffing the raw document punishes harmless refactors and makes the two adapters diverge.
 - **No password auth in the hosted product.** It removes an entire class of risk for no loss of function.
 - **The worker is the only thing that talks to the open internet.** Keeps the SSRF surface in one place with one set of tests.
+- **Licensing split, decided 2026-11-02.** Engine, CLI and Action stay Apache-2.0 so they can be embedded and run in CI without a legal review, with the patent grant a verification tool should carry. The hosted service code (worker, dashboard, billing), when it lands under `apps/`, will be AGPL-3.0 so that anyone operating a modified copy as a service must publish their changes. The static site stays Apache-2.0. The name and logo are trademarks and not licensed with the code (see TRADEMARK.md).
 
 ## 11. Verification (added after the pivot)
 

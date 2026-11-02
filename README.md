@@ -17,4 +17,4 @@ Status: early. The engine and CLI are under active development; the hosted servi
 
 ## License
 
-Apache-2.0. See [LICENSE](LICENSE).
+Apache-2.0. See [LICENSE](LICENSE). The name and logo are trademarks; see [TRADEMARK.md](TRADEMARK.md).
