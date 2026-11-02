@@ -1,4 +1,5 @@
 ---
+
 "@apidrifter/core": minor
 "apidrifter": minor
 ---

@@ -18,9 +18,7 @@
       "spec": "Allow null at paths[\"/api/v2/evolution-chain/{id}/\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"baby_trigger_item\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 25,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "request": {
       "method": "GET",
