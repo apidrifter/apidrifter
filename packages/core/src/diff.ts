@@ -12,12 +12,12 @@ import {
 import { locationKey } from "./render/location.js";
 import { clip, safeString } from "./text.js";
 import {
+  ApidrifterError,
   type Change,
   type DiffOptions,
   type DiffResult,
   type DocumentKind,
   type DocumentMeta,
-  ApidrifterError,
   type Limits,
 } from "./types.js";
 

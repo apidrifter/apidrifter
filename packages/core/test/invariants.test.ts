@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
+  ApidrifterError,
   applyConfig,
   type Change,
   clean,
   compileSubjectPattern,
-  ApidrifterError,
   diff,
   fingerprint,
   parseDocument,

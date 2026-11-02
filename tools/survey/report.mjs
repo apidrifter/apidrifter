@@ -20,12 +20,19 @@ const resDir = resolve(here, "results");
 await mkdir(resDir, { recursive: true });
 
 const BODY = new Set([
-  "response-type-mismatch", "response-null-not-allowed", "response-missing-required-property",
-  "response-undocumented-property", "response-forbidden-property", "response-enum-violation",
-  "response-composition-violation", "response-constraint-violation", "response-body-not-json",
+  "response-type-mismatch",
+  "response-null-not-allowed",
+  "response-missing-required-property",
+  "response-undocumented-property",
+  "response-forbidden-property",
+  "response-enum-violation",
+  "response-composition-violation",
+  "response-constraint-violation",
+  "response-body-not-json",
   "response-header-missing",
 ]);
-const INPUT_PREFIX = /^(request-|undocumented-operation|pattern-not-checked|deprecated-operation-in-use)/;
+const INPUT_PREFIX =
+  /^(request-|undocumented-operation|pattern-not-checked|deprecated-operation-in-use)/;
 
 function classify(f, obs) {
   const status = obs?.response.status ?? 0;
@@ -40,7 +47,12 @@ function classify(f, obs) {
 }
 let currentFindings = [];
 function hasInputFinding(f) {
-  return currentFindings.some((g) => g.observation === f.observation && INPUT_PREFIX.test(g.id) && g.id !== "request-rejected-but-valid");
+  return currentFindings.some(
+    (g) =>
+      g.observation === f.observation &&
+      INPUT_PREFIX.test(g.id) &&
+      g.id !== "request-rejected-but-valid",
+  );
 }
 
 const lines = [
@@ -79,12 +91,21 @@ for (const t of targets) {
   if (counts.body > 0) totals.withBody++;
   for (const k of Object.keys(counts)) totals[k] += counts[k];
   const sent = obs.length + (r.failures?.length ?? 0);
-  lines.push(`| ${t.name} | [spec](${t.spec}) | ${r.coverage.operations} | ${sent} | ${ok} | ${counts.body} | ${counts.media} | ${counts.errors} | ${counts.server} | ${counts.input} | ${t.note ?? ""} |`);
-  await writeFile(resolve(resDir, `${t.id}.findings.json`), `${JSON.stringify(findings, null, 2)}\n`);
+  lines.push(
+    `| ${t.name} | [spec](${t.spec}) | ${r.coverage.operations} | ${sent} | ${ok} | ${counts.body} | ${counts.media} | ${counts.errors} | ${counts.server} | ${counts.input} | ${t.note ?? ""} |`,
+  );
+  await writeFile(
+    resolve(resDir, `${t.id}.findings.json`),
+    `${JSON.stringify(findings, null, 2)}\n`,
+  );
 }
 lines.push("");
-lines.push(`**${totals.withBody} of ${totals.apis} APIs** returned at least one successful response whose body does not match their own spec. Totals: ${totals.body} body, ${totals.media} media, ${totals.errors} error-documentation, ${totals.server} server, ${totals.input} input.`);
+lines.push(
+  `**${totals.withBody} of ${totals.apis} APIs** returned at least one successful response whose body does not match their own spec. Totals: ${totals.body} body, ${totals.media} media, ${totals.errors} error-documentation, ${totals.server} server, ${totals.input} input.`,
+);
 lines.push("");
-lines.push("Method: one GET request per operation, values from the spec's own examples or a small hand-written set, a delay between requests, a named User-Agent, and no credentials. Operations that needed values we could not supply were skipped. Each row's findings file in this directory lists every finding with the fix the engine suggests for the spec and for the implementation.");
+lines.push(
+  "Method: one GET request per operation, values from the spec's own examples or a small hand-written set, a delay between requests, a named User-Agent, and no credentials. Operations that needed values we could not supply were skipped. Each row's findings file in this directory lists every finding with the fix the engine suggests for the spec and for the implementation.",
+);
 await writeFile(resolve(resDir, "summary.md"), `${lines.join("\n")}\n`);
 console.log(lines.join("\n"));

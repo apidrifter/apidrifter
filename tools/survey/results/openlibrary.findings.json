@@ -15,10 +15,7 @@
       "spec": "Add a \"303\" response under paths[\"/account/loan-history.json\"].get.responses."
     },
     "observation": 0,
-    "expected": [
-      "200",
-      "422"
-    ],
+    "expected": ["200", "422"],
     "actual": 303,
     "review": "unreviewed"
   },
@@ -38,9 +35,7 @@
       "spec": "Add a \"303\" response under paths[\"/account/loans.json\"].get.responses."
     },
     "observation": 1,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 303,
     "review": "unreviewed"
   },
@@ -61,9 +56,7 @@
       "spec": "Add \"text/plain\" under paths[\"/health\"].get.responses[\"200\"].content."
     },
     "observation": 3,
-    "expected": [
-      "application/json"
-    ],
+    "expected": ["application/json"],
     "actual": "text/plain",
     "review": "unreviewed"
   },
@@ -83,10 +76,7 @@
       "spec": "Add a \"401\" response under paths[\"/import/preview.json\"].get.responses."
     },
     "observation": 4,
-    "expected": [
-      "200",
-      "422"
-    ],
+    "expected": ["200", "422"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -106,10 +96,7 @@
       "spec": "Add a \"404\" response under paths[\"/lists/{olid}/editions.json\"].get.responses."
     },
     "observation": 6,
-    "expected": [
-      "200",
-      "422"
-    ],
+    "expected": ["200", "422"],
     "actual": 404,
     "review": "unreviewed"
   },
@@ -129,10 +116,7 @@
       "spec": "Add a \"404\" response under paths[\"/lists/{olid}/seeds.json\"].get.responses."
     },
     "observation": 7,
-    "expected": [
-      "200",
-      "422"
-    ],
+    "expected": ["200", "422"],
     "actual": 404,
     "review": "unreviewed"
   },
@@ -152,10 +136,7 @@
       "spec": "Add a \"404\" response under paths[\"/lists/{olid}/subjects.json\"].get.responses."
     },
     "observation": 8,
-    "expected": [
-      "200",
-      "422"
-    ],
+    "expected": ["200", "422"],
     "actual": 404,
     "review": "unreviewed"
   },
@@ -175,10 +156,7 @@
       "spec": "Add a \"401\" response under paths[\"/reading-goal.json\"].get.responses."
     },
     "observation": 10,
-    "expected": [
-      "200",
-      "422"
-    ],
+    "expected": ["200", "422"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -233,10 +211,7 @@
       "spec": "Add a \"404\" response under paths[\"/search/editions.json\"].get.responses."
     },
     "observation": 13,
-    "expected": [
-      "200",
-      "422"
-    ],
+    "expected": ["200", "422"],
     "actual": 404,
     "review": "unreviewed"
   },
@@ -256,10 +231,7 @@
       "spec": "Add a \"404\" response under paths[\"/series/{olid}/editions.json\"].get.responses."
     },
     "observation": 17,
-    "expected": [
-      "200",
-      "422"
-    ],
+    "expected": ["200", "422"],
     "actual": 404,
     "review": "unreviewed"
   },

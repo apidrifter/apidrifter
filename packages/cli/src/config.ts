@@ -1,6 +1,6 @@
 import { access } from "node:fs/promises";
 import { resolve } from "node:path";
-import { type Config, ApidrifterError, validateConfig } from "@apidrifter/core";
+import { ApidrifterError, type Config, validateConfig } from "@apidrifter/core";
 import { InputError } from "./errors.js";
 import { loadDocument } from "./io.js";
 

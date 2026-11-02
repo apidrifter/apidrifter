@@ -47,7 +47,11 @@ async function runTarget(t) {
   let specPath;
   if (parsedSpec !== undefined && typeof parsedSpec.swagger === "string") {
     console.error(`[${t.id}] converting Swagger ${parsedSpec.swagger} to OpenAPI 3`);
-    const { openapi } = await converter.convertObj(parsedSpec, { patch: true, warnOnly: true, resolve: false });
+    const { openapi } = await converter.convertObj(parsedSpec, {
+      patch: true,
+      warnOnly: true,
+      resolve: false,
+    });
     specPath = resolve(out, "spec.json");
     await writeFile(specPath, JSON.stringify(openapi));
   } else {
@@ -68,7 +72,7 @@ async function runTarget(t) {
     if ((t.exclude ?? []).some((re) => new RegExp(re).test(p.operationKey))) continue;
     const v = {};
     const missing = [];
-    const perOp = (t.opValues ?? {})[p.operationKey] ?? {};
+    const perOp = t.opValues?.[p.operationKey] ?? {};
     for (const prm of p.parameters) {
       const key = `${prm.in}:${prm.name}`;
       const given = perOp[key] ?? values[key] ?? values[`${prm.in}:*`];
@@ -87,26 +91,39 @@ async function runTarget(t) {
   await writeFile(resolve(out, "unfillable.json"), JSON.stringify(unfillable, null, 2));
 
   const args = [
-    "run", specPath,
-    "--base-url", t.baseUrl,
-    "--plan", filledPath,
+    "run",
+    specPath,
+    "--base-url",
+    t.baseUrl,
+    "--plan",
+    filledPath,
     "--only-filled",
-    "--methods", "GET",
-    "--max-requests", String(t.maxRequests ?? 40),
-    "--delay-ms", String(t.delayMs ?? 750),
-    "--user-agent", UA,
+    "--methods",
+    "GET",
+    "--max-requests",
+    String(t.maxRequests ?? 40),
+    "--delay-ms",
+    String(t.delayMs ?? 750),
+    "--user-agent",
+    UA,
     "--continue-on-error",
-    "--timeout", "30000",
-    "--max-body-bytes", String(t.maxBodyBytes ?? 8 * 1024 * 1024),
-    "--format", "json",
-    "--observations-out", resolve(out, "observations.json"),
+    "--timeout",
+    "30000",
+    "--max-body-bytes",
+    String(t.maxBodyBytes ?? 8 * 1024 * 1024),
+    "--format",
+    "json",
+    "--observations-out",
+    resolve(out, "observations.json"),
   ];
   for (const [k, envName] of Object.entries(t.headersFromEnv ?? {})) {
     const val = process.env[envName];
     if (val) args.push("--header", `${k}: ${val}`);
     else console.error(`[${t.id}] env ${envName} not set; running without ${k}`);
   }
-  console.error(`[${t.id}] running ${Math.min(filled.length, t.maxRequests ?? 40)} of ${filled.length} fillable GET operations (${unfillable.length} unfillable)`);
+  console.error(
+    `[${t.id}] running ${Math.min(filled.length, t.maxRequests ?? 40)} of ${filled.length} fillable GET operations (${unfillable.length} unfillable)`,
+  );
   const { stdout, code } = await cli(args, out, [0, 1]);
   const result = JSON.parse(stdout);
   await writeFile(resolve(out, "result.json"), JSON.stringify(result, null, 2));
@@ -123,9 +140,13 @@ async function runTarget(t) {
     breaking: result.summary.breaking,
     warning: result.summary.warning,
     info: result.summary.info,
-    top: Object.entries(ids).sort((a, b) => b[1] - a[1]).slice(0, 6),
+    top: Object.entries(ids)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 6),
   };
-  console.error(`[${t.id}] done: ${row.breaking} breaking, ${row.warning} warning, ${row.info} info; observed ${row.observed}/${row.operationsInSpec}`);
+  console.error(
+    `[${t.id}] done: ${row.breaking} breaking, ${row.warning} warning, ${row.info} info; observed ${row.observed}/${row.operationsInSpec}`,
+  );
   return row;
 }
 
@@ -135,7 +156,11 @@ function rank(entry, prefer) {
 }
 
 async function fetchText(url) {
-  const res = await fetch(url, { headers: { "user-agent": UA, accept: "application/json, application/yaml, text/yaml, */*" }, redirect: "follow", signal: AbortSignal.timeout(60_000) });
+  const res = await fetch(url, {
+    headers: { "user-agent": UA, accept: "application/json, application/yaml, text/yaml, */*" },
+    redirect: "follow",
+    signal: AbortSignal.timeout(60_000),
+  });
   if (!res.ok) throw new Error(`spec fetch ${url}: HTTP ${res.status}`);
   const len = Number(res.headers.get("content-length") ?? "0");
   if (len > MAX_SPEC_BYTES) throw new Error(`spec too large: ${len} bytes`);
@@ -159,14 +184,22 @@ function parseLoose(text) {
 
 function cli(args, cwd, allowExit = [0]) {
   return new Promise((resolvePromise, reject) => {
-    const child = spawn(process.execPath, [CLI, ...args], { cwd, stdio: ["ignore", "pipe", "pipe"] });
+    const child = spawn(process.execPath, [CLI, ...args], {
+      cwd,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
     let stdout = "";
     let stderr = "";
-    child.stdout.on("data", (d) => { stdout += d; });
-    child.stderr.on("data", (d) => { stderr += d; });
+    child.stdout.on("data", (d) => {
+      stdout += d;
+    });
+    child.stderr.on("data", (d) => {
+      stderr += d;
+    });
     child.on("error", reject);
     child.on("close", (code) => {
-      if (!allowExit.includes(code)) reject(new Error(`apidrifter ${args[0]} exited ${code}: ${stderr.trim().slice(0, 500)}`));
+      if (!allowExit.includes(code))
+        reject(new Error(`apidrifter ${args[0]} exited ${code}: ${stderr.trim().slice(0, 500)}`));
       else resolvePromise({ stdout, stderr, code });
     });
   });

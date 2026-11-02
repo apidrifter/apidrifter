@@ -15,9 +15,7 @@
       "spec": "Add a \"403\" response under paths[\"/actions/run\"].get.responses."
     },
     "observation": 0,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 403,
     "review": "unreviewed"
   },
@@ -37,9 +35,7 @@
       "spec": "Add a \"404\" response under paths[\"/activitypub/actor\"].get.responses."
     },
     "observation": 1,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 404,
     "review": "unreviewed"
   },
@@ -59,9 +55,7 @@
       "spec": "Add a \"404\" response under paths[\"/nodeinfo\"].get.responses."
     },
     "observation": 8,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 404,
     "review": "unreviewed"
   },
@@ -104,9 +98,7 @@
       "spec": "Allow null at paths[\"/orgs/{org}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"comment\"].properties[\"user\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 11,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -149,9 +141,7 @@
       "spec": "Allow null at paths[\"/orgs/{org}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repo\"].properties[\"parent\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 11,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -173,9 +163,7 @@
       "spec": "Allow null at paths[\"/orgs/{org}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repo\"].properties[\"repo_transfer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 11,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -197,9 +185,7 @@
       "spec": "Allow null at paths[\"/orgs/{org}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"comment\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 11,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -219,10 +205,7 @@
       "spec": "Add a \"401\" response under paths[\"/orgs/{org}/labels/{id}\"].get.responses."
     },
     "observation": 13,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -242,9 +225,7 @@
       "spec": "Add a \"401\" response under paths[\"/orgs/{org}/list_blocked\"].get.responses."
     },
     "observation": 14,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -285,11 +266,7 @@
       "spec": "Add a \"401\" response under paths[\"/orgs/{org}/quota\"].get.responses."
     },
     "observation": 17,
-    "expected": [
-      "200",
-      "403",
-      "404"
-    ],
+    "expected": ["200", "403", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -309,11 +286,7 @@
       "spec": "Add a \"401\" response under paths[\"/orgs/{org}/quota/artifacts\"].get.responses."
     },
     "observation": 18,
-    "expected": [
-      "200",
-      "403",
-      "404"
-    ],
+    "expected": ["200", "403", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -333,11 +306,7 @@
       "spec": "Add a \"401\" response under paths[\"/orgs/{org}/quota/attachments\"].get.responses."
     },
     "observation": 19,
-    "expected": [
-      "200",
-      "403",
-      "404"
-    ],
+    "expected": ["200", "403", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -357,11 +326,7 @@
       "spec": "Add a \"401\" response under paths[\"/orgs/{org}/quota/packages\"].get.responses."
     },
     "observation": 20,
-    "expected": [
-      "200",
-      "403",
-      "404"
-    ],
+    "expected": ["200", "403", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -404,9 +369,7 @@
       "spec": "Allow null at paths[\"/orgs/{org}/repos\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"parent\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 21,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -428,9 +391,7 @@
       "spec": "Allow null at paths[\"/orgs/{org}/repos\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repo_transfer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 21,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -515,9 +476,7 @@
       "spec": "Allow null at paths[\"/packages/{owner}\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repository\"].properties[\"parent\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 22,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -539,9 +498,7 @@
       "spec": "Allow null at paths[\"/packages/{owner}\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repository\"].properties[\"repo_transfer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 22,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -584,9 +541,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"parent\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 23,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -608,9 +563,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"repo_transfer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 23,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -630,11 +583,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/runners\"].get.responses."
     },
     "observation": 25,
-    "expected": [
-      "200",
-      "400",
-      "404"
-    ],
+    "expected": ["200", "400", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -654,10 +603,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/runners/jobs\"].get.responses."
     },
     "observation": 26,
-    "expected": [
-      "200",
-      "403"
-    ],
+    "expected": ["200", "403"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -693,9 +639,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/runners/registration-token\"].get.responses."
     },
     "observation": 27,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -715,10 +659,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/secrets\"].get.responses."
     },
     "observation": 28,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -738,11 +679,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/variables\"].get.responses."
     },
     "observation": 29,
-    "expected": [
-      "200",
-      "400",
-      "404"
-    ],
+    "expected": ["200", "400", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -785,9 +722,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"comment\"].properties[\"user\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 30,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -830,9 +765,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repo\"].properties[\"parent\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 30,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -854,9 +787,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"repo\"].properties[\"repo_transfer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 30,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -878,9 +809,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"comment\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 30,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -900,10 +829,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/assignees\"].get.responses."
     },
     "observation": 31,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -923,9 +849,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branch_protections\"].get.responses."
     },
     "observation": 32,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -945,10 +869,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branch_protections/{name}\"].get.responses."
     },
     "observation": 33,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -970,9 +891,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"added\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 34,
-    "expected": [
-      "array"
-    ],
+    "expected": ["array"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -994,9 +913,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"modified\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 34,
-    "expected": [
-      "array"
-    ],
+    "expected": ["array"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -1018,9 +935,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"removed\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 34,
-    "expected": [
-      "array"
-    ],
+    "expected": ["array"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -1042,9 +957,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"verification\"].properties[\"signer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 34,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -1066,9 +979,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches/{branch}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"commit\"].properties[\"added\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 35,
-    "expected": [
-      "array"
-    ],
+    "expected": ["array"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -1090,9 +1001,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches/{branch}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"commit\"].properties[\"modified\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 35,
-    "expected": [
-      "array"
-    ],
+    "expected": ["array"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -1114,9 +1023,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches/{branch}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"commit\"].properties[\"removed\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 35,
-    "expected": [
-      "array"
-    ],
+    "expected": ["array"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -1138,9 +1045,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches/{branch}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"commit\"].properties[\"verification\"].properties[\"signer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 35,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -1160,10 +1065,7 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/collaborators\"].get.responses."
     },
     "observation": 36,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -1206,9 +1108,7 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/commits\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"verification\"].properties[\"signer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 37,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": null,
     "review": "unreviewed"
   },

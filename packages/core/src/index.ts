@@ -26,6 +26,8 @@ export type { SchemaNode } from "./schema/model.js";
 export { createNormalizeContext, normalizeSchema } from "./schema/normalize.js";
 export { clean, clip, quote, safeString, truncate } from "./text.js";
 export {
+  ApidrifterError,
+  type ApidrifterErrorCode,
   type Change,
   type Config,
   DEFAULT_LIMITS,
@@ -34,8 +36,6 @@ export {
   type DiffSummary,
   type DocumentKind,
   type DocumentMeta,
-  ApidrifterError,
-  type ApidrifterErrorCode,
   type Limits,
   type Location,
   type Polarity,

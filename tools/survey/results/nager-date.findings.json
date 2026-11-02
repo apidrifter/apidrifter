@@ -15,10 +15,7 @@
       "spec": "Add a \"502\" response under paths[\"/api/v3/LongWeekend/{year}/{countryCode}\"].get.responses."
     },
     "observation": 3,
-    "expected": [
-      "200",
-      "404"
-    ],
+    "expected": ["200", "404"],
     "actual": 502,
     "review": "unreviewed"
   }
