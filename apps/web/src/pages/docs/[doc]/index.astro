@@ -1,6 +1,8 @@
 ---
 import Base from "../../../layouts/Base.astro";
-import { DOC_PAGES } from "../../../lib/site";
+import { breadcrumbs } from "../../../lib/jsonld";
+import { loadRules } from "../../../lib/rules";
+import { DOC_PAGES, SITE } from "../../../lib/site";
 import { getEntry, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -11,18 +13,80 @@ const { page } = Astro.props;
 const entry = await getEntry("docs", page.id);
 if (entry === undefined) throw new Error(`missing doc entry ${page.id}`);
 const { Content } = await render(entry);
+const rules = page.id === "rules" ? await loadRules() : undefined;
+const url = `${SITE.url}/docs/${page.id}/`;
+const jsonld = [
+  breadcrumbs([
+    { name: SITE.name, url: `${SITE.url}/` },
+    { name: "Docs", url: `${SITE.url}/docs/cli/` },
+    { name: page.title, url },
+  ]),
+];
 ---
 
-<Base title={page.title} description={page.description} wide={page.id === "rules"}>
+<Base title={page.title} description={page.description} wide={page.id === "rules"} jsonld={jsonld}>
   <p class="post-meta">
     {DOC_PAGES.map((d, i) => (
       <>
-        {i > 0 && " \u00B7 "}
+        {i > 0 && " · "}
         {d.id === page.id ? <strong>{d.title}</strong> : <a href={`/docs/${d.id}/`}>{d.title}</a>}
       </>
     ))}
   </p>
   <article class="doc prose">
-    <Content />
+    {
+      rules !== undefined ? (
+        <>
+          <h1 id="rules-reference">{rules.title}</h1>
+          {rules.preamble.map((p) => (
+            <p set:text={p} />
+          ))}
+          {rules.sections.map((s) => (
+            <section>
+              <h2 id={s.anchor}>{s.heading}</h2>
+              {s.intro.map((p) => (
+                <p set:text={p} />
+              ))}
+              <div class="table-wrap">
+                <table class="rules">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Severity</th>
+                      <th>Source</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {s.rows.map((r) => (
+                      <tr id={r.id}>
+                        <td>
+                          <a href={`#${r.id}`}>
+                            <code>{r.id}</code>
+                          </a>
+                        </td>
+                        <td>
+                          <span class:list={["badge", `sev-${r.severity}`]}>{r.severity}</span>
+                        </td>
+                        <td>{r.source}</td>
+                        <td>{r.description}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          ))}
+        </>
+      ) : (
+        <Content />
+      )
+    }
   </article>
+  <p class="small muted doc-foot">
+    Install with <code>npm install -g apidrifter</code> or run <code>npx apidrifter</code>.
+    See the <a href="/docs/cli/">CLI reference</a>, the <a href="/docs/rules/">rules reference</a>,
+    the <a href="/docs/design/">design document</a>, and what the tool finds in the wild under
+    <a href="/research/">research</a>.
+  </p>
 </Base>

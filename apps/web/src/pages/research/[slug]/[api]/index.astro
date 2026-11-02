@@ -1,8 +1,16 @@
 ---
 import Finding from "../../../../components/Finding.astro";
 import Base from "../../../../layouts/Base.astro";
+import { breadcrumbs, techArticle } from "../../../../lib/jsonld";
+import { curlFor } from "../../../../lib/markdown";
 import { SITE } from "../../../../lib/site";
-import { GROUPS, groupFindings, loadFindings, loadSummary, type SurveyApi } from "../../../../lib/survey";
+import {
+  GROUPS,
+  groupFindings,
+  loadFindings,
+  loadSummary,
+  type SurveyApi,
+} from "../../../../lib/survey";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -21,7 +29,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  post: { id: string; data: { title: string } };
+  post: { id: string; data: { title: string; date: Date } };
   api: SurveyApi;
   generatedAt: string;
 }
@@ -29,23 +37,54 @@ interface Props {
 const { post, api, generatedAt } = Astro.props;
 const findings = await loadFindings(api.id);
 const groups = groupFindings(findings);
-const title = `${api.name}: spec vs live`;
-const description = `${api.counts.hard} hard violations on successful responses out of ${api.sent} requests sent. Every request and finding, with fixes for both sides.`;
+const firstHard = (groups.get("hard") ?? [])[0];
+const runDate = (api.ranAt ?? generatedAt).slice(0, 10);
+const postUrl = `${SITE.url}/research/${post.id}/`;
+const url = `${postUrl}${api.id}/`;
+/** Name without the parenthetical, for titles and descriptions. */
+const shortName = api.name.replace(/\s*\(.*\)\s*$/, "");
+const title = `${shortName}: live API vs its OpenAPI spec`;
+const description = `${api.counts.hard} hard violations in ${api.ok} successful responses from ${shortName}: every request sent, every finding, and a fix for each side.`;
+const jsonld = [
+  techArticle({
+    url,
+    headline: title,
+    description,
+    datePublished: runDate,
+    dateModified: generatedAt.slice(0, 10),
+    isBasedOn: `${SITE.resultsUrl}/${api.id}.findings.json`,
+  }),
+  breadcrumbs([
+    { name: SITE.name, url: `${SITE.url}/` },
+    { name: "Research", url: `${SITE.url}/research/` },
+    { name: post.data.title, url: postUrl },
+    { name: api.name, url },
+  ]),
+];
 ---
 
-<Base title={title} description={description} wide>
+<Base
+  title={title}
+  description={description}
+  wide
+  jsonld={jsonld}
+  markdownAlternate={`/research/${post.id}/${api.id}/index.md`}
+  article={{ published: runDate, modified: generatedAt.slice(0, 10) }}
+>
   <p class="post-meta">
     <a href="/research/">Research</a> &middot; <a href={`/research/${post.id}/`}>{post.data.title}</a>
+    &middot; <a href={`/research/${post.id}/${api.id}/index.md`}>Markdown</a>
   </p>
-  <h1>{api.name}</h1>
+  <h1>{api.name}: spec vs live</h1>
 
+  <h2 id="summary">Summary</h2>
   <dl class="facts">
     <dt>Spec</dt>
     <dd><a href={api.spec} rel="noopener nofollow">{api.spec}</a> ({api.specFormat === "swagger-2.0" ? "Swagger 2.0, converted to OpenAPI 3 before checking" : "OpenAPI 3"})</dd>
     <dt>Base URL</dt>
     <dd><code>{api.baseUrl}</code></dd>
     <dt>Run</dt>
-    <dd>{(api.ranAt ?? generatedAt).slice(0, 10)}, read-only GET requests, no credentials</dd>
+    <dd><time datetime={runDate}>{runDate}</time>, read-only GET requests, no credentials</dd>
     <dt>Coverage</dt>
     <dd>
       {api.operations} operations in the spec, {api.sent} requests sent, {api.ok} successful,
@@ -62,24 +101,46 @@ const description = `${api.counts.hard} hard violations on successful responses 
       const list = groups.get(g.key) ?? [];
       if (list.length === 0) return null;
       return (
-        <details class="group" open={g.open}>
-          <summary>
-            <span>{g.label}</span>
-            <span class="count">{list.length}</span>
-            <span class="blurb">{g.blurb}</span>
-          </summary>
-          {list.map((f) => (
-            <Finding finding={f} />
-          ))}
-        </details>
+        <section class="group-section">
+          <h2 id={g.key}>
+            {g.label} <span class="group-count">{list.length}</span>
+          </h2>
+          <p class="muted small">{g.blurb}</p>
+          <details class="group" open={g.open}>
+            <summary>
+              {g.open ? "Hide" : "Show"} {list.length} finding{list.length === 1 ? "" : "s"}
+            </summary>
+            {list.map((f) => (
+              <Finding finding={f} />
+            ))}
+          </details>
+        </section>
       );
     })
   }
 
-  <p class="small muted">
-    Raw data: <a href={`${SITE.resultsUrl}/${api.id}.findings.json`} rel="noopener">findings</a> and
-    <a href={`${SITE.resultsUrl}/${api.id}.observations.json`} rel="noopener">requests sent</a>.
-    Reproduce with <code>apidrifter run</code>; the target definition is in <code>tools/survey/targets.json</code>.
-    If a finding is wrong, open an issue; if it is right, a pull request on the spec is welcome.
-  </p>
+  {
+    firstHard?.request !== undefined && (
+      <section>
+        <h2 id="reproduce">Reproduce</h2>
+        <p>
+          The first hard violation came from this request. Compare the response to the schema at
+          the location named in the finding.
+        </p>
+        <pre><code>{curlFor(api.baseUrl, firstHard.request)}</code></pre>
+      </section>
+    )
+  }
+
+  <section>
+    <h2 id="data">Data</h2>
+    <ul>
+      <li><a href={`${SITE.resultsUrl}/${api.id}.findings.json`} rel="noopener">Findings JSON</a>: every finding on this page with its classification and fixes.</li>
+      <li><a href={`${SITE.resultsUrl}/${api.id}.observations.json`} rel="noopener">Observations JSON</a>: every request sent and the status it received.</li>
+      <li><a href="/docs/cli/">Reproduce with <code>apidrifter run</code></a>; the target definition is in <code>tools/survey/targets.json</code> in the repository.</li>
+    </ul>
+    <p class="small muted">
+      If a finding is wrong, open an issue; if it is right, a pull request on the spec is welcome.
+    </p>
+  </section>
 </Base>
