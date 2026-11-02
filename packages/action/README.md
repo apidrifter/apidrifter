@@ -1,13 +1,13 @@
-# Driftwatch GitHub Action
+# Apidrifter GitHub Action
 
-Thin wrapper over the `driftwatch` CLI. Runs `changelog` into the job summary, runs `diff` with `--fail-on`, and optionally posts the changelog as a pull request comment.
+Thin wrapper over the `apidrifter` CLI. Runs `changelog` into the job summary, runs `diff` with `--fail-on`, and optionally posts the changelog as a pull request comment.
 
 ```yaml
 - uses: actions/checkout@v4
   with:
     fetch-depth: 2
 - run: git show HEAD~1:openapi.yaml > openapi.before.yaml
-- uses: <org>/driftwatch/packages/action@main
+- uses: <org>/apidrifter/packages/action@main
   with:
     before: openapi.before.yaml
     after: openapi.yaml

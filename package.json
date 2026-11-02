@@ -1,5 +1,5 @@
 {
-  "name": "driftwatch-monorepo",
+  "name": "apidrifter-monorepo",
   "private": true,
   "version": "0.0.0",
   "description": "Breaking-change detection and monitoring for OpenAPI documents and MCP servers.",

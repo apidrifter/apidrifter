@@ -1,10 +1,10 @@
-import { DEFAULT_LIMITS, DriftwatchError, type Limits } from "./types.js";
+import { DEFAULT_LIMITS, ApidrifterError, type Limits } from "./types.js";
 
 export function resolveLimits(partial?: Partial<Limits>): Limits {
   const limits: Limits = { ...DEFAULT_LIMITS, ...(partial ?? {}) };
   for (const [k, v] of Object.entries(limits)) {
     if (!Number.isFinite(v) || v <= 0) {
-      throw new DriftwatchError("invalid-config", `limit ${k} must be a positive number`);
+      throw new ApidrifterError("invalid-config", `limit ${k} must be a positive number`);
     }
   }
   return limits;
@@ -22,13 +22,13 @@ export function enforceShape(value: unknown, limits: Limits): void {
     if (item === undefined) break;
     nodes++;
     if (nodes > limits.maxNodes) {
-      throw new DriftwatchError(
+      throw new ApidrifterError(
         "document-too-many-nodes",
         `document has more than ${limits.maxNodes} values`,
       );
     }
     if (item.d > limits.maxDepth) {
-      throw new DriftwatchError(
+      throw new ApidrifterError(
         "document-too-deep",
         `document nests deeper than ${limits.maxDepth}`,
       );

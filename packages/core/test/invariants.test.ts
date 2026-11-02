@@ -4,7 +4,7 @@ import {
   type Change,
   clean,
   compileSubjectPattern,
-  DriftwatchError,
+  ApidrifterError,
   diff,
   fingerprint,
   parseDocument,
@@ -59,11 +59,11 @@ function flatten(v: unknown, acc: Record<string, true> = {}): Record<string, tru
 describe("parseDocument limits", () => {
   it("rejects documents over maxBytes", () => {
     const big = JSON.stringify({ openapi: "3.1.0", pad: "x".repeat(2048) });
-    expect(() => parseDocument(big, { limits: { maxBytes: 1024 } })).toThrowError(DriftwatchError);
+    expect(() => parseDocument(big, { limits: { maxBytes: 1024 } })).toThrowError(ApidrifterError);
     try {
       parseDocument(big, { limits: { maxBytes: 1024 } });
     } catch (e) {
-      expect((e as DriftwatchError).code).toBe("document-too-large");
+      expect((e as ApidrifterError).code).toBe("document-too-large");
     }
   });
 
@@ -73,7 +73,7 @@ describe("parseDocument limits", () => {
     try {
       parseDocument(deep);
     } catch (e) {
-      code = (e as DriftwatchError).code;
+      code = (e as ApidrifterError).code;
     }
     expect(code).toBe("document-too-deep");
   });
@@ -93,7 +93,7 @@ describe("parseDocument limits", () => {
     try {
       parseDocument(bomb, { format: "yaml" });
     } catch (e) {
-      code = (e as DriftwatchError).code;
+      code = (e as ApidrifterError).code;
     }
     expect(["parse-failed", "document-too-many-nodes"]).toContain(code);
   });
@@ -109,8 +109,8 @@ describe("parseDocument limits", () => {
   });
 
   it("rejects non-object documents", () => {
-    expect(() => parseDocument("[1,2,3]")).toThrowError(DriftwatchError);
-    expect(() => parseDocument("42", { format: "yaml" })).toThrowError(DriftwatchError);
+    expect(() => parseDocument("[1,2,3]")).toThrowError(ApidrifterError);
+    expect(() => parseDocument("42", { format: "yaml" })).toThrowError(ApidrifterError);
   });
 });
 
@@ -202,7 +202,7 @@ describe("applyConfig", () => {
         { openapi: "3.1.0", paths: {} },
         { config: { severity: { nope: "info" } } },
       ),
-    ).toThrowError(DriftwatchError);
+    ).toThrowError(ApidrifterError);
   });
 });
 
@@ -213,7 +213,7 @@ describe("diff kind handling", () => {
 
   it("refuses mixed kinds", () => {
     expect(() => diff({ openapi: "3.1.0", paths: {} }, { tools: [] })).toThrowError(
-      DriftwatchError,
+      ApidrifterError,
     );
   });
 });

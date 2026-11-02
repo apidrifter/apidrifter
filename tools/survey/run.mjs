@@ -2,9 +2,9 @@
 /**
  * Survey runner. For each target in targets.json:
  *   1. fetch the published spec (converted from Swagger 2.0 when needed)
- *   2. `driftwatch plan` it
+ *   2. `apidrifter plan` it
  *   3. build a filled plan for GET operations only, from target-level values and spec examples
- *   4. `driftwatch run` with a request budget, a delay, a named User-Agent and continue-on-error
+ *   4. `apidrifter run` with a request budget, a delay, a named User-Agent and continue-on-error
  *   5. write out/<id>/result.json and a one-line summary
  *
  * Read-only by construction: only GET, only values we chose, only credentials we own.
@@ -19,7 +19,7 @@ import converter from "swagger2openapi";
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, "../..");
 const CLI = resolve(root, "packages/cli/dist/bin.js");
-const UA = "driftwatch-survey/0.1 (read-only OpenAPI conformance survey; contact: see repository)";
+const UA = "apidrifter-survey/0.1 (read-only OpenAPI conformance survey; contact: see repository)";
 const MAX_SPEC_BYTES = 40 * 1024 * 1024;
 
 const only = new Set(process.argv.slice(2));
@@ -166,7 +166,7 @@ function cli(args, cwd, allowExit = [0]) {
     child.stderr.on("data", (d) => { stderr += d; });
     child.on("error", reject);
     child.on("close", (code) => {
-      if (!allowExit.includes(code)) reject(new Error(`driftwatch ${args[0]} exited ${code}: ${stderr.trim().slice(0, 500)}`));
+      if (!allowExit.includes(code)) reject(new Error(`apidrifter ${args[0]} exited ${code}: ${stderr.trim().slice(0, 500)}`));
       else resolvePromise({ stdout, stderr, code });
     });
   });

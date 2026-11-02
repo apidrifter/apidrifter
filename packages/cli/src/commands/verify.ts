@@ -50,7 +50,7 @@ export async function planCommand(args: ParsedArgs, io: CliIo): Promise<number> 
   rejectUnknownFlags(args, PLAN_FLAGS);
   const [specPath, extra] = args.positionals;
   if (specPath === undefined || extra !== undefined)
-    throw new UsageError("usage: driftwatch plan <spec>");
+    throw new UsageError("usage: apidrifter plan <spec>");
   const spec = await loadDocument(specPath, { cwd: io.cwd, fetch: fetchOpts(args, io) });
   const planned = await plan(spec);
   const text = `${JSON.stringify(planned, null, 2)}\n`;
@@ -67,7 +67,7 @@ export async function runCommand(args: ParsedArgs, io: CliIo): Promise<number> {
   rejectUnknownFlags(args, RUN_FLAGS);
   const [specPath, extra] = args.positionals;
   if (specPath === undefined || extra !== undefined) {
-    throw new UsageError("usage: driftwatch run <spec> --base-url <url> [--plan filled.json]");
+    throw new UsageError("usage: apidrifter run <spec> --base-url <url> [--plan filled.json]");
   }
   const baseUrlRaw = flag(args, "base-url");
   if (baseUrlRaw === undefined) throw new UsageError("--base-url is required");
@@ -161,7 +161,7 @@ export async function verifyCommand(args: ParsedArgs, io: CliIo): Promise<number
   const [specPath, extra] = args.positionals;
   const observationsPath = flag(args, "observations");
   if (specPath === undefined || extra !== undefined || observationsPath === undefined) {
-    throw new UsageError("usage: driftwatch verify <spec> --observations <file>");
+    throw new UsageError("usage: apidrifter verify <spec> --observations <file>");
   }
   const { format, level, config } = await commonOptions(args, io);
   const spec = await loadDocument(specPath, { cwd: io.cwd, fetch: fetchOpts(args, io) });

@@ -6,7 +6,7 @@ import { isOpenApiDocument, normalizeMediaType, normalizeOpenApi } from "../open
 import { locationKey } from "../render/location.js";
 import type { SchemaNode } from "../schema/model.js";
 import { clip, quote, safeString } from "../text.js";
-import { type Config, DriftwatchError, type Limits, type Location } from "../types.js";
+import { type Config, ApidrifterError, type Limits, type Location } from "../types.js";
 import { matchOperation } from "./match.js";
 import { findingSeverity } from "./rules.js";
 import type { Finding, Observation, VerifyOptions, VerifyResult } from "./types.js";
@@ -26,10 +26,10 @@ export function verify(
   const limits = resolveLimits(options.limits);
   enforceShape(spec, limits);
   if (!isOpenApiDocument(spec)) {
-    throw new DriftwatchError("unsupported-document", "verify requires an OpenAPI 3.x document");
+    throw new ApidrifterError("unsupported-document", "verify requires an OpenAPI 3.x document");
   }
   if (!Array.isArray(observations)) {
-    throw new DriftwatchError("invalid-config", "observations must be an array");
+    throw new ApidrifterError("invalid-config", "observations must be an array");
   }
   const config = validateVerifyConfig(options.config);
   const surface = normalizeOpenApi(spec, limits);

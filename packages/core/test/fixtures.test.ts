@@ -9,7 +9,7 @@ import { type ExpectedChange, loadFixtures } from "./helpers.js";
  * must report, compared on id, severity and location (and message when present).
  *
  * Regenerate expectations after an intentional engine change with:
- *   UPDATE_FIXTURES=1 pnpm --filter @driftwatch/core test
+ *   UPDATE_FIXTURES=1 pnpm --filter @apidrifter/core test
  * and review the resulting diff by hand. The expected file is the contract.
  */
 

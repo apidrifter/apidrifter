@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Oracle harness: compare the Driftwatch engine with oasdiff over two revisions of a
+# Oracle harness: compare the Apidrifter engine with oasdiff over two revisions of a
 # public spec. See README.md. Network access required. Not for CI.
 set -euo pipefail
 
@@ -75,6 +75,6 @@ fetch_spec "$NEW" "$NEW_FILE"
 
 # --- run both tools ---------------------------------------------------------------------
 "$BIN/oasdiff" changelog "$OLD_FILE" "$NEW_FILE" --format json > "$WORK/$NAME/oasdiff.json" || true
-node "$HERE/run-driftwatch.mjs" "$ROOT" "$OLD_FILE" "$NEW_FILE" > "$WORK/$NAME/driftwatch.json"
-node "$HERE/compare.mjs" "$WORK/$NAME/oasdiff.json" "$WORK/$NAME/driftwatch.json" > "$WORK/$NAME/report.md"
+node "$HERE/run-apidrifter.mjs" "$ROOT" "$OLD_FILE" "$NEW_FILE" > "$WORK/$NAME/apidrifter.json"
+node "$HERE/compare.mjs" "$WORK/$NAME/oasdiff.json" "$WORK/$NAME/apidrifter.json" > "$WORK/$NAME/report.md"
 echo "report: $WORK/$NAME/report.md"

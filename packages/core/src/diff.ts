@@ -17,7 +17,7 @@ import {
   type DiffResult,
   type DocumentKind,
   type DocumentMeta,
-  DriftwatchError,
+  ApidrifterError,
   type Limits,
 } from "./types.js";
 
@@ -41,7 +41,7 @@ export function diff(before: unknown, after: unknown, options: DiffOptions = {})
 
   const kind = options.kind ?? resolveKind(before, after);
   if (!isRecordLike(before) || !isRecordLike(after)) {
-    throw new DriftwatchError("unsupported-document", "documents must be objects");
+    throw new ApidrifterError("unsupported-document", "documents must be objects");
   }
 
   let changes: Change[];
@@ -81,18 +81,18 @@ function resolveKind(before: unknown, after: unknown): DocumentKind {
   const b = detectKind(before);
   const a = detectKind(after);
   if (b === "swagger2" || a === "swagger2") {
-    throw new DriftwatchError(
+    throw new ApidrifterError(
       "unsupported-document",
       "Swagger 2.0 is not supported; convert to OpenAPI 3 first",
     );
   }
   if (b === "unknown" || a === "unknown") {
-    throw new DriftwatchError(
+    throw new ApidrifterError(
       "unsupported-document",
       "could not detect document kind; expected OpenAPI 3.x or an MCP snapshot",
     );
   }
-  if (b !== a) throw new DriftwatchError("kind-mismatch", `cannot diff ${b} against ${a}`);
+  if (b !== a) throw new ApidrifterError("kind-mismatch", `cannot diff ${b} against ${a}`);
   return b;
 }
 

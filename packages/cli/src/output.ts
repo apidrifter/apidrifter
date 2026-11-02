@@ -1,4 +1,4 @@
-import { type DiffResult, renderMarkdown, renderText } from "@driftwatch/core";
+import { type DiffResult, renderMarkdown, renderText } from "@apidrifter/core";
 import { UsageError } from "./errors.js";
 
 export type Format = "json" | "markdown" | "text";

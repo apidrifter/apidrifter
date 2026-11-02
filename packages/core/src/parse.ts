@@ -1,7 +1,7 @@
 import { parse as parseYaml } from "yaml";
 import { enforceShape, resolveLimits } from "./limits.js";
 import { byteLength } from "./text.js";
-import { DriftwatchError, type Limits } from "./types.js";
+import { ApidrifterError, type Limits } from "./types.js";
 
 export interface ParseOptions {
   format?: "json" | "yaml" | "auto";
@@ -16,7 +16,7 @@ export interface ParseOptions {
 export function parseDocument(text: string, options: ParseOptions = {}): unknown {
   const limits = resolveLimits(options.limits);
   if (byteLength(text) > limits.maxBytes) {
-    throw new DriftwatchError("document-too-large", `document exceeds ${limits.maxBytes} bytes`);
+    throw new ApidrifterError("document-too-large", `document exceeds ${limits.maxBytes} bytes`);
   }
   const format = options.format ?? "auto";
   let value: unknown;
@@ -35,10 +35,10 @@ export function parseDocument(text: string, options: ParseOptions = {}): unknown
     }
   } catch (err) {
     const msg = err instanceof Error ? err.message : "unknown error";
-    throw new DriftwatchError("parse-failed", `could not parse document: ${msg.slice(0, 200)}`);
+    throw new ApidrifterError("parse-failed", `could not parse document: ${msg.slice(0, 200)}`);
   }
   if (value === null || typeof value !== "object" || Array.isArray(value)) {
-    throw new DriftwatchError("parse-failed", "document is not an object");
+    throw new ApidrifterError("parse-failed", "document is not an object");
   }
   enforceShape(value, limits);
   return stripPrototypes(value);

@@ -1,5 +1,5 @@
 import { isRecord } from "../parse.js";
-import { DriftwatchError, type Limits } from "../types.js";
+import { ApidrifterError, type Limits } from "../types.js";
 import { emptySchema, type SchemaNode } from "./model.js";
 
 export interface NormalizeContext {
@@ -44,10 +44,10 @@ export function normalizeSchema(raw: unknown, ctx: NormalizeContext): SchemaNode
 function walk(raw: unknown, ctx: NormalizeContext, depth: number): SchemaNode {
   ctx.nodes++;
   if (ctx.nodes > ctx.limits.maxNodes) {
-    throw new DriftwatchError("document-too-many-nodes", "schema expansion exceeded node budget");
+    throw new ApidrifterError("document-too-many-nodes", "schema expansion exceeded node budget");
   }
   if (depth > ctx.limits.maxDepth) {
-    throw new DriftwatchError("document-too-deep", "schema nesting exceeded depth limit");
+    throw new ApidrifterError("document-too-deep", "schema nesting exceeded depth limit");
   }
   const node = emptySchema();
   if (raw === true || raw === undefined || raw === null) return node;
@@ -65,7 +65,7 @@ function walk(raw: unknown, ctx: NormalizeContext, depth: number): SchemaNode {
       return node;
     }
     if (ctx.stack.length >= ctx.limits.maxRefDepth) {
-      throw new DriftwatchError("document-too-deep", "reference chain exceeded limit");
+      throw new ApidrifterError("document-too-deep", "reference chain exceeded limit");
     }
     const target = resolveLocalRef(ctx.root, ref);
     if (target === undefined) {

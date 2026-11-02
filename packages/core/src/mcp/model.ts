@@ -1,11 +1,11 @@
 import type { SchemaNode } from "../schema/model.js";
 
 /**
- * Snapshot of an MCP server as written by `driftwatch mcp snapshot`. The engine also
+ * Snapshot of an MCP server as written by `apidrifter mcp snapshot`. The engine also
  * accepts a bare `tools/list` result (`{ tools: [...] }`).
  */
 export interface McpSnapshotDocument {
-  driftwatch?: number;
+  apidrifter?: number;
   kind?: "mcp";
   capturedAt?: string;
   server?: {

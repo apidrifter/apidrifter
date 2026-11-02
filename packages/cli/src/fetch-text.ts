@@ -33,7 +33,7 @@ export async function fetchText(input: string, options: FetchTextOptions = {}): 
         redirect: "manual",
         signal: AbortSignal.timeout(timeoutMs),
         headers: {
-          "user-agent": `driftwatch/${VERSION}`,
+          "user-agent": `apidrifter/${VERSION}`,
           accept: "application/json, application/yaml, text/yaml, text/plain;q=0.9, */*;q=0.1",
           ...(options.headers ?? {}),
         },

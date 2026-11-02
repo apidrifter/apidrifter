@@ -12,7 +12,7 @@ import {
   type PlannedRequest,
   type VerifyOptions,
   type VerifyResult,
-} from "@driftwatch/core";
+} from "@apidrifter/core";
 
 export type {
   FilledRequest,
@@ -22,7 +22,7 @@ export type {
   PlannedRequest,
   VerifyOptions,
   VerifyResult,
-} from "@driftwatch/core";
+} from "@apidrifter/core";
 
 export async function plan(
   spec: unknown,

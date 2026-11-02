@@ -1,5 +1,5 @@
 /**
- * Public types for the Driftwatch engine.
+ * Public types for the Apidrifter engine.
  *
  * Everything here is serializable. The engine is a pure function from documents to a
  * `DiffResult`; nothing in this module touches I/O.
@@ -132,16 +132,16 @@ export interface DiffOptions {
 }
 
 /** Thrown for documents the engine refuses to process. Never thrown for ordinary diffs. */
-export class DriftwatchError extends Error {
-  readonly code: DriftwatchErrorCode;
-  constructor(code: DriftwatchErrorCode, message: string) {
+export class ApidrifterError extends Error {
+  readonly code: ApidrifterErrorCode;
+  constructor(code: ApidrifterErrorCode, message: string) {
     super(message);
-    this.name = "DriftwatchError";
+    this.name = "ApidrifterError";
     this.code = code;
   }
 }
 
-export type DriftwatchErrorCode =
+export type ApidrifterErrorCode =
   | "document-too-large"
   | "document-too-deep"
   | "document-too-many-nodes"

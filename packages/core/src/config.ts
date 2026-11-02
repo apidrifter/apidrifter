@@ -1,7 +1,7 @@
 import { fingerprint } from "./fingerprint.js";
 import { RULES } from "./rules/registry.js";
 import type { Change, Config, Severity } from "./types.js";
-import { DriftwatchError } from "./types.js";
+import { ApidrifterError } from "./types.js";
 import { FINDING_RULES } from "./verify/rules.js";
 
 const SEVERITIES: ReadonlySet<string> = new Set(["breaking", "warning", "info", "ignore"]);
@@ -22,7 +22,7 @@ export function validateConfig(
 ): Config {
   if (raw === undefined || raw === null) return {};
   if (typeof raw !== "object" || Array.isArray(raw)) {
-    throw new DriftwatchError("invalid-config", "config must be an object");
+    throw new ApidrifterError("invalid-config", "config must be an object");
   }
   const obj = raw as Record<string, unknown>;
   const config: Config = {};
@@ -32,17 +32,17 @@ export function validateConfig(
       obj["severity"] === null ||
       Array.isArray(obj["severity"])
     ) {
-      throw new DriftwatchError("invalid-config", "severity must be an object of rule id to level");
+      throw new ApidrifterError("invalid-config", "severity must be an object of rule id to level");
     }
     const sev: Record<string, Severity | "ignore"> = {};
     for (const [id, level] of Object.entries(obj["severity"] as Record<string, unknown>)) {
       if (typeof level !== "string" || !SEVERITIES.has(level)) {
-        throw new DriftwatchError(
+        throw new ApidrifterError(
           "invalid-config",
           `severity for ${id} must be breaking, warning, info or ignore`,
         );
       }
-      if (!knownIds.has(id)) throw new DriftwatchError("invalid-config", `unknown rule id ${id}`);
+      if (!knownIds.has(id)) throw new ApidrifterError("invalid-config", `unknown rule id ${id}`);
       sev[id] = level as Severity | "ignore";
     }
     config.severity = sev;
@@ -50,20 +50,20 @@ export function validateConfig(
   if (obj["ignore"] !== undefined) {
     const ig = obj["ignore"];
     if (typeof ig !== "object" || ig === null || Array.isArray(ig)) {
-      throw new DriftwatchError("invalid-config", "ignore must be an object");
+      throw new ApidrifterError("invalid-config", "ignore must be an object");
     }
     const ignore: NonNullable<Config["ignore"]> = {};
     const igObj = ig as Record<string, unknown>;
     if (igObj["ids"] !== undefined) {
       ignore.ids = stringList(igObj["ids"], "ignore.ids");
       for (const id of ignore.ids)
-        if (!knownIds.has(id)) throw new DriftwatchError("invalid-config", `unknown rule id ${id}`);
+        if (!knownIds.has(id)) throw new ApidrifterError("invalid-config", `unknown rule id ${id}`);
     }
     if (igObj["subjects"] !== undefined) {
       ignore.subjects = stringList(igObj["subjects"], "ignore.subjects");
       for (const p of ignore.subjects) {
         if (p.length > MAX_PATTERN)
-          throw new DriftwatchError("invalid-config", "ignore.subjects pattern too long");
+          throw new ApidrifterError("invalid-config", "ignore.subjects pattern too long");
       }
     }
     config.ignore = ignore;
@@ -74,7 +74,7 @@ export function validateConfig(
 
 function stringList(v: unknown, name: string): string[] {
   if (!Array.isArray(v) || !v.every((x) => typeof x === "string")) {
-    throw new DriftwatchError("invalid-config", `${name} must be a list of strings`);
+    throw new ApidrifterError("invalid-config", `${name} must be a list of strings`);
   }
   return v as string[];
 }

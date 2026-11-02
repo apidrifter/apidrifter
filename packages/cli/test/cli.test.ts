@@ -61,7 +61,7 @@ function makeIo(cwd: string, fetchImpl?: typeof fetch): CliIo & { out: string[];
 let dir: string;
 
 beforeAll(async () => {
-  dir = await mkdtemp(join(tmpdir(), "driftwatch-cli-"));
+  dir = await mkdtemp(join(tmpdir(), "apidrifter-cli-"));
   await writeFile(join(dir, "base.json"), JSON.stringify(base));
   await writeFile(join(dir, "broken.json"), JSON.stringify(broken));
   await writeFile(join(dir, "added.json"), JSON.stringify(added));
@@ -71,7 +71,7 @@ beforeAll(async () => {
   );
 });
 
-describe("driftwatch diff/breaking/changelog", () => {
+describe("apidrifter diff/breaking/changelog", () => {
   it("exits 1 on a breaking change and prints json when not a TTY", async () => {
     const io = makeIo(dir);
     const code = await main(["breaking", "base.json", "broken.json"], io);

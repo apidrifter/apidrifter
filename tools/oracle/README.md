@@ -1,6 +1,6 @@
 # Oracle harness
 
-Compares the Driftwatch engine against [oasdiff](https://github.com/oasdiff/oasdiff) over
+Compares the Apidrifter engine against [oasdiff](https://github.com/oasdiff/oasdiff) over
 real, historical public OpenAPI documents. oasdiff is the test oracle, not a dependency:
 every disagreement is a candidate fixture, and some disagreements are oasdiff being wrong.
 
@@ -11,7 +11,7 @@ Not run in CI. It downloads a binary and fetches specs from the network.
 1. Downloads a pinned oasdiff release for your platform and verifies its SHA-256 against
    the release's `checksums.txt`.
 2. Fetches two historical revisions of a public spec from `raw.githubusercontent.com`.
-3. Runs the built `@driftwatch/core` engine and `oasdiff changelog` over the pair.
+3. Runs the built `@apidrifter/core` engine and `oasdiff changelog` over the pair.
 4. Writes `work/<name>/report.md` listing changes only one tool reported, keyed by
    operation and change ID where IDs match, by operation alone where they do not.
 
@@ -19,7 +19,7 @@ Not run in CI. It downloads a binary and fetches specs from the network.
 
 ```
 export PATH="$HOME/.nvm/versions/node/v24.22.1/bin:$PATH"   # or any Node >= 22.12
-pnpm --filter @driftwatch/core build
+pnpm --filter @apidrifter/core build
 tools/oracle/run.sh stripe <old-commit-sha> <new-commit-sha>
 tools/oracle/run.sh github <old-commit-sha> <new-commit-sha>
 ```
