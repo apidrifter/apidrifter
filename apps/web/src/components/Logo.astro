@@ -1,0 +1,22 @@
+---
+interface Props {
+  size?: number;
+}
+const { size = 22 } = Astro.props;
+---
+
+<a class="logo" href="/" aria-label="API Drifter home">
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 32 32"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <rect width="32" height="32" rx="6" fill="#0b1020"></rect>
+    <path d="M4 14 H12 L28 14" stroke="#f4f6fb" stroke-width="2.4" fill="none" stroke-linecap="round"></path>
+    <path d="M4 14 H12 C18 14 20 22 28 23" stroke="#f2a93b" stroke-width="2.4" fill="none" stroke-linecap="round"></path>
+    <path d="M21 16.5 V19.5 M25 16.5 V21" stroke="#e5484d" stroke-width="1.6" stroke-linecap="round"></path>
+  </svg>
+  <span>apidrifter</span>
+</a>

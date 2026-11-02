@@ -42,7 +42,10 @@
       "!**/fixtures/**/*.json",
       "!pnpm-lock.yaml",
       "!.claude",
-      "!**/.claude"
+      "!**/.claude",
+      "!**/*.astro",
+      "!**/.astro",
+      "!**/*.mdx"
     ]
   }
 }

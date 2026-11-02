@@ -1,0 +1,22 @@
+---
+import SurveyTable from "../../../components/SurveyTable.astro";
+import Base from "../../../layouts/Base.astro";
+import { isoDate } from "../../../lib/site";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("research", (p) => !p.data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base title={post.data.title} description={post.data.description} wide={post.data.survey}>
+  <article class="prose">
+    <h1>{post.data.title}</h1>
+    <p class="post-meta">{isoDate(post.data.date)} &middot; <a href="/research/">Research</a></p>
+    <Content components={{ SurveyTable }} />
+  </article>
+</Base>

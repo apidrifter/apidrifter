@@ -1,0 +1,66 @@
+---
+/**
+ * The survey results table. All cell content is third-party text rendered through
+ * Astro's default escaping. `base` is the post URL the per-API pages hang off.
+ */
+import { SITE } from "../lib/site";
+import { loadSummary } from "../lib/survey";
+
+interface Props {
+  base?: string;
+}
+
+const summary = await loadSummary();
+const base = (Astro.props.base ?? Astro.url.pathname).replace(/\/?$/, "/");
+const generated = summary.generatedAt.slice(0, 10);
+---
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>API</th>
+        <th>Spec</th>
+        <th class="num">Ops in spec</th>
+        <th class="num">GET sent</th>
+        <th class="num">2xx</th>
+        <th class="num">Hard</th>
+        <th class="num">Body</th>
+        <th class="num">Media</th>
+        <th class="num">Errors</th>
+        <th class="num">Input</th>
+        <th>Reviewer note</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        summary.apis.map((a) => (
+          <tr>
+            <td>
+              <a href={`${base}${a.id}/`}>{a.name}</a>
+            </td>
+            <td>
+              <a href={a.spec} rel="noopener nofollow">
+                {a.specFormat === "swagger-2.0" ? "Swagger 2.0" : "OpenAPI 3"}
+              </a>
+            </td>
+            <td class="num">{a.operations}</td>
+            <td class="num">{a.sent}</td>
+            <td class="num">{a.ok}</td>
+            <td class:list={["num", { hard: a.counts.hard > 0 }]}>{a.counts.hard}</td>
+            <td class="num">{a.counts.body}</td>
+            <td class="num">{a.counts.media}</td>
+            <td class="num">{a.counts.errors}</td>
+            <td class="num">{a.counts.input}</td>
+            <td class="note">{a.note}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
+<p class="small muted">
+  <strong>{summary.totals.withHard} of {summary.totals.apis} APIs</strong> had at least one hard
+  violation on a successful response, across {summary.totals.hard} distinct schema locations.
+  Data generated {generated}, <a href={SITE.resultsUrl} rel="noopener">source in the repository</a>.
+</p>
