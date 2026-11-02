@@ -26,6 +26,6 @@ Hosted on Cloudflare Workers as static assets, connected to the `apidrifter/apid
 - Deploy command: `npx wrangler deploy` (reads `wrangler.jsonc` at the repository root, which points at `apps/web/dist`)
 - Preview command: `npx wrangler versions upload`
 - Node version: from the repository `.nvmrc`
-- Custom domains: `apidrifter.com`, and `www.apidrifter.com` which `public/_redirects` sends to the apex
+- Custom domains: `apidrifter.com`; `www` is redirected to the apex by a Cloudflare redirect rule on the zone (Workers assets do not support host-level rules in `_redirects`)
 
 Every push to `main` deploys; every pull request gets a preview. Security headers live in `public/_headers`.
