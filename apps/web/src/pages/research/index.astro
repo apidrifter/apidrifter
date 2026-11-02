@@ -1,0 +1,33 @@
+---
+import Base from "../../layouts/Base.astro";
+import { isoDate } from "../../lib/site";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("research", (p) => !p.data.draft)).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+---
+
+<Base
+  title="Research"
+  description="Investigations into how published API specs compare with live behavior, with the data to reproduce them."
+>
+  <h1>Research</h1>
+  <p class="muted">
+    What we find when we point the tool at the real world. Every post ships with its data and
+    the exact requests sent. <a href="/research/rss.xml">RSS</a>
+  </p>
+  <ul class="post-list">
+    {
+      posts.map((p) => (
+        <li>
+          <h2>
+            <a href={`/research/${p.id}/`}>{p.data.title}</a>
+          </h2>
+          <p class="post-meta">{isoDate(p.data.date)}</p>
+          <p>{p.data.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
