@@ -64,11 +64,11 @@ We checked 13 public APIs against their own OpenAPI documents, read-only. 9 of 1
 
 ## Packages
 
-| Package | What |
-|---|---|
-| [`apidrifter`](packages/cli) | The CLI and MCP server. `npx apidrifter`. |
-| [`@apidrifter/core`](packages/core) | The engine: pure, deterministic, no I/O. Use it as a library. |
-| [`action`](packages/action) | A composite GitHub Action wrapping `breaking` and `changelog`. |
+| Package                             | What                                                           |
+| ----------------------------------- | -------------------------------------------------------------- |
+| [`apidrifter`](packages/cli)        | The CLI and MCP server. `npx apidrifter`.                      |
+| [`@apidrifter/core`](packages/core) | The engine: pure, deterministic, no I/O. Use it as a library.  |
+| [`action`](packages/action)         | A composite GitHub Action wrapping `breaking` and `changelog`. |
 
 ## Design and contributing
 
