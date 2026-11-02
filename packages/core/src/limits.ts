@@ -1,4 +1,4 @@
-import { DEFAULT_LIMITS, ApidrifterError, type Limits } from "./types.js";
+import { ApidrifterError, DEFAULT_LIMITS, type Limits } from "./types.js";
 
 export function resolveLimits(partial?: Partial<Limits>): Limits {
   const limits: Limits = { ...DEFAULT_LIMITS, ...(partial ?? {}) };

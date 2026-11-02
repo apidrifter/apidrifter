@@ -435,9 +435,7 @@
       "spec": "Add a \"301\" response under paths[\"/c/{slug}/{id}.json\"].get.responses."
     },
     "observation": 0,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 301,
     "review": "unreviewed"
   },
@@ -543,9 +541,7 @@
       "spec": "Allow null at paths[\"/categories.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"category_list\"].properties[\"categories\"].items.properties[\"permission\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 2,
-    "expected": [
-      "integer"
-    ],
+    "expected": ["integer"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -798,9 +794,7 @@
       "spec": "Change the type at paths[\"/discourse-post-event/events.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"events\"].items.properties[\"post\"].properties[\"topic\"].properties[\"tags\"].items to \"object\"."
     },
     "observation": 4,
-    "expected": [
-      "string"
-    ],
+    "expected": ["string"],
     "actual": "object",
     "review": "unreviewed"
   },
@@ -969,10 +963,7 @@
       "spec": "Change the type at paths[\"/groups.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"groups\"].items.properties[\"grant_trust_level\"] to \"integer\"."
     },
     "observation": 5,
-    "expected": [
-      "null",
-      "string"
-    ],
+    "expected": ["null", "string"],
     "actual": "integer",
     "review": "unreviewed"
   },
@@ -992,9 +983,7 @@
       "spec": "Add a \"404\" response under paths[\"/groups/by-id/{id}.json\"].get.responses."
     },
     "observation": 8,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 404,
     "review": "unreviewed"
   },
@@ -1014,9 +1003,7 @@
       "spec": "Add a \"404\" response under paths[\"/groups/{name}.json\"].get.responses."
     },
     "observation": 6,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 404,
     "review": "unreviewed"
   },
@@ -1036,9 +1023,7 @@
       "spec": "Add a \"404\" response under paths[\"/groups/{name}/members.json\"].get.responses."
     },
     "observation": 7,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 404,
     "review": "unreviewed"
   },
@@ -1207,10 +1192,7 @@
       "spec": "Change the type at paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties[\"flair_group_id\"] to \"integer\"."
     },
     "observation": 9,
-    "expected": [
-      "null",
-      "string"
-    ],
+    "expected": ["null", "string"],
     "actual": "integer",
     "review": "unreviewed"
   },
@@ -1337,10 +1319,7 @@
       "spec": "Change the type at paths[\"/posts.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"latest_posts\"].items.properties[\"reply_to_post_number\"] to \"integer\"."
     },
     "observation": 9,
-    "expected": [
-      "null",
-      "string"
-    ],
+    "expected": ["null", "string"],
     "actual": "integer",
     "review": "unreviewed"
   },
@@ -2118,9 +2097,7 @@
       "spec": "Allow null at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"categories\"].items.properties[\"permission\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 13,
-    "expected": [
-      "integer"
-    ],
+    "expected": ["integer"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -2184,10 +2161,7 @@
       "spec": "Change the type at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"categories\"].items.properties[\"sort_ascending\"] to \"boolean\"."
     },
     "observation": 13,
-    "expected": [
-      "null",
-      "string"
-    ],
+    "expected": ["null", "string"],
     "actual": "boolean",
     "review": "unreviewed"
   },
@@ -2293,9 +2267,7 @@
       "spec": "Allow null at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"homepage_options\"].items.properties[\"path\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 13,
-    "expected": [
-      "string"
-    ],
+    "expected": ["string"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -2548,10 +2520,7 @@
       "spec": "Change the type at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"watched_words_link\"] to \"object\"."
     },
     "observation": 13,
-    "expected": [
-      "null",
-      "string"
-    ],
+    "expected": ["null", "string"],
     "actual": "object",
     "review": "unreviewed"
   },
@@ -2573,10 +2542,7 @@
       "spec": "Change the type at paths[\"/site.json\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"watched_words_replace\"] to \"object\"."
     },
     "observation": 13,
-    "expected": [
-      "null",
-      "string"
-    ],
+    "expected": ["null", "string"],
     "actual": "object",
     "review": "unreviewed"
   },
@@ -2596,9 +2562,7 @@
       "spec": "Add a \"404\" response under paths[\"/tag/{name}.json\"].get.responses."
     },
     "observation": 17,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 404,
     "review": "unreviewed"
   },
@@ -2618,9 +2582,7 @@
       "spec": "Add a \"404\" response under paths[\"/tag_groups.json\"].get.responses."
     },
     "observation": 15,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 404,
     "review": "unreviewed"
   },
@@ -2640,9 +2602,7 @@
       "spec": "Add a \"404\" response under paths[\"/tag_groups/{id}.json\"].get.responses."
     },
     "observation": 16,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 404,
     "review": "unreviewed"
   },
@@ -2746,9 +2706,7 @@
       "spec": "Add a \"403\" response under paths[\"/u/{username}/emails.json\"].get.responses."
     },
     "observation": 19,
-    "expected": [
-      "200"
-    ],
+    "expected": ["200"],
     "actual": 403,
     "review": "unreviewed"
   },

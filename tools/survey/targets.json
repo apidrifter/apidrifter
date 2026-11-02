@@ -35,9 +35,7 @@
         "path:api": "2015-05-01-preview"
       }
     },
-    "exclude": [
-      "^GET /specs/\\{\\}/\\{\\}/\\{\\}\\.json$"
-    ]
+    "exclude": ["^GET /specs/\\{\\}/\\{\\}/\\{\\}\\.json$"]
   },
   {
     "id": "pokeapi",
@@ -66,10 +64,7 @@
       "path:domain": "en.wikipedia.org",
       "path:format": "html"
     },
-    "exclude": [
-      "stash",
-      "mobile-sections"
-    ],
+    "exclude": ["stash", "mobile-sections"],
     "maxRequests": 25,
     "delayMs": 1000,
     "note": "Confirmed: media-list items carry undocumented leadImage and srcset; /page/lint returns an array where the spec says object; 400 errors come back as application/json, documented as application/problem+json."
@@ -88,13 +83,7 @@
       "path:post_id": "1",
       "path:name": "general"
     },
-    "exclude": [
-      "admin",
-      "private",
-      "notifications",
-      "session",
-      "invite"
-    ],
+    "exclude": ["admin", "private", "notifications", "session", "invite"],
     "maxRequests": 25,
     "delayMs": 1500,
     "note": "Confirmed: category custom_fields holds plugin keys the spec forbids; topic tags are objects where the spec says strings; permission is null. The spec is generated from test fixtures and lags the live site."

@@ -15,11 +15,7 @@
       "spec": "Add a \"429\" response under paths[\"/api/v4/groups/{id}\"].get.responses."
     },
     "observation": 1,
-    "expected": [
-      "200",
-      "400",
-      "404"
-    ],
+    "expected": ["200", "400", "404"],
     "actual": 429,
     "review": "unreviewed"
   },
@@ -41,9 +37,7 @@
       "spec": "Allow null at paths[\"/api/v4/projects/{id}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"namespace\"].properties[\"parent_id\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 0,
-    "expected": [
-      "integer"
-    ],
+    "expected": ["integer"],
     "actual": null,
     "review": "unreviewed"
   },
@@ -64,9 +58,7 @@
       "spec": "Change the type at paths[\"/api/v4/projects/{id}/issues\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
     },
     "observation": 9,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": "array",
     "review": "unreviewed"
   },
@@ -86,11 +78,7 @@
       "spec": "Add a \"401\" response under paths[\"/api/v4/projects/{id}/labels\"].get.responses."
     },
     "observation": 10,
-    "expected": [
-      "200",
-      "400",
-      "404"
-    ],
+    "expected": ["200", "400", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -110,11 +98,7 @@
       "spec": "Add a \"401\" response under paths[\"/api/v4/projects/{id}/members\"].get.responses."
     },
     "observation": 12,
-    "expected": [
-      "200",
-      "400",
-      "404"
-    ],
+    "expected": ["200", "400", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -134,11 +118,7 @@
       "spec": "Add a \"401\" response under paths[\"/api/v4/projects/{id}/milestones\"].get.responses."
     },
     "observation": 14,
-    "expected": [
-      "200",
-      "400",
-      "404"
-    ],
+    "expected": ["200", "400", "404"],
     "actual": 401,
     "review": "unreviewed"
   },
@@ -159,9 +139,7 @@
       "spec": "Change the type at paths[\"/api/v4/projects/{id}/repository/contributors\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
     },
     "observation": 6,
-    "expected": [
-      "object"
-    ],
+    "expected": ["object"],
     "actual": "array",
     "review": "unreviewed"
   },
@@ -181,11 +159,7 @@
       "spec": "Add a \"429\" response under paths[\"/api/v4/users/{id}\"].get.responses."
     },
     "observation": 2,
-    "expected": [
-      "200",
-      "400",
-      "404"
-    ],
+    "expected": ["200", "400", "404"],
     "actual": 429,
     "review": "unreviewed"
   },
@@ -205,10 +179,7 @@
       "spec": "Add a \"429\" response under paths[\"/api/v4/version\"].get.responses."
     },
     "observation": 3,
-    "expected": [
-      "200",
-      "401"
-    ],
+    "expected": ["200", "401"],
     "actual": 429,
     "review": "unreviewed"
   }

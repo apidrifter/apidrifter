@@ -3,6 +3,7 @@
 import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+
 const here = dirname(fileURLToPath(import.meta.url));
 const [id, perId = "2"] = process.argv.slice(2);
 const out = resolve(here, "out", id);
@@ -22,10 +23,24 @@ for (const [fid, list] of [...byId.entries()].sort((a, b) => b[1].length - a[1].
   console.log(`\n-- ${fid} (${list.length})`);
   for (const f of list.slice(0, Number(perId))) {
     const o = f.observation === undefined ? undefined : obs[f.observation];
-    const loc = [f.location.subject, f.location.part, f.location.name, f.location.mediaType, f.location.pointer].filter(Boolean).join(" > ");
+    const loc = [
+      f.location.subject,
+      f.location.part,
+      f.location.name,
+      f.location.mediaType,
+      f.location.pointer,
+    ]
+      .filter(Boolean)
+      .join(" > ");
     console.log(`   ${loc}`);
     console.log(`   msg: ${f.message.slice(0, 160)}`);
-    if (f.expected !== undefined || f.actual !== undefined) console.log(`   expected: ${JSON.stringify(f.expected)?.slice(0, 80)} actual: ${JSON.stringify(f.actual)?.slice(0, 80)}`);
-    if (o) console.log(`   obs: ${o.request.method} ${o.request.path} -> ${o.response.status} ${(o.response.mediaType ?? "").slice(0, 60)}`);
+    if (f.expected !== undefined || f.actual !== undefined)
+      console.log(
+        `   expected: ${JSON.stringify(f.expected)?.slice(0, 80)} actual: ${JSON.stringify(f.actual)?.slice(0, 80)}`,
+      );
+    if (o)
+      console.log(
+        `   obs: ${o.request.method} ${o.request.path} -> ${o.response.status} ${(o.response.mediaType ?? "").slice(0, 60)}`,
+      );
   }
 }

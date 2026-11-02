@@ -6,7 +6,7 @@ import { isOpenApiDocument, normalizeMediaType, normalizeOpenApi } from "../open
 import { locationKey } from "../render/location.js";
 import type { SchemaNode } from "../schema/model.js";
 import { clip, quote, safeString } from "../text.js";
-import { type Config, ApidrifterError, type Limits, type Location } from "../types.js";
+import { ApidrifterError, type Config, type Limits, type Location } from "../types.js";
 import { matchOperation } from "./match.js";
 import { findingSeverity } from "./rules.js";
 import type { Finding, Observation, VerifyOptions, VerifyResult } from "./types.js";
