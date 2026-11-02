@@ -1,6 +1,7 @@
 [
   {
     "class": "errors",
+    "strict": false,
     "id": "request-rejected-but-valid",
     "severity": "breaking",
     "location": {
@@ -14,10 +15,20 @@
     },
     "observation": 0,
     "actual": 400,
+    "request": {
+      "method": "GET",
+      "path": "/data/lists/",
+      "query": {
+        "sort": "updated"
+      },
+      "status": 400,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-response-media-type",
     "severity": "warning",
     "location": {
@@ -33,12 +44,24 @@
       "spec": "Add \"application/json\" under paths[\"/data/lists/\"].get.responses[\"default\"].content."
     },
     "observation": 0,
-    "expected": ["application/problem+json"],
+    "expected": [
+      "application/problem+json"
+    ],
     "actual": "application/json",
+    "request": {
+      "method": "GET",
+      "path": "/data/lists/",
+      "query": {
+        "sort": "updated"
+      },
+      "status": 400,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "request-rejected-but-valid",
     "severity": "breaking",
     "location": {
@@ -52,10 +75,18 @@
     },
     "observation": 2,
     "actual": 400,
+    "request": {
+      "method": "GET",
+      "path": "/data/lists/pages/https%3A%2F%2Fen.wikipedia.org/Earth",
+      "query": {},
+      "status": 400,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-response-media-type",
     "severity": "warning",
     "location": {
@@ -71,12 +102,22 @@
       "spec": "Add \"application/json\" under paths[\"/data/lists/pages/{project}/{title}\"].get.responses[\"default\"].content."
     },
     "observation": 2,
-    "expected": ["application/problem+json"],
+    "expected": [
+      "application/problem+json"
+    ],
     "actual": "application/json",
+    "request": {
+      "method": "GET",
+      "path": "/data/lists/pages/https%3A%2F%2Fen.wikipedia.org/Earth",
+      "query": {},
+      "status": 400,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "request-rejected-but-valid",
     "severity": "breaking",
     "location": {
@@ -90,10 +131,20 @@
     },
     "observation": 1,
     "actual": 400,
+    "request": {
+      "method": "GET",
+      "path": "/data/lists/42/entries/",
+      "query": {
+        "sort": "updated"
+      },
+      "status": 400,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-response-media-type",
     "severity": "warning",
     "location": {
@@ -109,12 +160,24 @@
       "spec": "Add \"application/json\" under paths[\"/data/lists/{id}/entries/\"].get.responses[\"default\"].content."
     },
     "observation": 1,
-    "expected": ["application/problem+json"],
+    "expected": [
+      "application/problem+json"
+    ],
     "actual": "application/json",
+    "request": {
+      "method": "GET",
+      "path": "/data/lists/42/entries/",
+      "query": {
+        "sort": "updated"
+      },
+      "status": 400,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-response-media-type",
     "severity": "warning",
     "location": {
@@ -130,12 +193,22 @@
       "spec": "Add \"application/json\" under paths[\"/page/\"].get.responses[\"default\"].content."
     },
     "observation": 3,
-    "expected": ["application/problem+json"],
+    "expected": [
+      "application/problem+json"
+    ],
     "actual": "application/json",
+    "request": {
+      "method": "GET",
+      "path": "/page/",
+      "query": {},
+      "status": 404,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -151,12 +224,22 @@
       "spec": "Change the type at paths[\"/page/lint/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
     },
     "observation": 6,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": "array",
+    "request": {
+      "method": "GET",
+      "path": "/page/lint/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -172,12 +255,22 @@
       "spec": "Change the type at paths[\"/page/lint/{title}/{revision}\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
     },
     "observation": 7,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": "array",
+    "request": {
+      "method": "GET",
+      "path": "/page/lint/Earth/1",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -195,10 +288,18 @@
     },
     "observation": 8,
     "actual": "leadImage",
+    "request": {
+      "method": "GET",
+      "path": "/page/media-list/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/MediaList/1.1.0\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -216,10 +317,18 @@
     },
     "observation": 8,
     "actual": "srcset",
+    "request": {
+      "method": "GET",
+      "path": "/page/media-list/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/MediaList/1.1.0\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -237,10 +346,18 @@
     },
     "observation": 8,
     "actual": "gallery_id",
+    "request": {
+      "method": "GET",
+      "path": "/page/media-list/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/MediaList/1.1.0\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -258,10 +375,18 @@
     },
     "observation": 8,
     "actual": "sources",
+    "request": {
+      "method": "GET",
+      "path": "/page/media-list/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/MediaList/1.1.0\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -279,10 +404,18 @@
     },
     "observation": 8,
     "actual": "audio_type",
+    "request": {
+      "method": "GET",
+      "path": "/page/media-list/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/MediaList/1.1.0\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -298,12 +431,22 @@
       "spec": "Change the type at paths[\"/page/mobile-html-offline-resources/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
     },
     "observation": 10,
-    "expected": ["string"],
+    "expected": [
+      "string"
+    ],
     "actual": "array",
+    "request": {
+      "method": "GET",
+      "path": "/page/mobile-html-offline-resources/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Mobile-HTML-Offline-Resources/1.2.1\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -319,12 +462,22 @@
       "spec": "Change the type at paths[\"/page/mobile-html-offline-resources/{title}/{revision}\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
     },
     "observation": 11,
-    "expected": ["string"],
+    "expected": [
+      "string"
+    ],
     "actual": "array",
+    "request": {
+      "method": "GET",
+      "path": "/page/mobile-html-offline-resources/Earth/1",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Mobile-HTML-Offline-Resources/1.2.1\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -342,10 +495,18 @@
     },
     "observation": 14,
     "actual": "content_urls",
+    "request": {
+      "method": "GET",
+      "path": "/page/summary/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Summary/1.5.0\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -363,10 +524,18 @@
     },
     "observation": 14,
     "actual": "description_source",
+    "request": {
+      "method": "GET",
+      "path": "/page/summary/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Summary/1.5.0\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -384,10 +553,18 @@
     },
     "observation": 14,
     "actual": "namespace",
+    "request": {
+      "method": "GET",
+      "path": "/page/summary/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Summary/1.5.0\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -405,10 +582,18 @@
     },
     "observation": 14,
     "actual": "revision",
+    "request": {
+      "method": "GET",
+      "path": "/page/summary/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Summary/1.5.0\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -426,10 +611,18 @@
     },
     "observation": 14,
     "actual": "tid",
+    "request": {
+      "method": "GET",
+      "path": "/page/summary/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Summary/1.5.0\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -447,10 +640,18 @@
     },
     "observation": 14,
     "actual": "type",
+    "request": {
+      "method": "GET",
+      "path": "/page/summary/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Summary/1.5.0\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -468,10 +669,18 @@
     },
     "observation": 14,
     "actual": "wikibase_item",
+    "request": {
+      "method": "GET",
+      "path": "/page/summary/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Summary/1.5.0\""
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-response-media-type",
     "severity": "warning",
     "location": {
@@ -487,12 +696,22 @@
       "spec": "Add \"text/html\" under paths[\"/page/talk/{title}\"].get.responses[\"default\"].content."
     },
     "observation": 15,
-    "expected": ["application/problem+json"],
+    "expected": [
+      "application/problem+json"
+    ],
     "actual": "text/html",
+    "request": {
+      "method": "GET",
+      "path": "/page/talk/Earth",
+      "query": {},
+      "status": 403,
+      "mediaType": "text/html; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-response-media-type",
     "severity": "warning",
     "location": {
@@ -508,12 +727,22 @@
       "spec": "Add \"text/html\" under paths[\"/page/talk/{title}/{revision}\"].get.responses[\"default\"].content."
     },
     "observation": 16,
-    "expected": ["application/problem+json"],
+    "expected": [
+      "application/problem+json"
+    ],
     "actual": "text/html",
+    "request": {
+      "method": "GET",
+      "path": "/page/talk/Earth/1",
+      "query": {},
+      "status": 403,
+      "mediaType": "text/html; charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -531,10 +760,18 @@
     },
     "observation": 17,
     "expected": "count",
+    "request": {
+      "method": "GET",
+      "path": "/page/title/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -551,12 +788,22 @@
       "spec": "Change the type at paths[\"/page/title/{title}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"items\"] to \"array\"."
     },
     "observation": 17,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": "array",
+    "request": {
+      "method": "GET",
+      "path": "/page/title/Earth",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-missing-required-property",
     "severity": "breaking",
     "location": {
@@ -574,10 +821,18 @@
     },
     "observation": 18,
     "expected": "count",
+    "request": {
+      "method": "GET",
+      "path": "/page/title/Earth/1",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -594,8 +849,17 @@
       "spec": "Change the type at paths[\"/page/title/{title}/{revision}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"items\"] to \"array\"."
     },
     "observation": 18,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": "array",
+    "request": {
+      "method": "GET",
+      "path": "/page/title/Earth/1",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   }
 ]

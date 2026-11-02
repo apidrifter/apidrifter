@@ -1,6 +1,7 @@
 [
   {
     "class": "body",
+    "strict": true,
     "id": "response-body-not-json",
     "severity": "warning",
     "location": {
@@ -16,6 +17,13 @@
       "spec": "Change the media type at paths[\"/user/login\"].get.responses[\"200\"].content to what is actually returned."
     },
     "observation": 6,
+    "request": {
+      "method": "GET",
+      "path": "/user/login",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   }
 ]

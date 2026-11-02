@@ -1,0 +1,382 @@
+[
+  {
+    "index": 0,
+    "operationKey": "GET /actions/run",
+    "method": "GET",
+    "path": "/actions/run",
+    "query": {},
+    "status": 403,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:05.036Z"
+  },
+  {
+    "index": 1,
+    "operationKey": "GET /activitypub/actor",
+    "method": "GET",
+    "path": "/activitypub/actor",
+    "query": {},
+    "status": 404,
+    "mediaType": "text/plain; charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:06.198Z"
+  },
+  {
+    "index": 2,
+    "operationKey": "GET /gitignore/templates",
+    "method": "GET",
+    "path": "/gitignore/templates",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:07.402Z"
+  },
+  {
+    "index": 3,
+    "operationKey": "GET /gitignore/templates/{}",
+    "method": "GET",
+    "path": "/gitignore/templates/forgejo",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:08.600Z"
+  },
+  {
+    "index": 4,
+    "operationKey": "GET /label/templates",
+    "method": "GET",
+    "path": "/label/templates",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:09.783Z"
+  },
+  {
+    "index": 5,
+    "operationKey": "GET /label/templates/{}",
+    "method": "GET",
+    "path": "/label/templates/forgejo",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:11.011Z"
+  },
+  {
+    "index": 6,
+    "operationKey": "GET /licenses",
+    "method": "GET",
+    "path": "/licenses",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:12.331Z"
+  },
+  {
+    "index": 7,
+    "operationKey": "GET /licenses/{}",
+    "method": "GET",
+    "path": "/licenses/forgejo",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:13.477Z"
+  },
+  {
+    "index": 8,
+    "operationKey": "GET /nodeinfo",
+    "method": "GET",
+    "path": "/nodeinfo",
+    "query": {},
+    "status": 404,
+    "mediaType": "text/plain; charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:14.707Z"
+  },
+  {
+    "index": 9,
+    "operationKey": "GET /orgs",
+    "method": "GET",
+    "path": "/orgs",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:16.300Z"
+  },
+  {
+    "index": 10,
+    "operationKey": "GET /orgs/{}",
+    "method": "GET",
+    "path": "/orgs/forgejo",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:17.501Z"
+  },
+  {
+    "index": 11,
+    "operationKey": "GET /orgs/{}/activities/feeds",
+    "method": "GET",
+    "path": "/orgs/forgejo/activities/feeds",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:22.489Z"
+  },
+  {
+    "index": 12,
+    "operationKey": "GET /orgs/{}/labels",
+    "method": "GET",
+    "path": "/orgs/forgejo/labels",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:23.706Z"
+  },
+  {
+    "index": 13,
+    "operationKey": "GET /orgs/{}/labels/{}",
+    "method": "GET",
+    "path": "/orgs/forgejo/labels/1",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:24.895Z"
+  },
+  {
+    "index": 14,
+    "operationKey": "GET /orgs/{}/list_blocked",
+    "method": "GET",
+    "path": "/orgs/forgejo/list_blocked",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:26.094Z"
+  },
+  {
+    "index": 15,
+    "operationKey": "GET /orgs/{}/public_members",
+    "method": "GET",
+    "path": "/orgs/forgejo/public_members",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:27.406Z"
+  },
+  {
+    "index": 16,
+    "operationKey": "GET /orgs/{}/public_members/{}",
+    "method": "GET",
+    "path": "/orgs/forgejo/public_members/forgejo",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:28.614Z"
+  },
+  {
+    "index": 17,
+    "operationKey": "GET /orgs/{}/quota",
+    "method": "GET",
+    "path": "/orgs/forgejo/quota",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:29.782Z"
+  },
+  {
+    "index": 18,
+    "operationKey": "GET /orgs/{}/quota/artifacts",
+    "method": "GET",
+    "path": "/orgs/forgejo/quota/artifacts",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:31.001Z"
+  },
+  {
+    "index": 19,
+    "operationKey": "GET /orgs/{}/quota/attachments",
+    "method": "GET",
+    "path": "/orgs/forgejo/quota/attachments",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:32.143Z"
+  },
+  {
+    "index": 20,
+    "operationKey": "GET /orgs/{}/quota/packages",
+    "method": "GET",
+    "path": "/orgs/forgejo/quota/packages",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:33.367Z"
+  },
+  {
+    "index": 21,
+    "operationKey": "GET /orgs/{}/repos",
+    "method": "GET",
+    "path": "/orgs/forgejo/repos",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:34.778Z"
+  },
+  {
+    "index": 22,
+    "operationKey": "GET /packages/{}",
+    "method": "GET",
+    "path": "/packages/forgejo",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:39.024Z"
+  },
+  {
+    "index": 23,
+    "operationKey": "GET /repos/{}/{}",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:40.208Z"
+  },
+  {
+    "index": 24,
+    "operationKey": "GET /repos/{}/{}/actions/artifacts",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/actions/artifacts",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:41.456Z"
+  },
+  {
+    "index": 25,
+    "operationKey": "GET /repos/{}/{}/actions/runners",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/actions/runners",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:42.607Z"
+  },
+  {
+    "index": 26,
+    "operationKey": "GET /repos/{}/{}/actions/runners/jobs",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/actions/runners/jobs",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:43.890Z"
+  },
+  {
+    "index": 27,
+    "operationKey": "GET /repos/{}/{}/actions/runners/registration-token",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/actions/runners/registration-token",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:43:45.033Z"
+  },
+  {
+    "index": 28,
+    "operationKey": "GET /repos/{}/{}/actions/secrets",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/actions/secrets",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:44:17.468Z"
+  },
+  {
+    "index": 29,
+    "operationKey": "GET /repos/{}/{}/actions/variables",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/actions/variables",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:44:49.930Z"
+  },
+  {
+    "index": 30,
+    "operationKey": "GET /repos/{}/{}/activities/feeds",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/activities/feeds",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:44:58.193Z"
+  },
+  {
+    "index": 31,
+    "operationKey": "GET /repos/{}/{}/assignees",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/assignees",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:44:59.399Z"
+  },
+  {
+    "index": 32,
+    "operationKey": "GET /repos/{}/{}/branch_protections",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/branch_protections",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:45:00.599Z"
+  },
+  {
+    "index": 33,
+    "operationKey": "GET /repos/{}/{}/branch_protections/{}",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/branch_protections/forgejo",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:45:01.781Z"
+  },
+  {
+    "index": 34,
+    "operationKey": "GET /repos/{}/{}/branches",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/branches",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:45:04.258Z"
+  },
+  {
+    "index": 35,
+    "operationKey": "GET /repos/{}/{}/branches/{}",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/branches/forgejo",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:45:05.461Z"
+  },
+  {
+    "index": 36,
+    "operationKey": "GET /repos/{}/{}/collaborators",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/collaborators",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:45:06.622Z"
+  },
+  {
+    "index": 37,
+    "operationKey": "GET /repos/{}/{}/commits",
+    "method": "GET",
+    "path": "/repos/forgejo/forgejo/commits",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json;charset=utf-8",
+    "capturedAt": "2026-10-30T21:45:12.127Z"
+  }
+]

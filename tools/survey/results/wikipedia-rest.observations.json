@@ -1,0 +1,196 @@
+[
+  {
+    "index": 0,
+    "operationKey": "GET /data/lists",
+    "method": "GET",
+    "path": "/data/lists/",
+    "query": {
+      "sort": "updated"
+    },
+    "status": 400,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:38:37.746Z"
+  },
+  {
+    "index": 1,
+    "operationKey": "GET /data/lists/{}/entries",
+    "method": "GET",
+    "path": "/data/lists/42/entries/",
+    "query": {
+      "sort": "updated"
+    },
+    "status": 400,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:38:38.932Z"
+  },
+  {
+    "index": 2,
+    "operationKey": "GET /data/lists/pages/{}/{}",
+    "method": "GET",
+    "path": "/data/lists/pages/https%3A%2F%2Fen.wikipedia.org/Earth",
+    "query": {},
+    "status": 400,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:38:40.011Z"
+  },
+  {
+    "index": 3,
+    "operationKey": "GET /page",
+    "method": "GET",
+    "path": "/page/",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:38:41.046Z"
+  },
+  {
+    "index": 4,
+    "operationKey": "GET /page/html/{}",
+    "method": "GET",
+    "path": "/page/html/Earth",
+    "query": {},
+    "status": 200,
+    "mediaType": "text/html; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/HTML/2.8.0\"",
+    "capturedAt": "2026-10-30T21:38:42.268Z"
+  },
+  {
+    "index": 5,
+    "operationKey": "GET /page/html/{}/{}",
+    "method": "GET",
+    "path": "/page/html/Earth/1",
+    "query": {},
+    "status": 200,
+    "mediaType": "text/html; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/HTML/2.8.0\"",
+    "capturedAt": "2026-10-30T21:38:43.780Z"
+  },
+  {
+    "index": 6,
+    "operationKey": "GET /page/lint/{}",
+    "method": "GET",
+    "path": "/page/lint/Earth",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:38:56.204Z"
+  },
+  {
+    "index": 7,
+    "operationKey": "GET /page/lint/{}/{}",
+    "method": "GET",
+    "path": "/page/lint/Earth/1",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:38:57.539Z"
+  },
+  {
+    "index": 8,
+    "operationKey": "GET /page/media-list/{}",
+    "method": "GET",
+    "path": "/page/media-list/Earth",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/MediaList/1.1.0\"",
+    "capturedAt": "2026-10-30T21:38:58.586Z"
+  },
+  {
+    "index": 9,
+    "operationKey": "GET /page/media-list/{}/{}",
+    "method": "GET",
+    "path": "/page/media-list/Earth/1",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/MediaList/1.1.0\"",
+    "capturedAt": "2026-10-30T21:39:00.051Z"
+  },
+  {
+    "index": 10,
+    "operationKey": "GET /page/mobile-html-offline-resources/{}",
+    "method": "GET",
+    "path": "/page/mobile-html-offline-resources/Earth",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Mobile-HTML-Offline-Resources/1.2.1\"",
+    "capturedAt": "2026-10-30T21:39:01.083Z"
+  },
+  {
+    "index": 11,
+    "operationKey": "GET /page/mobile-html-offline-resources/{}/{}",
+    "method": "GET",
+    "path": "/page/mobile-html-offline-resources/Earth/1",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Mobile-HTML-Offline-Resources/1.2.1\"",
+    "capturedAt": "2026-10-30T21:39:02.120Z"
+  },
+  {
+    "index": 12,
+    "operationKey": "GET /page/mobile-html/{}",
+    "method": "GET",
+    "path": "/page/mobile-html/Earth",
+    "query": {},
+    "status": 200,
+    "mediaType": "text/html; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Mobile-HTML/1.2.2\"",
+    "capturedAt": "2026-10-30T21:39:03.180Z"
+  },
+  {
+    "index": 13,
+    "operationKey": "GET /page/mobile-html/{}/{}",
+    "method": "GET",
+    "path": "/page/mobile-html/Earth/1",
+    "query": {},
+    "status": 200,
+    "mediaType": "text/html; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Mobile-HTML/1.2.2\"",
+    "capturedAt": "2026-10-30T21:39:04.490Z"
+  },
+  {
+    "index": 14,
+    "operationKey": "GET /page/summary/{}",
+    "method": "GET",
+    "path": "/page/summary/Earth",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8; profile=\"https://www.mediawiki.org/wiki/Specs/Summary/1.5.0\"",
+    "capturedAt": "2026-10-30T21:39:05.529Z"
+  },
+  {
+    "index": 15,
+    "operationKey": "GET /page/talk/{}",
+    "method": "GET",
+    "path": "/page/talk/Earth",
+    "query": {},
+    "status": 403,
+    "mediaType": "text/html; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:06.558Z"
+  },
+  {
+    "index": 16,
+    "operationKey": "GET /page/talk/{}/{}",
+    "method": "GET",
+    "path": "/page/talk/Earth/1",
+    "query": {},
+    "status": 403,
+    "mediaType": "text/html; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:07.586Z"
+  },
+  {
+    "index": 17,
+    "operationKey": "GET /page/title/{}",
+    "method": "GET",
+    "path": "/page/title/Earth",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:39:08.726Z"
+  },
+  {
+    "index": 18,
+    "operationKey": "GET /page/title/{}/{}",
+    "method": "GET",
+    "path": "/page/title/Earth/1",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T21:39:09.821Z"
+  }
+]

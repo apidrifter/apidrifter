@@ -1,0 +1,215 @@
+[
+  {
+    "index": 0,
+    "operationKey": "GET /c/{}/{}.json",
+    "method": "GET",
+    "path": "/c/general/1.json",
+    "query": {},
+    "status": 301,
+    "mediaType": "text/html; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:10.909Z"
+  },
+  {
+    "index": 1,
+    "operationKey": "GET /c/{}/show.json",
+    "method": "GET",
+    "path": "/c/1/show.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:12.540Z"
+  },
+  {
+    "index": 2,
+    "operationKey": "GET /categories.json",
+    "method": "GET",
+    "path": "/categories.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:14.157Z"
+  },
+  {
+    "index": 3,
+    "operationKey": "GET /discourse-post-event/events.ics",
+    "method": "GET",
+    "path": "/discourse-post-event/events.ics",
+    "query": {},
+    "status": 200,
+    "mediaType": "text/calendar; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:15.828Z"
+  },
+  {
+    "index": 4,
+    "operationKey": "GET /discourse-post-event/events.json",
+    "method": "GET",
+    "path": "/discourse-post-event/events.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:17.479Z"
+  },
+  {
+    "index": 5,
+    "operationKey": "GET /groups.json",
+    "method": "GET",
+    "path": "/groups.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:19.170Z"
+  },
+  {
+    "index": 6,
+    "operationKey": "GET /groups/{}.json",
+    "method": "GET",
+    "path": "/groups/general.json",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:20.774Z"
+  },
+  {
+    "index": 7,
+    "operationKey": "GET /groups/{}/members.json",
+    "method": "GET",
+    "path": "/groups/general/members.json",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:22.405Z"
+  },
+  {
+    "index": 8,
+    "operationKey": "GET /groups/by-id/{}.json",
+    "method": "GET",
+    "path": "/groups/by-id/1.json",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:24.005Z"
+  },
+  {
+    "index": 9,
+    "operationKey": "GET /posts.json",
+    "method": "GET",
+    "path": "/posts.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:26.049Z"
+  },
+  {
+    "index": 10,
+    "operationKey": "GET /posts/{}.json",
+    "method": "GET",
+    "path": "/posts/1.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:27.663Z"
+  },
+  {
+    "index": 11,
+    "operationKey": "GET /posts/{}/replies.json",
+    "method": "GET",
+    "path": "/posts/1/replies.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:29.262Z"
+  },
+  {
+    "index": 12,
+    "operationKey": "GET /search.json",
+    "method": "GET",
+    "path": "/search.json",
+    "query": {
+      "page": "1",
+      "q": "api @blake #support tags:api after:2021-06-04 in:unseen in:open order:latest_topic"
+    },
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:30.868Z"
+  },
+  {
+    "index": 13,
+    "operationKey": "GET /site.json",
+    "method": "GET",
+    "path": "/site.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:32.588Z"
+  },
+  {
+    "index": 14,
+    "operationKey": "GET /site/basic-info.json",
+    "method": "GET",
+    "path": "/site/basic-info.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:34.212Z"
+  },
+  {
+    "index": 15,
+    "operationKey": "GET /tag_groups.json",
+    "method": "GET",
+    "path": "/tag_groups.json",
+    "query": {},
+    "status": 404,
+    "mediaType": "text/html; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:35.842Z"
+  },
+  {
+    "index": 16,
+    "operationKey": "GET /tag_groups/{}.json",
+    "method": "GET",
+    "path": "/tag_groups/1.json",
+    "query": {},
+    "status": 404,
+    "mediaType": "text/html; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:37.461Z"
+  },
+  {
+    "index": 17,
+    "operationKey": "GET /tag/{}.json",
+    "method": "GET",
+    "path": "/tag/general.json",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:39.138Z"
+  },
+  {
+    "index": 18,
+    "operationKey": "GET /tags.json",
+    "method": "GET",
+    "path": "/tags.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:40.822Z"
+  },
+  {
+    "index": 19,
+    "operationKey": "GET /u/{}/emails.json",
+    "method": "GET",
+    "path": "/u/system/emails.json",
+    "query": {},
+    "status": 403,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:42.416Z"
+  },
+  {
+    "index": 20,
+    "operationKey": "GET /user-badges/{}.json",
+    "method": "GET",
+    "path": "/user-badges/system.json",
+    "query": {},
+    "status": 200,
+    "mediaType": "application/json; charset=utf-8",
+    "capturedAt": "2026-10-30T21:39:44.032Z"
+  }
+]

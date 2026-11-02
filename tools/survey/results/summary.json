@@ -1,0 +1,289 @@
+{
+  "generatedAt": "2026-11-02T22:33:10.512Z",
+  "totals": {
+    "apis": 13,
+    "withBody": 9,
+    "withHard": 9,
+    "body": 230,
+    "hard": 171,
+    "media": 1,
+    "errors": 94,
+    "server": 1,
+    "input": 5
+  },
+  "apis": [
+    {
+      "id": "petstore",
+      "name": "Swagger Petstore (reference demo)",
+      "spec": "https://petstore3.swagger.io/api/v3/openapi.json",
+      "baseUrl": "https://petstore3.swagger.io/api/v3",
+      "specFormat": "openapi-3",
+      "operations": 19,
+      "sent": 8,
+      "ok": 6,
+      "observed": 8,
+      "counts": {
+        "body": 1,
+        "hard": 1,
+        "media": 0,
+        "errors": 0,
+        "server": 0,
+        "input": 0
+      },
+      "note": "Confirmed: GET /user/login returns a plain-text session string under application/json.",
+      "ranAt": "2026-10-30T21:37:28.417Z"
+    },
+    {
+      "id": "apis-guru",
+      "name": "APIs.guru directory API",
+      "spec": "https://api.apis.guru/v2/openapi.yaml",
+      "baseUrl": "https://api.apis.guru/v2",
+      "specFormat": "openapi-3",
+      "operations": 7,
+      "sent": 6,
+      "ok": 6,
+      "observed": 6,
+      "counts": {
+        "body": 13,
+        "hard": 13,
+        "media": 0,
+        "errors": 0,
+        "server": 0,
+        "input": 0
+      },
+      "note": "Confirmed: GET /specs/{provider}/{api}.json returns the OpenAPI document itself; the spec documents the API entry object (preferred, versions).",
+      "ranAt": "2026-10-30T22:19:35.133Z"
+    },
+    {
+      "id": "pokeapi",
+      "name": "PokeAPI",
+      "spec": "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/openapi.yml",
+      "baseUrl": "https://pokeapi.co",
+      "specFormat": "openapi-3",
+      "operations": 102,
+      "sent": 30,
+      "ok": 30,
+      "observed": 30,
+      "counts": {
+        "body": 1,
+        "hard": 1,
+        "media": 0,
+        "errors": 0,
+        "server": 0,
+        "input": 0
+      },
+      "note": "Confirmed: evolution-chain baby_trigger_item is null; the spec does not allow null.",
+      "ranAt": "2026-10-30T21:38:10.165Z"
+    },
+    {
+      "id": "wikipedia-rest",
+      "name": "Wikimedia REST API (en.wikipedia.org)",
+      "spec": "https://en.wikipedia.org/api/rest_v1/?spec",
+      "baseUrl": "https://en.wikipedia.org/api/rest_v1",
+      "specFormat": "openapi-3",
+      "operations": 49,
+      "sent": 19,
+      "ok": 13,
+      "observed": 19,
+      "counts": {
+        "body": 20,
+        "hard": 8,
+        "media": 0,
+        "errors": 9,
+        "server": 0,
+        "input": 0
+      },
+      "note": "Confirmed: media-list items carry undocumented leadImage and srcset; /page/lint returns an array where the spec says object; 400 errors come back as application/json, documented as application/problem+json.",
+      "ranAt": "2026-10-30T21:38:37.746Z"
+    },
+    {
+      "id": "discourse-meta",
+      "name": "Discourse (meta.discourse.org)",
+      "spec": "https://docs.discourse.org/openapi.json",
+      "baseUrl": "https://meta.discourse.org",
+      "specFormat": "openapi-3",
+      "operations": 95,
+      "sent": 21,
+      "ok": 13,
+      "observed": 21,
+      "counts": {
+        "body": 126,
+        "hard": 106,
+        "media": 0,
+        "errors": 8,
+        "server": 0,
+        "input": 0
+      },
+      "note": "Confirmed: category custom_fields holds plugin keys the spec forbids; topic tags are objects where the spec says strings; permission is null. The spec is generated from test fixtures and lags the live site.",
+      "ranAt": "2026-10-30T21:39:10.909Z"
+    },
+    {
+      "id": "openlibrary",
+      "name": "Open Library",
+      "spec": "https://openlibrary.org/openapi.json",
+      "baseUrl": "https://openlibrary.org",
+      "specFormat": "openapi-3",
+      "operations": 58,
+      "sent": 20,
+      "ok": 9,
+      "observed": 20,
+      "counts": {
+        "body": 0,
+        "hard": 1,
+        "media": 1,
+        "errors": 9,
+        "server": 0,
+        "input": 4
+      },
+      "note": "Confirmed: /health returns text/plain, documented as application/json; the spec's own example for search.json spellcheck_count violates its schema. Account endpoints 303-redirect when logged out.",
+      "ranAt": "2026-10-30T22:19:40.968Z"
+    },
+    {
+      "id": "github",
+      "name": "GitHub REST API (unauthenticated)",
+      "spec": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
+      "baseUrl": "https://api.github.com",
+      "specFormat": "openapi-3",
+      "operations": 1254,
+      "sent": 40,
+      "ok": 9,
+      "observed": 40,
+      "counts": {
+        "body": 0,
+        "hard": 0,
+        "media": 0,
+        "errors": 28,
+        "server": 0,
+        "input": 0
+      },
+      "note": "First run: gist file language is null but not nullable; event payloads match two oneOf branches. The rerun hit the anonymous rate limit (403) after nine successes, so this row understates GitHub; rerun with a token pending.",
+      "ranAt": "2026-10-30T22:20:23.394Z"
+    },
+    {
+      "id": "gitea",
+      "name": "Gitea (gitea.com, self-served Swagger 2.0)",
+      "spec": "https://gitea.com/swagger.v1.json",
+      "baseUrl": "https://gitea.com/api/v1",
+      "specFormat": "swagger-2.0",
+      "operations": 537,
+      "sent": 40,
+      "ok": 19,
+      "observed": 40,
+      "counts": {
+        "body": 30,
+        "hard": 15,
+        "media": 0,
+        "errors": 14,
+        "server": 0,
+        "input": 0
+      },
+      "note": "Confirmed: activity feed comment and user objects are null; User carries an undocumented username field. Swagger 2.0 cannot express null, so the null findings are partly a format limitation.",
+      "ranAt": "2026-10-30T21:42:11.993Z"
+    },
+    {
+      "id": "codeberg",
+      "name": "Forgejo (codeberg.org, self-served Swagger 2.0)",
+      "spec": "https://codeberg.org/swagger.v1.json",
+      "baseUrl": "https://codeberg.org/api/v1",
+      "specFormat": "swagger-2.0",
+      "operations": 506,
+      "sent": 40,
+      "ok": 16,
+      "observed": 38,
+      "counts": {
+        "body": 35,
+        "hard": 23,
+        "media": 0,
+        "errors": 18,
+        "server": 0,
+        "input": 1
+      },
+      "note": "Same drift as Gitea (Forgejo fork), plus repo.parent null on feeds.",
+      "ranAt": "2026-10-30T21:43:05.036Z"
+    },
+    {
+      "id": "httpbin",
+      "name": "httpbin.org (self-served Swagger 2.0)",
+      "spec": "https://httpbin.org/spec.json",
+      "baseUrl": "https://httpbin.org",
+      "specFormat": "swagger-2.0",
+      "operations": 78,
+      "sent": 20,
+      "ok": 18,
+      "observed": 20,
+      "counts": {
+        "body": 0,
+        "hard": 0,
+        "media": 0,
+        "errors": 2,
+        "server": 0,
+        "input": 0
+      },
+      "note": "Confirmed: GET /cookies/set and /cookies/delete respond 302, documented as 200 only. Earlier input mistakes fixed.",
+      "ranAt": "2026-10-30T22:10:44.477Z"
+    },
+    {
+      "id": "nager-date",
+      "name": "Nager.Date public holidays",
+      "spec": "https://date.nager.at/openapi/community-v3.json",
+      "baseUrl": "https://date.nager.at",
+      "specFormat": "openapi-3",
+      "operations": 8,
+      "sent": 8,
+      "ok": 7,
+      "observed": 8,
+      "counts": {
+        "body": 0,
+        "hard": 0,
+        "media": 0,
+        "errors": 0,
+        "server": 1,
+        "input": 0
+      },
+      "note": "One 502 on LongWeekend during the run; transient, not drift.",
+      "ranAt": "2026-10-30T21:45:27.558Z"
+    },
+    {
+      "id": "open-meteo",
+      "name": "Open-Meteo forecast API",
+      "spec": "https://raw.githubusercontent.com/open-meteo/open-meteo/main/openapi/forecast.yml",
+      "baseUrl": "https://api.open-meteo.com",
+      "specFormat": "openapi-3",
+      "operations": 1,
+      "sent": 1,
+      "ok": 1,
+      "observed": 1,
+      "counts": {
+        "body": 1,
+        "hard": 0,
+        "media": 0,
+        "errors": 0,
+        "server": 0,
+        "input": 0
+      },
+      "note": "Minor: current_units.interval is undocumented.",
+      "ranAt": "2026-10-30T21:45:51.254Z"
+    },
+    {
+      "id": "gitlab",
+      "name": "GitLab REST API (gitlab.com, unauthenticated)",
+      "spec": "https://gitlab.com/gitlab-org/gitlab/-/raw/master/doc/api/openapi/openapi_v3.yaml",
+      "baseUrl": "https://gitlab.com",
+      "specFormat": "openapi-3",
+      "operations": 1864,
+      "sent": 15,
+      "ok": 8,
+      "observed": 15,
+      "counts": {
+        "body": 3,
+        "hard": 3,
+        "media": 0,
+        "errors": 6,
+        "server": 0,
+        "input": 0
+      },
+      "note": "Confirmed: GET /projects/{id}/issues and /repository/contributors return arrays where the generated spec says object; namespace.parent_id is null but not nullable. gitlab.com rate-limits anonymous clients after a dozen calls, so coverage is thin.",
+      "ranAt": "2026-10-30T22:21:28.106Z"
+    }
+  ]
+}

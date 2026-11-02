@@ -1,6 +1,7 @@
 [
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -18,10 +19,18 @@
     },
     "observation": 8,
     "actual": "username",
+    "request": {
+      "method": "GET",
+      "path": "/orgs/gitea/activities/feeds",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -38,12 +47,22 @@
       "spec": "Allow null at paths[\"/orgs/{org}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"comment\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 8,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/orgs/gitea/activities/feeds",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-constraint-violation",
     "severity": "warning",
     "location": {
@@ -62,10 +81,18 @@
     "observation": 8,
     "expected": "email",
     "actual": "",
+    "request": {
+      "method": "GET",
+      "path": "/orgs/gitea/activities/feeds",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -83,10 +110,18 @@
     },
     "observation": 8,
     "actual": "username",
+    "request": {
+      "method": "GET",
+      "path": "/orgs/gitea/activities/feeds",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -103,12 +138,22 @@
       "spec": "Allow null at paths[\"/orgs/{org}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"comment\"].properties[\"user\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 8,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/orgs/gitea/activities/feeds",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -123,12 +168,22 @@
       "spec": "Add a \"401\" response under paths[\"/orgs/{org}/blocks\"].get.responses."
     },
     "observation": 9,
-    "expected": ["200"],
+    "expected": [
+      "200"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/orgs/gitea/blocks",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -143,12 +198,23 @@
       "spec": "Add a \"401\" response under paths[\"/orgs/{org}/blocks/{username}\"].get.responses."
     },
     "observation": 10,
-    "expected": ["204", "404"],
+    "expected": [
+      "204",
+      "404"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/orgs/gitea/blocks/gitea",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -163,12 +229,23 @@
       "spec": "Add a \"401\" response under paths[\"/orgs/{org}/labels/{id}\"].get.responses."
     },
     "observation": 12,
-    "expected": ["200", "404"],
+    "expected": [
+      "200",
+      "404"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/orgs/gitea/labels/1",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -186,10 +263,18 @@
     },
     "observation": 16,
     "actual": "username",
+    "request": {
+      "method": "GET",
+      "path": "/orgs/gitea/public_members",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-constraint-violation",
     "severity": "warning",
     "location": {
@@ -208,10 +293,18 @@
     "observation": 18,
     "expected": "email",
     "actual": "",
+    "request": {
+      "method": "GET",
+      "path": "/orgs/gitea/repos",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -229,10 +322,18 @@
     },
     "observation": 18,
     "actual": "username",
+    "request": {
+      "method": "GET",
+      "path": "/orgs/gitea/repos",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -247,12 +348,23 @@
       "spec": "Add a \"401\" response under paths[\"/packages/{owner}\"].get.responses."
     },
     "observation": 19,
-    "expected": ["200", "404"],
+    "expected": [
+      "200",
+      "404"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/packages/gitea",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-constraint-violation",
     "severity": "warning",
     "location": {
@@ -271,10 +383,18 @@
     "observation": 20,
     "expected": "email",
     "actual": "",
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -292,10 +412,18 @@
     },
     "observation": 20,
     "actual": "username",
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -310,12 +438,25 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/jobs\"].get.responses."
     },
     "observation": 22,
-    "expected": ["200", "400", "404", "422"],
+    "expected": [
+      "200",
+      "400",
+      "404",
+      "422"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/actions/jobs",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -330,12 +471,24 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/runners\"].get.responses."
     },
     "observation": 23,
-    "expected": ["200", "400", "404"],
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/actions/runners",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -350,12 +503,24 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/runs\"].get.responses."
     },
     "observation": 24,
-    "expected": ["200", "400", "404"],
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/actions/runs",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -370,12 +535,23 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/secrets\"].get.responses."
     },
     "observation": 25,
-    "expected": ["200", "404"],
+    "expected": [
+      "200",
+      "404"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/actions/secrets",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -390,12 +566,24 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/variables\"].get.responses."
     },
     "observation": 27,
-    "expected": ["200", "400", "404"],
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/actions/variables",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -410,12 +598,27 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/actions/workflows\"].get.responses."
     },
     "observation": 28,
-    "expected": ["200", "400", "403", "404", "422", "500"],
+    "expected": [
+      "200",
+      "400",
+      "403",
+      "404",
+      "422",
+      "500"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/actions/workflows",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -433,10 +636,18 @@
     },
     "observation": 29,
     "actual": "username",
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/activities/feeds",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -453,12 +664,22 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"comment\"].properties[\"user\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 29,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/activities/feeds",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-constraint-violation",
     "severity": "warning",
     "location": {
@@ -477,10 +698,18 @@
     "observation": 29,
     "expected": "email",
     "actual": "",
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/activities/feeds",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -498,10 +727,18 @@
     },
     "observation": 29,
     "actual": "username",
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/activities/feeds",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -518,12 +755,22 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/activities/feeds\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"comment\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 29,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/activities/feeds",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -538,12 +785,23 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/assignees\"].get.responses."
     },
     "observation": 30,
-    "expected": ["200", "404"],
+    "expected": [
+      "200",
+      "404"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/assignees",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -558,12 +816,22 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branch_protections\"].get.responses."
     },
     "observation": 31,
-    "expected": ["200"],
+    "expected": [
+      "200"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/branch_protections",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -578,12 +846,23 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/branch_protections/{name}\"].get.responses."
     },
     "observation": 32,
-    "expected": ["200", "404"],
+    "expected": [
+      "200",
+      "404"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/branch_protections/gitea",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -600,12 +879,22 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"added\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 33,
-    "expected": ["array"],
+    "expected": [
+      "array"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/branches",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -622,12 +911,22 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"modified\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 33,
-    "expected": ["array"],
+    "expected": [
+      "array"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/branches",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -644,12 +943,22 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"removed\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 33,
-    "expected": ["array"],
+    "expected": [
+      "array"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/branches",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -666,12 +975,22 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"verification\"].properties[\"signer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 33,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/branches",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -688,12 +1007,22 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches/{branch}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"commit\"].properties[\"added\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 34,
-    "expected": ["array"],
+    "expected": [
+      "array"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/branches/main",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -710,12 +1039,22 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches/{branch}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"commit\"].properties[\"modified\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 34,
-    "expected": ["array"],
+    "expected": [
+      "array"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/branches/main",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -732,12 +1071,22 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches/{branch}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"commit\"].properties[\"removed\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 34,
-    "expected": ["array"],
+    "expected": [
+      "array"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/branches/main",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -754,12 +1103,22 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/branches/{branch}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"commit\"].properties[\"verification\"].properties[\"signer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 34,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/branches/main",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -774,12 +1133,23 @@
       "spec": "Add a \"401\" response under paths[\"/repos/{owner}/{repo}/collaborators\"].get.responses."
     },
     "observation": 35,
-    "expected": ["200", "404"],
+    "expected": [
+      "200",
+      "404"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/collaborators",
+      "query": {},
+      "status": 401,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -797,10 +1167,18 @@
     },
     "observation": 36,
     "actual": "username",
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/commits",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -817,12 +1195,22 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/commits\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"commit\"].properties[\"verification\"].properties[\"signer\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 36,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/commits",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -840,10 +1228,18 @@
     },
     "observation": 36,
     "actual": "username",
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/commits",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-constraint-violation",
     "severity": "warning",
     "location": {
@@ -862,10 +1258,18 @@
     "observation": 38,
     "expected": "email",
     "actual": "",
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/commits/main/status",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": false,
     "id": "response-undocumented-property",
     "severity": "info",
     "location": {
@@ -883,10 +1287,18 @@
     },
     "observation": 38,
     "actual": "username",
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/commits/main/status",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -903,12 +1315,22 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/commits/{ref}/status\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"statuses\"].items.properties[\"creator\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 38,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/commits/main/status",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -925,8 +1347,17 @@
       "spec": "Allow null at paths[\"/repos/{owner}/{repo}/commits/{ref}/statuses\"].get.responses[\"200\"].content[\"application/json\"].schema.items.properties[\"creator\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 39,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/repos/gitea/tea/commits/main/statuses",
+      "query": {},
+      "status": 200,
+      "mediaType": "application/json;charset=utf-8"
+    },
     "review": "unreviewed"
   }
 ]

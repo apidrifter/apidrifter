@@ -1,6 +1,7 @@
 [
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -15,12 +16,27 @@
       "spec": "Add a \"429\" response under paths[\"/api/v4/groups/{id}\"].get.responses."
     },
     "observation": 1,
-    "expected": ["200", "400", "404"],
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
     "actual": 429,
+    "request": {
+      "method": "GET",
+      "path": "/api/v4/groups/278964",
+      "query": {
+        "with_custom_attributes": "false",
+        "with_projects": "true"
+      },
+      "status": 429,
+      "mediaType": "text/plain"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-null-not-allowed",
     "severity": "breaking",
     "location": {
@@ -37,12 +53,26 @@
       "spec": "Allow null at paths[\"/api/v4/projects/{id}\"].get.responses[\"200\"].content[\"application/json\"].schema.properties[\"namespace\"].properties[\"parent_id\"] (add \"null\" to type, or nullable: true in OpenAPI 3.0)."
     },
     "observation": 0,
-    "expected": ["integer"],
+    "expected": [
+      "integer"
+    ],
     "actual": null,
+    "request": {
+      "method": "GET",
+      "path": "/api/v4/projects/278964",
+      "query": {
+        "license": "false",
+        "statistics": "false",
+        "with_custom_attributes": "false"
+      },
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -58,12 +88,29 @@
       "spec": "Change the type at paths[\"/api/v4/projects/{id}/issues\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
     },
     "observation": 9,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": "array",
+    "request": {
+      "method": "GET",
+      "path": "/api/v4/projects/278964/issues",
+      "query": {
+        "order_by": "created_at",
+        "page": "1",
+        "per_page": "20",
+        "sort": "desc",
+        "state": "all",
+        "with_labels_details": "false"
+      },
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -78,12 +125,29 @@
       "spec": "Add a \"401\" response under paths[\"/api/v4/projects/{id}/labels\"].get.responses."
     },
     "observation": 10,
-    "expected": ["200", "400", "404"],
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/api/v4/projects/278964/labels",
+      "query": {
+        "include_ancestor_groups": "true",
+        "page": "1",
+        "per_page": "20",
+        "with_counts": "false"
+      },
+      "status": 401,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -98,12 +162,27 @@
       "spec": "Add a \"401\" response under paths[\"/api/v4/projects/{id}/members\"].get.responses."
     },
     "observation": 12,
-    "expected": ["200", "400", "404"],
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/api/v4/projects/278964/members",
+      "query": {
+        "page": "1",
+        "per_page": "20"
+      },
+      "status": 401,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -118,12 +197,29 @@
       "spec": "Add a \"401\" response under paths[\"/api/v4/projects/{id}/milestones\"].get.responses."
     },
     "observation": 14,
-    "expected": ["200", "400", "404"],
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
     "actual": 401,
+    "request": {
+      "method": "GET",
+      "path": "/api/v4/projects/278964/milestones",
+      "query": {
+        "page": "1",
+        "per_page": "20",
+        "sort": "due_date_asc",
+        "state": "all"
+      },
+      "status": 401,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "body",
+    "strict": true,
     "id": "response-type-mismatch",
     "severity": "breaking",
     "location": {
@@ -139,12 +235,28 @@
       "spec": "Change the type at paths[\"/api/v4/projects/{id}/repository/contributors\"].get.responses[\"200\"].content[\"application/json\"].schema to \"array\"."
     },
     "observation": 6,
-    "expected": ["object"],
+    "expected": [
+      "object"
+    ],
     "actual": "array",
+    "request": {
+      "method": "GET",
+      "path": "/api/v4/projects/278964/repository/contributors",
+      "query": {
+        "order_by": "commits",
+        "page": "1",
+        "per_page": "20",
+        "ref": "main",
+        "sort": "asc"
+      },
+      "status": 200,
+      "mediaType": "application/json"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -159,12 +271,26 @@
       "spec": "Add a \"429\" response under paths[\"/api/v4/users/{id}\"].get.responses."
     },
     "observation": 2,
-    "expected": ["200", "400", "404"],
+    "expected": [
+      "200",
+      "400",
+      "404"
+    ],
     "actual": 429,
+    "request": {
+      "method": "GET",
+      "path": "/api/v4/users/278964",
+      "query": {
+        "with_custom_attributes": "false"
+      },
+      "status": 429,
+      "mediaType": "text/plain"
+    },
     "review": "unreviewed"
   },
   {
     "class": "errors",
+    "strict": false,
     "id": "undocumented-status",
     "severity": "breaking",
     "location": {
@@ -179,8 +305,18 @@
       "spec": "Add a \"429\" response under paths[\"/api/v4/version\"].get.responses."
     },
     "observation": 3,
-    "expected": ["200", "401"],
+    "expected": [
+      "200",
+      "401"
+    ],
     "actual": 429,
+    "request": {
+      "method": "GET",
+      "path": "/api/v4/version",
+      "query": {},
+      "status": 429,
+      "mediaType": "text/plain"
+    },
     "review": "unreviewed"
   }
 ]

@@ -1,0 +1,312 @@
+[
+  {
+    "index": 0,
+    "operationKey": "GET /account/loan-history.json",
+    "method": "GET",
+    "path": "/account/loan-history.json",
+    "query": {
+      "page": "1"
+    },
+    "status": 303,
+    "mediaType": "text/html",
+    "capturedAt": "2026-10-30T22:19:40.968Z"
+  },
+  {
+    "index": 1,
+    "operationKey": "GET /account/loans.json",
+    "method": "GET",
+    "path": "/account/loans.json",
+    "query": {},
+    "status": 303,
+    "mediaType": "text/html",
+    "capturedAt": "2026-10-30T22:19:42.771Z"
+  },
+  {
+    "index": 2,
+    "operationKey": "GET /api/books.json",
+    "method": "GET",
+    "path": "/api/books.json",
+    "query": {
+      "bibkeys": "ISBN:9780140328721",
+      "details": "false",
+      "format": "json",
+      "high_priority": "false"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:44.750Z"
+  },
+  {
+    "index": 3,
+    "operationKey": "GET /health",
+    "method": "GET",
+    "path": "/health",
+    "query": {},
+    "status": 200,
+    "mediaType": "text/plain",
+    "capturedAt": "2026-10-30T22:19:46.344Z"
+  },
+  {
+    "index": 4,
+    "operationKey": "GET /import/preview.json",
+    "method": "GET",
+    "path": "/import/preview.json",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:47.959Z"
+  },
+  {
+    "index": 5,
+    "operationKey": "GET /languages.json",
+    "method": "GET",
+    "path": "/languages.json",
+    "query": {
+      "limit": "15",
+      "sort": "count"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:49.738Z"
+  },
+  {
+    "index": 6,
+    "operationKey": "GET /lists/{}/editions.json",
+    "method": "GET",
+    "path": "/lists/OL1L/editions.json",
+    "query": {
+      "limit": "50",
+      "offset": "0"
+    },
+    "status": 404,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:51.470Z"
+  },
+  {
+    "index": 7,
+    "operationKey": "GET /lists/{}/seeds.json",
+    "method": "GET",
+    "path": "/lists/OL1L/seeds.json",
+    "query": {},
+    "status": 404,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:53.117Z"
+  },
+  {
+    "index": 8,
+    "operationKey": "GET /lists/{}/subjects.json",
+    "method": "GET",
+    "path": "/lists/OL1L/subjects.json",
+    "query": {
+      "limit": "20"
+    },
+    "status": 404,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:54.767Z"
+  },
+  {
+    "index": 9,
+    "operationKey": "GET /publishers/{}.json",
+    "method": "GET",
+    "path": "/publishers/OL45804W.json",
+    "query": {
+      "details": "false",
+      "has_fulltext": "false",
+      "limit": "12",
+      "sort": "editions"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:56.405Z"
+  },
+  {
+    "index": 10,
+    "operationKey": "GET /reading-goal.json",
+    "method": "GET",
+    "path": "/reading-goal.json",
+    "query": {},
+    "status": 401,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:19:58.019Z"
+  },
+  {
+    "index": 11,
+    "operationKey": "GET /search.json",
+    "method": "GET",
+    "path": "/search.json",
+    "query": {
+      "author": "tolkien",
+      "author_facet": [],
+      "author_key": [],
+      "fields": [
+        "author_key",
+        "author_name",
+        "cover_edition_key",
+        "cover_height",
+        "cover_i",
+        "cover_width",
+        "ebook_access",
+        "edition_count",
+        "first_publish_year",
+        "has_fulltext",
+        "ia",
+        "ia_collection",
+        "id_cita_press",
+        "id_librivox",
+        "id_openstax",
+        "id_project_gutenberg",
+        "id_project_runeberg",
+        "id_standard_ebooks",
+        "id_wikisource",
+        "key",
+        "language",
+        "lending_edition_s",
+        "lending_identifier_s",
+        "public_scan_b",
+        "series_key",
+        "series_name",
+        "series_position",
+        "subtitle",
+        "title"
+      ],
+      "first_publish_year": [],
+      "language": [],
+      "limit": "100",
+      "person_facet": [],
+      "place_facet": [],
+      "public_scan_b": [],
+      "publisher_facet": [],
+      "q": "the lord of the rings",
+      "query": "{\"q\": \"mark\"}",
+      "spellcheck_count": "3",
+      "subject_facet": [],
+      "time_facet": [],
+      "title": "the hobbit"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:20:02.459Z"
+  },
+  {
+    "index": 12,
+    "operationKey": "GET /search/authors.json",
+    "method": "GET",
+    "path": "/search/authors.json",
+    "query": {
+      "fields": "*",
+      "limit": "100",
+      "q": "the lord of the rings",
+      "sort": ""
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:20:04.106Z"
+  },
+  {
+    "index": 13,
+    "operationKey": "GET /search/editions.json",
+    "method": "GET",
+    "path": "/search/editions.json",
+    "query": {
+      "fields": [
+        "cover_i",
+        "ebook_access",
+        "isbn",
+        "key",
+        "language",
+        "publish_date",
+        "publisher",
+        "subtitle",
+        "title",
+        "work_key"
+      ],
+      "limit": "100",
+      "q": "the lord of the rings",
+      "sort": "",
+      "work_key": "/works/OL82536W"
+    },
+    "status": 404,
+    "mediaType": null,
+    "capturedAt": "2026-10-30T22:20:05.846Z"
+  },
+  {
+    "index": 14,
+    "operationKey": "GET /search/inside.json",
+    "method": "GET",
+    "path": "/search/inside.json",
+    "query": {
+      "facets": "true",
+      "limit": "20",
+      "phrase": "true",
+      "q": "the lord of the rings",
+      "readable": "false"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:20:13.535Z"
+  },
+  {
+    "index": 15,
+    "operationKey": "GET /search/lists.json",
+    "method": "GET",
+    "path": "/search/lists.json",
+    "query": {
+      "api": "",
+      "fields": "",
+      "limit": "20",
+      "q": "the lord of the rings",
+      "sort": ""
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:20:15.475Z"
+  },
+  {
+    "index": 16,
+    "operationKey": "GET /search/subjects.json",
+    "method": "GET",
+    "path": "/search/subjects.json",
+    "query": {
+      "limit": "100",
+      "q": "the lord of the rings"
+    },
+    "status": 200,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:20:17.160Z"
+  },
+  {
+    "index": 17,
+    "operationKey": "GET /series/{}/editions.json",
+    "method": "GET",
+    "path": "/series/OL1L/editions.json",
+    "query": {
+      "limit": "50",
+      "offset": "0"
+    },
+    "status": 404,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:20:18.767Z"
+  },
+  {
+    "index": 18,
+    "operationKey": "GET /series/{}/seeds.json",
+    "method": "GET",
+    "path": "/series/OL45804W/seeds.json",
+    "query": {},
+    "status": 422,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:20:20.379Z"
+  },
+  {
+    "index": 19,
+    "operationKey": "GET /series/{}/subjects.json",
+    "method": "GET",
+    "path": "/series/OL45804W/subjects.json",
+    "query": {
+      "limit": "20"
+    },
+    "status": 422,
+    "mediaType": "application/json",
+    "capturedAt": "2026-10-30T22:20:21.987Z"
+  }
+]
