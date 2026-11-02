@@ -1,0 +1,62 @@
+---
+import Logo from "../components/Logo.astro";
+import { SITE } from "../lib/site";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  /** Use the wide content column (tables). */
+  wide?: boolean;
+}
+
+const { title, description, wide = false } = Astro.props;
+const fullTitle = title === SITE.name ? title : `${title} \u00B7 ${SITE.name}`;
+const canonical = new URL(Astro.url.pathname, SITE.url).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="API Drifter research" href="/research/rss.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0b1020" />
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap wrap--wide">
+        <Logo />
+        <nav aria-label="Primary">
+          <a href="/research/">Research</a>
+          <a href="/docs/cli/">Docs</a>
+          <a href={SITE.repo} rel="noopener">GitHub</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class:list={["wrap", { "wrap--wide": wide }]}>
+        <slot />
+      </div>
+    </main>
+    <footer class="site">
+      <div class="wrap wrap--wide">
+        <span>{SITE.name} &middot; Apache-2.0 &middot; <a href={SITE.repo} rel="noopener">Source on GitHub</a></span>
+        <span><a href="/research/">Research</a> &middot; <a href="/docs/cli/">CLI</a> &middot; <a href="/docs/rules/">Rules</a> &middot; <a href="/docs/design/">Design</a> &middot; <a href="/llms.txt">llms.txt</a></span>
+      </div>
+    </footer>
+  </body>
+</html>
