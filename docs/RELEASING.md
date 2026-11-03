@@ -21,6 +21,20 @@ Packages are published to npm only from CI, with provenance attestations. Nobody
 - The CLI's exit codes and JSON output shape are public API.
 - `@apidrifter/core` and `apidrifter` are versioned independently.
 
+## GitHub Action mirror
+
+The composite action in `packages/action` is used as `apidrifter/action@v1`. GitHub only lists an action on the Marketplace when `action.yml` sits at the root of its own repository, so `.github/workflows/sync-action.yml` force-pushes the contents of `packages/action` (plus `LICENSE`) to the `main` branch of `apidrifter/action`, then moves the `v1` major tag and creates a `vX.Y.Z` release there.
+
+One-time setup:
+
+1. Create the empty public repository `apidrifter/action` (no README, no license; the sync writes both). Set its description to "Fail CI on breaking OpenAPI and MCP changes" and the website to https://apidrifter.com.
+2. Create a fine-grained personal access token scoped to the `apidrifter/action` repository only, with **Contents: read and write** (release creation is covered by Contents). Set an expiry and put a reminder in the calendar.
+3. Add it to `apidrifter/apidrifter` as the repository secret `ACTION_SYNC_TOKEN`.
+4. Run the workflow once by hand (Actions, "Sync GitHub Action", "Run workflow", version `0.1.0`) and check that `apidrifter/action` has `main`, the `v1` and `v0.1.0` tags and a release.
+5. On the release page of `apidrifter/action`, tick "Publish this Action to the GitHub Marketplace" once; later releases created by the workflow keep the listing current.
+
+Every release: after the CLI is published, push the tag `vX.Y.Z` (matching the `apidrifter` package version) on `apidrifter/apidrifter`, or run the workflow by hand with that version. The action's `version` input defaults to `latest`, so the mirror only needs to move when `action.yml` itself changes, but tagging every release keeps the two in step.
+
 ## MCP Registry
 
 `apidrifter serve` is listed in the official MCP Registry as `com.apidrifter/apidrifter`, verified by DNS on apidrifter.com. The listing is metadata only; the registry checks that the published npm package carries `mcpName` equal to that name.

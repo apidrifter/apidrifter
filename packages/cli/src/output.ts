@@ -1,4 +1,4 @@
-import { type DiffResult, renderMarkdown, renderText } from "@apidrifter/core";
+import { type DiffResult, type FooterOptions, renderMarkdown, renderText } from "@apidrifter/core";
 import { UsageError } from "./errors.js";
 
 export type Format = "json" | "markdown" | "text";
@@ -26,9 +26,9 @@ export function exceeds(
   return summary.breaking + summary.warning + summary.info > 0;
 }
 
-export function renderDiff(result: DiffResult, format: Format): string {
+export function renderDiff(result: DiffResult, format: Format, footer: FooterOptions): string {
   if (format === "json") return `${JSON.stringify(result, null, 2)}\n`;
-  if (format === "markdown") return renderMarkdown(result);
+  if (format === "markdown") return renderMarkdown(result, { footer });
   return renderText(result);
 }
 

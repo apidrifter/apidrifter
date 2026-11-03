@@ -1,0 +1,17 @@
+{
+  "name": "apidrifter",
+  "description": "API contract verification for coding agents: check that an HTTP implementation matches its OpenAPI document and fix whichever side drifted.",
+  "owner": {
+    "name": "apidrifter",
+    "url": "https://apidrifter.com"
+  },
+  "plugins": [
+    {
+      "name": "apidrifter",
+      "source": "./plugins/apidrifter",
+      "description": "Verify an API implementation against its OpenAPI spec, diff spec versions, and snapshot and diff MCP servers. Adds the apidrifter MCP server and a verify-api-contract skill.",
+      "category": "testing",
+      "tags": ["openapi", "api", "contract-testing", "mcp"]
+    }
+  ]
+}

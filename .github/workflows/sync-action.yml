@@ -1,0 +1,118 @@
+name: Sync GitHub Action
+
+# Mirrors packages/action to the apidrifter/action repository, where the composite action
+# lives at the repository root so it can be listed on the GitHub Marketplace and used as
+# `apidrifter/action@v1`. Runs on version tags (v1.2.3) and on demand. Needs the
+# ACTION_SYNC_TOKEN secret: a fine-grained PAT with contents: write on apidrifter/action.
+# See docs/RELEASING.md.
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to tag in apidrifter/action, without the v (for example 1.2.3). Leave empty to update only the major tag."
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-action
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    if: github.repository == 'apidrifter/apidrifter'
+    steps:
+      # Actions pinned by SHA; update via Dependabot.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Assemble the mirror
+        run: |
+          set -euo pipefail
+          rm -rf mirror
+          mkdir mirror
+          cp -R packages/action/. mirror/
+          cp LICENSE mirror/LICENSE
+          if [ ! -f mirror/README.md ]; then
+            {
+              echo "# Apidrifter GitHub Action"
+              echo
+              echo "Fail on breaking API changes between two OpenAPI documents or MCP snapshots, with a changelog in the job summary and optionally on the pull request."
+              echo
+              echo "This repository is generated from packages/action in https://github.com/apidrifter/apidrifter; open issues and pull requests there."
+            } > mirror/README.md
+          fi
+          ls -la mirror
+
+      - name: Push to apidrifter/action
+        env:
+          ACTION_SYNC_TOKEN: ${{ secrets.ACTION_SYNC_TOKEN }}
+          SOURCE_SHA: ${{ github.sha }}
+          REF_NAME: ${{ github.ref_name }}
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          if [ -z "${ACTION_SYNC_TOKEN}" ]; then
+            echo "ACTION_SYNC_TOKEN is not set; see docs/RELEASING.md" >&2
+            exit 1
+          fi
+          version=""
+          if [ "${EVENT_NAME}" = "push" ]; then
+            version="${REF_NAME#v}"
+          else
+            version="${INPUT_VERSION#v}"
+          fi
+          if [ -n "${version}" ] && ! printf '%s' "${version}" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+([-+][0-9A-Za-z.-]+)?$'; then
+            echo "version must look like 1.2.3, got ${version}" >&2
+            exit 1
+          fi
+          major="v1"
+          if [ -n "${version}" ]; then
+            major="v${version%%.*}"
+          fi
+
+          # The token travels in an HTTP header, never in a URL that git could print.
+          auth="$(printf 'x-access-token:%s' "${ACTION_SYNC_TOKEN}" | base64 | tr -d '\n')"
+          git_push() {
+            git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic ${auth}" push --force "$@"
+          }
+
+          cd mirror
+          git init -q -b main
+          git config user.name "apidrifter"
+          git config user.email "apidrifter@gmail.com"
+          git add -A
+          git commit -q -s -m "Sync from apidrifter/apidrifter@${SOURCE_SHA}${version:+ (v${version})}"
+          remote="https://github.com/apidrifter/action.git"
+          git_push "${remote}" HEAD:refs/heads/main
+          if [ -n "${version}" ]; then
+            git tag -f "v${version}"
+            git_push "${remote}" "refs/tags/v${version}"
+          fi
+          git tag -f "${major}"
+          git_push "${remote}" "refs/tags/${major}"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+        id: push
+
+      - name: Create the release on apidrifter/action
+        if: ${{ steps.push.outputs.version != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.ACTION_SYNC_TOKEN }}
+          VERSION: ${{ steps.push.outputs.version }}
+        run: |
+          set -euo pipefail
+          if gh release view "v${VERSION}" --repo apidrifter/action >/dev/null 2>&1; then
+            echo "release v${VERSION} already exists"
+            exit 0
+          fi
+          gh release create "v${VERSION}" --repo apidrifter/action \
+            --title "v${VERSION}" \
+            --notes "Mirror of packages/action from apidrifter/apidrifter v${VERSION}. Changelog: https://github.com/apidrifter/apidrifter/releases"

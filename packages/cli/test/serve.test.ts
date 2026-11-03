@@ -112,6 +112,22 @@ describe("serve over an in-memory transport", () => {
       });
       expect(escaped.isError).toBe(true);
 
+      const changelog = await client.callTool({
+        name: "changelog",
+        arguments: { before: { path: "a.json" }, after: { path: "b.json" } },
+      });
+      const markdown = (changelog.structuredContent as { markdown: string }).markdown;
+      expect(markdown).toContain("response-property-type-changed");
+      expect(markdown).toMatch(/\n---\n\nFound with \[apidrifter\]\(https:\/\/apidrifter\.com\) v/);
+
+      const verified = await client.callTool({
+        name: "verify_observations",
+        arguments: { spec: { path: "a.json" }, observations: [] },
+      });
+      const report = (verified.structuredContent as { markdown: string }).markdown;
+      expect(report).toMatch(/^## Verification report/);
+      expect(report).toContain("Found with [apidrifter](https://apidrifter.com)");
+
       const rules = await client.callTool({ name: "list_rules", arguments: {} });
       expect((rules.structuredContent as { rules: unknown[] }).rules.length).toBeGreaterThan(100);
     } finally {

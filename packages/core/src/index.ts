@@ -14,11 +14,12 @@ export {
   normalizePath,
 } from "./openapi/normalize.js";
 export { isRecord, type ParseOptions, parseDocument } from "./parse.js";
+export { type FooterOptions, renderFooter } from "./render/footer.js";
 export { formatLocation } from "./render/location.js";
-export { renderMarkdown } from "./render/markdown.js";
+export { type MarkdownOptions, renderMarkdown } from "./render/markdown.js";
 export { renderText } from "./render/text.js";
 // Verification
-export { renderVerifyMarkdown } from "./render/verify-markdown.js";
+export { renderVerifyMarkdown, type VerifyMarkdownOptions } from "./render/verify-markdown.js";
 export { renderVerifyText } from "./render/verify-text.js";
 export { listRules, RULES, type RuleDefinition } from "./rules/registry.js";
 export { diffSchemas, type SchemaEvent } from "./schema/diff.js";

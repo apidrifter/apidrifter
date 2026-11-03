@@ -1,0 +1,21 @@
+{
+  "name": "apidrifter",
+  "version": "0.1.0",
+  "description": "Check that an HTTP implementation matches its OpenAPI document: plan requests from the spec, run them against the local server, and get a fix for whichever side drifted.",
+  "author": {
+    "name": "apidrifter",
+    "url": "https://apidrifter.com"
+  },
+  "homepage": "https://apidrifter.com",
+  "repository": "https://github.com/apidrifter/apidrifter",
+  "license": "Apache-2.0",
+  "keywords": [
+    "openapi",
+    "api",
+    "contract-testing",
+    "spec-drift",
+    "breaking-changes",
+    "mcp",
+    "verification"
+  ]
+}

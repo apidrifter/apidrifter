@@ -3,7 +3,7 @@ import { hasFlag, type ParsedArgs, parseArgs } from "./args.js";
 import { breakingCommand, changelogCommand, diffCommand } from "./commands/diff.js";
 import { MCP_BOOLEANS, mcpDiffCommand, mcpSnapshotCommand } from "./commands/mcp.js";
 import { planCommand, RUN_BOOLEANS, runCommand, verifyCommand } from "./commands/verify.js";
-import type { CliIo } from "./context.js";
+import { type CliIo, COMMON_BOOLEANS } from "./context.js";
 import { EXIT_ENGINE, EXIT_OK, EXIT_USAGE, InputError, UsageError } from "./errors.js";
 import { serveCommand } from "./serve.js";
 import { VERSION } from "./version.js";
@@ -30,6 +30,7 @@ Common options:
   --fail-on breaking|warning|info   exit 1 at or above this level (default breaking)
   --timeout <ms>                network timeout (default 30000)
   --kind openapi|mcp            force the document kind for diff/breaking/changelog
+  --no-footer                   omit the "Found with apidrifter" line from markdown reports
 
 mcp options:
   --out <file>                  write the snapshot to a file instead of stdout
@@ -49,6 +50,7 @@ Exit codes: 0 ok, 1 threshold exceeded, 2 usage or input error, 3 engine refused
 const GLOBAL_BOOLEANS: ReadonlySet<string> = new Set([
   "help",
   "version",
+  ...COMMON_BOOLEANS,
   ...MCP_BOOLEANS,
   ...RUN_BOOLEANS,
 ]);

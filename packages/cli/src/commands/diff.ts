@@ -32,21 +32,21 @@ async function loadPair(args: ParsedArgs, io: CliIo, command: string): Promise<D
 
 export async function diffCommand(args: ParsedArgs, io: CliIo): Promise<number> {
   const result = await loadPair(args, io, "diff");
-  const { format, level } = await commonOptions(args, io);
-  io.stdout(renderDiff(result, format));
+  const { format, level, footer } = await commonOptions(args, io);
+  io.stdout(renderDiff(result, format, footer));
   return exceeds(result.summary, level) ? EXIT_THRESHOLD : EXIT_OK;
 }
 
 export async function breakingCommand(args: ParsedArgs, io: CliIo): Promise<number> {
   const result = breakingOnly(await loadPair(args, io, "breaking"));
-  const { format } = await commonOptions(args, io);
-  io.stdout(renderDiff(result, format));
+  const { format, footer } = await commonOptions(args, io);
+  io.stdout(renderDiff(result, format, footer));
   return result.hasBreaking ? EXIT_THRESHOLD : EXIT_OK;
 }
 
 export async function changelogCommand(args: ParsedArgs, io: CliIo): Promise<number> {
   const result = await loadPair(args, io, "changelog");
-  const { level } = await commonOptions(args, io);
-  io.stdout(renderMarkdown(result));
+  const { level, footer } = await commonOptions(args, io);
+  io.stdout(renderMarkdown(result, { footer }));
   return exceeds(result.summary, level) ? EXIT_THRESHOLD : EXIT_OK;
 }

@@ -57,8 +57,8 @@ export async function mcpDiffCommand(args: ParsedArgs, io: CliIo): Promise<numbe
       timeoutMs: intFlag(args, "timeout", 30_000),
     });
   }
-  const { format, level, config } = await commonOptions(args, io);
+  const { format, level, config, footer } = await commonOptions(args, io);
   const result = diff(before, after, { kind: "mcp", config });
-  io.stdout(renderDiff(result, format));
+  io.stdout(renderDiff(result, format, footer));
   return exceeds(result.summary, level) ? EXIT_THRESHOLD : EXIT_OK;
 }
