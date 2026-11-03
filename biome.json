@@ -47,6 +47,7 @@
       "!**/.astro",
       "!**/*.mdx",
       "!tools/survey/results",
+      "!tools/survey/out",
       "!.changeset/*.md",
       "!wrangler.jsonc"
     ]
