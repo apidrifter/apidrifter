@@ -75,6 +75,22 @@ export default defineConfig({
             priority: 0.8,
           };
         }
+        if (path === "/drift-index/") {
+          return {
+            ...item,
+            lastmod: SURVEY_DATE.toISOString(),
+            changefreq: "monthly",
+            priority: 0.8,
+          };
+        }
+        if (path === "/agents/" || path.startsWith("/compare/")) {
+          return {
+            ...item,
+            lastmod: BUILD_TIME.toISOString(),
+            changefreq: "monthly",
+            priority: 0.7,
+          };
+        }
         if (path.startsWith("/docs/")) {
           return {
             ...item,

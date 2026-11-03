@@ -1,0 +1,163 @@
+---
+import Base from "../../layouts/Base.astro";
+import { breadcrumbs, dataset } from "../../lib/jsonld";
+import { SITE } from "../../lib/site";
+import {
+  apiStatus,
+  loadSummary,
+  noteExcerpt,
+  rankedApis,
+  specFormatLabel,
+} from "../../lib/survey";
+import { getCollection } from "astro:content";
+
+const summary = await loadSummary();
+const posts = (await getCollection("research", (p) => !p.data.draft && p.data.survey)).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+const post = posts[0];
+const postBase = post === undefined ? "/research/" : `/research/${post.id}/`;
+const ranked = rankedApis(summary);
+const generated = summary.generatedAt.slice(0, 10);
+const url = `${SITE.url}/drift-index/`;
+const title = "Public API drift index";
+const description = `${summary.totals.apis} public APIs ranked by how far their live responses drift from their own OpenAPI spec: ${summary.totals.withHard} with hard violations, every request reproducible, updated monthly.`;
+const jsonld = [
+  dataset({
+    url,
+    name: "Public API drift index",
+    description: `Read-only requests to ${summary.totals.apis} public APIs that publish an OpenAPI document, verified against those documents and ranked by hard schema violations: every request sent, every finding, and a fix for each side.`,
+    dateCreated: summary.generatedAt,
+  }),
+  breadcrumbs([
+    { name: SITE.name, url: `${SITE.url}/` },
+    { name: "Drift index", url },
+  ]),
+];
+const statusClass = (s: string) =>
+  s === "Drift confirmed" ? "status-drift" : s === "Clean" ? "status-clean" : "status-unverified";
+---
+
+<Base
+  title={title}
+  description={description}
+  wide
+  jsonld={jsonld}
+  markdownAlternate="/drift-index/index.md"
+>
+  <p class="post-meta">
+    Data generated <time datetime={summary.generatedAt}>{generated}</time> &middot; updates monthly
+    &middot; <a href={postBase}>the write-up</a> &middot;
+    <a href="/drift-index/index.md">Markdown</a>
+  </p>
+  <h1>{title}</h1>
+  <p class="lede muted">
+    Public APIs that publish an OpenAPI document, checked read-only against that document and
+    ranked by hard violations: the mismatches a client generated from the spec would break on.
+    Each row links to every request sent and every finding, with a fix for each side.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="num">#</th>
+          <th>API</th>
+          <th>Spec format</th>
+          <th class="num">Operations observed</th>
+          <th class="num">Hard violations</th>
+          <th class="num">Body findings</th>
+          <th>Status</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          ranked.map((a, i) => {
+            const status = apiStatus(a);
+            return (
+              <tr>
+                <td class="rank">{i + 1}</td>
+                <td>
+                  <a href={`${postBase}${a.id}/`}>{a.name}</a>
+                </td>
+                <td>
+                  <a href={a.spec} rel="noopener nofollow">{specFormatLabel(a.specFormat)}</a>
+                </td>
+                <td class="num">{a.observed} of {a.operations}</td>
+                <td class:list={["num", { hard: a.counts.hard > 0 }]}>{a.counts.hard}</td>
+                <td class="num">{a.counts.body}</td>
+                <td class={statusClass(status)}>{status}</td>
+                <td class="note">{noteExcerpt(a.note)}</td>
+              </tr>
+            );
+          })
+        }
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">
+    <strong>{summary.totals.withHard} of {summary.totals.apis}</strong> had at least one hard
+    violation on a successful response, {summary.totals.hard} distinct schema locations in total.
+    Counts are distinct schema locations, not raw occurrences. Operations observed is the number
+    of operations we got a response for, out of the operations in the spec.
+  </p>
+
+  <h2 id="methodology">Methodology</h2>
+  <ul>
+    <li>
+      <b>Read-only.</b> One <code>GET</code> per operation, values from the spec&rsquo;s own
+      examples or a small hand-written set per API, a delay between requests, a named User-Agent,
+      one polite retry on 429 and a hard request budget. Nothing is created, changed or deleted.
+    </li>
+    <li>
+      <b>Unauthenticated.</b> No credentials were sent, so the undocumented-status count in the
+      per-API findings mostly reflects our own unauthenticated requests (401, 403, 429), not
+      drift. It is kept out of this table.
+    </li>
+    <li>
+      <b>Hand-reviewed.</b> Every hard violation was read by a person before it counted; the
+      reviewer note says what we confirmed. One false positive in our own validator was found this
+      way, fixed, and every API re-verified from the recorded responses.
+    </li>
+    <li>
+      <b>Status.</b> <i>Drift confirmed</i>: at least one hard violation on a successful
+      response. <i>Clean</i>: successful responses, none with a hard violation; read it with the
+      coverage column. <i>Not verified</i>: nothing sent or nothing succeeded, usually rate
+      limiting.
+    </li>
+    <li>
+      <b>A sample, not a rate.</b> These APIs were chosen because they publish a spec. The
+      ranking says which of them drifted furthest in the operations we could reach, not what
+      fraction of all APIs drift.
+    </li>
+    <li>
+      Swagger 2.0 documents were converted to OpenAPI 3 before checking; Swagger 2.0 cannot
+      express null, so some null findings on those rows are a format limitation as much as drift.
+    </li>
+  </ul>
+
+  <h2 id="get-your-api-on-the-index">How to get your API on the index</h2>
+  <p>
+    Run the tool against your own public API and its published spec, then
+    <a href={`${SITE.repo}/issues/new`} rel="noopener">open an issue</a> with the report attached
+    and the spec URL. We rerun it read-only from our side, review the findings by hand, and add the
+    row at the next monthly update. Clean rows are welcome; the index is more useful with them.
+  </p>
+  <pre><code>npx apidrifter run https://api.example.com/openapi.json --base-url https://api.example.com --format markdown &gt; report.md</code></pre>
+  <p class="small muted">
+    If a finding on an existing row is wrong, open an issue and we will correct it; if it is right,
+    a pull request on the spec is the fastest way to move the row down.
+  </p>
+
+  <h2 id="data">Data</h2>
+  <ul>
+    <li><a href={`${SITE.resultsRaw}/summary.json`} rel="noopener">summary.json</a>: this table as data.</li>
+    <li><a href={SITE.resultsUrl} rel="noopener">Per-API findings and observations</a>: every finding with both fixes, every request with its status.</li>
+    <li><a href={postBase}>The write-up</a>: what we counted, what we did not, and the APIs worth reading about.</li>
+    <li><a href="/drift-index/index.md">Markdown twin</a> of this page, for agents.</li>
+  </ul>
+  <p class="small muted">
+    The index updates monthly. Text and data are Apache-2.0; cite as {SITE.name} ({generated.slice(0, 4)}), <i>Public API drift index</i>, {url}.
+  </p>
+</Base>

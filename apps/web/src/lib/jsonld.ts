@@ -156,3 +156,29 @@ export function faqPage(qa: ReadonlyArray<{ q: string; a: string }>): JsonLd {
     })),
   };
 }
+
+export interface HowToInput {
+  url: string;
+  name: string;
+  description: string;
+  steps: Array<{ name: string; text: string }>;
+}
+
+export function howTo(h: HowToInput): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `${h.url}#howto`,
+    name: h.name,
+    description: h.description,
+    inLanguage: "en",
+    tool: { "@id": APP_ID },
+    step: h.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+      url: `${h.url}#step-${i + 1}`,
+    })),
+  };
+}

@@ -174,3 +174,37 @@ export function formatRequest(r: FindingRequest): string {
       : `?${q.map(([k, v]) => `${k}=${Array.isArray(v) ? v.join(",") : v}`).join("&")}`;
   return `${r.method} ${r.path}${qs}`;
 }
+
+/** Drift index status for one API. "Not verified" when nothing was sent or nothing succeeded. */
+export type DriftStatus = "Drift confirmed" | "Clean" | "Not verified";
+
+export function apiStatus(a: SurveyApi): DriftStatus {
+  if (a.sent === 0 || a.ok === 0) return "Not verified";
+  return a.counts.hard > 0 ? "Drift confirmed" : "Clean";
+}
+
+/** APIs ranked for the drift index: hard violations first, then other body findings, then name. */
+export function rankedApis(summary: SurveySummary): SurveyApi[] {
+  return [...summary.apis].sort(
+    (a, b) =>
+      b.counts.hard - a.counts.hard ||
+      b.counts.body - a.counts.body ||
+      a.name.localeCompare(b.name, "en"),
+  );
+}
+
+export function specFormatLabel(format: string): string {
+  return format === "swagger-2.0" ? "Swagger 2.0" : "OpenAPI 3";
+}
+
+/**
+ * The reviewer note for a table cell: the whole note when it fits in `max` characters,
+ * otherwise its first sentence, otherwise a clipped prefix.
+ */
+export function noteExcerpt(note: string, max = 120): string {
+  const flat = note.replace(/\s+/g, " ").trim();
+  if (flat.length <= max) return flat;
+  const sentence = flat.match(/^.*?\.(?=\s|$)/)?.[0];
+  if (sentence !== undefined && sentence.length <= max) return sentence;
+  return `${flat.slice(0, max - 1).trimEnd()}\u2026`;
+}

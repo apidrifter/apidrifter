@@ -1,0 +1,48 @@
+---
+import Base from "../../layouts/Base.astro";
+import { COMPARISONS } from "../../lib/compare";
+import { breadcrumbs } from "../../lib/jsonld";
+import { SITE } from "../../lib/site";
+
+const jsonld = [
+  breadcrumbs([
+    { name: SITE.name, url: `${SITE.url}/` },
+    { name: "Compare", url: `${SITE.url}/compare/` },
+  ]),
+];
+const reviewed = COMPARISONS.map((c) => c.reviewed).sort().at(-1) ?? "";
+---
+
+<Base
+  title="Compare apidrifter with other API tools"
+  description="Honest feature tables: apidrifter against Schemathesis and oasdiff. What each does, when to use the other tool instead, and how to run them together."
+  jsonld={jsonld}
+>
+  <h1>Compare</h1>
+  <p class="muted">
+    apidrifter overlaps with a few good tools. These pages say where, say what the other tool
+    does better, and show how to run both. Every claim is checked against the other tool&rsquo;s
+    public documentation; the date is on each page.
+  </p>
+  <ul class="compare-list">
+    {
+      COMPARISONS.map((c) => (
+        <li>
+          <h2>
+            <a href={`/compare/${c.id}/`}>{c.title}</a>
+          </h2>
+          <p>{c.oneLine}</p>
+        </li>
+      ))
+    }
+  </ul>
+  <h2 id="not-listed">Not listed</h2>
+  <p>
+    <a href="https://github.com/opticdev/optic" rel="noopener">Optic</a>, which checked specs
+    against captured traffic, was archived by its owner in January 2026 and is read-only. If
+    you are moving off it, <code>apidrifter run</code> covers the spec-vs-implementation part
+    and <code>apidrifter breaking</code> the spec-vs-spec part; see
+    <a href="/docs/cli/">the CLI reference</a>.
+  </p>
+  <p class="reviewed">Last reviewed {reviewed}</p>
+</Base>

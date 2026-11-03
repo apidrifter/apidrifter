@@ -1,0 +1,97 @@
+---
+import Base from "../../../layouts/Base.astro";
+import { COMPARISONS, type Comparison } from "../../../lib/compare";
+import { breadcrumbs, faqPage } from "../../../lib/jsonld";
+import { SITE } from "../../../lib/site";
+
+export async function getStaticPaths() {
+  return COMPARISONS.map((c) => ({ params: { tool: c.id }, props: { c } }));
+}
+
+interface Props {
+  c: Comparison;
+}
+
+const { c } = Astro.props;
+const url = `${SITE.url}/compare/${c.id}/`;
+const jsonld = [
+  breadcrumbs([
+    { name: SITE.name, url: `${SITE.url}/` },
+    { name: "Compare", url: `${SITE.url}/compare/` },
+    { name: c.title, url },
+  ]),
+  faqPage(c.faq),
+];
+---
+
+<Base title={c.title} description={c.description} wide jsonld={jsonld}>
+  <p class="post-meta">
+    <a href="/compare/">Compare</a> &middot; {c.name}: <a href={c.site} rel="noopener">docs</a>,{" "}
+    <a href={c.repo} rel="noopener">source</a>
+  </p>
+  <h1>{c.title}</h1>
+  <p>{c.summary}</p>
+
+  <h2 id="features">Feature by feature</h2>
+  <div class="table-wrap">
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>apidrifter</th>
+          <th>{c.name}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          c.features.map((f) => (
+            <tr>
+              <td>{f.feature}</td>
+              <td>{f.apidrifter}</td>
+              <td>{f.other}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="when-to-use-instead">When to use {c.name} instead</h2>
+  <p>{c.insteadIntro}</p>
+  <ul>
+    {c.instead.map((line) => <li>{line}</li>)}
+  </ul>
+
+  <h2 id="use-them-together">Use them together</h2>
+  <p>{c.togetherIntro}</p>
+  <pre><code>{c.togetherCommands}</code></pre>
+  <p>{c.togetherOutro}</p>
+
+  <h2 id="faq">Frequently asked questions</h2>
+  <dl class="faq">
+    {
+      c.faq.map((item) => (
+        <>
+          <dt>{item.q}</dt>
+          <dd>{item.a}</dd>
+        </>
+      ))
+    }
+  </dl>
+
+  <h2 id="sources">Sources</h2>
+  <ul class="sources">
+    {
+      c.sources.map((s) => (
+        <li>
+          <a href={s.url} rel="noopener">{s.label}</a>
+        </li>
+      ))
+    }
+    <li><a href="/docs/cli/">apidrifter CLI reference</a> and <a href="/docs/rules/">rules reference</a></li>
+  </ul>
+  <p class="reviewed">
+    Last reviewed <time datetime={c.reviewed}>{c.reviewed}</time>. If something here about {c.name} is
+    out of date, <a href={`${SITE.repo}/issues`} rel="noopener">open an issue</a> and we will fix it.
+  </p>
+</Base>

@@ -39,12 +39,14 @@ function checkPage(file) {
   for (const img of html.match(/<img\b[^>]*>/g) ?? []) {
     if (!/\balt=/.test(img)) problems.push(`${rel}: img without alt`);
   }
+  const seenTypes = new Set();
   for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
     jsonldBlocks++;
     try {
       const parsed = JSON.parse(m[1]);
       const types = parsed["@graph"] ? parsed["@graph"].map((x) => x["@type"]) : [parsed["@type"]];
       if (types.some((t) => t === undefined)) problems.push(`${rel}: JSON-LD item without @type`);
+      for (const t of types) seenTypes.add(t);
     } catch (err) {
       problems.push(`${rel}: JSON-LD does not parse: ${err.message}`);
     }
@@ -52,9 +54,24 @@ function checkPage(file) {
   if (
     rel === "/index.html" ||
     /\/research\/.+\/index\.html$/.test(rel) ||
-    /\/docs\/.+\/index\.html$/.test(rel)
+    /\/docs\/.+\/index\.html$/.test(rel) ||
+    /^\/(compare|agents|drift-index)\//.test(rel)
   ) {
     if (!html.includes('type="application/ld+json"')) problems.push(`${rel}: no JSON-LD`);
+  }
+  // Page types with a required structured-data shape.
+  const expectTypes = /^\/compare\/.+\/index\.html$/.test(rel)
+    ? ["FAQPage", "BreadcrumbList"]
+    : rel === "/agents/index.html"
+      ? ["HowTo", "SoftwareApplication"]
+      : rel === "/drift-index/index.html"
+        ? ["Dataset", "BreadcrumbList"]
+        : [];
+  for (const t of expectTypes) {
+    if (!seenTypes.has(t)) problems.push(`${rel}: missing ${t} JSON-LD`);
+  }
+  if (rel === "/drift-index/index.html" && !/rel="alternate" type="text\/markdown"/.test(html)) {
+    problems.push(`${rel}: missing markdown alternate link`);
   }
 }
 
@@ -78,12 +95,18 @@ function findMd(dir) {
   }
 }
 findMd(join(dist, "research"));
+if (existsSync(join(dist, "drift-index"))) findMd(join(dist, "drift-index"));
+if (!mdTwins.includes("/drift-index/index.md")) problems.push("missing /drift-index/index.md twin");
 const sitemap = existsSync(join(dist, "sitemap-0.xml"))
   ? readFileSync(join(dist, "sitemap-0.xml"), "utf8")
   : "";
 const lastmods = (sitemap.match(/<lastmod>/g) ?? []).length;
 const urls = (sitemap.match(/<loc>/g) ?? []).length;
 if (urls > 0 && lastmods !== urls) problems.push(`sitemap: ${lastmods} lastmod for ${urls} urls`);
+for (const path of ["/compare/", "/agents/", "/drift-index/"]) {
+  if (!sitemap.includes(`<loc>https://apidrifter.com${path}</loc>`))
+    problems.push(`sitemap: missing ${path}`);
+}
 
 console.log(
   `pages: ${pages}, JSON-LD blocks: ${jsonldBlocks}, markdown twins: ${mdTwins.length}, sitemap urls: ${urls} (lastmod ${lastmods})`,
