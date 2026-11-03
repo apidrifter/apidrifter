@@ -1,0 +1,17 @@
+{
+  "name": "apidrifter-example-express",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Minimal Express app with a hand-written OpenAPI document, for trying apidrifter.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "check": "npx -y apidrifter run openapi.yaml --base-url http://localhost:3000 --format markdown"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}

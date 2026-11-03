@@ -1,0 +1,19 @@
+---
+description: Verify the HTTP implementation against its generated OpenAPI document with apidrifter
+globs: ["main.py", "openapi.json", "**/routers/**", "**/routes/**", "**/api/**", "**/schemas/**"]
+alwaysApply: false
+---
+
+When you add or change an HTTP endpoint or a Pydantic model that feeds the OpenAPI document:
+
+1. Start the service locally (`uvicorn main:app --port 8000`). The spec is at
+   http://localhost:8000/openapi.json.
+2. `npx -y apidrifter plan http://localhost:8000/openapi.json --out plan.json`, then write a
+   filled plan with realistic values for the slots the engine cannot infer.
+3. `npx -y apidrifter run http://localhost:8000/openapi.json --base-url http://localhost:8000 --plan filled.json --format markdown`.
+   http:// is only allowed for localhost. Never put real credentials in the plan or the
+   command line; use `--bearer-env VAR`.
+4. For each finding decide which side is the source of truth, fix that side, and rerun until
+   the report is clean. Do not loosen the model to silence findings.
+5. Run `python export_spec.py > openapi.json` so the committed snapshot matches, and paste
+   the Markdown report into the pull request.

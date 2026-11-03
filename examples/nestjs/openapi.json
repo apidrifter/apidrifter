@@ -1,0 +1,223 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/health": {
+      "get": {
+        "operationId": "getHealth",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "status"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "ok"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Liveness check",
+        "tags": [
+          "Todos"
+        ]
+      }
+    },
+    "/todos": {
+      "get": {
+        "operationId": "listTodos",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TodoDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List todos",
+        "tags": [
+          "Todos"
+        ]
+      },
+      "post": {
+        "operationId": "createTodo",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTodoDto"
+              },
+              "examples": {
+                "default": {
+                  "value": {
+                    "title": "Ship the example",
+                    "dueDate": "2026-11-20"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TodoDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create a todo",
+        "tags": [
+          "Todos"
+        ]
+      }
+    },
+    "/todos/{id}": {
+      "get": {
+        "operationId": "getTodo",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "example": 2,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TodoDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Fetch one todo",
+        "tags": [
+          "Todos"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Todos (NestJS example)",
+    "description": "",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "TodoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 1
+          },
+          "title": {
+            "type": "string",
+            "example": "Write the spec"
+          },
+          "completed": {
+            "type": "boolean",
+            "example": false
+          },
+          "dueDate": {
+            "type": "string",
+            "example": "2026-11-10",
+            "format": "date"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "completed",
+          "dueDate"
+        ]
+      },
+      "ErrorDto": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "example": "not found"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "NewTodoDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "Ship the example",
+            "minLength": 1
+          },
+          "dueDate": {
+            "type": "string",
+            "example": "2026-11-20",
+            "format": "date"
+          }
+        },
+        "required": [
+          "title"
+        ]
+      }
+    }
+  }
+}

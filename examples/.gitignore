@@ -1,0 +1,10 @@
+node_modules/
+package-lock.json
+dist/
+.venv/
+__pycache__/
+*.pyc
+plan.json
+filled.json
+observations.json
+report.md

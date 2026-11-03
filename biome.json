@@ -50,7 +50,9 @@
       "!tools/survey/out",
       "!.changeset/*.md",
       "!plugins/**/SKILL.md",
-      "!wrangler.jsonc"
+      "!wrangler.jsonc",
+      "!examples/nestjs/src",
+      "!examples/*/openapi.json"
     ]
   }
 }

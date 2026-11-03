@@ -1,0 +1,17 @@
+---
+description: Verify the HTTP implementation against its OpenAPI document with apidrifter
+globs: ["openapi.yaml", "server.js", "**/routes/**", "**/controllers/**", "**/handlers/**", "**/api/**"]
+alwaysApply: false
+---
+
+When you add or change an HTTP endpoint or the OpenAPI document:
+
+1. Start the service locally (`npm start`, port 3000).
+2. `npx -y apidrifter plan openapi.yaml --out plan.json`, then write a filled plan with realistic
+   values for the slots the engine cannot infer.
+3. `npx -y apidrifter run openapi.yaml --base-url http://localhost:3000 --plan filled.json --format markdown`.
+   http:// is only allowed for localhost. Never put real credentials in the plan or the
+   command line; use `--bearer-env VAR`.
+4. For each finding decide which side is the source of truth, fix that side, and rerun until
+   the report is clean. Do not loosen the spec to silence findings.
+5. Paste the Markdown report into the pull request.
