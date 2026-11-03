@@ -93,6 +93,15 @@ importers:
         specifier: 7.0.8
         version: 7.0.8
 
+  tools/watch:
+    dependencies:
+      swagger2openapi:
+        specifier: 7.0.8
+        version: 7.0.8
+      yaml:
+        specifier: 2.9.1
+        version: 2.9.1
+
 packages:
 
   '@astrojs/astro2tsx@0.1.3':

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "github",
+    "name": "GitHub REST API",
+    "spec": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
+    "homepage": "https://docs.github.com/rest",
+    "format": "openapi-3.0",
+    "maxBytes": 40000000
+  },
+  {
+    "id": "stripe",
+    "name": "Stripe API",
+    "spec": "https://raw.githubusercontent.com/stripe/openapi/master/openapi/spec3.json",
+    "homepage": "https://docs.stripe.com/api",
+    "format": "openapi-3.0",
+    "maxBytes": 40000000
+  },
+  {
+    "id": "openai",
+    "name": "OpenAI API",
+    "spec": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
+    "homepage": "https://platform.openai.com/docs/api-reference",
+    "format": "openapi-3.1",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "cloudflare",
+    "name": "Cloudflare API",
+    "spec": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
+    "homepage": "https://developers.cloudflare.com/api/",
+    "format": "openapi-3.0",
+    "maxBytes": 40000000
+  },
+  {
+    "id": "digitalocean",
+    "name": "DigitalOcean API",
+    "spec": "https://api-engineering.nyc3.digitaloceanspaces.com/spec-ci/DigitalOcean-public.v2.yaml",
+    "homepage": "https://docs.digitalocean.com/reference/api/",
+    "format": "openapi-3.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "twilio",
+    "name": "Twilio API (2010-04-01)",
+    "spec": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_api_v2010.json",
+    "homepage": "https://www.twilio.com/docs/usage/api",
+    "format": "openapi-3.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "slack",
+    "name": "Slack Web API",
+    "spec": "https://raw.githubusercontent.com/slackapi/slack-api-specs/master/web-api/slack_web_openapi_v2.json",
+    "homepage": "https://api.slack.com/web",
+    "format": "swagger-2.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "discord",
+    "name": "Discord API",
+    "spec": "https://raw.githubusercontent.com/discord/discord-api-spec/main/specs/openapi.json",
+    "homepage": "https://discord.com/developers/docs/reference",
+    "format": "openapi-3.1",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "docker-engine",
+    "name": "Docker Engine API",
+    "spec": "https://raw.githubusercontent.com/moby/moby/master/api/swagger.yaml",
+    "homepage": "https://docs.docker.com/reference/api/engine/",
+    "format": "swagger-2.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "kubernetes",
+    "name": "Kubernetes API",
+    "spec": "https://raw.githubusercontent.com/kubernetes/kubernetes/master/api/openapi-spec/swagger.json",
+    "homepage": "https://kubernetes.io/docs/reference/kubernetes-api/",
+    "format": "swagger-2.0",
+    "maxBytes": 40000000
+  },
+  {
+    "id": "vercel",
+    "name": "Vercel REST API",
+    "spec": "https://openapi.vercel.sh/",
+    "homepage": "https://vercel.com/docs/rest-api",
+    "format": "openapi-3.0",
+    "maxBytes": 40000000
+  },
+  {
+    "id": "linode",
+    "name": "Linode (Akamai) API",
+    "spec": "https://raw.githubusercontent.com/linode/linode-api-docs/development/openapi.json",
+    "homepage": "https://techdocs.akamai.com/linode-api/reference/api",
+    "format": "openapi-3.0",
+    "maxBytes": 40000000
+  },
+  {
+    "id": "hetzner-cloud",
+    "name": "Hetzner Cloud API",
+    "spec": "https://docs.hetzner.cloud/cloud.spec.json",
+    "homepage": "https://docs.hetzner.cloud/",
+    "format": "openapi-3.1",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "plaid",
+    "name": "Plaid API",
+    "spec": "https://raw.githubusercontent.com/plaid/plaid-openapi/master/2020-09-14.yml",
+    "homepage": "https://plaid.com/docs/api/",
+    "format": "openapi-3.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "datadog",
+    "name": "Datadog API (v2)",
+    "spec": "https://raw.githubusercontent.com/DataDog/datadog-api-client-typescript/master/.generator/schemas/v2/openapi.yaml",
+    "homepage": "https://docs.datadoghq.com/api/latest/",
+    "format": "openapi-3.0",
+    "maxBytes": 40000000
+  },
+  {
+    "id": "sentry",
+    "name": "Sentry API",
+    "spec": "https://raw.githubusercontent.com/getsentry/sentry-api-schema/main/openapi-derefed.json",
+    "homepage": "https://docs.sentry.io/api/",
+    "format": "openapi-3.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "okta",
+    "name": "Okta Management API",
+    "spec": "https://raw.githubusercontent.com/okta/okta-management-openapi-spec/master/dist/current/management-minimal.yaml",
+    "homepage": "https://developer.okta.com/docs/api/",
+    "format": "openapi-3.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "box",
+    "name": "Box API",
+    "spec": "https://raw.githubusercontent.com/box/box-openapi/main/openapi.json",
+    "homepage": "https://developer.box.com/reference/",
+    "format": "openapi-3.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "asana",
+    "name": "Asana API",
+    "spec": "https://raw.githubusercontent.com/Asana/openapi/master/defs/asana_oas.yaml",
+    "homepage": "https://developers.asana.com/reference/rest-api-reference",
+    "format": "openapi-3.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "x",
+    "name": "X API (v2)",
+    "spec": "https://api.twitter.com/2/openapi.json",
+    "homepage": "https://developer.x.com/en/docs/x-api",
+    "format": "openapi-3.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "jira",
+    "name": "Jira Cloud platform REST API",
+    "spec": "https://developer.atlassian.com/cloud/jira/platform/swagger-v3.v3.json",
+    "homepage": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+    "format": "openapi-3.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "supabase",
+    "name": "Supabase Management API",
+    "spec": "https://api.supabase.com/api/v1-json",
+    "homepage": "https://supabase.com/docs/reference/api/introduction",
+    "format": "openapi-3.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "fly-machines",
+    "name": "Fly.io Machines API",
+    "spec": "https://docs.machines.dev/openapi.json",
+    "homepage": "https://docs.machines.dev/",
+    "format": "openapi-3.1",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "tailscale",
+    "name": "Tailscale API",
+    "spec": "https://api.tailscale.com/api/v2?outputOpenapiSchema=true",
+    "homepage": "https://tailscale.com/api",
+    "format": "openapi-3.1",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "discourse",
+    "name": "Discourse API",
+    "spec": "https://docs.discourse.org/openapi.json",
+    "homepage": "https://docs.discourse.org/",
+    "format": "openapi-3.1",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "gitea",
+    "name": "Gitea API",
+    "spec": "https://gitea.com/swagger.v1.json",
+    "homepage": "https://docs.gitea.com/api/",
+    "format": "swagger-2.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "forgejo",
+    "name": "Forgejo API (Codeberg)",
+    "spec": "https://codeberg.org/swagger.v1.json",
+    "homepage": "https://forgejo.org/docs/latest/user/api-usage/",
+    "format": "swagger-2.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "pokeapi",
+    "name": "PokeAPI",
+    "spec": "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/openapi.yml",
+    "homepage": "https://pokeapi.co/docs/v2",
+    "format": "openapi-3.1",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "wikimedia",
+    "name": "Wikimedia REST API (en.wikipedia.org)",
+    "spec": "https://en.wikipedia.org/api/rest_v1/?spec",
+    "homepage": "https://en.wikipedia.org/api/rest_v1/",
+    "format": "openapi-3.0",
+    "maxBytes": 20000000
+  },
+  {
+    "id": "petstore",
+    "name": "Swagger Petstore",
+    "spec": "https://petstore3.swagger.io/api/v3/openapi.json",
+    "homepage": "https://petstore3.swagger.io/",
+    "format": "openapi-3.0",
+    "maxBytes": 20000000
+  }
+]

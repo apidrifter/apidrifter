@@ -1,0 +1,126 @@
+name: Watch
+
+# Daily API spec change feed. Snapshots every spec in tools/watch/watchlist.json, diffs
+# changed ones with the CLI, commits the day's changes to main (which deploys the site)
+# and the raw snapshots to the orphan branch `watch-state`, then posts breaking changes
+# to X when credentials are configured. See tools/watch/README.md.
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: watch
+  cancel-in-progress: false
+
+env:
+  STATE_DIR: .watch-state
+  BOT_NAME: apidrifter
+  BOT_EMAIL: apidrifter@gmail.com
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.repository == 'apidrifter/apidrifter'
+    steps:
+      # Actions pinned by SHA; update via Dependabot.
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: main
+          # A PAT is only needed when branch protection on main rejects the default token.
+          token: ${{ secrets.WATCH_PUSH_TOKEN || github.token }}
+
+      - name: Does the watch-state branch exist?
+        id: probe
+        run: |
+          if git ls-remote --exit-code --heads origin watch-state >/dev/null; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        if: steps.probe.outputs.exists == 'true'
+        with:
+          ref: watch-state
+          path: .watch-state
+          token: ${{ secrets.WATCH_PUSH_TOKEN || github.token }}
+
+      - name: Create the watch-state branch (first run)
+        if: steps.probe.outputs.exists == 'false'
+        run: |
+          set -eu
+          mkdir -p "$STATE_DIR"
+          cd "$STATE_DIR"
+          git init -b watch-state
+          git config user.name "$BOT_NAME"
+          git config user.email "$BOT_EMAIL"
+          git remote add origin "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          cp ../tools/watch/state-README.md README.md
+          git add README.md
+          git commit -s -m "watch-state: initial commit"
+          git push origin watch-state
+        env:
+          TOKEN: ${{ secrets.WATCH_PUSH_TOKEN || github.token }}
+
+      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+        with:
+          version: 10.9.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+
+      - name: Snapshot specs
+        run: node tools/watch/snapshot.mjs --state "$STATE_DIR"
+
+      - name: Diff changed specs
+        run: node tools/watch/diff.mjs --state "$STATE_DIR"
+
+      - name: Commit change files to main
+        id: main
+        run: |
+          set -eu
+          git config user.name "$BOT_NAME"
+          git config user.email "$BOT_EMAIL"
+          git add tools/watch/changes
+          if git diff --cached --quiet; then
+            echo "no change files to commit"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -s -m "watch: spec changes $(date -u +%F)"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          echo "committed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Post breaking changes to X
+        # A failed post must not stop the state commit below; posted.json guards reruns.
+        continue-on-error: true
+        run: node tools/watch/post.mjs --state "$STATE_DIR"
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+
+      - name: Commit snapshots to watch-state
+        run: |
+          set -eu
+          cd "$STATE_DIR"
+          git config user.name "$BOT_NAME"
+          git config user.email "$BOT_EMAIL"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "state unchanged"
+            exit 0
+          fi
+          git commit -s -m "watch-state: $(date -u +%FT%TZ)"
+          git push origin HEAD:watch-state
