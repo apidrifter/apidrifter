@@ -51,7 +51,7 @@
         "server": 0,
         "input": 0
       },
-      "note": "Confirmed: GET /specs/{provider}/{api}.json returns the OpenAPI document itself; the spec documents the API entry object (preferred, versions).",
+      "note": "Confirmed: GET /specs/{provider}/{api}.json returns a version entry (added, info, link, openapiVer, swaggerUrl, updated); the spec documents the API entry object (preferred, versions).",
       "ranAt": "2026-10-30T22:19:35.133Z"
     },
     {

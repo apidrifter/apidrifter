@@ -27,7 +27,7 @@
     "maxRequests": 10,
     "delayMs": 500,
     "maxBodyBytes": 67108864,
-    "note": "Confirmed: GET /specs/{provider}/{api}.json returns the OpenAPI document itself; the spec documents the API entry object (preferred, versions).",
+    "note": "Confirmed: GET /specs/{provider}/{api}.json returns a version entry (added, info, link, openapiVer, swaggerUrl, updated); the spec documents the API entry object (preferred, versions).",
     "opValues": {
       "GET /specs/{}/{}/{}.json": {
         "path:provider": "azure.com",

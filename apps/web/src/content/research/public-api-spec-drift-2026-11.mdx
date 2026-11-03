@@ -39,7 +39,7 @@ The table below is generated from the survey data. Each row links to the full fi
 
 **GitLab's** generated OpenAPI document declares several list endpoints as returning an object. They return arrays. The namespace `parent_id` is null for top-level groups, and the spec does not allow null.
 
-**APIs.guru**, the directory most of us use to find specs, documents its per-API endpoint as returning an index entry with `preferred` and `versions`. It returns the full OpenAPI document instead.
+**APIs.guru**, the directory most of us use to find specs, documents its per-API endpoint as returning an index entry with `preferred` and `versions`. It returns a single version entry instead, with `info`, `link`, `openapiVer` and `swaggerUrl`, none of which the schema allows.
 
 **Gitea and Forgejo** serve their own Swagger 2.0 documents, and Swagger 2.0 has no way to say a field can be null. The live API returns null for nested objects constantly. That is less an API that drifted than a spec format that cannot describe the API, which is its own kind of problem for anyone generating a client from it.
 
