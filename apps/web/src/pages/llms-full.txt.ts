@@ -2,7 +2,7 @@ import { getCollection, getEntry } from "astro:content";
 import type { APIRoute } from "astro";
 import { postBodyMarkdown } from "../lib/markdown";
 import { DOC_PAGES, isoDate, SITE } from "../lib/site";
-import { loadSummary } from "../lib/survey";
+import { loadSummary, resultsUrl } from "../lib/survey";
 
 /**
  * Everything an agent needs in one Markdown file: what the tool is, the commands, the
@@ -13,7 +13,6 @@ export const GET: APIRoute = async () => {
   const posts = (await getCollection("research", (p) => !p.data.draft)).sort(
     (a, b) => b.data.date.getTime() - a.data.date.getTime(),
   );
-  const summary = await loadSummary();
   const cli = await getEntry("docs", "cli");
   const out: string[] = [
     `# ${SITE.name}`,
@@ -46,12 +45,13 @@ export const GET: APIRoute = async () => {
 
   for (const p of posts) {
     const url = `${SITE.url}/research/${p.id}/`;
+    const summary = await loadSummary(p.data.month);
     out.push(
       `# Research: ${p.data.title}`,
       "",
       `Published ${isoDate(p.data.date)} by ${SITE.name}. Canonical: ${url}. Markdown: ${url}index.md`,
       "",
-      postBodyMarkdown(p.body ?? "", summary, url),
+      postBodyMarkdown(p.body ?? "", summary, url, resultsUrl(p.data.month)),
       "",
     );
     if (p.data.survey) {

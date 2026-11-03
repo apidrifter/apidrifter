@@ -9,19 +9,20 @@ import {
   groupFindings,
   loadFindings,
   loadSummary,
+  resultsUrl,
   type SurveyApi,
 } from "../../../../lib/survey";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("research", (p) => !p.data.draft && p.data.survey);
-  const summary = await loadSummary();
   const paths = [];
   for (const post of posts) {
+    const summary = await loadSummary(post.data.month);
     for (const api of summary.apis) {
       paths.push({
         params: { slug: post.id, api: api.id },
-        props: { post, api, generatedAt: summary.generatedAt },
+        props: { post, api, generatedAt: summary.generatedAt, month: post.data.month },
       });
     }
   }
@@ -32,10 +33,12 @@ interface Props {
   post: { id: string; data: { title: string; date: Date } };
   api: SurveyApi;
   generatedAt: string;
+  month?: string;
 }
 
-const { post, api, generatedAt } = Astro.props;
-const findings = await loadFindings(api.id);
+const { post, api, generatedAt, month } = Astro.props;
+const findings = await loadFindings(api.id, month);
+const results = resultsUrl(month);
 const groups = groupFindings(findings);
 const firstHard = (groups.get("hard") ?? [])[0];
 const runDate = (api.ranAt ?? generatedAt).slice(0, 10);
@@ -52,7 +55,7 @@ const jsonld = [
     description,
     datePublished: runDate,
     dateModified: generatedAt.slice(0, 10),
-    isBasedOn: `${SITE.resultsUrl}/${api.id}.findings.json`,
+    isBasedOn: `${results}/${api.id}.findings.json`,
   }),
   breadcrumbs([
     { name: SITE.name, url: `${SITE.url}/` },
@@ -135,9 +138,9 @@ const jsonld = [
   <section>
     <h2 id="data">Data</h2>
     <ul>
-      <li><a href={`${SITE.resultsUrl}/${api.id}.findings.json`} rel="noopener">Findings JSON</a>: every finding on this page with its classification and fixes.</li>
-      <li><a href={`${SITE.resultsUrl}/${api.id}.observations.json`} rel="noopener">Observations JSON</a>: every request sent and the status it received.</li>
-      <li><a href="/docs/cli/">Reproduce with <code>apidrifter run</code></a>; the target definition is in <code>tools/survey/targets.json</code> in the repository.</li>
+      <li><a href={`${results}/${api.id}.findings.json`} rel="noopener">Findings JSON</a>: every finding on this page with its classification and fixes.</li>
+      <li><a href={`${results}/${api.id}.observations.json`} rel="noopener">Observations JSON</a>: every request sent and the status it received.</li>
+      <li><a href="/docs/cli/">Reproduce with <code>apidrifter run</code></a>; the target definition is in <code>{month === undefined ? "tools/survey/targets.json" : `tools/survey/results/${month}/targets.json`}</code> in the repository.</li>
     </ul>
     <p class="small muted">
       If a finding is wrong, open an issue; if it is right, a pull request on the spec is welcome.

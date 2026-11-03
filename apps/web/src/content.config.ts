@@ -13,6 +13,11 @@ const research = defineCollection({
     date: z.coerce.date(),
     survey: z.boolean().default(false),
     draft: z.boolean().default(false),
+    /** Survey data lives in tools/survey/results/<month>/ instead of tools/survey/results/. */
+    month: z
+      .string()
+      .regex(/^\d{4}-\d{2}$/)
+      .optional(),
   }),
 });
 

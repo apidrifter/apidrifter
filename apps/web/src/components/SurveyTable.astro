@@ -3,15 +3,19 @@
  * The survey results table. All cell content is third-party text rendered through
  * Astro's default escaping. `base` is the post URL the per-API pages hang off.
  */
-import { SITE } from "../lib/site";
-import { loadSummary } from "../lib/survey";
+import { loadSummary, resultsUrl } from "../lib/survey";
+import { getEntry } from "astro:content";
 
 interface Props {
   base?: string;
 }
 
-const summary = await loadSummary();
 const base = (Astro.props.base ?? Astro.url.pathname).replace(/\/?$/, "/");
+// The post this table sits in decides which results directory to read.
+const slug = base.match(/^\/research\/([^/]+)\/$/)?.[1];
+const post = slug === undefined ? undefined : await getEntry("research", slug);
+const month = post?.data.month;
+const summary = await loadSummary(month);
 const generated = summary.generatedAt.slice(0, 10);
 ---
 
@@ -62,5 +66,5 @@ const generated = summary.generatedAt.slice(0, 10);
 <p class="small muted">
   <strong>{summary.totals.withHard} of {summary.totals.apis} APIs</strong> had at least one hard
   violation on a successful response, across {summary.totals.hard} distinct schema locations.
-  Data generated {generated}, <a href={SITE.resultsUrl} rel="noopener">source in the repository</a>.
+  Data generated {generated}, <a href={resultsUrl(month)} rel="noopener">source in the repository</a>.
 </p>

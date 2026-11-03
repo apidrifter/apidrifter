@@ -23,7 +23,11 @@ function code(s: string): string {
   return `\`${s.replace(/`/g, "'")}\``;
 }
 
-export function surveyTableMarkdown(summary: SurveySummary, base: string): string {
+export function surveyTableMarkdown(
+  summary: SurveySummary,
+  base: string,
+  resultsBase: string = SITE.resultsUrl,
+): string {
   const lines = [
     "| API | Spec | Ops in spec | GET sent | 2xx | Hard | Body | Media | Errors | Input | Reviewer note |",
     "|-----|------|-------------|----------|-----|------|------|-------|--------|-------|---------------|",
@@ -36,18 +40,23 @@ export function surveyTableMarkdown(summary: SurveySummary, base: string): strin
   }
   lines.push("");
   lines.push(
-    `**${summary.totals.withHard} of ${summary.totals.apis} APIs** had at least one hard violation on a successful response, across ${summary.totals.hard} distinct schema locations. Data generated ${summary.generatedAt.slice(0, 10)}, source: ${SITE.resultsUrl}`,
+    `**${summary.totals.withHard} of ${summary.totals.apis} APIs** had at least one hard violation on a successful response, across ${summary.totals.hard} distinct schema locations. Data generated ${summary.generatedAt.slice(0, 10)}, source: ${resultsBase}`,
   );
   return lines.join("\n");
 }
 
 /** Turn an MDX post body into plain Markdown with the survey table inlined. */
-export function postBodyMarkdown(body: string, summary: SurveySummary, base: string): string {
+export function postBodyMarkdown(
+  body: string,
+  summary: SurveySummary,
+  base: string,
+  resultsBase: string = SITE.resultsUrl,
+): string {
   return body
     .split("\n")
     .filter((l) => !/^import\s/.test(l))
     .join("\n")
-    .replace(/<SurveyTable\s*\/>/g, surveyTableMarkdown(summary, base))
+    .replace(/<SurveyTable\s*\/>/g, surveyTableMarkdown(summary, base, resultsBase))
     .trim();
 }
 
@@ -96,6 +105,7 @@ export function apiMarkdown(
   api: SurveyApi,
   findings: Finding[],
   generatedAt: string,
+  resultsBase: string = SITE.resultsUrl,
 ): string {
   const groups = groupFindings(findings);
   const url = `${postUrl}${api.id}/`;
@@ -135,9 +145,9 @@ export function apiMarkdown(
   lines.push(
     "## Data",
     "",
-    `- Findings: ${SITE.resultsUrl}/${api.id}.findings.json`,
-    `- Requests sent: ${SITE.resultsUrl}/${api.id}.observations.json`,
-    `- Tool: ${SITE.url}/docs/cli/ (reproduce with apidrifter run; target definition in tools/survey/targets.json)`,
+    `- Findings: ${resultsBase}/${api.id}.findings.json`,
+    `- Requests sent: ${resultsBase}/${api.id}.observations.json`,
+    `- Tool: ${SITE.url}/docs/cli/ (reproduce with apidrifter run; target definition in ${resultsBase === SITE.resultsUrl ? "tools/survey/targets.json" : "targets.json next to the findings"})`,
     "",
   );
   return lines.join("\n");

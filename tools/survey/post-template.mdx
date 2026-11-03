@@ -1,0 +1,47 @@
+---
+title: "{{TITLE}}"
+description: "{{DESCRIPTION}}"
+date: {{DATE}}
+shortTitle: "{{SHORT_TITLE}}"
+survey: true
+draft: true
+month: "{{MONTH}}"
+---
+
+Every month we pick public APIs from the [apis.guru](https://apis.guru) directory that publish their own OpenAPI document, send one read-only request per operation with no credentials, and compare what comes back to what the document says. This is the {{MONTH}} run: {{APIS}} APIs, {{SENT}} requests, {{OK}} successful responses.
+
+The short answer: {{WITH_HARD}} of the {{APIS}} returned at least one successful response that a client generated from their own spec would choke on.
+
+## What we counted, and what we did not
+
+A finding only counts as **hard** when a typed client generated from the spec would break on it: a field with the wrong type, a required field missing, a field present where the schema forbids unknown fields, a null where the schema does not allow null, or a success response in a media type the spec does not list. Nothing else is in the headline number.
+
+Reported separately and kept out of it: undocumented extra fields (a documentation gap, not a violation), undocumented error statuses (we sent no credentials, so 401, 403 and 429 are expected), and our own input mistakes, which are labeled as such.
+
+## Results
+
+The table is generated from the survey data. Each row links to the full findings, where every finding carries the exact request we sent, the status we got, the location in the response body, and two suggested fixes: one if the spec is the source of truth, one if the implementation is.
+
+<SurveyTable />
+
+## The ones worth reading
+
+{{TOP_FINDINGS}}
+
+## What this does and does not show
+
+It shows that published specs and live behavior disagree often enough that checking is worth automating, and that the disagreements are the kind that break real clients. It does not show a rate: {{APIS}} APIs chosen because they publish a spec, one request per operation, read-only, no credentials, is a sample, not a measurement.
+
+## Method
+
+- Candidates come from the apis.guru directory, selected deterministically for the month: a JSON spec, an https base URL, no cloud vendors, no API already surveyed, and at least three GET operations that need no credentials and whose required parameters have examples in the spec.
+- The spec checked is the apis.guru mirror of the provider's document, so a finding can reflect a stale mirror rather than a stale spec. The mirror date is in each API's reviewer note.
+- One `GET` per operation, values from the spec's own examples and defaults only, a delay between requests, a User-Agent naming the survey, one polite retry on 429, and a request budget of at most 25 per API.
+- Swagger 2.0 documents were converted to OpenAPI 3 before checking.
+- Every request, status and finding is in the repository under `tools/survey/results/{{MONTH}}/`. The tool, the runner and the candidate list are open source, so anyone can rerun it.
+
+If you maintain one of these APIs and a finding is wrong, we want to know. If it is right, a pull request on the spec is welcome.
+
+## Reviewer notes
+
+{{REVIEWER_NOTES}}

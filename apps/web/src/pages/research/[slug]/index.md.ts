@@ -2,7 +2,7 @@ import { getCollection } from "astro:content";
 import type { APIRoute } from "astro";
 import { postBodyMarkdown } from "../../../lib/markdown";
 import { isoDate, SITE } from "../../../lib/site";
-import { loadSummary } from "../../../lib/survey";
+import { loadSummary, resultsUrl } from "../../../lib/survey";
 
 export async function getStaticPaths() {
   const posts = await getCollection("research", (p) => !p.data.draft);
@@ -14,11 +14,11 @@ export const GET: APIRoute = async ({ props }) => {
   const post = props.post as {
     id: string;
     body?: string;
-    data: { title: string; description: string; date: Date; survey: boolean };
+    data: { title: string; description: string; date: Date; survey: boolean; month?: string };
   };
   const url = `${SITE.url}/research/${post.id}/`;
-  const summary = await loadSummary();
-  const body = postBodyMarkdown(post.body ?? "", summary, url);
+  const summary = await loadSummary(post.data.month);
+  const body = postBodyMarkdown(post.body ?? "", summary, url, resultsUrl(post.data.month));
   const text = [
     "---",
     `title: "${post.data.title.replace(/"/g, "'")}"`,
