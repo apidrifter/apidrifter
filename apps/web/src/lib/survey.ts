@@ -176,11 +176,13 @@ export function formatRequest(r: FindingRequest): string {
 }
 
 /** Drift index status for one API. "Not verified" when nothing was sent or nothing succeeded. */
-export type DriftStatus = "Drift confirmed" | "Clean" | "Not verified";
+export type DriftStatus = "Drift confirmed" | "Clean" | "Incomplete" | "Not verified";
 
 export function apiStatus(a: SurveyApi): DriftStatus {
   if (a.sent === 0 || a.ok === 0) return "Not verified";
-  return a.counts.hard > 0 ? "Drift confirmed" : "Clean";
+  if (a.counts.hard > 0) return "Drift confirmed";
+  // Fewer than half the requests succeeded (rate limiting, mostly): too little seen to call it clean.
+  return a.ok * 2 < a.sent ? "Incomplete" : "Clean";
 }
 
 /** APIs ranked for the drift index: hard violations first, then other body findings, then name. */

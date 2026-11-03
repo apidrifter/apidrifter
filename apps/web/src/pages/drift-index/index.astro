@@ -123,8 +123,8 @@ const statusClass = (s: string) =>
     <li>
       <b>Status.</b> <i>Drift confirmed</i>: at least one hard violation on a successful
       response. <i>Clean</i>: successful responses, none with a hard violation; read it with the
-      coverage column. <i>Not verified</i>: nothing sent or nothing succeeded, usually rate
-      limiting.
+      coverage column. <i>Incomplete</i>: fewer than half the requests succeeded, usually rate
+      limiting, so no verdict. <i>Not verified</i>: nothing sent or nothing succeeded.
     </li>
     <li>
       <b>A sample, not a rate.</b> These APIs were chosen because they publish a spec. The
