@@ -8,12 +8,19 @@
  *   5. write out/<id>/result.json and a one-line summary
  *
  * Read-only by construction: only GET, only values we chose, only credentials we own.
- * Usage: node run.mjs [target-id ...]
+ * A target without `values` still works: the CLI fills required parameters from the spec's
+ * own examples and defaults, and operations that cannot be filled are skipped and listed
+ * in out/<id>/unfillable.json. A failing target never stops the run; it gets an error row.
+ *
+ * Usage: node run.mjs [--targets <file>] [--month YYYY-MM] [target-id ...]
+ *   --targets  target file (default targets.json); candidates.json for an automated month
+ *   --month    write under out/YYYY-MM/ instead of out/
  */
 import { spawn } from "node:child_process";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { parseArgs } from "node:util";
 import converter from "swagger2openapi";
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -22,11 +29,27 @@ const CLI = resolve(root, "packages/cli/dist/bin.js");
 const UA = "apidrifter-survey/0.1 (read-only OpenAPI conformance survey; contact: see repository)";
 const MAX_SPEC_BYTES = 40 * 1024 * 1024;
 
-const only = new Set(process.argv.slice(2));
-const targets = JSON.parse(await readFile(resolve(here, "targets.json"), "utf8"));
+const { values: opts, positionals } = parseArgs({
+  options: {
+    targets: { type: "string", default: resolve(here, "targets.json") },
+    month: { type: "string" },
+  },
+  allowPositionals: true,
+});
+if (opts.month !== undefined && !/^\d{4}-\d{2}$/.test(opts.month)) {
+  throw new Error(`--month must be YYYY-MM, got ${opts.month}`);
+}
+const outRoot = opts.month === undefined ? resolve(here, "out") : resolve(here, "out", opts.month);
+const only = new Set(positionals);
+const targets = JSON.parse(await readFile(resolve(opts.targets), "utf8"));
+if (!Array.isArray(targets)) throw new Error(`${opts.targets} is not an array of targets`);
 const rows = [];
 for (const t of targets) {
   if (only.size > 0 && !only.has(t.id)) continue;
+  if (typeof t.id !== "string" || !/^[a-z0-9-]+$/.test(t.id)) {
+    console.error(`skipping target with bad id ${JSON.stringify(t.id)}`);
+    continue;
+  }
   try {
     rows.push(await runTarget(t));
   } catch (err) {
@@ -35,17 +58,24 @@ for (const t of targets) {
     rows.push({ id: t.id, error: reason });
   }
 }
+await mkdir(outRoot, { recursive: true });
+await writeFile(
+  resolve(outRoot, "run-summary.json"),
+  `${JSON.stringify({ ranAt: new Date().toISOString(), targets: opts.targets, rows }, null, 2)}\n`,
+);
 console.log("\nsummary:");
 for (const r of rows) console.log(JSON.stringify(r));
 
 async function runTarget(t) {
-  const out = resolve(here, "out", t.id);
+  const out = resolve(outRoot, t.id);
   await mkdir(out, { recursive: true });
   console.error(`[${t.id}] fetching spec ${t.spec}`);
   const specText = await fetchText(t.spec);
   const parsedSpec = parseLoose(specText);
   let specPath;
+  let specFormat = "openapi-3";
   if (parsedSpec !== undefined && typeof parsedSpec.swagger === "string") {
+    specFormat = "swagger-2.0";
     console.error(`[${t.id}] converting Swagger ${parsedSpec.swagger} to OpenAPI 3`);
     const { openapi } = await converter.convertObj(parsedSpec, {
       patch: true,
@@ -146,6 +176,10 @@ async function runTarget(t) {
   };
   console.error(
     `[${t.id}] done: ${row.breaking} breaking, ${row.warning} warning, ${row.info} info; observed ${row.observed}/${row.operationsInSpec}`,
+  );
+  await writeFile(
+    resolve(out, "meta.json"),
+    `${JSON.stringify({ id: t.id, specFormat, ranAt: new Date().toISOString(), ...row }, null, 2)}\n`,
   );
   return row;
 }

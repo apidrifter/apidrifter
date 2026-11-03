@@ -1,0 +1,22 @@
+{
+  "apis.guru": "2026-11",
+  "codeberg": "2026-11",
+  "discourse-meta": "2026-11",
+  "discourse.local": "2026-11",
+  "gitea": "2026-11",
+  "gitea.io": "2026-11",
+  "github": "2026-11",
+  "github.com": "2026-11",
+  "github.com:api.github.com": "2026-11",
+  "gitlab": "2026-11",
+  "gitlab.com": "2026-11",
+  "httpbin": "2026-11",
+  "httpbin.org": "2026-11",
+  "nager-date": "2026-11",
+  "open-meteo": "2026-11",
+  "openlibrary": "2026-11",
+  "petstore": "2026-11",
+  "pokeapi": "2026-11",
+  "wikimedia.org": "2026-11",
+  "wikipedia-rest": "2026-11"
+}

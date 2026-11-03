@@ -3,7 +3,7 @@ import SurveyTable from "../../../components/SurveyTable.astro";
 import Base from "../../../layouts/Base.astro";
 import { breadcrumbs, dataset, techArticle } from "../../../lib/jsonld";
 import { SITE, isoDate } from "../../../lib/site";
-import { loadSummary } from "../../../lib/survey";
+import { loadSummary, resultsUrl } from "../../../lib/survey";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -15,7 +15,8 @@ const { post } = Astro.props;
 const { Content, headings } = await render(post);
 const url = `${SITE.url}/research/${post.id}/`;
 const published = isoDate(post.data.date);
-const summary = post.data.survey ? await loadSummary() : undefined;
+const summary = post.data.survey ? await loadSummary(post.data.month) : undefined;
+const results = resultsUrl(post.data.month);
 const modified = summary !== undefined ? summary.generatedAt.slice(0, 10) : published;
 const toc = headings.filter((h) => h.depth === 2);
 const jsonld = [
@@ -25,7 +26,7 @@ const jsonld = [
     description: post.data.description,
     datePublished: published,
     dateModified: modified,
-    ...(post.data.survey ? { isBasedOn: SITE.resultsUrl } : {}),
+    ...(post.data.survey ? { isBasedOn: results } : {}),
   }),
   breadcrumbs([
     { name: SITE.name, url: `${SITE.url}/` },
@@ -92,7 +93,7 @@ const bibKey = `apidrifter${published.slice(0, 4)}${post.id.replace(/[^a-z0-9]/g
   year         = {${published.slice(0, 4)}},
   month        = {${published.slice(5, 7)}},
   url          = {${url}},
-  note         = {Data and method: ${SITE.resultsUrl}}
+  note         = {Data and method: ${results}}
 }`}</code></pre>
     </section>
   </article>

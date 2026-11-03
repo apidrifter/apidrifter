@@ -4,8 +4,25 @@
  */
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import { SITE } from "./site";
 
 const RESULTS_DIR = resolve(process.cwd(), "../../tools/survey/results");
+
+function checkMonth(month: string | undefined): void {
+  if (month !== undefined && !/^\d{4}-\d{2}$/.test(month)) throw new Error(`bad month ${month}`);
+}
+
+/** Local results directory for a post: the top level, or a month subdirectory. */
+export function resultsDir(month?: string): string {
+  checkMonth(month);
+  return month === undefined ? RESULTS_DIR : resolve(RESULTS_DIR, month);
+}
+
+/** Public URL of the same directory in the repository. */
+export function resultsUrl(month?: string): string {
+  checkMonth(month);
+  return month === undefined ? SITE.resultsUrl : `${SITE.resultsUrl}/${month}`;
+}
 
 export type FindingClass = "body" | "media" | "errors" | "server" | "input";
 
@@ -81,14 +98,14 @@ export interface Finding {
   review: string;
 }
 
-export async function loadSummary(): Promise<SurveySummary> {
-  const text = await readFile(resolve(RESULTS_DIR, "summary.json"), "utf8");
+export async function loadSummary(month?: string): Promise<SurveySummary> {
+  const text = await readFile(resolve(resultsDir(month), "summary.json"), "utf8");
   return JSON.parse(text) as SurveySummary;
 }
 
-export async function loadFindings(apiId: string): Promise<Finding[]> {
+export async function loadFindings(apiId: string, month?: string): Promise<Finding[]> {
   if (!/^[a-z0-9-]+$/.test(apiId)) throw new Error(`bad api id ${apiId}`);
-  const text = await readFile(resolve(RESULTS_DIR, `${apiId}.findings.json`), "utf8");
+  const text = await readFile(resolve(resultsDir(month), `${apiId}.findings.json`), "utf8");
   return JSON.parse(text) as Finding[];
 }
 
