@@ -470,8 +470,8 @@ function render({ week, npm, repo, traffic, registry, complaints, discussions, m
     "- [ ] Merge or close the open research PR from `research-monthly.yml` if one exists.",
     "- [ ] Glance at `/changes/` and the last `watch-daily.yml` run for failures.",
     "- [ ] Check Search Console for new queries landing on `/research/` and `/compare/`.",
-    "- [ ] If npm or stars moved more than usual, find the referrer and note it in docs/GROWTH.md.",
-    "- [ ] Anything to file upstream from docs/outreach/?",
+    "- [ ] If npm or stars moved more than usual, find the referrer and note it in docs/internal/GROWTH.md (local, not in the repo).",
+    "- [ ] Anything to file upstream from docs/internal/outreach/ (local)?",
     "",
     `Previous numbers: ${prev?.generatedAt ? `from ${prev.generatedAt}` : "none on record"}; state file \`${path.relative(process.cwd(), statePath)}\`.`,
   );
