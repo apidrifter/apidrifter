@@ -8,6 +8,7 @@ import {
   type FilledRequest,
   type Observation,
   plan,
+  renderVerifyMarkdown,
   type VerifyResult,
   verify,
 } from "./core-verify.js";
@@ -70,6 +71,9 @@ export interface ServeOptions {
   fetchImpl?: typeof fetch;
   env: Record<string, string | undefined>;
 }
+
+/** Markdown returned by tools carries the same attribution footer as the CLI's reports. */
+const FOOTER = { version: VERSION } as const;
 
 export async function loadDocInput(input: DocInput, options: ServeOptions): Promise<unknown> {
   const given = [input.path, input.url, input.content].filter((v) => v !== undefined).length;
@@ -172,7 +176,7 @@ export function createServer(options: ServeOptions): McpServer {
     async ({ before, after, kind }) => {
       try {
         const r = await runDiff(before, after, kind);
-        return ok(diffSummary(r), { markdown: renderMarkdown(r), result: r });
+        return ok(diffSummary(r), { markdown: renderMarkdown(r, { footer: FOOTER }), result: r });
       } catch (err) {
         return fail(err);
       }
@@ -299,6 +303,7 @@ export function createServer(options: ServeOptions): McpServer {
           ...result,
           skipped,
           observations,
+          markdown: await renderVerifyMarkdown(result, { footer: FOOTER }),
         });
       } catch (err) {
         return fail(err);
@@ -324,7 +329,10 @@ export function createServer(options: ServeOptions): McpServer {
           observations = loaded as Observation[];
         }
         const result = await verify(specDoc, observations);
-        return ok(verifySummary(result), result);
+        return ok(verifySummary(result), {
+          ...result,
+          markdown: await renderVerifyMarkdown(result, { footer: FOOTER }),
+        });
       } catch (err) {
         return fail(err);
       }

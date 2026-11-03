@@ -1,5 +1,6 @@
 import type { Severity } from "../types.js";
 import type { Finding, VerifyResult } from "../verify/types.js";
+import { type FooterOptions, renderFooter } from "./footer.js";
 import { formatLocation } from "./location.js";
 
 const ORDER: Severity[] = ["breaking", "warning", "info"];
@@ -20,9 +21,15 @@ function code(s: string): string {
   return `\`${s.replace(/`/g, "'")}\``;
 }
 
+export interface VerifyMarkdownOptions {
+  title?: string;
+  /** Attribution footer. On by default; pass `false` to omit it. */
+  footer?: FooterOptions;
+}
+
 export function renderVerifyMarkdown(
   result: VerifyResult,
-  options: { title?: string } = {},
+  options: VerifyMarkdownOptions = {},
 ): string {
   const lines: string[] = [];
   lines.push(`## ${esc(options.title ?? "Verification report")}`);
@@ -45,7 +52,7 @@ export function renderVerifyMarkdown(
     lines.push("");
   }
   if (result.findings.length === 0) lines.push("No findings.");
-  return `${lines.join("\n").trimEnd()}\n`;
+  return `${lines.join("\n").trimEnd()}\n${renderFooter(options.footer)}`;
 }
 
 function renderFinding(f: Finding): string[] {

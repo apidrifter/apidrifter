@@ -16,13 +16,13 @@ inputs:
     required: false
     default: "breaking"
   config:
-    description: "Path to a apidrifter config file"
+    description: "Path to an apidrifter config file"
     required: false
     default: ""
   version:
-    description: "apidrifter npm version to run"
+    description: "apidrifter npm version or dist-tag to run, as in npx -y apidrifter@<version>"
     required: false
-    default: "0.1.0"
+    default: "latest"
   github-token:
     description: "Token used to post the changelog as a pull request comment. Leave empty to skip."
     required: false
@@ -47,7 +47,9 @@ runs:
         set -euo pipefail
         args=()
         if [ -n "$DW_CONFIG" ]; then args+=(--config "$DW_CONFIG"); fi
-        npx --yes "apidrifter@${DW_VERSION}" changelog "$DW_BEFORE" "$DW_AFTER" --fail-on info "${args[@]}" > apidrifter-changelog.md || true
+        # The version comes through the environment, not interpolated into the script, so an
+        # input cannot inject shell. It becomes npx -y apidrifter@<version>.
+        npx -y "apidrifter@${DW_VERSION}" changelog "$DW_BEFORE" "$DW_AFTER" --fail-on info "${args[@]}" > apidrifter-changelog.md || true
         cat apidrifter-changelog.md >> "$GITHUB_STEP_SUMMARY"
 
     - id: breaking
@@ -62,7 +64,7 @@ runs:
         set -uo pipefail
         args=()
         if [ -n "$DW_CONFIG" ]; then args+=(--config "$DW_CONFIG"); fi
-        npx --yes "apidrifter@${DW_VERSION}" diff "$DW_BEFORE" "$DW_AFTER" --format json --fail-on "$DW_FAIL_ON" "${args[@]}" > apidrifter-result.json
+        npx -y "apidrifter@${DW_VERSION}" diff "$DW_BEFORE" "$DW_AFTER" --format json --fail-on "$DW_FAIL_ON" "${args[@]}" > apidrifter-result.json
         status=$?
         count=$(node -e 'const r=JSON.parse(require("fs").readFileSync("apidrifter-result.json","utf8"));process.stdout.write(String(r.summary.breaking))' 2>/dev/null || echo 0)
         echo "breaking=$count" >> "$GITHUB_OUTPUT"

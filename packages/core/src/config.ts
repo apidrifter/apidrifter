@@ -69,6 +69,12 @@ export function validateConfig(
     config.ignore = ignore;
   }
   if (obj["baseline"] !== undefined) config.baseline = stringList(obj["baseline"], "baseline");
+  if (obj["footer"] !== undefined) {
+    if (typeof obj["footer"] !== "boolean") {
+      throw new ApidrifterError("invalid-config", "footer must be true or false");
+    }
+    config.footer = obj["footer"];
+  }
   return config;
 }
 

@@ -5,6 +5,9 @@ import { beforeAll, describe, expect, it } from "vitest";
 import { main } from "../src/cli.js";
 import type { CliIo } from "../src/context.js";
 import { EXIT_OK, EXIT_THRESHOLD, EXIT_USAGE } from "../src/errors.js";
+import { VERSION } from "../src/version.js";
+
+const FOOTER = `\n---\n\nFound with [apidrifter](https://apidrifter.com) v${VERSION}\n`;
 
 const base = {
   openapi: "3.1.0",
@@ -69,6 +72,8 @@ beforeAll(async () => {
     join(dir, "config.json"),
     JSON.stringify({ severity: { "api-version-changed": "breaking" } }),
   );
+  await writeFile(join(dir, "no-footer.json"), JSON.stringify({ footer: false }));
+  await writeFile(join(dir, "bad-footer.json"), JSON.stringify({ footer: "no" }));
 });
 
 describe("apidrifter diff/breaking/changelog", () => {
@@ -103,6 +108,49 @@ describe("apidrifter diff/breaking/changelog", () => {
     expect(await main(["changelog", "base.json", "broken.json"], io)).toBe(EXIT_THRESHOLD);
     expect(io.out.join("")).toMatch(/^## /);
     expect(io.out.join("")).toContain("response-property-type-changed");
+  });
+
+  it("ends markdown reports with the footer and the CLI version", async () => {
+    const changelog = makeIo(dir);
+    await main(["changelog", "base.json", "broken.json"], changelog);
+    expect(changelog.out.join("").endsWith(FOOTER)).toBe(true);
+    const markdown = makeIo(dir);
+    await main(["diff", "base.json", "broken.json", "--format", "markdown"], markdown);
+    expect(markdown.out.join("").endsWith(FOOTER)).toBe(true);
+  });
+
+  it("never puts the footer in json or text output", async () => {
+    const json = makeIo(dir);
+    await main(["diff", "base.json", "broken.json"], json);
+    expect(json.out.join("")).not.toContain("Found with");
+    const text = makeIo(dir);
+    text.isTTY = true;
+    await main(["diff", "base.json", "broken.json"], text);
+    expect(text.out.join("")).not.toContain("Found with");
+  });
+
+  it("drops the footer with --no-footer", async () => {
+    const io = makeIo(dir);
+    expect(await main(["changelog", "base.json", "broken.json", "--no-footer"], io)).toBe(
+      EXIT_THRESHOLD,
+    );
+    const out = io.out.join("");
+    expect(out).not.toContain("Found with");
+    expect(out).toContain("response-property-type-changed");
+    expect(
+      await main(["changelog", "base.json", "broken.json", "--no-footer=1"], makeIo(dir)),
+    ).toBe(EXIT_USAGE);
+  });
+
+  it("drops the footer with footer: false in the config file and rejects other values", async () => {
+    const io = makeIo(dir);
+    await main(["changelog", "base.json", "broken.json", "--config", "no-footer.json"], io);
+    expect(io.out.join("")).not.toContain("Found with");
+    const bad = makeIo(dir);
+    expect(
+      await main(["changelog", "base.json", "broken.json", "--config", "bad-footer.json"], bad),
+    ).toBe(EXIT_USAGE);
+    expect(bad.err.join("")).toMatch(/footer must be true or false/);
   });
 
   it("returns usage errors for bad invocations", async () => {
@@ -229,6 +277,31 @@ describe("plan and run", () => {
       ),
     ).toBe(EXIT_OK);
     expect(seen).toEqual([]);
+  });
+
+  it("run puts the footer after the skipped and failed sections in markdown", async () => {
+    const fetchImpl = (async () => {
+      throw new Error("connection refused");
+    }) as typeof fetch;
+    const io = makeIo(dir, fetchImpl);
+    const argv = [
+      "run",
+      "base.json",
+      "--base-url",
+      "http://localhost:9999",
+      "--continue-on-error",
+      "--format",
+      "markdown",
+    ];
+    expect(await main(argv, io)).toBe(EXIT_OK);
+    const out = io.out.join("");
+    expect(out).toContain("### Failed requests (1)");
+    expect(out.endsWith(FOOTER)).toBe(true);
+    expect(out.indexOf("### Failed requests")).toBeLessThan(out.indexOf("Found with"));
+    const off = makeIo(dir, fetchImpl);
+    await main([...argv, "--no-footer"], off);
+    expect(off.out.join("")).not.toContain("Found with");
+    expect(off.out.join("")).toContain("### Failed requests (1)");
   });
 
   it("run records transport failures with --continue-on-error", async () => {

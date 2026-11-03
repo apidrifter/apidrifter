@@ -122,6 +122,8 @@ export interface Config {
   };
   /** Fingerprints of changes that have been reviewed and accepted. See `fingerprint()`. */
   baseline?: string[];
+  /** Set to `false` to omit the attribution footer from Markdown reports. */
+  footer?: boolean;
 }
 
 export interface DiffOptions {

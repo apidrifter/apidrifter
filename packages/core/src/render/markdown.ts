@@ -1,4 +1,5 @@
 import type { Change, DiffResult, Severity } from "../types.js";
+import { type FooterOptions, renderFooter } from "./footer.js";
 import { formatLocation } from "./location.js";
 
 const ORDER: Severity[] = ["breaking", "warning", "info"];
@@ -15,7 +16,13 @@ function esc(s: string): string {
   return s.replace(/[\\`*_[\]<>]/g, "\\$&");
 }
 
-export function renderMarkdown(result: DiffResult, options: { title?: string } = {}): string {
+export interface MarkdownOptions {
+  title?: string;
+  /** Attribution footer. On by default; pass `false` to omit it. */
+  footer?: FooterOptions;
+}
+
+export function renderMarkdown(result: DiffResult, options: MarkdownOptions = {}): string {
   const lines: string[] = [];
   const title = options.title ?? `${result.kind === "openapi" ? "API" : "MCP server"} changes`;
   lines.push(`## ${esc(title)}`);
@@ -38,7 +45,7 @@ export function renderMarkdown(result: DiffResult, options: { title?: string } =
     lines.push("");
   }
   if (result.changes.length === 0) lines.push("No changes.");
-  return `${lines.join("\n").trimEnd()}\n`;
+  return `${lines.join("\n").trimEnd()}\n${renderFooter(options.footer)}`;
 }
 
 function describe(title: string | undefined, version: string | undefined): string {

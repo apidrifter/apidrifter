@@ -50,6 +50,12 @@ Cursor, Windsurf, or any client that takes a JSON config:
 
 Then ask the agent to plan requests for a spec, fill the values it cannot infer, run them against your dev server, and fix whichever side is wrong.
 
+## Use it from your agent
+
+The Claude Code plugin adds the MCP server and a skill that runs the check whenever the agent adds or changes an endpoint or edits an OpenAPI document: `/plugin marketplace add apidrifter/apidrifter`, then `/plugin install apidrifter@apidrifter`. For Cursor rules, a paragraph to paste into `CLAUDE.md` or `AGENTS.md`, Codex and other MCP clients, and what each MCP tool does, see [docs/agents.md](docs/agents.md).
+
+Markdown reports end with a `Found with apidrifter` line so a report pasted into a pull request says how it was produced; `--no-footer` or `"footer": false` in the config file turns it off.
+
 ## What it checks
 
 - **Verification**: undocumented statuses and media types, missing required fields, wrong types, forbidden or undocumented fields, disallowed nulls, enum and constraint violations, requests the spec allows but the server rejects, and requests the spec forbids but the server accepts. 26 finding rules.

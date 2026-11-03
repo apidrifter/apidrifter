@@ -1,3 +1,4 @@
+import { type FooterOptions, renderFooter } from "@apidrifter/core";
 import { flag, flagAll, hasFlag, intFlag, type ParsedArgs, rejectUnknownFlags } from "../args.js";
 import { type CliIo, commonOptions, withFlags } from "../context.js";
 import {
@@ -74,7 +75,7 @@ export async function runCommand(args: ParsedArgs, io: CliIo): Promise<number> {
   const baseCheck = checkUrl(baseUrlRaw);
   if (!baseCheck.ok) throw new InputError(baseCheck.reason);
 
-  const { format, level, config } = await commonOptions(args, io);
+  const { format, level, config, footer } = await commonOptions(args, io);
   const timeoutMs = intFlag(args, "timeout", 30_000);
   const maxBodyBytes = intFlag(args, "max-body-bytes", 8 * 1024 * 1024);
 
@@ -152,7 +153,7 @@ export async function runCommand(args: ParsedArgs, io: CliIo): Promise<number> {
   }
 
   const result = await verify(spec, observations, { config });
-  io.stdout(await renderVerify(result, format, skipped, failures, overBudget));
+  io.stdout(await renderVerify(result, format, skipped, failures, overBudget, footer));
   return exceeds(result.summary, level) ? EXIT_THRESHOLD : EXIT_OK;
 }
 
@@ -163,11 +164,11 @@ export async function verifyCommand(args: ParsedArgs, io: CliIo): Promise<number
   if (specPath === undefined || extra !== undefined || observationsPath === undefined) {
     throw new UsageError("usage: apidrifter verify <spec> --observations <file>");
   }
-  const { format, level, config } = await commonOptions(args, io);
+  const { format, level, config, footer } = await commonOptions(args, io);
   const spec = await loadDocument(specPath, { cwd: io.cwd, fetch: fetchOpts(args, io) });
   const observations = await loadObservations(observationsPath, io);
   const result = await verify(spec, observations, { config });
-  io.stdout(await renderVerify(result, format, []));
+  io.stdout(await renderVerify(result, format, [], [], 0, footer));
   return exceeds(result.summary, level) ? EXIT_THRESHOLD : EXIT_OK;
 }
 
@@ -177,13 +178,16 @@ export async function renderVerify(
   skipped: Skipped[],
   failures: RequestFailure[] = [],
   overBudget = 0,
+  footer: FooterOptions = false,
 ): Promise<string> {
   if (format === "json") {
     return `${JSON.stringify({ ...result, skipped, failures, overBudget }, null, 2)}\n`;
   }
-  const body =
-    format === "markdown" ? await renderVerifyMarkdown(result) : await renderVerifyText(result);
   const md = format === "markdown";
+  // The footer goes after the skipped and failed sections, so the body is rendered without it.
+  const body = md
+    ? await renderVerifyMarkdown(result, { footer: false })
+    : await renderVerifyText(result);
   const sections: string[] = [];
   if (skipped.length > 0) {
     const lines = skipped.map((s) =>
@@ -206,7 +210,7 @@ export async function renderVerify(
   if (overBudget > 0) {
     sections.push(`${md ? "\n" : "\n"}${overBudget} request(s) not sent: over --max-requests\n`);
   }
-  return `${body}${sections.join("")}`;
+  return `${body}${sections.join("")}${md ? renderFooter(footer) : ""}`;
 }
 
 function fetchOpts(args: ParsedArgs, io: CliIo) {

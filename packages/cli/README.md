@@ -22,7 +22,7 @@ Any client that takes a JSON config:
 { "mcpServers": { "apidrifter": { "command": "npx", "args": ["-y", "apidrifter", "serve"] } } }
 ```
 
-Tools: `plan_requests`, `run_requests`, `verify_observations`, `diff_specs`, `breaking_changes`, `changelog`, `mcp_snapshot`, `mcp_diff`, `list_rules`.
+Tools: `plan_requests`, `run_requests`, `verify_observations`, `diff_specs`, `breaking_changes`, `changelog`, `mcp_snapshot`, `mcp_diff`, `list_rules`. Setup for Claude Code (including the plugin), Cursor, Codex and other clients: [docs/agents.md](https://github.com/apidrifter/apidrifter/blob/main/docs/agents.md).
 
 ## Commands
 
@@ -84,12 +84,13 @@ Example client configuration:
 
 ## Common options
 
-| Flag                                | Meaning                                                                                                                                    |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `--format json\|markdown\|text`     | Default: text on a terminal, json otherwise.                                                                                               |
-| `--config <file>`                   | Severity overrides, ignores and baseline. `apidrifter.config.json` or `.apidrifter.yaml` in the working directory is loaded automatically. |
-| `--fail-on breaking\|warning\|info` | Exit 1 when anything at or above this level is found. Default `breaking`.                                                                  |
-| `--timeout <ms>`                    | Network timeout. Default 30000.                                                                                                            |
+| Flag                                | Meaning                                                                                                                                                     |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--format json\|markdown\|text`     | Default: text on a terminal, json otherwise.                                                                                                                |
+| `--config <file>`                   | Severity overrides, ignores and baseline. `apidrifter.config.json` or `.apidrifter.yaml` in the working directory is loaded automatically.                  |
+| `--fail-on breaking\|warning\|info` | Exit 1 when anything at or above this level is found. Default `breaking`.                                                                                   |
+| `--timeout <ms>`                    | Network timeout. Default 30000.                                                                                                                             |
+| `--no-footer`                       | Omit the `Found with apidrifter vX.Y.Z` line that ends Markdown reports. Text and JSON output never carry it. Same as `"footer": false` in the config file. |
 
 ## Exit codes
 
@@ -106,8 +107,9 @@ Example client configuration:
 {
   "severity": { "response-property-enum-value-added": "breaking", "api-version-changed": "ignore" },
   "ignore": { "ids": ["endpoint-description-changed"], "subjects": ["GET /internal/**"] },
-  "baseline": ["<fingerprints of reviewed changes>"]
+  "baseline": ["<fingerprints of reviewed changes>"],
+  "footer": false
 }
 ```
 
-Configuration can make the engine quieter or louder. It never changes what is detected.
+Configuration can make the engine quieter or louder. It never changes what is detected. `footer: false` omits the attribution line from Markdown reports, like `--no-footer`.

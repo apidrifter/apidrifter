@@ -49,6 +49,7 @@
       "!tools/survey/results",
       "!tools/survey/out",
       "!.changeset/*.md",
+      "!plugins/**/SKILL.md",
       "!wrangler.jsonc"
     ]
   }

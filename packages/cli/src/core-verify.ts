@@ -10,6 +10,7 @@ import {
   type Limits,
   type Observation,
   type PlannedRequest,
+  type VerifyMarkdownOptions,
   type VerifyOptions,
   type VerifyResult,
 } from "@apidrifter/core";
@@ -39,8 +40,11 @@ export async function verify(
   return coreVerify(spec, observations, options);
 }
 
-export async function renderVerifyMarkdown(result: VerifyResult): Promise<string> {
-  return coreRenderVerifyMarkdown(result);
+export async function renderVerifyMarkdown(
+  result: VerifyResult,
+  options?: VerifyMarkdownOptions,
+): Promise<string> {
+  return coreRenderVerifyMarkdown(result, options);
 }
 
 export async function renderVerifyText(result: VerifyResult): Promise<string> {

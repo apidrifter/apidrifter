@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "apidrifter": {
+      "command": "npx",
+      "args": ["-y", "apidrifter", "serve"]
+    }
+  }
+}
