@@ -1,0 +1,5 @@
+{
+  "severity": {
+    "response-undocumented-property": "warning"
+  }
+}

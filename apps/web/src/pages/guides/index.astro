@@ -1,0 +1,51 @@
+---
+import Base from "../../layouts/Base.astro";
+import { EXAMPLES_URL, GUIDES } from "../../lib/guides";
+import { breadcrumbs } from "../../lib/jsonld";
+import { SITE } from "../../lib/site";
+
+const jsonld = [
+  breadcrumbs([
+    { name: SITE.name, url: `${SITE.url}/` },
+    { name: "Guides", url: `${SITE.url}/guides/` },
+  ]),
+];
+const reviewed = GUIDES.map((g) => g.reviewed).sort().at(-1) ?? "";
+---
+
+<Base
+  title="Framework guides: verify your API against its spec"
+  description="Guides for FastAPI, Express, Hono, Fastify and NestJS: where the spec comes from, how to run apidrifter against the live app, and how to make it automatic."
+  jsonld={jsonld}
+>
+  <h1>Guides</h1>
+  <p class="muted">
+    One guide per framework. Each says where that framework&rsquo;s OpenAPI document comes
+    from, how to run apidrifter against the live app, how to read a real finding and decide
+    which side to fix, and how to make the check automatic with an instructions file, the
+    Claude Code hook and a CI job. Every guide has a runnable example in the repository with a
+    deliberate mismatch, so the findings shown are real output.
+  </p>
+  <ul class="compare-list">
+    {
+      GUIDES.map((g) => (
+        <li>
+          <h2>
+            <a href={`/guides/${g.id}/`}>{g.title}</a>
+          </h2>
+          <p>{g.oneLine}</p>
+        </li>
+      ))
+    }
+  </ul>
+  <h2 id="other-frameworks">Other frameworks</h2>
+  <p>
+    The loop is the same for anything that speaks HTTP and has an OpenAPI 3 document: start the
+    app, run <code>npx apidrifter run &lt;spec&gt; --base-url http://localhost:&lt;port&gt;</code>,
+    read the two fixes on each finding, pick a side. The
+    <a href="/agents/">agents page</a> has the instructions paragraph and MCP setup that work
+    for any codebase; the <a href="/docs/cli/">CLI reference</a> has every flag. The examples
+    live at <a href={EXAMPLES_URL} rel="noopener">examples/</a> in the repository.
+  </p>
+  <p class="reviewed">Last reviewed {reviewed}</p>
+</Base>

@@ -1,0 +1,121 @@
+openapi: 3.0.3
+info:
+  title: Todos (Express example)
+  version: 1.0.0
+  description: >-
+    A hand-written OpenAPI document for the Express app in server.js. The Todo schema is
+    strict (additionalProperties: false); the server returns an ownerId field the schema does
+    not declare, which is the deliberate mismatch this example demonstrates.
+servers:
+  - url: http://localhost:3000
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      summary: Liveness check
+      responses:
+        "200":
+          description: The service is up
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status]
+                properties:
+                  status:
+                    type: string
+                    enum: [ok]
+  /todos:
+    get:
+      operationId: listTodos
+      summary: List todos
+      responses:
+        "200":
+          description: All todos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Todo"
+    post:
+      operationId: createTodo
+      summary: Create a todo
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NewTodo"
+            example:
+              title: Ship the example
+              dueDate: "2026-11-20"
+      responses:
+        "201":
+          description: The created todo
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Todo"
+        "400":
+          description: Invalid body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /todos/{id}:
+    get:
+      operationId: getTodo
+      summary: Fetch one todo
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: 1
+      responses:
+        "200":
+          description: The todo
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Todo"
+        "404":
+          description: No todo with that id
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Todo:
+      type: object
+      additionalProperties: false
+      required: [id, title, completed, dueDate]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        completed:
+          type: boolean
+        dueDate:
+          type: string
+          format: date
+    NewTodo:
+      type: object
+      required: [title]
+      properties:
+        title:
+          type: string
+          minLength: 1
+        dueDate:
+          type: string
+          format: date
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: string

@@ -19,6 +19,33 @@ Or install the plugin, which adds the same MCP server plus a `verify-api-contrac
 
 From a shell the same two steps are `claude plugin marketplace add apidrifter/apidrifter` and `claude plugin install apidrifter@apidrifter`.
 
+## Automatic reminders (Claude Code hook)
+
+The plugin also ships a `PostToolUse` hook (`plugins/apidrifter/hooks/hooks.json`). After every `Edit`, `Write` or `MultiEdit`, a small shell script (`hooks/on-change.sh`) reads the tool input, and when the edited file is an OpenAPI document (`openapi.*`, `swagger.*`, `*.openapi.yaml`, `*.openapi.json`) or lives under a `routes`, `controllers`, `handlers` or `api` directory, it hands Claude a reminder to run `npx -y apidrifter run <spec> --base-url http://localhost:<port>` and fix whichever side is wrong. The hook only prints the reminder: it never starts the server, never sends a request, and always exits 0, so it cannot block an edit. The reminder is delivered as `hookSpecificOutput.additionalContext`, which is what Claude Code shows to the model from a `PostToolUse` hook (plain stdout from that event only reaches the debug log).
+
+Without the plugin, copy [`on-change.sh`](../plugins/apidrifter/hooks/on-change.sh) into your project as `.claude/hooks/apidrifter-on-change.sh`, make it executable, and add this to `.claude/settings.json` (project) or `~/.claude/settings.json` (user):
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/apidrifter-on-change.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+The script uses `node` to parse the hook input when it is available (it is, wherever `npx apidrifter` works) and falls back to a `sed` pattern otherwise. Edit the two `case` patterns near the top of the script to match your own spec filename or source layout.
+
 ## CLAUDE.md, AGENTS.md or any instructions file
 
 Paste this into the instructions file your agent reads (`CLAUDE.md`, `AGENTS.md`, `.github/copilot-instructions.md`, ...):

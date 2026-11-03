@@ -1,0 +1,17 @@
+{
+  "description": "After an edit to an OpenAPI document or a route, controller, handler or api file, remind the model to verify the implementation against the spec with apidrifter. The hook only prints a reminder; it never starts a server or sends a request.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/on-change.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

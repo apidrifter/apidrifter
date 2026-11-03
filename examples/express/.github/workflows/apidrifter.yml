@@ -1,0 +1,54 @@
+# Two checks on every pull request: the spec against its previous version (breaking changes),
+# and the spec against the running app (drift). Copy this file to the root of your own
+# repository; paths below assume the Express app lives at the repository root.
+name: apidrifter
+
+on:
+  pull_request:
+    paths:
+      - "openapi.yaml"
+      - "server.js"
+      - "package.json"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  spec-diff:
+    name: Breaking changes in openapi.yaml
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Spec from the base branch
+        run: git show "origin/${GITHUB_BASE_REF}:openapi.yaml" > openapi.before.yaml
+      - uses: apidrifter/action@v1
+        with:
+          before: openapi.before.yaml
+          after: openapi.yaml
+          fail-on: breaking
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  live-check:
+    name: Spec vs running app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - name: Start the app
+        run: |
+          npm start &
+          for i in $(seq 1 20); do
+            curl -sf http://localhost:3000/health && break
+            sleep 0.5
+          done
+      - name: Verify the implementation against the spec
+        run: |
+          npx -y apidrifter run openapi.yaml --base-url http://localhost:3000 \
+            --format markdown --fail-on breaking | tee report.md >> "$GITHUB_STEP_SUMMARY"
+          exit "${PIPESTATUS[0]}"

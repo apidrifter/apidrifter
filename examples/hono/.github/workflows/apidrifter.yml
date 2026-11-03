@@ -1,0 +1,62 @@
+# Two checks on every pull request: the generated spec against its previous version
+# (breaking changes), and the spec against the running app (drift). Copy this file to the
+# root of your own repository; paths below assume the Hono app lives at the repository root.
+name: apidrifter
+
+on:
+  pull_request:
+    paths:
+      - "src/**"
+      - "openapi.json"
+      - "package.json"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  spec-diff:
+    name: Breaking changes in the generated spec
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - name: The committed snapshot must match the code
+        run: |
+          npm run spec
+          git diff --exit-code openapi.json
+      - name: Spec from the base branch
+        run: git show "origin/${GITHUB_BASE_REF}:openapi.json" > openapi.before.json
+      - uses: apidrifter/action@v1
+        with:
+          before: openapi.before.json
+          after: openapi.json
+          fail-on: breaking
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  live-check:
+    name: Spec vs running app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - name: Start the app
+        run: |
+          npm start &
+          for i in $(seq 1 20); do
+            curl -sf http://localhost:3000/health && break
+            sleep 0.5
+          done
+      - name: Verify the implementation against the spec it serves
+        run: |
+          npx -y apidrifter run http://localhost:3000/openapi.json --base-url http://localhost:3000 \
+            --format markdown --fail-on breaking | tee report.md >> "$GITHUB_STEP_SUMMARY"
+          exit "${PIPESTATUS[0]}"

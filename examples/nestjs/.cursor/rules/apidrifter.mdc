@@ -1,0 +1,20 @@
+---
+description: Verify the HTTP implementation against its generated OpenAPI document with apidrifter
+globs: ["src/**", "openapi.json", "**/*.controller.ts", "**/*.dto.ts", "**/controllers/**", "**/api/**"]
+alwaysApply: false
+---
+
+When you add or change an HTTP endpoint, a controller or a DTO that feeds the OpenAPI
+document:
+
+1. Start the service locally (`npm start`, port 3000). The spec is at
+   http://localhost:3000/openapi.json.
+2. `npx -y apidrifter plan http://localhost:3000/openapi.json --out plan.json`, then write a
+   filled plan with realistic values for the slots the engine cannot infer.
+3. `npx -y apidrifter run http://localhost:3000/openapi.json --base-url http://localhost:3000 --plan filled.json --format markdown`.
+   http:// is only allowed for localhost. Never put real credentials in the plan or the
+   command line; use `--bearer-env VAR`.
+4. For each finding decide which side is the source of truth, fix that side, and rerun until
+   the report is clean. Do not loosen the DTO to silence findings.
+5. Run `npm run spec` so the committed openapi.json matches, and paste the Markdown report
+   into the pull request.
