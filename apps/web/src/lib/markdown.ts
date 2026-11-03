@@ -6,13 +6,17 @@
  */
 import { SITE } from "./site";
 import {
+  apiStatus,
   type Finding,
   type FindingRequest,
   formatLocation,
   GROUPS,
   groupFindings,
+  noteExcerpt,
+  rankedApis,
   type SurveyApi,
   type SurveySummary,
+  specFormatLabel,
 } from "./survey";
 
 function cell(s: string): string {
@@ -140,5 +144,19 @@ export function apiMarkdown(
     `- Tool: ${SITE.url}/docs/cli/ (reproduce with apidrifter run; target definition in tools/survey/targets.json)`,
     "",
   );
+  return lines.join("\n");
+}
+
+/** The drift index table: ranked by hard violations. `base` is the research post URL. */
+export function driftIndexMarkdown(summary: SurveySummary, base: string): string {
+  const lines = [
+    "| # | API | Spec format | Operations observed | Hard violations | Body findings | Status | Note |",
+    "|---|-----|-------------|---------------------|-----------------|---------------|--------|------|",
+  ];
+  rankedApis(summary).forEach((a, i) => {
+    lines.push(
+      `| ${i + 1} | [${cell(a.name)}](${base}${a.id}/) | [${specFormatLabel(a.specFormat)}](${a.spec}) | ${a.observed} of ${a.operations} | ${a.counts.hard} | ${a.counts.body} | ${apiStatus(a)} | ${cell(noteExcerpt(a.note))} |`,
+    );
+  });
   return lines.join("\n");
 }

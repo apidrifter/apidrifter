@@ -21,6 +21,8 @@ const DOC_IDS: Record<string, string> = {
   "packages/cli/README.md": "cli",
   "docs/rules.md": "rules",
   "docs/DESIGN.md": "design",
+  /** Optional: rendered at /agents/ when present, with a built-in fallback otherwise. */
+  "docs/agents.md": "agents",
 };
 
 const docs = defineCollection({

@@ -634,3 +634,77 @@ table.rules tr:target {
   padding-top: 1rem;
   border-top: 1px solid var(--line);
 }
+
+/* Compare, agents and drift index pages */
+table.compare th:first-child,
+table.compare td:first-child {
+  font-weight: 600;
+  min-width: 14ch;
+}
+table.compare td {
+  font-size: 0.88rem;
+}
+.reviewed {
+  color: var(--fg-muted);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+.sources {
+  font-size: 0.9rem;
+}
+td.rank {
+  text-align: right;
+  font-family: var(--mono);
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+.status-drift {
+  color: var(--danger);
+}
+.status-clean {
+  color: var(--ok);
+}
+.status-unverified {
+  color: var(--fg-muted);
+}
+.compare-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.compare-list li {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-raised);
+  padding: 14px 16px;
+  margin: 0 0 12px;
+}
+.compare-list h2 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+}
+.compare-list p {
+  margin: 0;
+  color: var(--fg-muted);
+}
+.howto {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5em;
+  display: grid;
+  gap: 10px;
+}
+.howto li {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-raised);
+  padding: 12px 16px;
+}
+.howto li .n {
+  font-family: var(--mono);
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+.howto li pre {
+  margin: 6px 0 0;
+}

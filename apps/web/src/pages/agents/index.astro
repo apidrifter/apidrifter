@@ -1,0 +1,143 @@
+---
+/**
+ * apidrifter for coding agents. Renders docs/agents.md from the repository when it exists
+ * (content collection entry "agents"); otherwise a short built-in body, so the page always
+ * builds.
+ */
+import Base from "../../layouts/Base.astro";
+import { breadcrumbs, howTo, softwareApplication } from "../../lib/jsonld";
+import { SITE } from "../../lib/site";
+import { getEntry, render } from "astro:content";
+
+const title = "apidrifter for coding agents";
+const description =
+  "Install the apidrifter MCP server in Claude Code, Cursor, Codex or any MCP client, then let the agent plan requests, run them and fix whichever side drifted.";
+const url = `${SITE.url}/agents/`;
+
+const entry = await getEntry("docs", "agents");
+const rendered = entry !== undefined ? await render(entry) : undefined;
+const Content = rendered?.Content;
+/** The doc may bring its own h1; the page must end up with exactly one. */
+const docHasH1 = entry !== undefined && /^#\s+\S/m.test(entry.body ?? "");
+const toc = (rendered?.headings ?? []).filter((h) => h.depth === 2);
+
+const CLAUDE_ONE_LINER = "claude mcp add apidrifter -- npx -y apidrifter serve";
+const JSON_CONFIG = `{
+  "mcpServers": {
+    "apidrifter": { "command": "npx", "args": ["-y", "apidrifter", "serve"] }
+  }
+}`;
+
+const steps = [
+  {
+    name: "Install the MCP server",
+    text: `In Claude Code run: ${CLAUDE_ONE_LINER}. Any client that takes a JSON config uses command npx with args -y apidrifter serve.`,
+    code: CLAUDE_ONE_LINER,
+  },
+  {
+    name: "Plan the requests",
+    text: "Ask the agent to call plan_requests on the OpenAPI document, or run npx apidrifter plan openapi.yaml --out plan.json. The plan lists one request per operation with the parameter and body slots that still need values.",
+    code: "npx apidrifter plan openapi.yaml --out plan.json",
+  },
+  {
+    name: "Run them against the server",
+    text: "The agent fills the slots with realistic values and auth, then calls run_requests with the base URL of your dev or staging server; or run npx apidrifter run openapi.yaml --base-url http://localhost:3000 --plan filled.json.",
+    code: "npx apidrifter run openapi.yaml --base-url http://localhost:3000 --plan filled.json",
+  },
+  {
+    name: "Read the findings",
+    text: "Every finding names the operation, the location in the response and the rule, and carries two fixes: one if the spec is the source of truth, one if the implementation is. Skipped operations list the values still missing.",
+    code: undefined,
+  },
+  {
+    name: "Fix the side that is wrong",
+    text: "Decide which side is the source of truth for each finding, apply that fix, and rerun until the report is clean. Add apidrifter breaking old.yaml new.yaml before merging to catch breaking spec changes.",
+    code: "npx apidrifter breaking openapi.before.yaml openapi.yaml",
+  },
+];
+
+const jsonld = [
+  softwareApplication(),
+  howTo({
+    url,
+    name: "Verify an API against its OpenAPI spec from a coding agent",
+    description,
+    steps: steps.map((s) => ({ name: s.name, text: s.text })),
+  }),
+  breadcrumbs([
+    { name: SITE.name, url: `${SITE.url}/` },
+    { name: "Agents", url },
+  ]),
+];
+---
+
+<Base title={title} description={description} jsonld={jsonld}>
+  <p class="post-meta">
+    <a href="/docs/cli/">CLI reference</a> &middot; <a href="/docs/rules/">Rules</a> &middot;
+    <a href="/compare/">Compare</a> &middot; <a href="/llms.txt">llms.txt</a>
+  </p>
+  {!docHasH1 && <h1>{title}</h1>}
+  {
+    Content !== undefined ? (
+      <article class="doc prose">
+        {toc.length > 0 && (
+          <nav class="toc" aria-label="Contents">
+            <ol>
+              {toc.map((h) => (
+                <li>
+                  <a href={`#${h.slug}`}>{h.text}</a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
+        <Content />
+      </article>
+    ) : (
+      <article class="prose">
+        <p class="lede muted">
+          <code>apidrifter serve</code> runs the whole verify loop as an MCP server over stdio, so
+          the agent that just changed your API can check it against the spec and act on the
+          two-sided fixes without a person in the loop.
+        </p>
+        <h2 id="claude-code">Claude Code</h2>
+        <pre><code>{CLAUDE_ONE_LINER}</code></pre>
+        <h2 id="cursor-codex-and-other-mcp-clients">Cursor, Codex and other MCP clients</h2>
+        <p>Any client that takes a JSON MCP config:</p>
+        <pre><code>{JSON_CONFIG}</code></pre>
+        <h2 id="mcp-tools">MCP tools</h2>
+        <p>
+          <code>plan_requests</code>, <code>run_requests</code>, <code>verify_observations</code>,
+          <code>diff_specs</code>, <code>breaking_changes</code>, <code>changelog</code>,
+          <code>mcp_snapshot</code>, <code>mcp_diff</code>, <code>list_rules</code>. Documents are
+          passed as a path inside the working directory, an HTTPS URL, or inline content. Results
+          come back as structured content; third-party text never reaches the agent outside a data
+          field.
+        </p>
+      </article>
+    )
+  }
+
+  <h2 id="the-loop">The loop, step by step</h2>
+  <ol class="howto">
+    {
+      steps.map((s, i) => (
+        <li id={`step-${i + 1}`}>
+          <span class="n">0{i + 1}</span> <strong>{s.name}.</strong> {s.text}
+          {s.code !== undefined && (
+            <pre>
+              <code>{s.code}</code>
+            </pre>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+  <p class="small muted doc-foot">
+    The CLI sends requests only where the agent points it; URLs other than localhost must be
+    HTTPS, and secrets passed as headers are never written to output. Full flags in the
+    <a href="/docs/cli/">CLI reference</a>; every finding ID in the
+    <a href="/docs/rules/">rules reference</a>. Everything on this site in one file for agents:
+    <a href="/llms-full.txt">llms-full.txt</a>.
+  </p>
+</Base>

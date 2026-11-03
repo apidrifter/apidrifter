@@ -1,5 +1,6 @@
 import { getCollection } from "astro:content";
 import type { APIRoute } from "astro";
+import { COMPARISONS } from "../lib/compare";
 import { DOC_PAGES, SITE } from "../lib/site";
 import { loadSummary } from "../lib/survey";
 
@@ -26,9 +27,18 @@ export const GET: APIRoute = async () => {
     "- `npx apidrifter mcp snapshot <url>` and `npx apidrifter mcp diff <snapshot> <url>`: snapshot and diff MCP servers, including tool description changes.",
     "- `npx apidrifter serve`: run the same capabilities as an MCP server over stdio.",
     "",
+    "## For coding agents",
+    "",
+    `- [apidrifter for coding agents](${SITE.url}/agents/): install the MCP server in Claude Code (\`claude mcp add apidrifter -- npx -y apidrifter serve\`), Cursor, Codex or any MCP client, with the tool list and a CLAUDE.md / AGENTS.md snippet.`,
+    "",
     "## Docs",
     "",
     ...DOC_PAGES.map((d) => `- [${d.title}](${SITE.url}/docs/${d.id}/): ${d.description}`),
+    "",
+    "## Comparisons",
+    "",
+    `- [Compare](${SITE.url}/compare/): honest feature tables against other tools.`,
+    ...COMPARISONS.map((c) => `- [${c.title}](${SITE.url}/compare/${c.id}/): ${c.oneLine}`),
     "",
     "## Research",
     "",
@@ -36,6 +46,8 @@ export const GET: APIRoute = async () => {
       (p) =>
         `- [${p.data.title}](${SITE.url}/research/${p.id}/): ${p.data.description} Markdown twin: ${SITE.url}/research/${p.id}/index.md`,
     ),
+    "",
+    `- [Public API drift index](${SITE.url}/drift-index/): the surveyed APIs ranked by hard spec violations, with method and status per API; updated monthly. Markdown twin: ${SITE.url}/drift-index/index.md`,
     "",
     `Survey data: ${summary.totals.withHard} of ${summary.totals.apis} surveyed public APIs had hard spec violations on successful responses (${summary.totals.hard} distinct schema locations). Per-API pages: ${SITE.url}/research/<post>/<api-id>/ with Markdown twins at .../index.md. Raw JSON: ${SITE.resultsUrl}`,
     "",
