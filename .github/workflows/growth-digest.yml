@@ -1,0 +1,69 @@
+name: Growth digest
+
+# Weekly, zero touch. Runs tools/growth/digest.mjs, files or updates one issue per ISO week
+# labeled "growth", and commits the week's numbers to tools/growth/state/latest.json so the
+# next run can show deltas. Posts nothing outside this repository.
+
+on:
+  schedule:
+    - cron: "0 7 * * 1" # Monday 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: growth-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    if: github.repository == 'apidrifter/apidrifter'
+    steps:
+      # Actions pinned by SHA; update via Dependabot.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+
+      - name: Collect and render
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          node tools/growth/digest.mjs --out "$RUNNER_TEMP/digest.md"
+          echo "WEEK=$(date -u +%G-W%V)" >> "$GITHUB_ENV"
+
+      - name: Create or update the issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          title="Growth digest $WEEK"
+          gh label create growth --description "Weekly growth digest" --color 0E8A16 --force
+          number="$(gh issue list --label growth --state all --search "\"$title\" in:title" \
+            --json number,title --jq "map(select(.title == \"$title\")) | .[0].number // empty")"
+          if [ -n "$number" ]; then
+            gh issue edit "$number" --body-file "$RUNNER_TEMP/digest.md"
+            gh issue reopen "$number" >/dev/null 2>&1 || true
+            echo "Updated issue #$number"
+          else
+            gh issue create --title "$title" --label growth --body-file "$RUNNER_TEMP/digest.md"
+          fi
+
+      - name: Commit state
+        run: |
+          set -euo pipefail
+          git config user.name "apidrifter"
+          git config user.email "apidrifter@gmail.com"
+          git add tools/growth/state/latest.json
+          if git diff --cached --quiet; then
+            echo "State unchanged"
+            exit 0
+          fi
+          git commit -s -m "Growth digest state for $WEEK"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
