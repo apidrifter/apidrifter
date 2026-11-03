@@ -1,6 +1,7 @@
 import { getCollection } from "astro:content";
 import type { APIRoute } from "astro";
 import { COMPARISONS } from "../lib/compare";
+import { GUIDES } from "../lib/guides";
 import { DOC_PAGES, SITE } from "../lib/site";
 import { loadSummary } from "../lib/survey";
 
@@ -30,6 +31,14 @@ export const GET: APIRoute = async () => {
     "## For coding agents",
     "",
     `- [apidrifter for coding agents](${SITE.url}/agents/): install the MCP server in Claude Code (\`claude mcp add apidrifter -- npx -y apidrifter serve\`), Cursor, Codex or any MCP client, with the tool list and a CLAUDE.md / AGENTS.md snippet.`,
+    "",
+    "## Guides",
+    "",
+    `- [Guides](${SITE.url}/guides/): verify an app against its OpenAPI spec, one guide per framework, each with a runnable example under ${SITE.repo}/tree/main/examples.`,
+    ...GUIDES.map(
+      (g) =>
+        `- [${g.title}](${SITE.url}/guides/${g.id}/): ${g.oneLine} Markdown twin: ${SITE.url}/guides/${g.id}/index.md`,
+    ),
     "",
     "## Docs",
     "",

@@ -55,22 +55,29 @@ function checkPage(file) {
     rel === "/index.html" ||
     /\/research\/.+\/index\.html$/.test(rel) ||
     /\/docs\/.+\/index\.html$/.test(rel) ||
-    /^\/(compare|agents|drift-index)\//.test(rel)
+    /^\/(compare|agents|drift-index|guides)\//.test(rel)
   ) {
     if (!html.includes('type="application/ld+json"')) problems.push(`${rel}: no JSON-LD`);
   }
   // Page types with a required structured-data shape.
   const expectTypes = /^\/compare\/.+\/index\.html$/.test(rel)
     ? ["FAQPage", "BreadcrumbList"]
-    : rel === "/agents/index.html"
-      ? ["HowTo", "SoftwareApplication"]
-      : rel === "/drift-index/index.html"
-        ? ["Dataset", "BreadcrumbList"]
-        : [];
+    : /^\/guides\/.+\/index\.html$/.test(rel)
+      ? ["HowTo", "FAQPage", "BreadcrumbList"]
+      : rel === "/guides/index.html"
+        ? ["BreadcrumbList"]
+        : rel === "/agents/index.html"
+          ? ["HowTo", "SoftwareApplication"]
+          : rel === "/drift-index/index.html"
+            ? ["Dataset", "BreadcrumbList"]
+            : [];
   for (const t of expectTypes) {
     if (!seenTypes.has(t)) problems.push(`${rel}: missing ${t} JSON-LD`);
   }
-  if (rel === "/drift-index/index.html" && !/rel="alternate" type="text\/markdown"/.test(html)) {
+  if (
+    (rel === "/drift-index/index.html" || /^\/guides\/.+\/index\.html$/.test(rel)) &&
+    !/rel="alternate" type="text\/markdown"/.test(html)
+  ) {
     problems.push(`${rel}: missing markdown alternate link`);
   }
 }
@@ -96,14 +103,20 @@ function findMd(dir) {
 }
 findMd(join(dist, "research"));
 if (existsSync(join(dist, "drift-index"))) findMd(join(dist, "drift-index"));
+if (existsSync(join(dist, "guides"))) findMd(join(dist, "guides"));
 if (!mdTwins.includes("/drift-index/index.md")) problems.push("missing /drift-index/index.md twin");
+for (const dir of existsSync(join(dist, "guides")) ? readdirSync(join(dist, "guides")) : []) {
+  if (!statSync(join(dist, "guides", dir)).isDirectory()) continue;
+  if (!mdTwins.includes(`/guides/${dir}/index.md`))
+    problems.push(`missing /guides/${dir}/index.md twin`);
+}
 const sitemap = existsSync(join(dist, "sitemap-0.xml"))
   ? readFileSync(join(dist, "sitemap-0.xml"), "utf8")
   : "";
 const lastmods = (sitemap.match(/<lastmod>/g) ?? []).length;
 const urls = (sitemap.match(/<loc>/g) ?? []).length;
 if (urls > 0 && lastmods !== urls) problems.push(`sitemap: ${lastmods} lastmod for ${urls} urls`);
-for (const path of ["/compare/", "/agents/", "/drift-index/"]) {
+for (const path of ["/compare/", "/agents/", "/drift-index/", "/guides/"]) {
   if (!sitemap.includes(`<loc>https://apidrifter.com${path}</loc>`))
     problems.push(`sitemap: missing ${path}`);
 }

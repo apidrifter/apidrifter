@@ -35,6 +35,8 @@ function surveyDate() {
 
 const POST_DATES = postDates();
 const SURVEY_DATE = surveyDate();
+/** The framework guides were last reviewed on this date; bump it when their content changes. */
+const GUIDES_DATE = new Date("2026-11-03T00:00:00Z");
 
 export default defineConfig({
   site: SITE_URL,
@@ -81,6 +83,14 @@ export default defineConfig({
             lastmod: SURVEY_DATE.toISOString(),
             changefreq: "monthly",
             priority: 0.8,
+          };
+        }
+        if (path.startsWith("/guides/")) {
+          return {
+            ...item,
+            lastmod: GUIDES_DATE.toISOString(),
+            changefreq: "monthly",
+            priority: 0.7,
           };
         }
         if (path === "/agents/" || path.startsWith("/compare/")) {

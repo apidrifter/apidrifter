@@ -1,0 +1,111 @@
+---
+import Base from "../../../layouts/Base.astro";
+import { exampleUrl, GUIDES, type Guide, guideSteps } from "../../../lib/guides";
+import { breadcrumbs, faqPage, howTo } from "../../../lib/jsonld";
+import { SITE } from "../../../lib/site";
+
+export async function getStaticPaths() {
+  return GUIDES.map((g) => ({ params: { framework: g.id }, props: { g } }));
+}
+
+interface Props {
+  g: Guide;
+}
+
+const { g } = Astro.props;
+const url = `${SITE.url}/guides/${g.id}/`;
+const steps = guideSteps(g);
+const example = exampleUrl(g);
+const jsonld = [
+  howTo({ url, name: g.title, description: g.description, steps }),
+  faqPage(g.faq),
+  breadcrumbs([
+    { name: SITE.name, url: `${SITE.url}/` },
+    { name: "Guides", url: `${SITE.url}/guides/` },
+    { name: g.framework, url },
+  ]),
+];
+---
+
+<Base
+  title={g.title}
+  description={g.description}
+  jsonld={jsonld}
+  markdownAlternate={`/guides/${g.id}/index.md`}
+>
+  <p class="post-meta">
+    <a href="/guides/">Guides</a> &middot; <a href={example} rel="noopener">Example on GitHub</a>
+    &middot; <a href="/docs/cli/">CLI reference</a> &middot;
+    <a href={`/guides/${g.id}/index.md`}>Markdown</a>
+  </p>
+  <h1>{g.title}</h1>
+  <p class="lede">{g.intro}</p>
+
+  <ol class="howto">
+    {
+      steps.map((s, i) => (
+        <li id={`step-${i + 1}`}>
+          <span class="n">0{i + 1}</span> <strong>{s.name}.</strong>{" "}
+          <a href={`#${["spec", "start", "run", "findings", "automatic"][i]}`}>Details</a>
+        </li>
+      ))
+    }
+  </ol>
+
+  <h2 id="spec">Where the {g.framework} spec comes from</h2>
+  {g.specSource.map((p) => <p>{p}</p>)}
+
+  <h2 id="start">Start the app</h2>
+  <p>
+    The commands below use the example from the repository; for your own app, start it the
+    way you normally do and note the port.
+  </p>
+  <pre><code>{g.startCommands}</code></pre>
+
+  <h2 id="run">Run apidrifter</h2>
+  <pre><code>{g.runCommands}</code></pre>
+  <p>{g.runNotes}</p>
+
+  <h2 id="findings">Read the findings and decide which side to fix</h2>
+  <p>
+    This is the real report for the example, which has one deliberate mismatch. Every finding
+    carries a stable rule ID, the operation and JSON location, and two fixes.
+  </p>
+  <pre><code>{g.findingExcerpt}</code></pre>
+  {g.findingNotes.map((p) => <p>{p}</p>)}
+
+  <h2 id="automatic">Make it automatic</h2>
+  <p>{g.automationIntro}</p>
+  <p>
+    First, an instructions file. Paste this into <code>CLAUDE.md</code>,
+    <code>AGENTS.md</code> or whatever file your coding agent reads; it is the paragraph from
+    the <a href="/agents/">agents page</a> with this framework&rsquo;s spec location and port
+    filled in.
+  </p>
+  <pre><code>{g.claudeMd}</code></pre>
+  <p>
+    Second, a job in CI that starts the app and runs the check with
+    <code>--fail-on breaking</code>. The example&rsquo;s
+    <code>.github/workflows/apidrifter.yml</code> has the full file; this is the live-check
+    job.
+  </p>
+  <pre><code>{g.ciSnippet}</code></pre>
+  <p>{g.automationOutro}</p>
+
+  <h2 id="faq">Frequently asked questions</h2>
+  <dl class="faq">
+    {
+      g.faq.map((item) => (
+        <>
+          <dt>{item.q}</dt>
+          <dd>{item.a}</dd>
+        </>
+      ))
+    }
+  </dl>
+
+  <p class="reviewed">
+    Example: <a href={example} rel="noopener">{`examples/${g.id}`}</a> in the repository. Last
+    reviewed <time datetime={g.reviewed}>{g.reviewed}</time> against apidrifter 0.1.0.
+  </p>
+</Base>
