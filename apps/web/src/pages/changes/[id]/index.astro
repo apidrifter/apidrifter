@@ -1,0 +1,160 @@
+---
+import Base from "../../../layouts/Base.astro";
+import {
+  type ChangeDay,
+  type WatchedApi,
+  countLabel,
+  historyFor,
+  loadDays,
+  loadWatchlist,
+  plural,
+} from "../../../lib/changes";
+import { breadcrumbs } from "../../../lib/jsonld";
+import { SITE } from "../../../lib/site";
+
+export async function getStaticPaths() {
+  const watchlist = await loadWatchlist();
+  const days = await loadDays();
+  return watchlist.map((api) => ({ params: { id: api.id }, props: { api, days } }));
+}
+
+interface Props {
+  api: WatchedApi;
+  days: ChangeDay[];
+}
+
+const { api, days } = Astro.props;
+const history = historyFor(days, api.id);
+const totals = history.reduce(
+  (acc, x) => ({
+    breaking: acc.breaking + x.entry.summary.breaking,
+    warning: acc.warning + x.entry.summary.warning,
+    info: acc.info + x.entry.summary.info,
+  }),
+  { breaking: 0, warning: 0, info: 0 },
+);
+const url = `${SITE.url}/changes/${api.id}/`;
+const title = `${api.name}: spec changes`;
+/** Meta description between 50 and 160 characters whatever the API name length. */
+function fit(candidates: string[]): string {
+  return candidates.find((c) => c.length <= 160) ?? candidates[candidates.length - 1];
+}
+const description =
+  history.length === 0
+    ? fit([
+        `Daily watch of the ${api.name} OpenAPI document. No changes recorded yet; breaking changes appear here and in the RSS feed when the spec moves.`,
+        `Daily watch of the ${api.name} OpenAPI document. Breaking changes appear here and in RSS when the spec moves.`,
+        `Daily watch of this OpenAPI document. Breaking changes appear here and in RSS when the spec moves.`,
+      ])
+    : fit([
+        `${plural(history.length, "day")} with changes in the ${api.name} OpenAPI document since ${history[history.length - 1].date}: ${countLabel(totals)}, diffed daily by apidrifter.`,
+        `${api.name} OpenAPI document: ${plural(history.length, "day")} with changes since ${history[history.length - 1].date}, ${countLabel(totals)}.`,
+        `${plural(history.length, "day")} with changes in this OpenAPI document since ${history[history.length - 1].date}: ${countLabel(totals)}, diffed daily by apidrifter.`,
+      ]);
+const jsonld = [
+  breadcrumbs([
+    { name: SITE.name, url: `${SITE.url}/` },
+    { name: "Changes", url: `${SITE.url}/changes/` },
+    { name: api.name, url },
+  ]),
+];
+const formatLabel = api.format.startsWith("swagger")
+  ? "Swagger 2.0, converted to OpenAPI 3 before diffing"
+  : `OpenAPI ${api.format.replace("openapi-", "")}`;
+---
+
+<Base title={title} description={description} jsonld={jsonld}>
+  <p class="post-meta">
+    <a href="/changes/">Changes</a> &middot; <a href="/changes/rss.xml">RSS</a> &middot;
+    <a href="/changes/feed.json">JSON Feed</a>
+  </p>
+  <h1>{api.name}: spec changes</h1>
+  <dl class="facts">
+    <dt>Spec</dt>
+    <dd><a href={api.spec} rel="noopener nofollow">{api.spec}</a> ({formatLabel})</dd>
+    <dt>Docs</dt>
+    <dd><a href={api.homepage} rel="noopener nofollow">{api.homepage}</a></dd>
+    <dt>Recorded</dt>
+    <dd>
+      {
+        history.length === 0
+          ? "no changes yet"
+          : `${plural(history.length, "day")} with changes, ${countLabel(totals)} in total`
+      }
+    </dd>
+  </dl>
+
+  {
+    history.length === 0 ? (
+      <p class="muted">
+        No changes recorded yet. The watcher snapshots this spec every day and records a diff the
+        first time the document changes.
+      </p>
+    ) : (
+      history.map((x) => (
+        <section class="group-section">
+          <h2 id={x.date}>
+            <time datetime={x.date}>{x.date}</time>{" "}
+            <span class="group-count">
+              <span class="sev-breaking">{x.entry.summary.breaking} breaking</span>,{" "}
+              <span class="sev-warning">{x.entry.summary.warning} warning</span>,{" "}
+              <span class="sev-info">{x.entry.summary.info} info</span>
+            </span>
+          </h2>
+          <p class="small muted">
+            {x.entry.total} changes, {x.entry.distinct} distinct
+            {x.entry.changes.length < x.entry.distinct ? `, first ${x.entry.changes.length} shown` : ""}.
+            {x.entry.before.version !== undefined && x.entry.after.version !== undefined
+              ? ` Version ${x.entry.before.version} to ${x.entry.after.version}.`
+              : ""}
+            {" "}Previous snapshot from <time datetime={x.entry.before.fetchedAt}>{x.entry.before.fetchedAt.slice(0, 10)}</time>
+            {x.entry.before.url !== x.entry.specUrl && (
+              <>
+                {" "}(<a href={x.entry.before.url} rel="noopener nofollow">before</a>,{" "}
+                <a href={x.entry.specUrl} rel="noopener nofollow">after</a>)
+              </>
+            )}.
+          </p>
+          <ul class="change-list">
+            {x.entry.changes.map((c) => (
+              <li>
+                <span class={`badge sev-${c.severity}`}>{c.severity}</span>{" "}
+                {c.subject !== undefined && <code>{c.subject}</code>}{" "}
+                {c.message}
+                {c.count > 1 && <span class="muted small"> (x{c.count})</span>}
+                <span class="muted small"> {c.id}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    )
+  }
+
+  <section class="doc-foot">
+    <p class="small muted">
+      Reproduce any day: fetch the two spec versions and run
+      <code>npx apidrifter diff before.json after.json</code>. Raw entries:
+      <a href={`${SITE.repo}/tree/main/tools/watch/changes`} rel="noopener">tools/watch/changes</a>.
+    </p>
+  </section>
+</Base>
+
+<style>
+  .change-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .change-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    overflow-wrap: anywhere;
+    font-size: 0.95rem;
+  }
+  .badge.sev-breaking,
+  .badge.sev-warning,
+  .badge.sev-info {
+    font-size: 0.72rem;
+  }
+</style>

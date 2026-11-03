@@ -1,0 +1,380 @@
+{
+  "date": "2026-11-03",
+  "generatedAt": "2026-11-03T13:48:52.575Z",
+  "entries": [
+    {
+      "id": "discord",
+      "name": "Discord API",
+      "homepage": "https://discord.com/developers/docs/reference",
+      "specUrl": "https://raw.githubusercontent.com/discord/discord-api-spec/4e75626a4cedfbc397d66f5491c79a9a62a71fd5/specs/openapi.json",
+      "fetchedAt": "2026-11-03T13:48:51.783Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/discord/discord-api-spec/9426d3c1d4b103484283d7feb568f2ef142712de/specs/openapi.json",
+        "fetchedAt": "2026-11-03T13:48:51.606Z",
+        "version": "10"
+      },
+      "after": {
+        "version": "10"
+      },
+      "summary": {
+        "breaking": 756,
+        "warning": 3,
+        "info": 3289
+      },
+      "total": 4048,
+      "distinct": 196,
+      "changes": [
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "POST /interactions/{interaction_id}/{interaction_token}/callback",
+          "message": "property \"proxy_url\" became optional",
+          "count": 72
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /channels/{channel_id}/messages",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /channels/{channel_id}/messages/pins",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /channels/{channel_id}/messages/{message_id}",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /channels/{channel_id}/pins",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /channels/{channel_id}/threads/archived/private",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /channels/{channel_id}/threads/archived/public",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /channels/{channel_id}/threads/search",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /channels/{channel_id}/users/@me/threads/archived/private",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /guilds/{guild_id}/messages/search",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /guilds/{guild_id}/threads/active",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /webhooks/{webhook_id}/{webhook_token}/messages/@original",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /webhooks/{webhook_id}/{webhook_token}/messages/{message_id}",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "PATCH /channels/{channel_id}/messages/{message_id}",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "PATCH /webhooks/{webhook_id}/{webhook_token}/messages/@original",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "PATCH /webhooks/{webhook_id}/{webhook_token}/messages/{message_id}",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "POST /channels/{channel_id}/messages",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "POST /channels/{channel_id}/messages/{message_id}/crosspost",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "POST /channels/{channel_id}/polls/{message_id}/expire",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "POST /webhooks/{webhook_id}/{webhook_token}",
+          "message": "property \"proxy_url\" became optional",
+          "count": 36
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /guilds/{guild_id}/audit-logs",
+          "message": "oneOf alternative \"title:ROLE_POSITION_UPDATE\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /guilds/{guild_id}/audit-logs",
+          "message": "oneOf alternative \"title:CHANNEL_POSITION_UPDATE\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /users/@me/connections",
+          "message": "oneOf alternative \"title:LETTERBOXD\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /interactions/{interaction_id}/{interaction_token}/callback",
+          "message": "property \"content_scan_metadata\" was added",
+          "count": 72
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /interactions/{interaction_id}/{interaction_token}/callback",
+          "message": "property \"flags\" was added",
+          "count": 72
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /interactions/{interaction_id}/{interaction_token}/callback",
+          "message": "property \"placeholder\" was added",
+          "count": 72
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /interactions/{interaction_id}/{interaction_token}/callback",
+          "message": "property \"placeholder_version\" was added",
+          "count": 72
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/messages",
+          "message": "property \"content_scan_metadata\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/messages",
+          "message": "property \"flags\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/messages",
+          "message": "property \"placeholder\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/messages",
+          "message": "property \"placeholder_version\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/messages/pins",
+          "message": "property \"content_scan_metadata\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/messages/pins",
+          "message": "property \"flags\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/messages/pins",
+          "message": "property \"placeholder\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/messages/pins",
+          "message": "property \"placeholder_version\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/messages/{message_id}",
+          "message": "property \"content_scan_metadata\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/messages/{message_id}",
+          "message": "property \"flags\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/messages/{message_id}",
+          "message": "property \"placeholder\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/messages/{message_id}",
+          "message": "property \"placeholder_version\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/pins",
+          "message": "property \"content_scan_metadata\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/pins",
+          "message": "property \"flags\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/pins",
+          "message": "property \"placeholder\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/pins",
+          "message": "property \"placeholder_version\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/threads/archived/private",
+          "message": "property \"content_scan_metadata\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/threads/archived/private",
+          "message": "property \"flags\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/threads/archived/private",
+          "message": "property \"placeholder\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/threads/archived/private",
+          "message": "property \"placeholder_version\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/threads/archived/public",
+          "message": "property \"content_scan_metadata\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/threads/archived/public",
+          "message": "property \"flags\" was added",
+          "count": 36
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /channels/{channel_id}/threads/archived/public",
+          "message": "property \"placeholder\" was added",
+          "count": 36
+        }
+      ]
+    }
+  ]
+}

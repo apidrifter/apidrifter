@@ -1,5 +1,6 @@
 import { getCollection } from "astro:content";
 import type { APIRoute } from "astro";
+import { loadWatchlist } from "../lib/changes";
 import { COMPARISONS } from "../lib/compare";
 import { DOC_PAGES, SITE } from "../lib/site";
 import { loadSummary } from "../lib/survey";
@@ -9,6 +10,7 @@ export const GET: APIRoute = async () => {
     (a, b) => b.data.date.getTime() - a.data.date.getTime(),
   );
   const summary = await loadSummary();
+  const watched = await loadWatchlist();
   const lines: string[] = [
     `# ${SITE.name}`,
     "",
@@ -50,6 +52,13 @@ export const GET: APIRoute = async () => {
     `- [Public API drift index](${SITE.url}/drift-index/): the surveyed APIs ranked by hard spec violations, with method and status per API; updated monthly. Markdown twin: ${SITE.url}/drift-index/index.md`,
     "",
     `Survey data: ${summary.totals.withHard} of ${summary.totals.apis} surveyed public APIs had hard spec violations on successful responses (${summary.totals.hard} distinct schema locations). Per-API pages: ${SITE.url}/research/<post>/<api-id>/ with Markdown twins at .../index.md. Raw JSON: ${SITE.resultsUrl}`,
+    "",
+    "## Spec change feed",
+    "",
+    `- [API spec change feed](${SITE.url}/changes/): daily diffs of ${watched.length} public OpenAPI specs (GitHub, Stripe, OpenAI, Cloudflare, Kubernetes and more), breaking changes first. Per-API history: ${SITE.url}/changes/<api-id>/`,
+    `- [JSON Feed](${SITE.url}/changes/feed.json): every API-day with changes, including the change rows (rule id, severity, subject, message).`,
+    `- [RSS](${SITE.url}/changes/rss.xml): API-days with breaking changes only.`,
+    `- Watched API ids: ${watched.map((a) => a.id).join(", ")}.`,
     "",
     "## Optional",
     "",

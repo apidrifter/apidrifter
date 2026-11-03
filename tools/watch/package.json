@@ -1,0 +1,16 @@
+{
+  "name": "@apidrifter/watch",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Daily watch of public OpenAPI documents: snapshot, diff with the CLI, publish a change feed.",
+  "type": "module",
+  "scripts": {
+    "snapshot": "node snapshot.mjs",
+    "diff": "node diff.mjs",
+    "post": "node post.mjs"
+  },
+  "dependencies": {
+    "swagger2openapi": "7.0.8",
+    "yaml": "2.9.1"
+  }
+}

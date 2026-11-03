@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-11-03T13:48:52.576Z",
+  "days": 90,
+  "entries": [
+    {
+      "date": "2026-11-03",
+      "apis": [
+        {
+          "id": "discord",
+          "name": "Discord API",
+          "breaking": 756,
+          "warning": 3,
+          "info": 3289,
+          "total": 4048
+        }
+      ]
+    }
+  ]
+}

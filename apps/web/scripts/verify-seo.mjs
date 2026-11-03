@@ -54,6 +54,7 @@ function checkPage(file) {
   if (
     rel === "/index.html" ||
     /\/research\/.+\/index\.html$/.test(rel) ||
+    /\/changes\/.*index\.html$/.test(rel) ||
     /\/docs\/.+\/index\.html$/.test(rel) ||
     /^\/(compare|agents|drift-index)\//.test(rel)
   ) {
@@ -83,6 +84,8 @@ for (const f of [
   "sitemap-index.xml",
   "sitemap-0.xml",
   "research/rss.xml",
+  "changes/rss.xml",
+  "changes/feed.json",
 ]) {
   if (!existsSync(join(dist, f))) problems.push(`missing ${f}`);
 }

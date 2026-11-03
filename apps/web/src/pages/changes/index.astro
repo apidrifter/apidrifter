@@ -1,0 +1,178 @@
+---
+import Base from "../../layouts/Base.astro";
+import { countLabel, loadDays, loadWatchlist, plural } from "../../lib/changes";
+import { breadcrumbs, dataset } from "../../lib/jsonld";
+import { SITE } from "../../lib/site";
+
+const INDEX_DAYS = 30;
+const SHOWN_CHANGES = 12;
+
+const watchlist = await loadWatchlist();
+const days = await loadDays();
+const recent = days.slice(0, INDEX_DAYS);
+const firstDate = days.length > 0 ? days[days.length - 1].date : undefined;
+const lastDate = days.length > 0 ? days[0].date : undefined;
+const url = `${SITE.url}/changes/`;
+const changesRaw = `${SITE.repo}/tree/main/tools/watch/changes`;
+
+const title = "API spec change feed";
+const description = `Daily diffs of ${watchlist.length} public OpenAPI specs (GitHub, Stripe, OpenAI, Cloudflare and more), with breaking changes classified by the apidrifter engine. RSS and JSON.`;
+const jsonld = [
+  breadcrumbs([
+    { name: SITE.name, url: `${SITE.url}/` },
+    { name: "Changes", url },
+  ]),
+  {
+    ...dataset({
+      url,
+      name: "Public API spec change feed",
+      description:
+        "Day-by-day changes in the published OpenAPI documents of well-known public APIs, classified as breaking, warning or info by the apidrifter diff engine.",
+      dateCreated: firstDate ?? "2026-11-03",
+    }),
+    dateModified: lastDate ?? "2026-11-03",
+    temporalCoverage: firstDate !== undefined && lastDate !== undefined ? `${firstDate}/${lastDate}` : undefined,
+    distribution: [
+      { "@type": "DataDownload", encodingFormat: "application/feed+json", contentUrl: `${url}feed.json` },
+      { "@type": "DataDownload", encodingFormat: "application/rss+xml", contentUrl: `${url}rss.xml` },
+      { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: changesRaw },
+    ],
+    includedInDataCatalog: { "@type": "DataCatalog", name: "API Drifter research", url: changesRaw },
+  },
+];
+---
+
+<Base title={title} description={description} jsonld={jsonld}>
+  <h1>API spec change feed</h1>
+  <p class="lede">
+    What changed in the published OpenAPI documents of {watchlist.length} public APIs, checked
+    once a day and diffed with the same engine as <code>npx apidrifter diff</code>.
+  </p>
+  <p class="muted">
+    <a href="/changes/rss.xml">RSS (breaking changes)</a> &middot;
+    <a href="/changes/feed.json">JSON Feed (all changes)</a> &middot;
+    <a href={changesRaw} rel="noopener">raw data</a> &middot;
+    <a href="/docs/cli/">CLI docs</a>
+  </p>
+
+  <h2 id="how">How this is generated</h2>
+  <p>
+    A scheduled job fetches each spec from the URL its publisher maintains, converts Swagger 2.0
+    to OpenAPI 3 where needed, and keeps the previous version. When the bytes change, it runs
+    <code>apidrifter diff previous current --format json</code> and records up to 50 distinct
+    changes per API per day, breaking first. Severity follows the
+    <a href="/docs/rules/">rules reference</a>: a property becoming required is breaking in a
+    request and harmless in a response. Days without changes are not recorded. Nothing here is
+    hand-edited; the runner lives in <code>tools/watch</code> in the
+    <a href={SITE.repo} rel="noopener">repository</a>.
+  </p>
+  <p class="small muted">
+    Names, paths and messages below come from third-party documents. A high count on one day
+    usually means a schema shared by many operations changed once.
+  </p>
+
+  <h2 id="days">Recent days</h2>
+  {
+    recent.length === 0 ? (
+      <p class="muted">No changes recorded yet. The first diff appears the day after the first snapshot.</p>
+    ) : (
+      recent.map((d) => (
+        <section class="group-section">
+          <h3 id={`d-${d.date}`}>
+            <time datetime={d.date}>{d.date}</time>{" "}
+            <span class="group-count">{plural(d.entries.length, "API")}</span>
+          </h3>
+          {d.entries.map((e) => (
+            <details class="group" open={e.summary.breaking > 0}>
+              <summary>
+                <a href={`/changes/${e.id}/`}>{e.name}</a>
+                <span class="count">
+                  <span class="sev-breaking">{e.summary.breaking} breaking</span>,{" "}
+                  <span class="sev-warning">{e.summary.warning} warning</span>,{" "}
+                  <span class="sev-info">{e.summary.info} info</span>
+                </span>
+              </summary>
+              <ul class="change-list">
+                {e.changes.slice(0, SHOWN_CHANGES).map((c) => (
+                  <li>
+                    <span class={`badge sev-${c.severity}`}>{c.severity}</span>{" "}
+                    {c.subject !== undefined && <code>{c.subject}</code>}{" "}
+                    {c.message}
+                    {c.count > 1 && <span class="muted small"> (x{c.count})</span>}
+                    <span class="muted small"> {c.id}</span>
+                  </li>
+                ))}
+              </ul>
+              <p class="small muted change-foot">
+                {e.changes.length > SHOWN_CHANGES
+                  ? `${e.changes.length - SHOWN_CHANGES} more on `
+                  : "Full list and history on "}
+                <a href={`/changes/${e.id}/`}>the {e.name} page</a>. {countLabel(e.summary)} in total.
+              </p>
+            </details>
+          ))}
+        </section>
+      ))
+    )
+  }
+  {
+    days.length > INDEX_DAYS && (
+      <p class="muted small">Older days are on the per-API pages below.</p>
+    )
+  }
+
+  <h2 id="apis">Watched APIs</h2>
+  <ul class="post-list api-list">
+    {
+      watchlist.map((a) => {
+        const n = days.reduce((acc, d) => acc + (d.entries.some((e) => e.id === a.id) ? 1 : 0), 0);
+        return (
+          <li>
+            <a href={`/changes/${a.id}/`}>{a.name}</a>
+            <span class="muted small">
+              {" "}
+              {n === 0 ? "no changes recorded" : plural(n, "day") + " with changes"} &middot;{" "}
+              <a href={a.homepage} rel="noopener nofollow">
+                docs
+              </a>
+            </span>
+          </li>
+        );
+      })
+    }
+  </ul>
+  <p class="small muted">
+    Want an API added? Open a pull request on <code>tools/watch/watchlist.json</code>. The spec
+    must be published at a stable URL by its owner.
+  </p>
+</Base>
+
+<style>
+  .change-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 16px 8px;
+    border-top: 1px solid var(--line);
+  }
+  .change-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    overflow-wrap: anywhere;
+    font-size: 0.95rem;
+  }
+  .change-list li:last-child {
+    border-bottom: 0;
+  }
+  .change-foot {
+    padding: 0 16px 12px;
+    margin: 0;
+  }
+  .api-list li {
+    padding: 6px 0;
+  }
+  .badge.sev-breaking,
+  .badge.sev-warning,
+  .badge.sev-info {
+    font-size: 0.72rem;
+  }
+</style>
