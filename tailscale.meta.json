@@ -1,0 +1,12 @@
+{
+  "id": "tailscale",
+  "url": "https://api.tailscale.com/api/v2?outputOpenapiSchema=true",
+  "fetchedAt": "2026-11-04T06:54:44.445Z",
+  "checkedAt": "2026-11-04T06:54:44.445Z",
+  "sha256": "115a40c8a96d816b88dda6daae41a46f4b764517cb13c9f245d0e5e219c5b5b8",
+  "bytes": 250162,
+  "etag": "\"115a40c8a96d816b88dda6daae41a46f4b764517cb13c9f245d0e5e219c5b5b8\"",
+  "contentType": "application/yaml",
+  "sourceFormat": "openapi-3.1.0",
+  "version": "v2"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "datadog",
+  "url": "https://raw.githubusercontent.com/DataDog/datadog-api-client-typescript/master/.generator/schemas/v2/openapi.yaml",
+  "fetchedAt": "2026-11-04T06:54:37.717Z",
+  "checkedAt": "2026-11-04T06:54:37.717Z",
+  "sha256": "8cba49be1f1dbf93b88340c6bd4e92e93d8dd09d69cfb36ab3894492509f393f",
+  "bytes": 9376792,
+  "etag": "W/\"b4d6b4da4f28d1dc985ecaf2d2d55ac93659a499cbc46d4e034af1b0ebd7a421\"",
+  "contentType": "text/plain; charset=utf-8",
+  "sourceFormat": "openapi-3.0.0",
+  "version": "1.0"
+}

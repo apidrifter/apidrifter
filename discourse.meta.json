@@ -1,0 +1,13 @@
+{
+  "id": "discourse",
+  "url": "https://docs.discourse.org/openapi.json",
+  "fetchedAt": "2026-11-04T06:54:44.727Z",
+  "checkedAt": "2026-11-04T06:54:44.727Z",
+  "sha256": "655f381c1c27cd5eb918feb8037881fb234643b95a7b3a6a34071701ed96269b",
+  "bytes": 722566,
+  "etag": "W/\"6ae5f05f-b0686\"",
+  "lastModified": "Sat, 31 Oct 2026 13:42:55 GMT",
+  "contentType": "application/json; charset=utf-8",
+  "sourceFormat": "openapi-3.1.0",
+  "version": "latest"
+}

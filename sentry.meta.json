@@ -1,0 +1,12 @@
+{
+  "id": "sentry",
+  "url": "https://raw.githubusercontent.com/getsentry/sentry-api-schema/main/openapi-derefed.json",
+  "fetchedAt": "2026-11-04T06:54:40.135Z",
+  "checkedAt": "2026-11-04T06:54:40.135Z",
+  "sha256": "f952a3e370b2c32e442a2abadbe98a0e4184abe1d7e5791af8255f3703a5b247",
+  "bytes": 4804937,
+  "etag": "W/\"2e9ad2f87c0cf24fad6e167d59d1b11282472edbe3b3e2dc69b51d52dbf0397b\"",
+  "contentType": "text/plain; charset=utf-8",
+  "sourceFormat": "openapi-3.0.3",
+  "version": "v0"
+}
