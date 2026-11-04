@@ -223,6 +223,16 @@ async function writeIndex() {
       })),
     });
   }
+  // Only rewrite the index when its entries change. A timestamp-only rewrite would commit to
+  // main every day, which rebuilds and redeploys the site for nothing.
+  const indexPath = resolve(CHANGES_DIR, "index.json");
+  let previous = null;
+  try {
+    previous = JSON.parse(await readFile(indexPath, "utf8"));
+  } catch {
+    // first run
+  }
+  if (previous && JSON.stringify(previous.entries) === JSON.stringify(days)) return;
   const index = { generatedAt: new Date().toISOString(), days: INDEX_DAYS, entries: days };
-  await writeFile(resolve(CHANGES_DIR, "index.json"), `${JSON.stringify(index, null, 2)}\n`);
+  await writeFile(indexPath, `${JSON.stringify(index, null, 2)}\n`);
 }
