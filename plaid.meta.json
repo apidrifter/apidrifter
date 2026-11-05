@@ -1,12 +1,12 @@
 {
   "id": "plaid",
   "url": "https://raw.githubusercontent.com/plaid/plaid-openapi/master/2020-09-14.yml",
-  "fetchedAt": "2026-11-04T06:54:36.546Z",
-  "checkedAt": "2026-11-04T06:54:36.546Z",
-  "sha256": "0914d09677392d647dd4c37740ea1b30bfdd33ac71a254c20c89822c9566c4be",
-  "bytes": 3342111,
-  "etag": "W/\"0ad5bd54a10b83fbbf36b422812b49b1f267d4f0594001e5d806f7f48fca2ae4\"",
+  "fetchedAt": "2026-11-05T06:56:29.602Z",
+  "checkedAt": "2026-11-05T06:56:29.602Z",
+  "sha256": "ef42469087e2c93242baaa8b83c90fb949f44d3dbae8ac0354d4bfd4cad2947d",
+  "bytes": 3346623,
+  "etag": "W/\"a5efca212aa0274ef7c3f1b260a9dff065013e73b2a497cbde1d2d79cf401d70\"",
   "contentType": "text/plain; charset=utf-8",
   "sourceFormat": "openapi-3.0.0",
-  "version": "2020-09-14_1.792.1"
+  "version": "2020-09-14_1.799.0"
 }
