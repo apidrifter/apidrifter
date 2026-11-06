@@ -1,7 +1,100 @@
 {
-  "generatedAt": "2026-11-05T06:57:12.309Z",
+  "generatedAt": "2026-11-06T06:55:54.096Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-06",
+      "apis": [
+        {
+          "id": "vercel",
+          "name": "Vercel REST API",
+          "breaking": 1423,
+          "warning": 88,
+          "info": 1528,
+          "total": 3039
+        },
+        {
+          "id": "sentry",
+          "name": "Sentry API",
+          "breaking": 162,
+          "warning": 134,
+          "info": 3971,
+          "total": 4267
+        },
+        {
+          "id": "datadog",
+          "name": "Datadog API (v2)",
+          "breaking": 122,
+          "warning": 204,
+          "info": 357,
+          "total": 683
+        },
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 116,
+          "warning": 54,
+          "info": 159,
+          "total": 329
+        },
+        {
+          "id": "openai",
+          "name": "OpenAI API",
+          "breaking": 3,
+          "warning": 30,
+          "info": 19,
+          "total": 52
+        },
+        {
+          "id": "github",
+          "name": "GitHub REST API",
+          "breaking": 1,
+          "warning": 2,
+          "info": 10,
+          "total": 13
+        },
+        {
+          "id": "digitalocean",
+          "name": "DigitalOcean API",
+          "breaking": 0,
+          "warning": 4,
+          "info": 139,
+          "total": 143
+        },
+        {
+          "id": "supabase",
+          "name": "Supabase Management API",
+          "breaking": 0,
+          "warning": 3,
+          "info": 12,
+          "total": 15
+        },
+        {
+          "id": "jira",
+          "name": "Jira Cloud platform REST API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 2,
+          "total": 2
+        },
+        {
+          "id": "twilio",
+          "name": "Twilio API (2010-04-01)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 4,
+          "total": 4
+        },
+        {
+          "id": "x",
+          "name": "X API (v2)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 6,
+          "total": 6
+        }
+      ]
+    },
     {
       "date": "2026-11-05",
       "apis": [
