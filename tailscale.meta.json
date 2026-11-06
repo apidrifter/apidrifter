@@ -2,7 +2,7 @@
   "id": "tailscale",
   "url": "https://api.tailscale.com/api/v2?outputOpenapiSchema=true",
   "fetchedAt": "2026-11-04T06:54:44.445Z",
-  "checkedAt": "2026-11-05T06:56:39.467Z",
+  "checkedAt": "2026-11-06T06:55:37.001Z",
   "sha256": "115a40c8a96d816b88dda6daae41a46f4b764517cb13c9f245d0e5e219c5b5b8",
   "bytes": 250162,
   "etag": "\"115a40c8a96d816b88dda6daae41a46f4b764517cb13c9f245d0e5e219c5b5b8\"",
