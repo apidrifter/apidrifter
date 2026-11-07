@@ -2,7 +2,7 @@
   "id": "stripe",
   "url": "https://raw.githubusercontent.com/stripe/openapi/master/openapi/spec3.json",
   "fetchedAt": "2026-11-04T06:54:27.695Z",
-  "checkedAt": "2026-11-06T06:55:22.297Z",
+  "checkedAt": "2026-11-07T06:40:03.993Z",
   "sha256": "7cff4cc46d0654101a36a3302f7544640f5f73e4f3cad6f264f0e23c19fa1776",
   "bytes": 8317513,
   "etag": "W/\"66ba08254f450bce0bd8d29a246d321c5884608896a23c223994bc75bc4a0a92\"",
