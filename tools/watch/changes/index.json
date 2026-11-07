@@ -1,7 +1,100 @@
 {
-  "generatedAt": "2026-11-06T06:55:54.096Z",
+  "generatedAt": "2026-11-07T06:40:41.261Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-07",
+      "apis": [
+        {
+          "id": "vercel",
+          "name": "Vercel REST API",
+          "breaking": 1718,
+          "warning": 48,
+          "info": 1729,
+          "total": 3495
+        },
+        {
+          "id": "kubernetes",
+          "name": "Kubernetes API",
+          "breaking": 110,
+          "warning": 5,
+          "info": 939,
+          "total": 1054
+        },
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 49,
+          "warning": 9,
+          "info": 40,
+          "total": 98
+        },
+        {
+          "id": "sentry",
+          "name": "Sentry API",
+          "breaking": 5,
+          "warning": 1,
+          "info": 612,
+          "total": 618
+        },
+        {
+          "id": "github",
+          "name": "GitHub REST API",
+          "breaking": 0,
+          "warning": 4,
+          "info": 18,
+          "total": 22
+        },
+        {
+          "id": "datadog",
+          "name": "Datadog API (v2)",
+          "breaking": 0,
+          "warning": 1,
+          "info": 25,
+          "total": 26
+        },
+        {
+          "id": "digitalocean",
+          "name": "DigitalOcean API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 10,
+          "total": 10
+        },
+        {
+          "id": "openai",
+          "name": "OpenAI API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 34,
+          "total": 34
+        },
+        {
+          "id": "supabase",
+          "name": "Supabase Management API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 3,
+          "total": 3
+        },
+        {
+          "id": "tailscale",
+          "name": "Tailscale API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 6,
+          "total": 6
+        },
+        {
+          "id": "x",
+          "name": "X API (v2)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 351,
+          "total": 351
+        }
+      ]
+    },
     {
       "date": "2026-11-06",
       "apis": [

@@ -1,0 +1,2594 @@
+{
+  "date": "2026-11-07",
+  "generatedAt": "2026-11-07T06:40:41.258Z",
+  "entries": [
+    {
+      "id": "vercel",
+      "name": "Vercel REST API",
+      "homepage": "https://vercel.com/docs/rest-api",
+      "specUrl": "https://openapi.vercel.sh/",
+      "fetchedAt": "2026-11-07T06:40:08.827Z",
+      "before": {
+        "url": "https://openapi.vercel.sh/",
+        "fetchedAt": "2026-11-06T06:55:27.921Z",
+        "version": "0.0.1"
+      },
+      "after": {
+        "version": "0.0.1"
+      },
+      "summary": {
+        "breaking": 1718,
+        "warning": 48,
+        "info": 1729
+      },
+      "total": 3495,
+      "distinct": 1560,
+      "changes": [
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"projectId\" was removed",
+          "count": 64
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"projectName\" was removed",
+          "count": 54
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"previous\" was removed",
+          "count": 30
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"next\" was removed",
+          "count": 29
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"name\" was removed",
+          "count": 25
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"actorType\" was removed",
+          "count": 21
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"source\" was removed",
+          "count": 20
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"reason\" was removed",
+          "count": 18
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"project\" was removed",
+          "count": 17
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"actorName\" was removed",
+          "count": 17
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"id\" was removed",
+          "count": 16
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"actorId\" was removed",
+          "count": 15
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"enabled\" was removed",
+          "count": 15
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"scope\" was removed",
+          "count": 14
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"domain\" was removed",
+          "count": 14
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"action\" was removed",
+          "count": 13
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"teamId\" was removed",
+          "count": 13
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"integrationName\" was removed",
+          "count": 12
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"email\" was removed",
+          "count": 12
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"type\" was removed",
+          "count": 11
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"ownerId\" was removed",
+          "count": 11
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"organizationId\" was removed",
+          "count": 11
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"username\" was removed",
+          "count": 11
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"team\" was removed",
+          "count": 10
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"deploymentId\" was removed",
+          "count": 10
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"target\" was removed",
+          "count": 9
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"slug\" was removed",
+          "count": 9
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"provider\" was removed",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"teamSlug\" was removed",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"projectName\" became optional",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"projectId\" became optional",
+          "count": 7
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"configurationId\" was removed",
+          "count": 7
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"integrationId\" was removed",
+          "count": 7
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"integrationSlug\" was removed",
+          "count": 7
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"origin\" was removed",
+          "count": 7
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"userAgent\" was removed",
+          "count": 7
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"environment\" was removed",
+          "count": 6
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"userId\" was removed",
+          "count": 6
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"configuration\" was removed",
+          "count": 6
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"url\" was removed",
+          "count": 6
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"edgeConfigId\" was removed",
+          "count": 6
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"teamName\" was removed",
+          "count": 6
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"justification\" was removed",
+          "count": 6
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"budget\" was removed",
+          "count": 6
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"sessionId\" was removed",
+          "count": 6
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"appName\" was removed",
+          "count": 6
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"subscriptionId\" was removed",
+          "count": 5
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"alias\" was removed",
+          "count": 5
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"plan\" was removed",
+          "count": 5
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"currency\" was removed",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "kubernetes",
+      "name": "Kubernetes API",
+      "homepage": "https://kubernetes.io/docs/reference/kubernetes-api/",
+      "specUrl": "https://raw.githubusercontent.com/kubernetes/kubernetes/master/api/openapi-spec/swagger.json",
+      "fetchedAt": "2026-11-07T06:40:08.142Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/kubernetes/kubernetes/master/api/openapi-spec/swagger.json",
+        "fetchedAt": "2026-11-05T06:56:26.074Z",
+        "version": "unversioned"
+      },
+      "after": {
+        "version": "unversioned"
+      },
+      "summary": {
+        "breaking": 110,
+        "warning": 5,
+        "info": 939
+      },
+      "total": 1054,
+      "distinct": 79,
+      "changes": [
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "POST /api/v1/namespaces/{namespace}/pods",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 12
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "DELETE /api/v1/namespaces/{namespace}/pods/{name}",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "PATCH /api/v1/namespaces/{namespace}/pods/{name}",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "PATCH /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "PATCH /api/v1/namespaces/{namespace}/pods/{name}/resize",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "PATCH /api/v1/namespaces/{namespace}/pods/{name}/status",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "PUT /api/v1/namespaces/{namespace}/pods/{name}",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "PUT /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "PUT /api/v1/namespaces/{namespace}/pods/{name}/resize",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "PUT /api/v1/namespaces/{namespace}/pods/{name}/status",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /api/v1/namespaces/{namespace}/pods",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 5
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /api/v1/pods",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 5
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /api/v1/namespaces/{namespace}/pods/{name}",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 4
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 4
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /api/v1/namespaces/{namespace}/pods/{name}/resize",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 4
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /api/v1/namespaces/{namespace}/pods/{name}/status",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 4
+        },
+        {
+          "id": "request-property-property-removed",
+          "severity": "warning",
+          "subject": "POST /api/v1/namespaces/{namespace}/pods",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-removed",
+          "severity": "warning",
+          "subject": "PUT /api/v1/namespaces/{namespace}/pods/{name}",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-removed",
+          "severity": "warning",
+          "subject": "PUT /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-removed",
+          "severity": "warning",
+          "subject": "PUT /api/v1/namespaces/{namespace}/pods/{name}/resize",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-removed",
+          "severity": "warning",
+          "subject": "PUT /api/v1/namespaces/{namespace}/pods/{name}/status",
+          "message": "property \"volumeHealth\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /api/v1/namespaces/{namespace}/persistentvolumeclaims",
+          "message": "the description changed",
+          "count": 48
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /apis/apps/v1/namespaces/{namespace}/statefulsets",
+          "message": "the description changed",
+          "count": 48
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /apis/storage.k8s.io/v1/csinodes",
+          "message": "the description changed",
+          "count": 48
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "DELETE /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "DELETE /apis/storage.k8s.io/v1/csinodes/{name}",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /apis/apps/v1/namespaces/{namespace}/statefulsets/{name}",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /apis/apps/v1/namespaces/{namespace}/statefulsets/{name}/status",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /apis/storage.k8s.io/v1/csinodes/{name}",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /apis/storage.k8s.io/v1/csinodes/{name}/status",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /apis/apps/v1/namespaces/{namespace}/statefulsets/{name}",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /apis/apps/v1/namespaces/{namespace}/statefulsets/{name}/status",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /apis/storage.k8s.io/v1/csinodes/{name}",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /apis/storage.k8s.io/v1/csinodes/{name}/status",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/v1/namespaces/{namespace}/persistentvolumeclaims",
+          "message": "the description changed",
+          "count": 20
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/v1/persistentvolumeclaims",
+          "message": "the description changed",
+          "count": 20
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /apis/apps/v1/namespaces/{namespace}/statefulsets",
+          "message": "the description changed",
+          "count": 20
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /apis/apps/v1/statefulsets",
+          "message": "the description changed",
+          "count": 20
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /apis/storage.k8s.io/v1/csinodes",
+          "message": "the description changed",
+          "count": 20
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}",
+          "message": "the description changed",
+          "count": 16
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status",
+          "message": "the description changed",
+          "count": 16
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /apis/apps/v1/namespaces/{namespace}/statefulsets/{name}",
+          "message": "the description changed",
+          "count": 16
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /apis/apps/v1/namespaces/{namespace}/statefulsets/{name}/status",
+          "message": "the description changed",
+          "count": 16
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /apis/storage.k8s.io/v1/csinodes/{name}",
+          "message": "the description changed",
+          "count": 16
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /apis/storage.k8s.io/v1/csinodes/{name}/status",
+          "message": "the description changed",
+          "count": 16
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /api/v1/namespaces/{namespace}/pods",
+          "message": "property \"volumeStatuses\" was added",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare API",
+      "homepage": "https://developers.cloudflare.com/api/",
+      "specUrl": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
+      "fetchedAt": "2026-11-07T06:40:06.021Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
+        "fetchedAt": "2026-11-06T06:55:24.610Z",
+        "version": "4.0.0"
+      },
+      "after": {
+        "version": "4.0.0"
+      },
+      "summary": {
+        "breaking": 49,
+        "warning": 9,
+        "info": 40
+      },
+      "total": 98,
+      "distinct": 81,
+      "changes": [
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /zones/{zone_id}/custom_hostnames",
+          "message": "property \"custom_certificate\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /zones/{zone_id}/custom_hostnames",
+          "message": "property \"custom_key\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /zones/{zone_id}/custom_hostnames/{custom_hostname_id}",
+          "message": "property \"custom_certificate\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /zones/{zone_id}/custom_hostnames/{custom_hostname_id}",
+          "message": "property \"custom_key\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "PATCH /zones/{zone_id}/custom_hostnames/{custom_hostname_id}",
+          "message": "property \"custom_certificate\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "PATCH /zones/{zone_id}/custom_hostnames/{custom_hostname_id}",
+          "message": "property \"custom_key\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "POST /zones/{zone_id}/custom_hostnames",
+          "message": "property \"custom_certificate\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "POST /zones/{zone_id}/custom_hostnames",
+          "message": "property \"custom_key\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "PUT /zones/{zone_id}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}/certificates/{certificate_id}",
+          "message": "property \"custom_certificate\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "PUT /zones/{zone_id}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}/certificates/{certificate_id}",
+          "message": "property \"custom_key\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /zones/{zone_id}/argo/tiered_caching",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /zones/{zone_id}/cache/cache_reserve",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /zones/{zone_id}/cache/origin_post_quantum_encryption",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /zones/{zone_id}/cache/regional_tiered_cache",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /zones/{zone_id}/cache/tiered_cache_smart_topology_enable",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /zones/{zone_id}/cache/variants",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /zones/{zone_id}/settings/aegis",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /zones/{zone_id}/settings/origin_max_http_version",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /zones/{zone_id}/settings/origin_tls_compliance_modes",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PATCH /zones/{zone_id}/argo/tiered_caching",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PATCH /zones/{zone_id}/cache/cache_reserve",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PATCH /zones/{zone_id}/cache/regional_tiered_cache",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PATCH /zones/{zone_id}/cache/tiered_cache_smart_topology_enable",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PATCH /zones/{zone_id}/cache/variants",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PATCH /zones/{zone_id}/settings/aegis",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PATCH /zones/{zone_id}/settings/origin_max_http_version",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PATCH /zones/{zone_id}/settings/origin_tls_compliance_modes",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "POST /accounts/{account_id}/ai-gateway/billing/topup/eligibility",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "POST /accounts/{account_id}/ai-gateway/billing/topup/eligibility",
+          "message": "property \"account_payment_method_state\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "POST /accounts/{account_id}/ai-gateway/billing/topup/eligibility",
+          "message": "property \"aig_customer_state\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "POST /accounts/{account_id}/ai-gateway/billing/topup/eligibility",
+          "message": "property \"aig_default_payment_method_state\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "POST /accounts/{account_id}/ai-gateway/billing/topup/eligibility",
+          "message": "property \"display_payment_method\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "POST /accounts/{account_id}/ai-gateway/billing/topup/eligibility",
+          "message": "property \"eligible\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "POST /accounts/{account_id}/ai-gateway/billing/topup/eligibility",
+          "message": "property \"reason\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "POST /accounts/{account_id}/ai-gateway/billing/topup/eligibility",
+          "message": "property \"recommended_action\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "POST /accounts/{account_id}/ai-gateway/billing/topup/eligibility",
+          "message": "property \"recoverable\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "POST /zones/{zone_id}/cache/tiered_cache_smart_topology_enable",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PUT /zones/{zone_id}/cache/origin_post_quantum_encryption",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PUT /zones/{zone_id}/settings/origin_tls_compliance_modes",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-removed",
+          "severity": "warning",
+          "subject": "GET /organizations/{organization_id}/accounts",
+          "message": "query parameter \"page\" was removed",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-removed",
+          "severity": "warning",
+          "subject": "GET /organizations/{organization_id}/accounts",
+          "message": "query parameter \"per_page\" was removed",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-removed",
+          "severity": "warning",
+          "subject": "GET /tenants/{tenant_id}/accounts",
+          "message": "query parameter \"page\" was removed",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-removed",
+          "severity": "warning",
+          "subject": "GET /tenants/{tenant_id}/accounts",
+          "message": "query parameter \"per_page\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "POST /accounts/{account_id}/ai-gateway/billing/topup/eligibility",
+          "message": "anyOf alternative \"ref:#/components/schemas/aig-billing_GetTopupEligibilityResult\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "POST /accounts/{account_id}/ai-gateway/billing/topup/eligibility",
+          "message": "anyOf alternative \"ref:#/components/schemas/aig-billing_GetAuthoritativeTopupEligibilityResult\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "POST /accounts/{account_id}/email/sending/send",
+          "message": "enum value \"\\\"email.sending.error.email.recipient_plan_restricted\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "POST /accounts/{account_id}/email/sending/send_raw",
+          "message": "enum value \"\\\"email.sending.error.email.recipient_plan_restricted\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-default-removed",
+          "severity": "warning",
+          "subject": "PUT /accounts/{account_id}/ai-gateway/gateways/{id}",
+          "message": "the default value was removed",
+          "count": 1
+        },
+        {
+          "id": "request-property-description-changed",
+          "severity": "info",
+          "subject": "POST /accounts/{account_id}/abuse-reports/{report_param}",
+          "message": "the description changed",
+          "count": 8
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "DELETE /accounts/{account_id}/cloudforce-one/events/datasets/preferences",
+          "message": "operation was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "sentry",
+      "name": "Sentry API",
+      "homepage": "https://docs.sentry.io/api/",
+      "specUrl": "https://raw.githubusercontent.com/getsentry/sentry-api-schema/main/openapi-derefed.json",
+      "fetchedAt": "2026-11-07T06:40:13.857Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/getsentry/sentry-api-schema/main/openapi-derefed.json",
+        "fetchedAt": "2026-11-06T06:55:33.870Z",
+        "version": "v0"
+      },
+      "after": {
+        "version": "v0"
+      },
+      "summary": {
+        "breaking": 5,
+        "warning": 1,
+        "info": 612
+      },
+      "total": 618,
+      "distinct": 127,
+      "changes": [
+        {
+          "id": "request-parameter-min-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/environments/",
+          "message": "minLength 1 was added",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-type-changed",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/events-timeseries/",
+          "message": "type changed from \"string\" to \"array\"",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-items-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/events-timeseries/",
+          "message": "array items are now constrained",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-min-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/environments/",
+          "message": "minLength 1 was added",
+          "count": 1
+        },
+        {
+          "id": "response-removed",
+          "severity": "breaking",
+          "subject": "PUT /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/ownership/",
+          "message": "response \"202\" was removed",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-removed",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/agents/conversations/{conversation_id}/",
+          "message": "query parameter \"view\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/symbol-sources/",
+          "message": "the description changed",
+          "count": 83
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/symbol-sources/",
+          "message": "the description changed",
+          "count": 83
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/symbol-sources/",
+          "message": "the description changed",
+          "count": 83
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/issues/",
+          "message": "the description changed",
+          "count": 34
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/issues/",
+          "message": "the description changed",
+          "count": 32
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/",
+          "message": "the description changed",
+          "count": 17
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "the description changed",
+          "count": 17
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/events/{event_id}/",
+          "message": "the description changed",
+          "count": 16
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/events/{event_id}/",
+          "message": "the description changed",
+          "count": 16
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/user-feedback/",
+          "message": "the description changed",
+          "count": 11
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/user-feedback/",
+          "message": "the description changed",
+          "count": 11
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/tags/{key}/",
+          "message": "the description changed",
+          "count": 10
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/tags/",
+          "message": "the description changed",
+          "count": 10
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/tags/{key}/values/",
+          "message": "the description changed",
+          "count": 7
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/shortids/{issue_id}/",
+          "message": "the description changed",
+          "count": 6
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/hooks/",
+          "message": "the description changed",
+          "count": 6
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/hooks/{hook_id}/",
+          "message": "the description changed",
+          "count": 6
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/hooks/",
+          "message": "the description changed",
+          "count": 6
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "the description changed",
+          "count": 6
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/hooks/{hook_id}/",
+          "message": "the description changed",
+          "count": 6
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/detectors/",
+          "message": "the description changed",
+          "count": 4
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/detectors/{detector_id}/",
+          "message": "the description changed",
+          "count": 4
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/monitors/",
+          "message": "the description changed",
+          "count": 4
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/",
+          "message": "the description changed",
+          "count": 4
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/monitors/{monitor_id_or_slug}/",
+          "message": "the description changed",
+          "count": 4
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /api/0/organizations/{organization_id_or_slug}/monitors/",
+          "message": "the description changed",
+          "count": 4
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /api/0/organizations/{organization_id_or_slug}/projects/{project_id_or_slug}/detectors/",
+          "message": "the description changed",
+          "count": 4
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/detectors/",
+          "message": "the description changed",
+          "count": 4
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/detectors/{detector_id}/",
+          "message": "the description changed",
+          "count": 4
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/",
+          "message": "the description changed",
+          "count": 4
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/monitors/{monitor_id_or_slug}/",
+          "message": "the description changed",
+          "count": 4
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/issues/",
+          "message": "the description changed",
+          "count": 3
+        },
+        {
+          "id": "request-property-property-became-optional",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/issues/",
+          "message": "property \"ignoreCount\" became optional",
+          "count": 2
+        },
+        {
+          "id": "request-property-property-became-optional",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/issues/",
+          "message": "property \"ignoreDuration\" became optional",
+          "count": 2
+        },
+        {
+          "id": "request-property-property-became-optional",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/issues/",
+          "message": "property \"ignoreUserCount\" became optional",
+          "count": 2
+        },
+        {
+          "id": "request-property-property-became-optional",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/issues/",
+          "message": "property \"ignoreUserWindow\" became optional",
+          "count": 2
+        },
+        {
+          "id": "request-property-property-became-optional",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/issues/",
+          "message": "property \"ignoreWindow\" became optional",
+          "count": 2
+        },
+        {
+          "id": "request-property-property-became-optional",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "property \"ignoreCount\" became optional",
+          "count": 2
+        },
+        {
+          "id": "request-property-property-became-optional",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "property \"ignoreDuration\" became optional",
+          "count": 2
+        },
+        {
+          "id": "request-property-property-became-optional",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "property \"ignoreUserCount\" became optional",
+          "count": 2
+        },
+        {
+          "id": "request-property-property-became-optional",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "property \"ignoreUserWindow\" became optional",
+          "count": 2
+        },
+        {
+          "id": "request-property-property-became-optional",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "property \"ignoreWindow\" became optional",
+          "count": 2
+        },
+        {
+          "id": "request-parameter-added",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/agents/conversations/",
+          "message": "query parameter \"sort\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/agents/conversations/{conversation_id}/",
+          "message": "the description changed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "name": "GitHub REST API",
+      "homepage": "https://docs.github.com/rest",
+      "specUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
+      "fetchedAt": "2026-11-07T06:40:03.713Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
+        "fetchedAt": "2026-11-06T06:55:21.386Z",
+        "version": "1.1.4"
+      },
+      "after": {
+        "version": "1.1.4"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 4,
+        "info": 18
+      },
+      "total": 22,
+      "distinct": 22,
+      "changes": [
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "POST /orgs/{org}/secret-scanning/custom-patterns",
+          "message": "enum value \"\\\"dry_run_in_progress\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "POST /orgs/{org}/secret-scanning/custom-patterns",
+          "message": "enum value \"\\\"invalid_state\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "POST /repos/{owner}/{repo}/secret-scanning/custom-patterns",
+          "message": "enum value \"\\\"dry_run_in_progress\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "POST /repos/{owner}/{repo}/secret-scanning/custom-patterns",
+          "message": "enum value \"\\\"invalid_state\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-description-changed",
+          "severity": "info",
+          "subject": "DELETE /teams/{team_id}/members/{username}",
+          "message": "response description changed",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /enterprises/{enterprise}/copilot/policies/code-review",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /orgs/{org}/copilot/code-review/runner",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /orgs/{org}/copilot/code-review/settings",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /orgs/{org}/copilot/policies/code-review",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "response-description-changed",
+          "severity": "info",
+          "subject": "GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+          "message": "response description changed",
+          "count": 1
+        },
+        {
+          "id": "response-added",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/actions/runs",
+          "message": "response \"304\" was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/copilot/code-review/settings",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-added",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/{issue_number}/artifacts/{artifact_number}",
+          "message": "query parameter \"page\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-added",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/{issue_number}/artifacts/{artifact_number}",
+          "message": "query parameter \"per_page\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-required-property-added",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/{issue_number}/artifacts/{artifact_number}",
+          "message": "required property \"has_next_page\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-required-property-added",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/{issue_number}/artifacts/{artifact_number}",
+          "message": "required property \"total_count\" was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "PATCH /orgs/{org}/copilot/code-review/settings",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "PATCH /repos/{owner}/{repo}/copilot/code-review/settings",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "POST /repos/{owner}/{repo}/pulls/{pull_number}/copilot-code-review",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "PUT /enterprises/{enterprise}/copilot/policies/code-review",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "PUT /orgs/{org}/copilot/code-review/runner",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "PUT /orgs/{org}/copilot/policies/code-review",
+          "message": "operation was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "datadog",
+      "name": "Datadog API (v2)",
+      "homepage": "https://docs.datadoghq.com/api/latest/",
+      "specUrl": "https://raw.githubusercontent.com/DataDog/datadog-api-client-typescript/master/.generator/schemas/v2/openapi.yaml",
+      "fetchedAt": "2026-11-07T06:40:10.730Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/DataDog/datadog-api-client-typescript/master/.generator/schemas/v2/openapi.yaml",
+        "fetchedAt": "2026-11-06T06:55:30.787Z",
+        "version": "1.0"
+      },
+      "after": {
+        "version": "1.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 1,
+        "info": 25
+      },
+      "total": 26,
+      "distinct": 26,
+      "changes": [
+        {
+          "id": "request-parameter-default-removed",
+          "severity": "warning",
+          "subject": "GET /api/v2/metrics",
+          "message": "the default value was removed",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "DELETE /api/v2/rum/config/archive/{app_id}",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "endpoint-summary-changed",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics",
+          "message": "summary changed",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-added",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics",
+          "message": "query parameter \"filter[historical_metrics]\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-added",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics",
+          "message": "query parameter \"filter[metrics.id]\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics",
+          "message": "property \"indexed_volume_delta\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics",
+          "message": "property \"ingested_volume_delta\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-added",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics",
+          "message": "response \"410\" was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics/{metric_name}/active-configurations",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics/{metric_name}/all-tags",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics/{metric_name}/estimate",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-min-decreased",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics/{metric_name}/estimate",
+          "message": "minimum decreased from 49 to 0",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics/{metric_name}/tags",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics/{metric_name}/volumes",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics/{metric_name}/volumes",
+          "message": "property \"indexed_volume_delta\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /api/v2/metrics/{metric_name}/volumes",
+          "message": "property \"ingested_volume_delta\" was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /api/v2/rum/config/archive",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /api/v2/rum/config/archive/{app_id}",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /api/v2/rum/recover/requests",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /api/v2/rum/recover/requests/{request_id}",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "PATCH /api/v2/rum/recover/requests/{request_id}",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "POST /api/v2/rum/recover/count",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "POST /api/v2/rum/recover/requests",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "POST /api/v2/rum/recover/sessions",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "PUT /api/v2/rum/config/archive/{app_id}",
+          "message": "operation was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "digitalocean",
+      "name": "DigitalOcean API",
+      "homepage": "https://docs.digitalocean.com/reference/api/",
+      "specUrl": "https://api-engineering.nyc3.digitaloceanspaces.com/spec-ci/DigitalOcean-public.v2.yaml",
+      "fetchedAt": "2026-11-07T06:40:06.652Z",
+      "before": {
+        "url": "https://api-engineering.nyc3.digitaloceanspaces.com/spec-ci/DigitalOcean-public.v2.yaml",
+        "fetchedAt": "2026-11-06T06:55:25.526Z",
+        "version": "2.0"
+      },
+      "after": {
+        "version": "2.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 10
+      },
+      "total": 10,
+      "distinct": 10,
+      "changes": [
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /v2/gen-ai/models/catalog_v2",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /v2/gen-ai/models/catalog_v2/{id}",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /v2/harness-runtime/regions",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /v2/insights/notification-channels",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /v2/insights/notification-channels/{id}",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "POST /v2/insights/notification-channels",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "request-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v2/insights/notification-channels",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v2/insights/notification-channels",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "request-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /v2/insights/notification-channels/{id}",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /v2/insights/notification-channels/{id}",
+          "message": "the description changed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI API",
+      "homepage": "https://platform.openai.com/docs/api-reference",
+      "specUrl": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
+      "fetchedAt": "2026-11-07T06:40:04.177Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
+        "fetchedAt": "2026-11-06T06:55:22.618Z",
+        "version": "2.3.0"
+      },
+      "after": {
+        "version": "2.3.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 34
+      },
+      "total": 34,
+      "distinct": 15,
+      "changes": [
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /agents/sessions",
+          "message": "property \"prompt_cache_options\" was added",
+          "count": 11
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /agents/sessions/{session_id}/events",
+          "message": "property \"prompt_cache_options\" was added",
+          "count": 10
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /agents/sessions",
+          "message": "property \"prompt_cache_options\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /agents/sessions/{session_id}",
+          "message": "property \"prompt_cache_options\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /agents/sessions/{session_id}/subagents/{subagent_id}/turns",
+          "message": "property \"prompt_cache_options\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /agents/sessions/{session_id}/subagents/{subagent_id}/turns/{turn_id}",
+          "message": "property \"prompt_cache_options\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /agents/sessions/{session_id}/turns",
+          "message": "property \"prompt_cache_options\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /agents/sessions/{session_id}/turns/{turn_id}",
+          "message": "property \"prompt_cache_options\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "POST /agents/sessions",
+          "message": "property \"prompt_cache_options\" was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "POST /agents/sessions/{session_id}",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "POST /agents/sessions/{session_id}",
+          "message": "property \"prompt_cache_options\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /agents/sessions/{session_id}",
+          "message": "property \"prompt_cache_options\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /images/edits",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /images/generations",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /images/variations",
+          "message": "the description changed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase Management API",
+      "homepage": "https://supabase.com/docs/reference/api/introduction",
+      "specUrl": "https://api.supabase.com/api/v1-json",
+      "fetchedAt": "2026-11-07T06:40:14.922Z",
+      "before": {
+        "url": "https://api.supabase.com/api/v1-json",
+        "fetchedAt": "2026-11-06T06:55:35.843Z",
+        "version": "1.0.0"
+      },
+      "after": {
+        "version": "1.0.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 3
+      },
+      "total": 3,
+      "distinct": 3,
+      "changes": [
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "PATCH /v1/projects/{ref}/config/database/postgres",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-required-property-added",
+          "severity": "info",
+          "subject": "POST /v1/oauth/token",
+          "message": "required property \"project_refs\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /v1/oauth/token",
+          "message": "property \"scope\" was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "tailscale",
+      "name": "Tailscale API",
+      "homepage": "https://tailscale.com/api",
+      "specUrl": "https://api.tailscale.com/api/v2?outputOpenapiSchema=true",
+      "fetchedAt": "2026-11-07T06:40:16.035Z",
+      "before": {
+        "url": "https://api.tailscale.com/api/v2?outputOpenapiSchema=true",
+        "fetchedAt": "2026-11-04T06:54:44.445Z",
+        "version": "v2"
+      },
+      "after": {
+        "version": "v2"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 6
+      },
+      "total": 6,
+      "distinct": 6,
+      "changes": [
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /tailnet/{tailnet}/keys",
+          "message": "property \"nodeAttributes\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /tailnet/{tailnet}/keys/{keyId}",
+          "message": "property \"nodeAttributes\" was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "POST /tailnet/{tailnet}/keys",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "POST /tailnet/{tailnet}/keys",
+          "message": "property \"nodeAttributes\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /tailnet/{tailnet}/keys",
+          "message": "property \"nodeAttributes\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PUT /tailnet/{tailnet}/keys/{keyId}",
+          "message": "property \"nodeAttributes\" was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "x",
+      "name": "X API (v2)",
+      "homepage": "https://developer.x.com/en/docs/x-api",
+      "specUrl": "https://api.twitter.com/2/openapi.json",
+      "fetchedAt": "2026-11-07T06:40:14.620Z",
+      "before": {
+        "url": "https://api.twitter.com/2/openapi.json",
+        "fetchedAt": "2026-11-06T06:55:35.311Z",
+        "version": "2.174"
+      },
+      "after": {
+        "version": "2.174"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 351
+      },
+      "total": 351,
+      "distinct": 282,
+      "changes": [
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/activity/stream",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/bots",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/broadcasts/chat/moderators",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/broadcasts/chat/mutes",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/broadcasts/{id}/chat",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/calls/scheduled",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/calls/scheduled/{id}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/calls/{id}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/chat/conversations",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/chat/conversations/{id}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/chat/conversations/{id}/admin_requests",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/dm_conversations/with/{participant_id}/dm_events",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/dm_conversations/{id}/dm_events",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/dm_events",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/dm_events/{event_id}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/likes/firehose/stream",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/likes/sample10/stream",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/lists/{id}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/lists/{id}/followers",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/lists/{id}/members",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/lists/{id}/tweets",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/media",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/media/{media_key}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/notes/search/posts_eligible_for_notes",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/spaces",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/spaces/by/creator_ids",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/spaces/search",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/spaces/{id}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/spaces/{id}/buyers",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/spaces/{id}/tweets",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/firehose/stream",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/firehose/stream/lang/en",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/firehose/stream/lang/ja",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/firehose/stream/lang/ko",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/firehose/stream/lang/pt",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/sample/stream",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/sample10/stream",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/search/all",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/search/recent",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/search/stream",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/{id}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/{id}/liking_users",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/{id}/quote_tweets",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/{id}/retweeted_by",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/tweets/{id}/retweets",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/users",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/users/by",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/users/by/username/{username}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /2/users/me",
+          "message": "the description changed",
+          "count": 2
+        }
+      ]
+    }
+  ]
+}
