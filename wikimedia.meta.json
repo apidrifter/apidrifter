@@ -2,7 +2,7 @@
   "id": "wikimedia",
   "url": "https://en.wikipedia.org/api/rest_v1/?spec",
   "fetchedAt": "2026-11-04T06:54:46.473Z",
-  "checkedAt": "2026-11-07T06:40:17.759Z",
+  "checkedAt": "2026-11-08T06:41:46.862Z",
   "sha256": "becc6060586499ef407f8ecf62661ab4d828e92ebe1d6ef4e0b60c1b82eee639",
   "bytes": 106848,
   "etag": "W/\"1a160-65f0f30ac2480\"",

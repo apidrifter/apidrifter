@@ -1,11 +1,11 @@
 {
   "id": "forgejo",
   "url": "https://codeberg.org/swagger.v1.json",
-  "fetchedAt": "2026-11-04T06:54:46.014Z",
-  "checkedAt": "2026-11-07T06:40:17.593Z",
-  "sha256": "e7d5198da4775419eda7f26f3a4629ae5c513e11859e764bad6102dff30d793a",
-  "bytes": 854104,
+  "fetchedAt": "2026-11-08T06:41:46.560Z",
+  "checkedAt": "2026-11-08T06:41:46.560Z",
+  "sha256": "020885f071657c8504585fdff5cb4b5f06b9a48476c49e2f7316a7712c887850",
+  "bytes": 868976,
   "contentType": "application/json",
   "sourceFormat": "swagger-2.0",
-  "version": "16.0.0-dev-798-568c49e1+gitea-1.22.0"
+  "version": "17.0.0-99-322c239+gitea-1.22.0"
 }
