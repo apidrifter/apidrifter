@@ -1,0 +1,1120 @@
+{
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08T06:41:57.927Z",
+  "entries": [
+    {
+      "id": "forgejo",
+      "name": "Forgejo API (Codeberg)",
+      "homepage": "https://forgejo.org/docs/latest/user/api-usage/",
+      "specUrl": "https://codeberg.org/swagger.v1.json",
+      "fetchedAt": "2026-11-08T06:41:46.560Z",
+      "before": {
+        "url": "https://codeberg.org/swagger.v1.json",
+        "fetchedAt": "2026-11-04T06:54:46.014Z",
+        "version": "16.0.0-dev-798-568c49e1+gitea-1.22.0"
+      },
+      "after": {
+        "version": "17.0.0-99-322c239+gitea-1.22.0"
+      },
+      "summary": {
+        "breaking": 11,
+        "warning": 0,
+        "info": 261
+      },
+      "total": 272,
+      "distinct": 160,
+      "changes": [
+        {
+          "id": "response-header-removed",
+          "severity": "breaking",
+          "subject": "GET /user/applications/oauth2",
+          "message": "response header \"x-total-count\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-media-type-removed",
+          "severity": "breaking",
+          "subject": "GET /user/applications/oauth2/{id}",
+          "message": "response is no longer returned as \"application/json\"",
+          "count": 1
+        },
+        {
+          "id": "response-media-type-removed",
+          "severity": "breaking",
+          "subject": "GET /user/applications/oauth2/{id}",
+          "message": "response is no longer returned as \"text/html\"",
+          "count": 1
+        },
+        {
+          "id": "response-media-type-removed",
+          "severity": "breaking",
+          "subject": "PATCH /user/applications/oauth2/{id}",
+          "message": "response is no longer returned as \"application/json\"",
+          "count": 1
+        },
+        {
+          "id": "response-media-type-removed",
+          "severity": "breaking",
+          "subject": "PATCH /user/applications/oauth2/{id}",
+          "message": "response is no longer returned as \"text/html\"",
+          "count": 1
+        },
+        {
+          "id": "response-media-type-removed",
+          "severity": "breaking",
+          "subject": "POST /admin/users/{username}/tokens",
+          "message": "response is no longer returned as \"application/json\"",
+          "count": 1
+        },
+        {
+          "id": "response-media-type-removed",
+          "severity": "breaking",
+          "subject": "POST /admin/users/{username}/tokens",
+          "message": "response is no longer returned as \"text/html\"",
+          "count": 1
+        },
+        {
+          "id": "response-media-type-removed",
+          "severity": "breaking",
+          "subject": "POST /user/applications/oauth2",
+          "message": "response is no longer returned as \"application/json\"",
+          "count": 1
+        },
+        {
+          "id": "response-media-type-removed",
+          "severity": "breaking",
+          "subject": "POST /user/applications/oauth2",
+          "message": "response is no longer returned as \"text/html\"",
+          "count": 1
+        },
+        {
+          "id": "response-media-type-removed",
+          "severity": "breaking",
+          "subject": "POST /users/{username}/tokens",
+          "message": "response is no longer returned as \"application/json\"",
+          "count": 1
+        },
+        {
+          "id": "response-media-type-removed",
+          "severity": "breaking",
+          "subject": "POST /users/{username}/tokens",
+          "message": "response is no longer returned as \"text/html\"",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/commits/{sha}/pull",
+          "message": "the description changed",
+          "count": 6
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/pulls",
+          "message": "the description changed",
+          "count": 6
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/pulls/pinned",
+          "message": "the description changed",
+          "count": 6
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/pulls/{base}/{head}",
+          "message": "the description changed",
+          "count": 6
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/pulls/{index}",
+          "message": "the description changed",
+          "count": 6
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /repos/{owner}/{repo}/pulls/{index}",
+          "message": "the description changed",
+          "count": 6
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /repos/{owner}/{repo}/pulls",
+          "message": "the description changed",
+          "count": 6
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /actions/run",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /admin/actions/runners/jobs",
+          "message": "property \"html_url\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /admin/actions/runners/jobs",
+          "message": "property \"steps\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /admin/runners/jobs",
+          "message": "property \"html_url\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /admin/runners/jobs",
+          "message": "property \"steps\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /notifications",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /notifications/threads/{id}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /orgs/{org}/actions/runners/jobs",
+          "message": "property \"html_url\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /orgs/{org}/actions/runners/jobs",
+          "message": "property \"steps\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /orgs/{org}/activities/feeds",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /orgs/{org}/repos",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /orgs/{org}/teams",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /packages/{owner}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /packages/{owner}/{type}/{name}/{version}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/search",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
+          "message": "response description changed",
+          "count": 2
+        },
+        {
+          "id": "response-media-type-added",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
+          "message": "response may now be \"application/x-ndjson\"",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/actions/runners/jobs",
+          "message": "property \"html_url\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/actions/runners/jobs",
+          "message": "property \"steps\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/actions/runs",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/actions/runs/{run_id}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
+          "message": "property \"html_url\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
+          "message": "property \"steps\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/activities/feeds",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/branch_protections",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/branch_protections/{name}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/commits/{ref}/status",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/forks",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/{index}/timeline",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/keys",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/keys/{id}",
+          "message": "the description changed",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "sentry",
+      "name": "Sentry API",
+      "homepage": "https://docs.sentry.io/api/",
+      "specUrl": "https://raw.githubusercontent.com/getsentry/sentry-api-schema/main/openapi-derefed.json",
+      "fetchedAt": "2026-11-08T06:41:42.029Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/getsentry/sentry-api-schema/main/openapi-derefed.json",
+        "fetchedAt": "2026-11-07T06:40:13.857Z",
+        "version": "v0"
+      },
+      "after": {
+        "version": "v0"
+      },
+      "summary": {
+        "breaking": 5,
+        "warning": 15,
+        "info": 2650
+      },
+      "total": 2670,
+      "distinct": 836,
+      "changes": [
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "type is no longer restricted",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/members/{member_id}/",
+          "message": "property \"invite_link\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-changed",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/stats-summary/",
+          "message": "type changed from \"string\" to \"integer\"",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/members/{member_id}/",
+          "message": "property \"invite_link\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-format-changed",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/sentry-app-components/",
+          "message": "format changed from \"none\" to \"uuid\"",
+          "count": 3
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "anyOf alternative \"index:0\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "anyOf alternative \"index:1\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "anyOf alternative \"index:2\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-format-changed",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/available-actions/",
+          "message": "format changed from \"none\" to \"uuid\"",
+          "count": 1
+        },
+        {
+          "id": "response-property-format-changed",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/sentry-apps/",
+          "message": "format changed from \"none\" to \"uuid\"",
+          "count": 1
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/stats_v2/",
+          "message": "anyOf alternative \"index:0\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/stats_v2/",
+          "message": "anyOf alternative \"index:1\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-format-changed",
+          "severity": "warning",
+          "subject": "GET /api/0/sentry-apps/{sentry_app_id_or_slug}/",
+          "message": "format changed from \"none\" to \"uuid\"",
+          "count": 1
+        },
+        {
+          "id": "response-property-format-changed",
+          "severity": "warning",
+          "subject": "PUT /api/0/sentry-apps/{sentry_app_id_or_slug}/",
+          "message": "format changed from \"none\" to \"uuid\"",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/events/{event_id}/",
+          "message": "the description changed",
+          "count": 100
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/events/{event_id}/",
+          "message": "the description changed",
+          "count": 98
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/hashes/",
+          "message": "the description changed",
+          "count": 95
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/eventids/{event_id}/",
+          "message": "the description changed",
+          "count": 89
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/codeowners/",
+          "message": "the description changed",
+          "count": 38
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/codeowners/{codeowners_id}/",
+          "message": "the description changed",
+          "count": 38
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/codeowners/",
+          "message": "the description changed",
+          "count": 38
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/codeowners/{codeowners_id}/",
+          "message": "the description changed",
+          "count": 38
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/integrations/{integration_id}/",
+          "message": "the description changed",
+          "count": 37
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/releases/{version}/commits/",
+          "message": "the description changed",
+          "count": 35
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/repos/{repo_id}/commits/",
+          "message": "the description changed",
+          "count": 35
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/releases/{version}/commits/",
+          "message": "the description changed",
+          "count": 35
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/scim/v2/ServiceProviderConfig",
+          "message": "the description changed",
+          "count": 26
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/forwarding/",
+          "message": "the description changed",
+          "count": 24
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /api/0/organizations/{organization_id_or_slug}/forwarding/",
+          "message": "the description changed",
+          "count": 24
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/forwarding/{data_forwarder_id}/",
+          "message": "the description changed",
+          "count": 24
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/stacktrace-link/",
+          "message": "the description changed",
+          "count": 19
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/",
+          "message": "the description changed",
+          "count": 19
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/shortids/{issue_id}/",
+          "message": "the description changed",
+          "count": 18
+        },
+        {
+          "id": "response-property-pattern-added",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/",
+          "message": "a pattern constraint was added",
+          "count": 18
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/ownership/",
+          "message": "the description changed",
+          "count": 17
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/ownership/",
+          "message": "the description changed",
+          "count": 17
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/release-threshold-statuses/",
+          "message": "the description changed",
+          "count": 16
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /api/0/organizations/{organization_id_or_slug}/code-mappings/bulk/",
+          "message": "the description changed",
+          "count": 16
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/files/difs/assemble/",
+          "message": "the description changed",
+          "count": 16
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/seer/repos/",
+          "message": "the description changed",
+          "count": 15
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/scim/v2/ResourceTypes",
+          "message": "the description changed",
+          "count": 14
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /api/0/organizations/{organization_id_or_slug}/external-users/",
+          "message": "the description changed",
+          "count": 14
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/external-teams/",
+          "message": "the description changed",
+          "count": 14
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/",
+          "message": "the description changed",
+          "count": 13
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "the description changed",
+          "count": 13
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/teams/",
+          "message": "the description changed",
+          "count": 13
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/user-teams/",
+          "message": "the description changed",
+          "count": 13
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/",
+          "message": "the description changed",
+          "count": 13
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /api/0/organizations/{organization_id_or_slug}/teams/",
+          "message": "the description changed",
+          "count": 13
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "the description changed",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "id": "kubernetes",
+      "name": "Kubernetes API",
+      "homepage": "https://kubernetes.io/docs/reference/kubernetes-api/",
+      "specUrl": "https://raw.githubusercontent.com/kubernetes/kubernetes/master/api/openapi-spec/swagger.json",
+      "fetchedAt": "2026-11-08T06:41:38.158Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/kubernetes/kubernetes/master/api/openapi-spec/swagger.json",
+        "fetchedAt": "2026-11-07T06:40:08.142Z",
+        "version": "unversioned"
+      },
+      "after": {
+        "version": "unversioned"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 130
+      },
+      "total": 130,
+      "distinct": 24,
+      "changes": [
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /apis/batch/v1/namespaces/{namespace}/cronjobs",
+          "message": "property \"name\" was added",
+          "count": 12
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /apis/batch/v1/namespaces/{namespace}/jobs",
+          "message": "property \"name\" was added",
+          "count": 12
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PATCH /apis/batch/v1/namespaces/{namespace}/cronjobs/{name}",
+          "message": "property \"name\" was added",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PATCH /apis/batch/v1/namespaces/{namespace}/cronjobs/{name}/status",
+          "message": "property \"name\" was added",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PATCH /apis/batch/v1/namespaces/{namespace}/jobs/{name}",
+          "message": "property \"name\" was added",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PATCH /apis/batch/v1/namespaces/{namespace}/jobs/{name}/status",
+          "message": "property \"name\" was added",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PUT /apis/batch/v1/namespaces/{namespace}/cronjobs/{name}",
+          "message": "property \"name\" was added",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PUT /apis/batch/v1/namespaces/{namespace}/cronjobs/{name}/status",
+          "message": "property \"name\" was added",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PUT /apis/batch/v1/namespaces/{namespace}/jobs/{name}",
+          "message": "property \"name\" was added",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PUT /apis/batch/v1/namespaces/{namespace}/jobs/{name}/status",
+          "message": "property \"name\" was added",
+          "count": 8
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /apis/batch/v1/cronjobs",
+          "message": "property \"name\" was added",
+          "count": 5
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /apis/batch/v1/jobs",
+          "message": "property \"name\" was added",
+          "count": 5
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /apis/batch/v1/namespaces/{namespace}/cronjobs",
+          "message": "property \"name\" was added",
+          "count": 5
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /apis/batch/v1/namespaces/{namespace}/jobs",
+          "message": "property \"name\" was added",
+          "count": 5
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /apis/batch/v1/namespaces/{namespace}/cronjobs/{name}",
+          "message": "property \"name\" was added",
+          "count": 4
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /apis/batch/v1/namespaces/{namespace}/cronjobs/{name}/status",
+          "message": "property \"name\" was added",
+          "count": 4
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /apis/batch/v1/namespaces/{namespace}/jobs/{name}",
+          "message": "property \"name\" was added",
+          "count": 4
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /apis/batch/v1/namespaces/{namespace}/jobs/{name}/status",
+          "message": "property \"name\" was added",
+          "count": 4
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "POST /apis/batch/v1/namespaces/{namespace}/cronjobs",
+          "message": "property \"name\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "POST /apis/batch/v1/namespaces/{namespace}/jobs",
+          "message": "property \"name\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "PUT /apis/batch/v1/namespaces/{namespace}/cronjobs/{name}",
+          "message": "property \"name\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "PUT /apis/batch/v1/namespaces/{namespace}/cronjobs/{name}/status",
+          "message": "property \"name\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "PUT /apis/batch/v1/namespaces/{namespace}/jobs/{name}",
+          "message": "property \"name\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "PUT /apis/batch/v1/namespaces/{namespace}/jobs/{name}/status",
+          "message": "property \"name\" was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI API",
+      "homepage": "https://platform.openai.com/docs/api-reference",
+      "specUrl": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
+      "fetchedAt": "2026-11-08T06:41:35.129Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
+        "fetchedAt": "2026-11-07T06:40:04.177Z",
+        "version": "2.3.0"
+      },
+      "after": {
+        "version": "2.3.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 17
+      },
+      "total": 17,
+      "distinct": 17,
+      "changes": [
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "DELETE /organization/external_keys/{external_key_id}",
+          "message": "property \"key_ocid\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "DELETE /organization/external_keys/{external_key_id}",
+          "message": "property \"key_version_ocid\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "DELETE /organization/external_keys/{external_key_id}",
+          "message": "property \"region\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "DELETE /organization/external_keys/{external_key_id}",
+          "message": "property \"vault_ocid\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /organization/external_keys",
+          "message": "property \"key_ocid\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /organization/external_keys",
+          "message": "property \"key_version_ocid\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /organization/external_keys",
+          "message": "property \"region\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /organization/external_keys",
+          "message": "property \"vault_ocid\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /organization/external_keys/{external_key_id}",
+          "message": "property \"key_ocid\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /organization/external_keys/{external_key_id}",
+          "message": "property \"key_version_ocid\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /organization/external_keys/{external_key_id}",
+          "message": "property \"region\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /organization/external_keys/{external_key_id}",
+          "message": "property \"vault_ocid\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-one-of-branch-added",
+          "severity": "info",
+          "subject": "POST /organization/external_keys",
+          "message": "oneOf alternative \"ref:#/components/schemas/OciExternalKeyParams\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /organization/external_keys",
+          "message": "property \"key_ocid\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /organization/external_keys",
+          "message": "property \"key_version_ocid\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /organization/external_keys",
+          "message": "property \"region\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /organization/external_keys",
+          "message": "property \"vault_ocid\" was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel REST API",
+      "homepage": "https://vercel.com/docs/rest-api",
+      "specUrl": "https://openapi.vercel.sh/",
+      "fetchedAt": "2026-11-08T06:41:39.012Z",
+      "before": {
+        "url": "https://openapi.vercel.sh/",
+        "fetchedAt": "2026-11-07T06:40:08.827Z",
+        "version": "0.0.1"
+      },
+      "after": {
+        "version": "0.0.1"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 1
+      },
+      "total": 1,
+      "distinct": 1,
+      "changes": [
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /v1/storage/stores/integration/direct",
+          "message": "property \"tokenSetKey\" was added",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

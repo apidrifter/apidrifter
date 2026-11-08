@@ -1,7 +1,52 @@
 {
-  "generatedAt": "2026-11-07T06:40:41.261Z",
+  "generatedAt": "2026-11-08T06:41:57.930Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-08",
+      "apis": [
+        {
+          "id": "forgejo",
+          "name": "Forgejo API (Codeberg)",
+          "breaking": 11,
+          "warning": 0,
+          "info": 261,
+          "total": 272
+        },
+        {
+          "id": "sentry",
+          "name": "Sentry API",
+          "breaking": 5,
+          "warning": 15,
+          "info": 2650,
+          "total": 2670
+        },
+        {
+          "id": "kubernetes",
+          "name": "Kubernetes API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 130,
+          "total": 130
+        },
+        {
+          "id": "openai",
+          "name": "OpenAI API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 17,
+          "total": 17
+        },
+        {
+          "id": "vercel",
+          "name": "Vercel REST API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 1,
+          "total": 1
+        }
+      ]
+    },
     {
       "date": "2026-11-07",
       "apis": [
