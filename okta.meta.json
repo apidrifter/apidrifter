@@ -2,7 +2,7 @@
   "id": "okta",
   "url": "https://raw.githubusercontent.com/okta/okta-management-openapi-spec/master/dist/current/management-minimal.yaml",
   "fetchedAt": "2026-11-05T06:56:35.140Z",
-  "checkedAt": "2026-11-08T06:41:42.320Z",
+  "checkedAt": "2026-11-09T07:04:49.580Z",
   "sha256": "0e1ccf7a1c12f4e77e2e5cebf2d625f8869f7603746360a54e0360673644049f",
   "bytes": 3461374,
   "etag": "W/\"cc29050ec6cb8357d0ea33d2baf61ad2a07fd6b5a59600fef4794a0f4546c473\"",
