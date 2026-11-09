@@ -1,7 +1,28 @@
 {
-  "generatedAt": "2026-11-08T06:41:57.930Z",
+  "generatedAt": "2026-11-09T07:04:58.677Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-09",
+      "apis": [
+        {
+          "id": "sentry",
+          "name": "Sentry API",
+          "breaking": 47,
+          "warning": 190,
+          "info": 1029,
+          "total": 1266
+        },
+        {
+          "id": "openai",
+          "name": "OpenAI API",
+          "breaking": 0,
+          "warning": 30,
+          "info": 9,
+          "total": 39
+        }
+      ]
+    },
     {
       "date": "2026-11-08",
       "apis": [

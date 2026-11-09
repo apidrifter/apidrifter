@@ -1,0 +1,509 @@
+{
+  "date": "2026-11-09",
+  "generatedAt": "2026-11-09T07:04:58.673Z",
+  "entries": [
+    {
+      "id": "sentry",
+      "name": "Sentry API",
+      "homepage": "https://docs.sentry.io/api/",
+      "specUrl": "https://raw.githubusercontent.com/getsentry/sentry-api-schema/main/openapi-derefed.json",
+      "fetchedAt": "2026-11-09T07:04:49.120Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/getsentry/sentry-api-schema/main/openapi-derefed.json",
+        "fetchedAt": "2026-11-08T06:41:42.029Z",
+        "version": "v0"
+      },
+      "after": {
+        "version": "v0"
+      },
+      "summary": {
+        "breaking": 47,
+        "warning": 190,
+        "info": 1029
+      },
+      "total": 1266,
+      "distinct": 1015,
+      "changes": [
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "the value may now be null",
+          "count": 2
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/events/{event_id}/",
+          "message": "the value may now be null",
+          "count": 2
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/events/{event_id}/",
+          "message": "the value may now be null",
+          "count": 2
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/user-feedback/",
+          "message": "the value may now be null",
+          "count": 2
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "POST /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/user-feedback/",
+          "message": "the value may now be null",
+          "count": 2
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/config/integrations/",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/detectors/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/detectors/{detector_id}/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/eventids/{event_id}/",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/events/{event_id}/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/hashes/",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/monitors/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/checkins/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/preprodartifacts/{artifact_id}/size-analysis/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/releases/",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/releases/{version}/",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/releases/{version}/commits/",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/releases/{version}/previous-with-commits/",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/repos/{repo_id}/commits/",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/sentry-app-components/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/shared/issues/{share_id}/",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/events/{event_id}/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/monitors/{monitor_id_or_slug}/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/monitors/{monitor_id_or_slug}/checkins/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/releases/",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/releases/{version}/commits/",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-min-added",
+          "severity": "breaking",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/user-feedback/",
+          "message": "minLength 1 was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "POST /api/0/organizations/{organization_id_or_slug}/monitors/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "POST /api/0/organizations/{organization_id_or_slug}/projects/{project_id_or_slug}/detectors/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "POST /api/0/organizations/{organization_id_or_slug}/releases/",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "request-body-became-required",
+          "severity": "breaking",
+          "subject": "POST /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/user-feedback/",
+          "message": "request body became required",
+          "count": 1
+        },
+        {
+          "id": "request-property-max-added",
+          "severity": "breaking",
+          "subject": "POST /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/user-feedback/",
+          "message": "maxLength 4096 was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-max-added",
+          "severity": "breaking",
+          "subject": "POST /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/user-feedback/",
+          "message": "maxLength 75 was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-max-added",
+          "severity": "breaking",
+          "subject": "POST /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/user-feedback/",
+          "message": "maxLength 32 was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-max-added",
+          "severity": "breaking",
+          "subject": "POST /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/user-feedback/",
+          "message": "maxLength 128 was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/detectors/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/detectors/{detector_id}/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "PUT /api/0/organizations/{organization_id_or_slug}/releases/{version}/",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "response-property-type-widened",
+          "severity": "breaking",
+          "subject": "PUT /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/monitors/{monitor_id_or_slug}/",
+          "message": "type is no longer restricted",
+          "count": 1
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/integrations/{integration_id}/",
+          "message": "anyOf alternative \"index:0\" was added",
+          "count": 6
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/integrations/{integration_id}/",
+          "message": "anyOf alternative \"index:1\" was added",
+          "count": 6
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/integrations/{integration_id}/",
+          "message": "anyOf alternative \"index:2\" was added",
+          "count": 4
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/integrations/{integration_id}/",
+          "message": "anyOf alternative \"index:3\" was added",
+          "count": 4
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/integrations/{integration_id}/",
+          "message": "anyOf alternative \"index:4\" was added",
+          "count": 4
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+          "message": "anyOf alternative \"index:2\" was added",
+          "count": 3
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/events/{event_id}/",
+          "message": "anyOf alternative \"index:2\" was added",
+          "count": 3
+        },
+        {
+          "id": "response-property-one-of-branch-added",
+          "severity": "warning",
+          "subject": "GET /api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/events/{event_id}/",
+          "message": "anyOf alternative \"index:2\" was added",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI API",
+      "homepage": "https://platform.openai.com/docs/api-reference",
+      "specUrl": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
+      "fetchedAt": "2026-11-09T07:04:42.742Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
+        "fetchedAt": "2026-11-08T06:41:35.129Z",
+        "version": "2.3.0"
+      },
+      "after": {
+        "version": "2.3.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 30,
+        "info": 9
+      },
+      "total": 39,
+      "distinct": 15,
+      "changes": [
+        {
+          "id": "response-property-max-increased",
+          "severity": "warning",
+          "subject": "GET /responses/{response_id}",
+          "message": "maxLength increased from 64 to 128",
+          "count": 7
+        },
+        {
+          "id": "response-property-max-increased",
+          "severity": "warning",
+          "subject": "GET /responses/{response_id}?beta=true",
+          "message": "maxLength increased from 64 to 128",
+          "count": 7
+        },
+        {
+          "id": "response-property-max-increased",
+          "severity": "warning",
+          "subject": "POST /responses",
+          "message": "maxLength increased from 64 to 128",
+          "count": 7
+        },
+        {
+          "id": "response-property-max-increased",
+          "severity": "warning",
+          "subject": "POST /responses?beta=true",
+          "message": "maxLength increased from 64 to 128",
+          "count": 7
+        },
+        {
+          "id": "response-property-max-increased",
+          "severity": "warning",
+          "subject": "POST /responses/{response_id}/cancel",
+          "message": "maxLength increased from 64 to 128",
+          "count": 1
+        },
+        {
+          "id": "response-property-max-increased",
+          "severity": "warning",
+          "subject": "POST /responses/{response_id}/cancel?beta=true",
+          "message": "maxLength increased from 64 to 128",
+          "count": 1
+        },
+        {
+          "id": "request-property-max-increased",
+          "severity": "info",
+          "subject": "POST /conversations",
+          "message": "maxLength increased from 64 to 128",
+          "count": 1
+        },
+        {
+          "id": "request-property-max-increased",
+          "severity": "info",
+          "subject": "POST /conversations/{conversation_id}/items",
+          "message": "maxLength increased from 64 to 128",
+          "count": 1
+        },
+        {
+          "id": "request-property-max-increased",
+          "severity": "info",
+          "subject": "POST /decisions",
+          "message": "maxLength increased from 64 to 128",
+          "count": 1
+        },
+        {
+          "id": "request-property-max-increased",
+          "severity": "info",
+          "subject": "POST /responses",
+          "message": "maxLength increased from 64 to 128",
+          "count": 1
+        },
+        {
+          "id": "request-property-max-increased",
+          "severity": "info",
+          "subject": "POST /responses/compact",
+          "message": "maxLength increased from 64 to 128",
+          "count": 1
+        },
+        {
+          "id": "request-property-max-increased",
+          "severity": "info",
+          "subject": "POST /responses/compact?beta=true",
+          "message": "maxLength increased from 64 to 128",
+          "count": 1
+        },
+        {
+          "id": "request-property-max-increased",
+          "severity": "info",
+          "subject": "POST /responses/input_tokens",
+          "message": "maxLength increased from 64 to 128",
+          "count": 1
+        },
+        {
+          "id": "request-property-max-increased",
+          "severity": "info",
+          "subject": "POST /responses/input_tokens?beta=true",
+          "message": "maxLength increased from 64 to 128",
+          "count": 1
+        },
+        {
+          "id": "request-property-max-increased",
+          "severity": "info",
+          "subject": "POST /responses?beta=true",
+          "message": "maxLength increased from 64 to 128",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
