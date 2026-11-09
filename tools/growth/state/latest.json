@@ -1,9 +1,25 @@
 {
   "version": 1,
-  "generatedAt": null,
-  "week": null,
-  "npm": null,
-  "github": null,
+  "generatedAt": "2026-11-09T08:25:27.616Z",
+  "week": "2026-W46",
+  "npm": {
+    "apidrifter": {
+      "week": 567,
+      "month": 567
+    },
+    "@apidrifter/core": {
+      "week": 516,
+      "month": 516
+    }
+  },
+  "github": {
+    "stars": 26,
+    "forks": 0,
+    "openIssues": 0,
+    "watchers": 0
+  },
   "traffic": null,
-  "registry": null
+  "registry": {
+    "listed": false
+  }
 }
