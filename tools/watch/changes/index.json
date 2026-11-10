@@ -1,7 +1,116 @@
 {
-  "generatedAt": "2026-11-09T07:04:58.677Z",
+  "generatedAt": "2026-11-10T06:50:52.097Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-10",
+      "apis": [
+        {
+          "id": "vercel",
+          "name": "Vercel REST API",
+          "breaking": 720,
+          "warning": 39,
+          "info": 705,
+          "total": 1464
+        },
+        {
+          "id": "pokeapi",
+          "name": "PokeAPI",
+          "breaking": 112,
+          "warning": 68,
+          "info": 1452,
+          "total": 1632
+        },
+        {
+          "id": "kubernetes",
+          "name": "Kubernetes API",
+          "breaking": 62,
+          "warning": 0,
+          "info": 17306,
+          "total": 17368
+        },
+        {
+          "id": "sentry",
+          "name": "Sentry API",
+          "breaking": 22,
+          "warning": 181,
+          "info": 122,
+          "total": 325
+        },
+        {
+          "id": "openai",
+          "name": "OpenAI API",
+          "breaking": 10,
+          "warning": 10,
+          "info": 26,
+          "total": 46
+        },
+        {
+          "id": "datadog",
+          "name": "Datadog API (v2)",
+          "breaking": 7,
+          "warning": 31,
+          "info": 151,
+          "total": 189
+        },
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 5,
+          "warning": 9,
+          "info": 132,
+          "total": 146
+        },
+        {
+          "id": "x",
+          "name": "X API (v2)",
+          "breaking": 1,
+          "warning": 4,
+          "info": 116,
+          "total": 121
+        },
+        {
+          "id": "asana",
+          "name": "Asana API",
+          "breaking": 0,
+          "warning": 3,
+          "info": 2,
+          "total": 5
+        },
+        {
+          "id": "github",
+          "name": "GitHub REST API",
+          "breaking": 0,
+          "warning": 2,
+          "info": 10,
+          "total": 12
+        },
+        {
+          "id": "box",
+          "name": "Box API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 7,
+          "total": 7
+        },
+        {
+          "id": "hetzner-cloud",
+          "name": "Hetzner Cloud API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 2,
+          "total": 2
+        },
+        {
+          "id": "jira",
+          "name": "Jira Cloud platform REST API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 1,
+          "total": 1
+        }
+      ]
+    },
     {
       "date": "2026-11-09",
       "apis": [
