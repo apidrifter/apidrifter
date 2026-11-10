@@ -1,11 +1,11 @@
 {
   "id": "pokeapi",
   "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/openapi.yml",
-  "fetchedAt": "2026-11-04T06:54:46.311Z",
-  "checkedAt": "2026-11-09T07:04:53.282Z",
-  "sha256": "40d7b32e6bdf27b113108496ed974210a59910fc8f60b13ba560473aef658881",
-  "bytes": 231196,
-  "etag": "W/\"ac9e0e005aa3643f564dd60f46c5c8686bee12ddac64ae7ad9761f19a58e908d\"",
+  "fetchedAt": "2026-11-10T06:50:18.862Z",
+  "checkedAt": "2026-11-10T06:50:18.862Z",
+  "sha256": "abda6f26a34c86a4542e9bdaed8a122ef5b9ec5a97695ce84af3605d89e45966",
+  "bytes": 326367,
+  "etag": "W/\"fef699a4d3ceafc4c7158cd8b0ae2348ce239bc9bc22884c074a5e409215e7b8\"",
   "contentType": "text/plain; charset=utf-8",
   "sourceFormat": "openapi-3.1.0",
   "version": "2.10.0"

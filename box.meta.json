@@ -1,11 +1,11 @@
 {
   "id": "box",
   "url": "https://raw.githubusercontent.com/box/box-openapi/main/openapi.json",
-  "fetchedAt": "2026-11-05T06:56:36.503Z",
-  "checkedAt": "2026-11-09T07:04:49.729Z",
-  "sha256": "6d1530ea42928345f9dea1d14ccda66863b0a1aa8062098eebb4666a7d2b5de4",
-  "bytes": 1812850,
-  "etag": "W/\"9b279e969d96cc8ccaa76980d552a7b417d5dcf2a5b58564b61b8ffa4633c0bb\"",
+  "fetchedAt": "2026-11-10T06:50:14.189Z",
+  "checkedAt": "2026-11-10T06:50:14.189Z",
+  "sha256": "844382d03842bf0f116f01e5ef64b9e79cb8f8a4ade35b26e9cfe35b7cd29b38",
+  "bytes": 1819729,
+  "etag": "W/\"77be7d1496e7164839cc76bbccadf3473a5fd0e9252e8216d4f485dd1fc17cc2\"",
   "contentType": "text/plain; charset=utf-8",
   "sourceFormat": "openapi-3.0.2",
   "version": "2024.0"

@@ -1,12 +1,12 @@
 {
   "id": "hetzner-cloud",
   "url": "https://docs.hetzner.cloud/cloud.spec.json",
-  "fetchedAt": "2026-11-04T06:54:36.249Z",
-  "checkedAt": "2026-11-09T07:04:48.058Z",
-  "sha256": "a01f19e86d04c57dfbae1c5eef739883b580d9031fd138690779349de426653b",
-  "bytes": 3532388,
-  "etag": "W/\"35e664-1a19b85bf07\"",
-  "lastModified": "Mon, 02 Nov 2026 09:09:56 GMT",
+  "fetchedAt": "2026-11-10T06:50:08.407Z",
+  "checkedAt": "2026-11-10T06:50:08.407Z",
+  "sha256": "3f90e2a03d37da90cde0b14744419bde101bb20829d0d870c0c3b95c5b3d1225",
+  "bytes": 3532416,
+  "etag": "W/\"35e680-1a1c0a03eab\"",
+  "lastModified": "Mon, 09 Nov 2026 14:04:49 GMT",
   "contentType": "application/json; charset=UTF-8",
   "sourceFormat": "openapi-3.1.2",
   "version": "1.0.0"

@@ -2,7 +2,7 @@
   "id": "twilio",
   "url": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_api_v2010.json",
   "fetchedAt": "2026-11-06T06:55:26.800Z",
-  "checkedAt": "2026-11-09T07:04:45.267Z",
+  "checkedAt": "2026-11-10T06:50:04.642Z",
   "sha256": "f5efc0ed7078b035f675e04aa2774eaea43a0606c1d699b1fd35759258e5ddc6",
   "bytes": 1879653,
   "etag": "W/\"2fab8ea94f5d2646d6a273d27804566bed81a0c1f4dcc4b2ac21ddf65bbb8149\"",
