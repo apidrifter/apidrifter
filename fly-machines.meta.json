@@ -1,12 +1,12 @@
 {
   "id": "fly-machines",
   "url": "https://docs.machines.dev/openapi.json",
-  "fetchedAt": "2026-11-04T06:54:43.866Z",
-  "checkedAt": "2026-11-10T06:50:16.700Z",
-  "sha256": "0394571a4e33878bd7c2fbc506b43f402990d0b66ee3a9c8a58fe03b417ef17b",
-  "bytes": 299513,
-  "etag": "W/\"v27N8szAe6TJJzsY\"",
-  "lastModified": "Fri, 23 Oct 2026 21:41:09 GMT",
+  "fetchedAt": "2026-11-11T06:54:42.737Z",
+  "checkedAt": "2026-11-11T06:54:42.737Z",
+  "sha256": "5eeb7e51413aef86ec244a266543de10f1dd3f9567d3d975209cfc761b5610e2",
+  "bytes": 374794,
+  "etag": "W/\"xvsePCCTIM3yPX8I\"",
+  "lastModified": "Tue, 10 Nov 2026 20:53:05 GMT",
   "contentType": "application/json",
   "sourceFormat": "openapi-3.1.0",
   "version": "1.0"

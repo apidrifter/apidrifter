@@ -2,7 +2,7 @@
   "id": "discord",
   "url": "https://raw.githubusercontent.com/discord/discord-api-spec/main/specs/openapi.json",
   "fetchedAt": "2026-11-07T06:40:07.898Z",
-  "checkedAt": "2026-11-10T06:50:04.996Z",
+  "checkedAt": "2026-11-11T06:54:33.804Z",
   "sha256": "ef338088f4c6a73fdb9840acd1ce2bf8f16c1870f4437bfc563418c7e0de7278",
   "bytes": 1208907,
   "etag": "W/\"19542bb6e57f68c5e4ef16055b22565d3a5c6a49836be5b62da33a6d65999330\"",

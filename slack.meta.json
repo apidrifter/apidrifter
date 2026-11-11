@@ -2,7 +2,7 @@
   "id": "slack",
   "url": "https://raw.githubusercontent.com/slackapi/slack-api-specs/master/web-api/slack_web_openapi_v2.json",
   "fetchedAt": "2026-11-04T06:54:32.543Z",
-  "checkedAt": "2026-11-10T06:50:04.899Z",
+  "checkedAt": "2026-11-11T06:54:33.649Z",
   "sha256": "742a5c977180a829df8767cf57bc417d99b3713583aee83741efb9c08ca731e7",
   "bytes": 1237332,
   "etag": "W/\"15eb7083a94f24d254d9abbf6c14686adbc990428e343dd04cee5b5831086680\"",
