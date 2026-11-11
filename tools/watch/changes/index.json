@@ -1,7 +1,92 @@
 {
-  "generatedAt": "2026-11-10T06:50:52.097Z",
+  "generatedAt": "2026-11-11T06:54:59.441Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-11",
+      "apis": [
+        {
+          "id": "vercel",
+          "name": "Vercel REST API",
+          "breaking": 458,
+          "warning": 21,
+          "info": 529,
+          "total": 1008
+        },
+        {
+          "id": "fly-machines",
+          "name": "Fly.io Machines API",
+          "breaking": 82,
+          "warning": 61,
+          "info": 2100,
+          "total": 2243
+        },
+        {
+          "id": "sentry",
+          "name": "Sentry API",
+          "breaking": 65,
+          "warning": 45,
+          "info": 118,
+          "total": 228
+        },
+        {
+          "id": "openai",
+          "name": "OpenAI API",
+          "breaking": 37,
+          "warning": 235,
+          "info": 266,
+          "total": 538
+        },
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 37,
+          "warning": 114,
+          "info": 225,
+          "total": 376
+        },
+        {
+          "id": "datadog",
+          "name": "Datadog API (v2)",
+          "breaking": 34,
+          "warning": 41,
+          "info": 118,
+          "total": 193
+        },
+        {
+          "id": "x",
+          "name": "X API (v2)",
+          "breaking": 16,
+          "warning": 1,
+          "info": 14,
+          "total": 31
+        },
+        {
+          "id": "supabase",
+          "name": "Supabase Management API",
+          "breaking": 0,
+          "warning": 81,
+          "info": 1,
+          "total": 82
+        },
+        {
+          "id": "github",
+          "name": "GitHub REST API",
+          "breaking": 0,
+          "warning": 3,
+          "info": 29,
+          "total": 32
+        },
+        {
+          "id": "jira",
+          "name": "Jira Cloud platform REST API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 2,
+          "total": 2
+        }
+      ]
+    },
     {
       "date": "2026-11-10",
       "apis": [
