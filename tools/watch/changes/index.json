@@ -1,7 +1,108 @@
 {
-  "generatedAt": "2026-11-11T06:54:59.441Z",
+  "generatedAt": "2026-11-12T06:56:22.121Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-12",
+      "apis": [
+        {
+          "id": "vercel",
+          "name": "Vercel REST API",
+          "breaking": 1651,
+          "warning": 47,
+          "info": 1672,
+          "total": 3370
+        },
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 73,
+          "warning": 37,
+          "info": 217,
+          "total": 327
+        },
+        {
+          "id": "sentry",
+          "name": "Sentry API",
+          "breaking": 19,
+          "warning": 0,
+          "info": 21,
+          "total": 40
+        },
+        {
+          "id": "digitalocean",
+          "name": "DigitalOcean API",
+          "breaking": 18,
+          "warning": 0,
+          "info": 75,
+          "total": 93
+        },
+        {
+          "id": "datadog",
+          "name": "Datadog API (v2)",
+          "breaking": 13,
+          "warning": 0,
+          "info": 54,
+          "total": 67
+        },
+        {
+          "id": "jira",
+          "name": "Jira Cloud platform REST API",
+          "breaking": 0,
+          "warning": 1,
+          "info": 3,
+          "total": 4
+        },
+        {
+          "id": "fly-machines",
+          "name": "Fly.io Machines API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 22,
+          "total": 22
+        },
+        {
+          "id": "forgejo",
+          "name": "Forgejo API (Codeberg)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 1,
+          "total": 1
+        },
+        {
+          "id": "github",
+          "name": "GitHub REST API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 8,
+          "total": 8
+        },
+        {
+          "id": "openai",
+          "name": "OpenAI API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 30,
+          "total": 30
+        },
+        {
+          "id": "supabase",
+          "name": "Supabase Management API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 2,
+          "total": 2
+        },
+        {
+          "id": "x",
+          "name": "X API (v2)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 152,
+          "total": 152
+        }
+      ]
+    },
     {
       "date": "2026-11-11",
       "apis": [
