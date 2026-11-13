@@ -1,7 +1,124 @@
 {
-  "generatedAt": "2026-11-12T06:56:22.121Z",
+  "generatedAt": "2026-11-13T06:56:00.803Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-13",
+      "apis": [
+        {
+          "id": "openai",
+          "name": "OpenAI API",
+          "breaking": 2393,
+          "warning": 2131,
+          "info": 262,
+          "total": 4786
+        },
+        {
+          "id": "vercel",
+          "name": "Vercel REST API",
+          "breaking": 60,
+          "warning": 13,
+          "info": 88,
+          "total": 161
+        },
+        {
+          "id": "sentry",
+          "name": "Sentry API",
+          "breaking": 43,
+          "warning": 25,
+          "info": 72,
+          "total": 140
+        },
+        {
+          "id": "datadog",
+          "name": "Datadog API (v2)",
+          "breaking": 8,
+          "warning": 14,
+          "info": 2013,
+          "total": 2035
+        },
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 4,
+          "warning": 20,
+          "info": 76,
+          "total": 100
+        },
+        {
+          "id": "digitalocean",
+          "name": "DigitalOcean API",
+          "breaking": 0,
+          "warning": 8,
+          "info": 56,
+          "total": 64
+        },
+        {
+          "id": "wikimedia",
+          "name": "Wikimedia REST API (en.wikipedia.org)",
+          "breaking": 0,
+          "warning": 1,
+          "info": 1,
+          "total": 2
+        },
+        {
+          "id": "box",
+          "name": "Box API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 7,
+          "total": 7
+        },
+        {
+          "id": "discourse",
+          "name": "Discourse API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 4,
+          "total": 4
+        },
+        {
+          "id": "fly-machines",
+          "name": "Fly.io Machines API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 2,
+          "total": 2
+        },
+        {
+          "id": "jira",
+          "name": "Jira Cloud platform REST API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 2,
+          "total": 2
+        },
+        {
+          "id": "kubernetes",
+          "name": "Kubernetes API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 154,
+          "total": 154
+        },
+        {
+          "id": "supabase",
+          "name": "Supabase Management API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 13,
+          "total": 13
+        },
+        {
+          "id": "x",
+          "name": "X API (v2)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 6,
+          "total": 6
+        }
+      ]
+    },
     {
       "date": "2026-11-12",
       "apis": [
