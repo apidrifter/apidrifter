@@ -1,11 +1,11 @@
 {
   "id": "openai",
   "url": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
-  "fetchedAt": "2026-11-12T06:55:55.659Z",
-  "checkedAt": "2026-11-12T06:55:55.659Z",
-  "sha256": "f334b5353666afcd7209f505eec99a9cbd66285a23c8f716e0b3ab574f4dc54a",
-  "bytes": 4334427,
-  "etag": "W/\"6e8961771c54fab7829e5209c8c48a9cd8a0af49c17842bdd892c645ddc43e92\"",
+  "fetchedAt": "2026-11-13T06:55:11.271Z",
+  "checkedAt": "2026-11-13T06:55:11.271Z",
+  "sha256": "e56a504edd33d1caf1f31cd7eeda339650a75c806b9f723115af83f6f6124fda",
+  "bytes": 4322863,
+  "etag": "W/\"37108f032cdbb6962d976d3d57a73d847f94f83f3a3471f31a01f8f93fb16099\"",
   "contentType": "text/plain; charset=utf-8",
   "sourceFormat": "openapi-3.1.0",
   "version": "2.3.0"

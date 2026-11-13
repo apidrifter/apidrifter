@@ -1,12 +1,12 @@
 {
   "id": "wikimedia",
   "url": "https://en.wikipedia.org/api/rest_v1/?spec",
-  "fetchedAt": "2026-11-04T06:54:46.473Z",
-  "checkedAt": "2026-11-12T06:56:09.801Z",
-  "sha256": "becc6060586499ef407f8ecf62661ab4d828e92ebe1d6ef4e0b60c1b82eee639",
+  "fetchedAt": "2026-11-13T06:55:34.127Z",
+  "checkedAt": "2026-11-13T06:55:34.127Z",
+  "sha256": "0a2e48a675966acbe588138b60ffff27513f75fe257dc9001e3c1e4ca3d553ef",
   "bytes": 106848,
-  "etag": "W/\"1a160-65f0f30ac2480\"",
-  "lastModified": "Fri, 30 Oct 2026 13:58:26 GMT",
+  "etag": "W/\"1a160-6601c306c0400\"",
+  "lastModified": "Thu, 12 Nov 2026 22:54:08 GMT",
   "contentType": "application/json",
   "sourceFormat": "openapi-3.0.1",
   "version": "1.0.0"

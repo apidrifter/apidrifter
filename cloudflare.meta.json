@@ -1,11 +1,11 @@
 {
   "id": "cloudflare",
   "url": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
-  "fetchedAt": "2026-11-12T06:55:57.537Z",
-  "checkedAt": "2026-11-12T06:55:57.537Z",
-  "sha256": "97dc0c2806b4f19fb21ab93dad90ab444bc5b4e6d2486a23bc83243ffe5ca0f9",
-  "bytes": 28029351,
-  "etag": "W/\"5d3e2497c497bd45c5eb1dc7b77a9ce6100408c503e92fb8c29d7baf20afaa65\"",
+  "fetchedAt": "2026-11-13T06:55:14.049Z",
+  "checkedAt": "2026-11-13T06:55:14.049Z",
+  "sha256": "ff20e2f147bb35b47b89b9b188ccd86d9a8a495ca3afb375c5aeb0ab5b3634a0",
+  "bytes": 27984853,
+  "etag": "W/\"766dbaafd7aed0c3241ee4a22c7766335aea913ee778f912814429e05fbf78e7\"",
   "contentType": "text/plain; charset=utf-8",
   "sourceFormat": "openapi-3.0.3",
   "version": "4.0.0"

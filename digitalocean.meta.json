@@ -1,12 +1,12 @@
 {
   "id": "digitalocean",
   "url": "https://api-engineering.nyc3.digitaloceanspaces.com/spec-ci/DigitalOcean-public.v2.yaml",
-  "fetchedAt": "2026-11-12T06:55:58.271Z",
-  "checkedAt": "2026-11-12T06:55:58.271Z",
-  "sha256": "a9c8695a561046547091d3bb0c3b30342777445076e594855ddccac869e48764",
-  "bytes": 4545513,
-  "etag": "\"65081c10e4e2534e322f4b6d956a56b5\"",
-  "lastModified": "Thu, 12 Nov 2026 05:51:47 GMT",
+  "fetchedAt": "2026-11-13T06:55:15.333Z",
+  "checkedAt": "2026-11-13T06:55:15.333Z",
+  "sha256": "13f994bc0f5bc03692cd5374364773b470bac70b16231b7cd9a7d8bbec5eb16b",
+  "bytes": 4556692,
+  "etag": "\"91ca0ac75769688e99a58031b9fcc909\"",
+  "lastModified": "Thu, 12 Nov 2026 11:11:16 GMT",
   "contentType": "application/yaml",
   "sourceFormat": "openapi-3.0.0",
   "version": "2.0"
