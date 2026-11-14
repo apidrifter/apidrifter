@@ -1,7 +1,92 @@
 {
-  "generatedAt": "2026-11-13T06:56:00.803Z",
+  "generatedAt": "2026-11-14T06:44:13.370Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-14",
+      "apis": [
+        {
+          "id": "vercel",
+          "name": "Vercel REST API",
+          "breaking": 850,
+          "warning": 95,
+          "info": 973,
+          "total": 1918
+        },
+        {
+          "id": "sentry",
+          "name": "Sentry API",
+          "breaking": 287,
+          "warning": 3,
+          "info": 296,
+          "total": 586
+        },
+        {
+          "id": "openai",
+          "name": "OpenAI API",
+          "breaking": 166,
+          "warning": 146,
+          "info": 68,
+          "total": 380
+        },
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 9,
+          "warning": 5,
+          "info": 58,
+          "total": 72
+        },
+        {
+          "id": "datadog",
+          "name": "Datadog API (v2)",
+          "breaking": 7,
+          "warning": 19,
+          "info": 87,
+          "total": 113
+        },
+        {
+          "id": "digitalocean",
+          "name": "DigitalOcean API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 4,
+          "total": 4
+        },
+        {
+          "id": "discourse",
+          "name": "Discourse API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 1,
+          "total": 1
+        },
+        {
+          "id": "github",
+          "name": "GitHub REST API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 57,
+          "total": 57
+        },
+        {
+          "id": "kubernetes",
+          "name": "Kubernetes API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 1869,
+          "total": 1869
+        },
+        {
+          "id": "x",
+          "name": "X API (v2)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 3,
+          "total": 3
+        }
+      ]
+    },
     {
       "date": "2026-11-13",
       "apis": [
