@@ -2,7 +2,7 @@
   "id": "cloudflare",
   "url": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
   "fetchedAt": "2026-11-14T06:43:30.099Z",
-  "checkedAt": "2026-11-14T06:43:30.099Z",
+  "checkedAt": "2026-11-15T06:47:11.196Z",
   "sha256": "214602bc44128f3b441db94e5a77a1da8c47d6c5d9da9c26230dfff2650cdebf",
   "bytes": 28011450,
   "etag": "W/\"af8830253ec405b85506bb1dad420ac77e60bbe927321ebb3b30cbf296a3be74\"",
