@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-09T08:25:27.616Z",
-  "week": "2026-W46",
+  "generatedAt": "2026-11-16T09:38:29.277Z",
+  "week": "2026-W47",
   "npm": {
     "apidrifter": {
-      "week": 567,
-      "month": 567
+      "week": 45,
+      "month": 612
     },
     "@apidrifter/core": {
-      "week": 516,
-      "month": 516
+      "week": 47,
+      "month": 563
     }
   },
   "github": {
     "stars": 26,
     "forks": 0,
-    "openIssues": 0,
+    "openIssues": 5,
     "watchers": 0
   },
   "traffic": null,
