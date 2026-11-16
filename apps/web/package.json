@@ -12,10 +12,10 @@
     "verify": "node scripts/verify-seo.mjs dist"
   },
   "dependencies": {
-    "@astrojs/mdx": "8.1.2",
+    "@astrojs/mdx": "8.1.6",
     "@astrojs/rss": "4.0.19",
-    "@astrojs/sitemap": "3.7.4",
-    "astro": "7.4.5"
+    "@astrojs/sitemap": "3.7.5",
+    "astro": "7.4.12"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
