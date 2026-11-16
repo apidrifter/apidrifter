@@ -1,7 +1,28 @@
 {
-  "generatedAt": "2026-11-14T06:44:13.370Z",
+  "generatedAt": "2026-11-16T08:08:32.664Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-16",
+      "apis": [
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 0,
+          "warning": 48,
+          "info": 2,
+          "total": 50
+        },
+        {
+          "id": "jira",
+          "name": "Jira Cloud platform REST API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 6,
+          "total": 6
+        }
+      ]
+    },
     {
       "date": "2026-11-14",
       "apis": [
