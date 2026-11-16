@@ -1,11 +1,11 @@
 {
   "id": "jira",
   "url": "https://developer.atlassian.com/cloud/jira/platform/swagger-v3.v3.json",
-  "fetchedAt": "2026-11-13T06:55:30.638Z",
-  "checkedAt": "2026-11-15T06:47:14.626Z",
-  "sha256": "fe90ae5cb2cea905248637cbd8cab79572256cb0213993d003877fc4903cf1d9",
-  "bytes": 2512650,
+  "fetchedAt": "2026-11-16T08:08:24.340Z",
+  "checkedAt": "2026-11-16T08:08:24.340Z",
+  "sha256": "cc48730aac00f7d8c6cef390592623d8acabd356ccfc56fb9bc70519757fe7f4",
+  "bytes": 2512675,
   "contentType": "text/plain; charset=utf-8",
   "sourceFormat": "openapi-3.0.1",
-  "version": "1001.0.0-SNAPSHOT-83d88a18b8b4802935182c6ee49cc6f906b4e4e8"
+  "version": "1001.0.0-SNAPSHOT-4316cda06959d0f332288c8170c2869bbb60512d"
 }
