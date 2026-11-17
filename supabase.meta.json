@@ -1,11 +1,11 @@
 {
   "id": "supabase",
   "url": "https://api.supabase.com/api/v1-json",
-  "fetchedAt": "2026-11-14T06:43:43.882Z",
-  "checkedAt": "2026-11-16T08:08:24.513Z",
-  "sha256": "e09ef664178e38bd55283845cae2103b1f1a3b2df6cf155a54c7d53c098005ac",
-  "bytes": 361374,
-  "etag": "W/\"5839e-kxm7dTNZSJHMC74ixXR9ByuP9uA\"",
+  "fetchedAt": "2026-11-17T06:57:52.440Z",
+  "checkedAt": "2026-11-17T06:57:52.440Z",
+  "sha256": "a6f60730993a7b13fd65d44f3001a7781e223865a12e5bce0685454e048db577",
+  "bytes": 363131,
+  "etag": "W/\"58a7b-4V8xUYvPWk3WSwBTbHiY+c1bBSs\"",
   "contentType": "application/json; charset=utf-8",
   "sourceFormat": "openapi-3.0.0",
   "version": "1.0.0"
