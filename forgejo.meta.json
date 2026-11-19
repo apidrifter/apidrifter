@@ -2,7 +2,7 @@
   "id": "forgejo",
   "url": "https://codeberg.org/swagger.v1.json",
   "fetchedAt": "2026-11-12T06:56:09.450Z",
-  "checkedAt": "2026-11-17T06:57:54.586Z",
+  "checkedAt": "2026-11-19T06:57:33.384Z",
   "sha256": "634d5ea11006a14a5fce1c2dd197522b322756797b380124223dfc92155ff04e",
   "bytes": 868977,
   "contentType": "application/json",
