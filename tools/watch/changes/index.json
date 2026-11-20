@@ -1,7 +1,92 @@
 {
-  "generatedAt": "2026-11-19T06:57:58.769Z",
+  "generatedAt": "2026-11-20T06:57:31.150Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-20",
+      "apis": [
+        {
+          "id": "vercel",
+          "name": "Vercel REST API",
+          "breaking": 549,
+          "warning": 28,
+          "info": 616,
+          "total": 1193
+        },
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 55,
+          "warning": 9,
+          "info": 101,
+          "total": 165
+        },
+        {
+          "id": "openai",
+          "name": "OpenAI API",
+          "breaking": 32,
+          "warning": 33,
+          "info": 12,
+          "total": 77
+        },
+        {
+          "id": "datadog",
+          "name": "Datadog API (v2)",
+          "breaking": 14,
+          "warning": 5,
+          "info": 60,
+          "total": 79
+        },
+        {
+          "id": "digitalocean",
+          "name": "DigitalOcean API",
+          "breaking": 8,
+          "warning": 0,
+          "info": 112,
+          "total": 120
+        },
+        {
+          "id": "forgejo",
+          "name": "Forgejo API (Codeberg)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 1,
+          "total": 1
+        },
+        {
+          "id": "jira",
+          "name": "Jira Cloud platform REST API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 2,
+          "total": 2
+        },
+        {
+          "id": "kubernetes",
+          "name": "Kubernetes API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 1989,
+          "total": 1989
+        },
+        {
+          "id": "supabase",
+          "name": "Supabase Management API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 11,
+          "total": 11
+        },
+        {
+          "id": "x",
+          "name": "X API (v2)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 3,
+          "total": 3
+        }
+      ]
+    },
     {
       "date": "2026-11-19",
       "apis": [
