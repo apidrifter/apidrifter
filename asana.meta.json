@@ -1,11 +1,11 @@
 {
   "id": "asana",
   "url": "https://raw.githubusercontent.com/Asana/openapi/master/defs/asana_oas.yaml",
-  "fetchedAt": "2026-11-18T06:56:58.261Z",
-  "checkedAt": "2026-11-19T06:57:29.683Z",
-  "sha256": "c79c386b1f24abd163ea844450b66f85851a53d0f3fb13e1611b7cd3569a91dc",
-  "bytes": 3484576,
-  "etag": "W/\"fe8dddbc340395fee4598e25c7225efc69156af02e8196025aad3e14925fbc49\"",
+  "fetchedAt": "2026-11-20T06:57:09.304Z",
+  "checkedAt": "2026-11-20T06:57:09.304Z",
+  "sha256": "034cecb821af15040070c48d3032714cc2ef6e42339a48fabc7c6a87cd72394a",
+  "bytes": 3485573,
+  "etag": "W/\"607112acaa5cd6f765c9a0a52db124c0c02379310de48b5d417e31d033804ee5\"",
   "contentType": "text/plain; charset=utf-8",
   "sourceFormat": "openapi-3.0.0",
   "version": "1.0"

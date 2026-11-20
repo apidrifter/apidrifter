@@ -1,11 +1,11 @@
 {
   "id": "kubernetes",
   "url": "https://raw.githubusercontent.com/kubernetes/kubernetes/master/api/openapi-spec/swagger.json",
-  "fetchedAt": "2026-11-19T06:57:20.238Z",
-  "checkedAt": "2026-11-19T06:57:20.238Z",
-  "sha256": "1fadc5f4bce753e728838c39bc70c512d3636f721fac8ba2757729b4dca33f70",
-  "bytes": 4379332,
-  "etag": "W/\"7bfd5a6754a661e4fd80c44c3d39b41623487ac84fd2cf8fa58202f79f7859ea\"",
+  "fetchedAt": "2026-11-20T06:57:01.816Z",
+  "checkedAt": "2026-11-20T06:57:01.816Z",
+  "sha256": "8ada7fdfa69c4bfb835582fbd668bbbafee6e484b0984e9534b19196e5720bbe",
+  "bytes": 4380613,
+  "etag": "W/\"39f853b616c4d0e3c80c949454e26c93802930ebf06a9ef51bfd090f7daf670e\"",
   "contentType": "text/plain; charset=utf-8",
   "sourceFormat": "swagger-2.0",
   "version": "unversioned"
