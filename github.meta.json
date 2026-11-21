@@ -2,7 +2,7 @@
   "id": "github",
   "url": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
   "fetchedAt": "2026-11-18T06:56:47.127Z",
-  "checkedAt": "2026-11-20T06:56:57.339Z",
+  "checkedAt": "2026-11-21T06:53:11.911Z",
   "sha256": "6d9bbb20d8865b01464028937f2403954ad46598b4ebd3513dcb1a15b1a84aa7",
   "bytes": 14275550,
   "etag": "W/\"8f8ac6adbaea6e41b3ba0057eb8ebaec427acc4c4c7d79af180ba8376cfb3dd7\"",
