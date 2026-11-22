@@ -1,12 +1,12 @@
 {
   "id": "discourse",
   "url": "https://docs.discourse.org/openapi.json",
-  "fetchedAt": "2026-11-14T06:43:45.059Z",
-  "checkedAt": "2026-11-21T06:53:25.843Z",
-  "sha256": "8de25dc67c858589ae86deb9b7cda8d84f5133d73190cc96abf0e60435938e19",
-  "bytes": 723847,
-  "etag": "W/\"6af6d518-b0b87\"",
-  "lastModified": "Fri, 13 Nov 2026 09:15:04 GMT",
+  "fetchedAt": "2026-11-22T06:51:57.219Z",
+  "checkedAt": "2026-11-22T06:51:57.219Z",
+  "sha256": "a5b34004fdbbf228e3d2d75cb36186bdf50b4d7bce2fe78f730d4f7bd1c1ad21",
+  "bytes": 723997,
+  "etag": "W/\"6b01ab2e-b0c1d\"",
+  "lastModified": "Sat, 21 Nov 2026 14:31:10 GMT",
   "contentType": "application/json; charset=utf-8",
   "sourceFormat": "openapi-3.1.0",
   "version": "latest"

@@ -2,7 +2,7 @@
   "id": "digitalocean",
   "url": "https://api-engineering.nyc3.digitaloceanspaces.com/spec-ci/DigitalOcean-public.v2.yaml",
   "fetchedAt": "2026-11-21T06:53:14.494Z",
-  "checkedAt": "2026-11-21T06:53:14.494Z",
+  "checkedAt": "2026-11-22T06:51:47.593Z",
   "sha256": "e189e92287de70680d11b4a79a594cad66eaf5e869a500b8975384f22dc9c133",
   "bytes": 4590806,
   "etag": "\"86e28addd65a163b5ab530dd2ae8ea8c\"",
