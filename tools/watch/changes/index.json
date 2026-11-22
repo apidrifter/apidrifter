@@ -1,7 +1,36 @@
 {
-  "generatedAt": "2026-11-21T06:53:43.819Z",
+  "generatedAt": "2026-11-22T06:52:07.111Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-22",
+      "apis": [
+        {
+          "id": "discourse",
+          "name": "Discourse API",
+          "breaking": 1,
+          "warning": 0,
+          "info": 2,
+          "total": 3
+        },
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 4,
+          "total": 4
+        },
+        {
+          "id": "datadog",
+          "name": "Datadog API (v2)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 2,
+          "total": 2
+        }
+      ]
+    },
     {
       "date": "2026-11-21",
       "apis": [

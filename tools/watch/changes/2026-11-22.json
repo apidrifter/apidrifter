@@ -1,0 +1,141 @@
+{
+  "date": "2026-11-22",
+  "generatedAt": "2026-11-22T06:52:07.104Z",
+  "entries": [
+    {
+      "id": "discourse",
+      "name": "Discourse API",
+      "homepage": "https://docs.discourse.org/",
+      "specUrl": "https://docs.discourse.org/openapi.json",
+      "fetchedAt": "2026-11-22T06:51:57.219Z",
+      "before": {
+        "url": "https://docs.discourse.org/openapi.json",
+        "fetchedAt": "2026-11-14T06:43:45.059Z",
+        "version": "latest"
+      },
+      "after": {
+        "version": "latest"
+      },
+      "summary": {
+        "breaking": 1,
+        "warning": 0,
+        "info": 2
+      },
+      "total": 3,
+      "distinct": 3,
+      "changes": [
+        {
+          "id": "request-property-max-added",
+          "severity": "breaking",
+          "subject": "POST /uploads/batch-presign-multipart-parts.json",
+          "message": "maxItems 100 was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "POST /uploads/batch-presign-multipart-parts.json",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "request-property-description-changed",
+          "severity": "info",
+          "subject": "POST /uploads/batch-presign-multipart-parts.json",
+          "message": "the description changed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare API",
+      "homepage": "https://developers.cloudflare.com/api/",
+      "specUrl": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
+      "fetchedAt": "2026-11-22T06:51:46.907Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
+        "fetchedAt": "2026-11-21T06:53:13.655Z",
+        "version": "4.0.0"
+      },
+      "after": {
+        "version": "4.0.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 4
+      },
+      "total": 4,
+      "distinct": 4,
+      "changes": [
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /accounts/{account_id}/billable/usage",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /organizations/{organization_id}/billable/usage",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "request-property-description-changed",
+          "severity": "info",
+          "subject": "POST /accounts/{account_id}/billable/usage",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /accounts/{account_id}/billable/usage",
+          "message": "the description changed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "datadog",
+      "name": "Datadog API (v2)",
+      "homepage": "https://docs.datadoghq.com/api/latest/",
+      "specUrl": "https://raw.githubusercontent.com/DataDog/datadog-api-client-typescript/master/.generator/schemas/v2/openapi.yaml",
+      "fetchedAt": "2026-11-22T06:51:51.273Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/DataDog/datadog-api-client-typescript/master/.generator/schemas/v2/openapi.yaml",
+        "fetchedAt": "2026-11-21T06:53:19.798Z",
+        "version": "1.0"
+      },
+      "after": {
+        "version": "1.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 2
+      },
+      "total": 2,
+      "distinct": 2,
+      "changes": [
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "GET /api/v2/synthetics/tests/browser/{public_id}/results",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "GET /api/v2/synthetics/tests/{public_id}/results",
+          "message": "description changed",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
