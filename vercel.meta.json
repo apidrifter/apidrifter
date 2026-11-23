@@ -1,12 +1,12 @@
 {
   "id": "vercel",
   "url": "https://openapi.vercel.sh/",
-  "fetchedAt": "2026-11-21T06:53:17.147Z",
-  "checkedAt": "2026-11-22T06:51:48.779Z",
-  "sha256": "5ee133ae3d3dacddeafde7b30594f6a95cacec5de88661d437b5d1c532702927",
-  "bytes": 12414846,
-  "etag": "W/\"49d01beee61e5994ccb699ae012edb2e\"",
-  "lastModified": "Sat, 21 Nov 2026 06:08:27 GMT",
+  "fetchedAt": "2026-11-23T07:11:07.819Z",
+  "checkedAt": "2026-11-23T07:11:07.819Z",
+  "sha256": "c1a3b931a9dfd8a3e3877daa6ff31a70a975dcc4408e9943213bc38b86ba27a7",
+  "bytes": 12415025,
+  "etag": "W/\"d66a7cd477abecf21461441574af362c\"",
+  "lastModified": "Mon, 23 Nov 2026 06:19:14 GMT",
   "contentType": "application/json; charset=utf-8",
   "sourceFormat": "openapi-3.0.3",
   "version": "0.0.1"
