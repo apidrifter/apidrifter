@@ -1,0 +1,329 @@
+{
+  "date": "2026-11-23",
+  "generatedAt": "2026-11-23T07:11:18.832Z",
+  "entries": [
+    {
+      "id": "vercel",
+      "name": "Vercel REST API",
+      "homepage": "https://vercel.com/docs/rest-api",
+      "specUrl": "https://openapi.vercel.sh/",
+      "fetchedAt": "2026-11-23T07:11:07.819Z",
+      "before": {
+        "url": "https://openapi.vercel.sh/",
+        "fetchedAt": "2026-11-21T06:53:17.147Z",
+        "version": "0.0.1"
+      },
+      "after": {
+        "version": "0.0.1"
+      },
+      "summary": {
+        "breaking": 6,
+        "warning": 3,
+        "info": 7
+      },
+      "total": 16,
+      "distinct": 15,
+      "changes": [
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"alias\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"sandboxName\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"expiryNotificationLeadTime\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-became-optional",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"projectId\" became optional",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"projectName\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-removed",
+          "severity": "breaking",
+          "subject": "GET /v3/events",
+          "message": "property \"sandboxId\" was removed",
+          "count": 1
+        },
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "GET /v1/events/types",
+          "message": "enum value \"\\\"sandbox-ai-gateway-credentials-configured\\\"\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "GET /v3/events",
+          "message": "enum value \"\\\"sandbox-ai-gateway-credentials-configured\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-became-required",
+          "severity": "info",
+          "subject": "GET /v3/events",
+          "message": "property \"projectId\" became required",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-became-required",
+          "severity": "info",
+          "subject": "GET /v3/events",
+          "message": "property \"sandboxId\" became required",
+          "count": 1
+        },
+        {
+          "id": "response-property-required-property-added",
+          "severity": "info",
+          "subject": "GET /v3/events",
+          "message": "required property \"alias\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /v3/events",
+          "message": "property \"sandboxId\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-required-property-added",
+          "severity": "info",
+          "subject": "GET /v3/events",
+          "message": "required property \"expiryNotificationLeadTime\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-required-property-added",
+          "severity": "info",
+          "subject": "GET /v3/events",
+          "message": "required property \"projectName\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-required-property-added",
+          "severity": "info",
+          "subject": "GET /v3/events",
+          "message": "required property \"sandboxName\" was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "fly-machines",
+      "name": "Fly.io Machines API",
+      "homepage": "https://docs.machines.dev/",
+      "specUrl": "https://docs.machines.dev/openapi.json",
+      "fetchedAt": "2026-11-23T07:11:12.387Z",
+      "before": {
+        "url": "https://docs.machines.dev/openapi.json",
+        "fetchedAt": "2026-11-19T06:57:31.347Z",
+        "version": "1.0"
+      },
+      "after": {
+        "version": "1.0"
+      },
+      "summary": {
+        "breaking": 2,
+        "warning": 6,
+        "info": 9
+      },
+      "total": 17,
+      "distinct": 17,
+      "changes": [
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "GET /v1/postgres/{postgres_cluster_id}/maintenance_window",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "response-property-nullable-added",
+          "severity": "breaking",
+          "subject": "PATCH /v1/postgres/{postgres_cluster_id}/maintenance_window",
+          "message": "the value may now be null",
+          "count": 1
+        },
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "GET /v1/postgres",
+          "message": "enum value \"\\\"dev-256\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "GET /v1/postgres/plans",
+          "message": "enum value \"\\\"dev-256\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "GET /v1/postgres/{postgres_cluster_id}",
+          "message": "enum value \"\\\"dev-256\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "POST /v1/postgres",
+          "message": "enum value \"\\\"dev-256\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "POST /v1/postgres/{postgres_cluster_id}/fork",
+          "message": "enum value \"\\\"dev-256\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-enum-value-added",
+          "severity": "warning",
+          "subject": "POST /v1/postgres/{postgres_cluster_id}/restore",
+          "message": "enum value \"\\\"dev-256\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "GET /v1/postgres/{postgres_cluster_id}/maintenance_window",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /v1/postgres/{postgres_cluster_id}/maintenance_window",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "PATCH /v1/postgres/{postgres_cluster_id}/maintenance_window",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /v1/postgres/{postgres_cluster_id}/maintenance_window",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-description-changed",
+          "severity": "info",
+          "subject": "PATCH /v1/postgres/{postgres_cluster_id}/maintenance_window",
+          "message": "response description changed",
+          "count": 1
+        },
+        {
+          "id": "request-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v1/postgres",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "request-property-min-decreased",
+          "severity": "info",
+          "subject": "POST /v1/postgres",
+          "message": "minimum decreased from 10 to 1",
+          "count": 1
+        },
+        {
+          "id": "request-property-enum-value-added",
+          "severity": "info",
+          "subject": "POST /v1/postgres",
+          "message": "enum value \"\\\"dev-256\\\"\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-enum-value-added",
+          "severity": "info",
+          "subject": "POST /v1/postgres/{postgres_cluster_id}/fork",
+          "message": "enum value \"\\\"dev-256\\\"\" was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "jira",
+      "name": "Jira Cloud platform REST API",
+      "homepage": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+      "specUrl": "https://developer.atlassian.com/cloud/jira/platform/swagger-v3.v3.json",
+      "fetchedAt": "2026-11-23T07:11:11.379Z",
+      "before": {
+        "url": "https://developer.atlassian.com/cloud/jira/platform/swagger-v3.v3.json",
+        "fetchedAt": "2026-11-20T06:57:10.104Z",
+        "version": "1001.0.0-SNAPSHOT-eac1257d8e1582ed7dd2a97a93dbea3c277d24be"
+      },
+      "after": {
+        "version": "1001.0.0-SNAPSHOT-6e27052da36f05e0a0b0bf27ca91a6601810e967"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 4
+      },
+      "total": 4,
+      "distinct": 4,
+      "changes": [
+        {
+          "id": "api-version-changed",
+          "severity": "info",
+          "message": "the API version changed",
+          "count": 1
+        },
+        {
+          "id": "response-description-changed",
+          "severity": "info",
+          "subject": "GET /rest/api/3/project/{projectIdOrKey}/classification-config",
+          "message": "response description changed",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-added",
+          "severity": "info",
+          "subject": "POST /rest/api/3/issue",
+          "message": "query parameter \"preferFieldAssociatedErrors\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-parameter-added",
+          "severity": "info",
+          "subject": "POST /rest/api/3/issue/{issueIdOrKey}/transitions",
+          "message": "query parameter \"preferFieldAssociatedErrors\" was added",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
