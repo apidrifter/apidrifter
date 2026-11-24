@@ -1,7 +1,84 @@
 {
-  "generatedAt": "2026-11-23T07:11:18.845Z",
+  "generatedAt": "2026-11-24T06:57:25.750Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-24",
+      "apis": [
+        {
+          "id": "vercel",
+          "name": "Vercel REST API",
+          "breaking": 1537,
+          "warning": 34,
+          "info": 1570,
+          "total": 3141
+        },
+        {
+          "id": "hetzner-cloud",
+          "name": "Hetzner Cloud API",
+          "breaking": 380,
+          "warning": 0,
+          "info": 382,
+          "total": 762
+        },
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 27,
+          "warning": 7,
+          "info": 428,
+          "total": 462
+        },
+        {
+          "id": "datadog",
+          "name": "Datadog API (v2)",
+          "breaking": 24,
+          "warning": 0,
+          "info": 69,
+          "total": 93
+        },
+        {
+          "id": "box",
+          "name": "Box API",
+          "breaking": 0,
+          "warning": 1,
+          "info": 1,
+          "total": 2
+        },
+        {
+          "id": "digitalocean",
+          "name": "DigitalOcean API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 46,
+          "total": 46
+        },
+        {
+          "id": "jira",
+          "name": "Jira Cloud platform REST API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 17,
+          "total": 17
+        },
+        {
+          "id": "openai",
+          "name": "OpenAI API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 7,
+          "total": 7
+        },
+        {
+          "id": "x",
+          "name": "X API (v2)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 2,
+          "total": 2
+        }
+      ]
+    },
     {
       "date": "2026-11-23",
       "apis": [
