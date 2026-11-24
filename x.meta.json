@@ -1,10 +1,10 @@
 {
   "id": "x",
   "url": "https://api.twitter.com/2/openapi.json",
-  "fetchedAt": "2026-11-23T07:11:11.095Z",
-  "checkedAt": "2026-11-23T07:11:11.095Z",
-  "sha256": "3a65818e6aa0af3592ec16d19dc67cc7b3a050020495c6a0e402f0172861ec45",
-  "bytes": 1412372,
+  "fetchedAt": "2026-11-24T06:57:08.113Z",
+  "checkedAt": "2026-11-24T06:57:08.113Z",
+  "sha256": "3e9713b695a2811475c4f7adc74021bcc3297458fc339551e91ef28ceccda2cb",
+  "bytes": 1412758,
   "contentType": "application/json; charset=utf-8",
   "sourceFormat": "openapi-3.0.0",
   "version": "2.175"
