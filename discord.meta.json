@@ -1,11 +1,11 @@
 {
   "id": "discord",
   "url": "https://raw.githubusercontent.com/discord/discord-api-spec/main/specs/openapi.json",
-  "fetchedAt": "2026-11-07T06:40:07.898Z",
-  "checkedAt": "2026-11-24T06:56:59.284Z",
-  "sha256": "ef338088f4c6a73fdb9840acd1ce2bf8f16c1870f4437bfc563418c7e0de7278",
-  "bytes": 1208907,
-  "etag": "W/\"19542bb6e57f68c5e4ef16055b22565d3a5c6a49836be5b62da33a6d65999330\"",
+  "fetchedAt": "2026-11-25T06:58:58.746Z",
+  "checkedAt": "2026-11-25T06:58:58.746Z",
+  "sha256": "33be28e715283003426be4666c0b558a53ce2e9a54f13217666304a2865048ba",
+  "bytes": 1208925,
+  "etag": "W/\"3dd217b4a22029740ca7519f51d5d69383f227765b9ed2debed3695a0b4229ee\"",
   "contentType": "text/plain; charset=utf-8",
   "sourceFormat": "openapi-3.1.0",
   "version": "10"

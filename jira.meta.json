@@ -2,7 +2,7 @@
   "id": "jira",
   "url": "https://developer.atlassian.com/cloud/jira/platform/swagger-v3.v3.json",
   "fetchedAt": "2026-11-24T06:57:08.364Z",
-  "checkedAt": "2026-11-24T06:57:08.364Z",
+  "checkedAt": "2026-11-25T06:59:06.923Z",
   "sha256": "b303b589c1e8d4066eed7ec007b496a37a4925ffc36369c999543d911bb07945",
   "bytes": 2514735,
   "contentType": "application/json; charset=utf-8",
