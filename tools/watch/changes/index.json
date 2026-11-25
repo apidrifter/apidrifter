@@ -1,7 +1,68 @@
 {
-  "generatedAt": "2026-11-24T06:57:25.750Z",
+  "generatedAt": "2026-11-25T06:59:21.473Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-25",
+      "apis": [
+        {
+          "id": "openai",
+          "name": "OpenAI API",
+          "breaking": 2833,
+          "warning": 2644,
+          "info": 568,
+          "total": 6045
+        },
+        {
+          "id": "vercel",
+          "name": "Vercel REST API",
+          "breaking": 834,
+          "warning": 52,
+          "info": 967,
+          "total": 1853
+        },
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 110,
+          "warning": 2,
+          "info": 75,
+          "total": 187
+        },
+        {
+          "id": "datadog",
+          "name": "Datadog API (v2)",
+          "breaking": 14,
+          "warning": 40,
+          "info": 7389,
+          "total": 7443
+        },
+        {
+          "id": "digitalocean",
+          "name": "DigitalOcean API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 30,
+          "total": 30
+        },
+        {
+          "id": "discourse",
+          "name": "Discourse API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 1,
+          "total": 1
+        },
+        {
+          "id": "x",
+          "name": "X API (v2)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 2,
+          "total": 2
+        }
+      ]
+    },
     {
       "date": "2026-11-24",
       "apis": [
