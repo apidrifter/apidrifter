@@ -1,7 +1,76 @@
 {
-  "generatedAt": "2026-11-25T06:59:21.473Z",
+  "generatedAt": "2026-11-26T06:58:31.639Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-26",
+      "apis": [
+        {
+          "id": "vercel",
+          "name": "Vercel REST API",
+          "breaking": 1481,
+          "warning": 49,
+          "info": 1582,
+          "total": 3112
+        },
+        {
+          "id": "x",
+          "name": "X API (v2)",
+          "breaking": 3,
+          "warning": 2,
+          "info": 9,
+          "total": 14
+        },
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 2,
+          "warning": 0,
+          "info": 57,
+          "total": 59
+        },
+        {
+          "id": "jira",
+          "name": "Jira Cloud platform REST API",
+          "breaking": 1,
+          "warning": 1,
+          "info": 3,
+          "total": 5
+        },
+        {
+          "id": "datadog",
+          "name": "Datadog API (v2)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 269,
+          "total": 269
+        },
+        {
+          "id": "digitalocean",
+          "name": "DigitalOcean API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 58,
+          "total": 58
+        },
+        {
+          "id": "github",
+          "name": "GitHub REST API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 73,
+          "total": 73
+        },
+        {
+          "id": "tailscale",
+          "name": "Tailscale API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 2,
+          "total": 2
+        }
+      ]
+    },
     {
       "date": "2026-11-25",
       "apis": [
