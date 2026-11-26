@@ -1,11 +1,11 @@
 {
   "id": "github",
   "url": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
-  "fetchedAt": "2026-11-18T06:56:47.127Z",
-  "checkedAt": "2026-11-25T06:58:55.224Z",
-  "sha256": "6d9bbb20d8865b01464028937f2403954ad46598b4ebd3513dcb1a15b1a84aa7",
-  "bytes": 14275550,
-  "etag": "W/\"8f8ac6adbaea6e41b3ba0057eb8ebaec427acc4c4c7d79af180ba8376cfb3dd7\"",
+  "fetchedAt": "2026-11-26T06:57:58.006Z",
+  "checkedAt": "2026-11-26T06:57:58.006Z",
+  "sha256": "8b22618a0f749ef2f3edcc99c1d4ac6d5626e385057f4cedcccdc8acd5280593",
+  "bytes": 14283088,
+  "etag": "W/\"a2b69c2ae57815075dd4668093feeb0d325589c20d9c1a5f3705ab86f22484fc\"",
   "contentType": "text/plain; charset=utf-8",
   "sourceFormat": "openapi-3.0.3",
   "version": "1.1.4"
