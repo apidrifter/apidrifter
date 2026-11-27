@@ -1,0 +1,668 @@
+{
+  "date": "2026-11-27",
+  "generatedAt": "2026-11-27T06:59:53.202Z",
+  "entries": [
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare API",
+      "homepage": "https://developers.cloudflare.com/api/",
+      "specUrl": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
+      "fetchedAt": "2026-11-27T06:59:35.530Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
+        "fetchedAt": "2026-11-26T06:58:00.138Z",
+        "version": "4.0.0"
+      },
+      "after": {
+        "version": "4.0.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 26
+      },
+      "total": 26,
+      "distinct": 15,
+      "changes": [
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "DELETE /zones/{zone_id}/email/routing/rules/{rule_identifier}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /accounts/{account_id}/email/routing/rules",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /zones/{zone_id}/email/routing/rules",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /zones/{zone_id}/email/routing/rules/{rule_identifier}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /{account_or_zone}/{account_or_zone_id}/email/routing/rules",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "request-property-description-changed",
+          "severity": "info",
+          "subject": "POST /accounts/{account_id}/email/routing/rules/plan",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /accounts/{account_id}/email/routing/rules/plan",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "request-property-description-changed",
+          "severity": "info",
+          "subject": "POST /zones/{zone_id}/email/routing/rules",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /zones/{zone_id}/email/routing/rules",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "request-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /zones/{zone_id}/email/routing/rules/{rule_identifier}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /zones/{zone_id}/email/routing/rules/{rule_identifier}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "DELETE /accounts/{account_id}/settings/transformations/workers/{script_name}",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /accounts/{account_id}/settings/transformations/workers/{script_name}",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "POST /zones/{zone_id}/dns_records/import",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "PUT /accounts/{account_id}/settings/transformations/workers/{script_name}",
+          "message": "operation was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "name": "GitHub REST API",
+      "homepage": "https://docs.github.com/rest",
+      "specUrl": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
+      "fetchedAt": "2026-11-27T06:59:33.203Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
+        "fetchedAt": "2026-11-26T06:57:58.006Z",
+        "version": "1.1.4"
+      },
+      "after": {
+        "version": "1.1.4"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 50
+      },
+      "total": 50,
+      "distinct": 41,
+      "changes": [
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /events",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /networks/{owner}/{repo}/events",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /orgs/{org}/events",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/events",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /users/{username}/events",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /users/{username}/events/orgs/{org}",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /users/{username}/events/public",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /users/{username}/received_events",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /users/{username}/received_events/public",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "DELETE /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by/{issue_id}",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "DELETE /repos/{owner}/{repo}/issues/{issue_number}/relates_to/{issue_id}",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /issues",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /orgs/{org}/issues",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/events",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/events/{event_id}",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/{issue_number}",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocking",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/{issue_number}/parent",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/{issue_number}/relates_to",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/issues/{issue_number}/timeline",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "GET /repos/{owner}/{repo}/planning-statuses",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /search/issues",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /user/issues",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "request-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /repos/{owner}/{repo}/issues/{issue_number}",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /repos/{owner}/{repo}/issues/{issue_number}",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /orgs/{org}/projectsV2/{project_number}/drafts",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /orgs/{org}/projectsV2/{project_number}/items",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "request-property-description-changed",
+          "severity": "info",
+          "subject": "POST /repos/{owner}/{repo}/issues",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /repos/{owner}/{repo}/issues",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /repos/{owner}/{repo}/issues/{issue_number}/assignees",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /repos/{owner}/{repo}/issues/{issue_number}/relates_to",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /user/{user_id}/projectsV2/{project_number}/drafts",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /users/{username}/projectsV2/{project_number}/items",
+          "message": "the description changed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "jira",
+      "name": "Jira Cloud platform REST API",
+      "homepage": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+      "specUrl": "https://developer.atlassian.com/cloud/jira/platform/swagger-v3.v3.json",
+      "fetchedAt": "2026-11-27T06:59:42.264Z",
+      "before": {
+        "url": "https://developer.atlassian.com/cloud/jira/platform/swagger-v3.v3.json",
+        "fetchedAt": "2026-11-26T06:58:12.699Z",
+        "version": "1001.0.0-SNAPSHOT-c708f3bbbb25201455fbb24169cbdc71ef7764bf"
+      },
+      "after": {
+        "version": "1001.0.0-SNAPSHOT-b98c7080b2b5bfa1670476e0715f746ffa0c3df0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 1
+      },
+      "total": 1,
+      "distinct": 1,
+      "changes": [
+        {
+          "id": "api-version-changed",
+          "severity": "info",
+          "message": "the API version changed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel REST API",
+      "homepage": "https://vercel.com/docs/rest-api",
+      "specUrl": "https://openapi.vercel.sh/",
+      "fetchedAt": "2026-11-27T06:59:37.403Z",
+      "before": {
+        "url": "https://openapi.vercel.sh/",
+        "fetchedAt": "2026-11-26T06:58:03.820Z",
+        "version": "0.0.1"
+      },
+      "after": {
+        "version": "0.0.1"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 33
+      },
+      "total": 33,
+      "distinct": 24,
+      "changes": [
+        {
+          "id": "response-property-one-of-branch-removed",
+          "severity": "info",
+          "subject": "GET /v1/projects/{projectIdOrName}/feature-flags/flags",
+          "message": "oneOf alternative \"index:3\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-one-of-branch-removed",
+          "severity": "info",
+          "subject": "GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}",
+          "message": "oneOf alternative \"index:3\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-one-of-branch-removed",
+          "severity": "info",
+          "subject": "GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions",
+          "message": "oneOf alternative \"index:3\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-one-of-branch-removed",
+          "severity": "info",
+          "subject": "GET /v1/teams/{teamId}/feature-flags/flags",
+          "message": "oneOf alternative \"index:3\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-one-of-branch-removed",
+          "severity": "info",
+          "subject": "GET /v2/projects/{projectIdOrName}/feature-flags/flags",
+          "message": "oneOf alternative \"index:3\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-one-of-branch-removed",
+          "severity": "info",
+          "subject": "GET /v2/teams/{teamId}/feature-flags/flags",
+          "message": "oneOf alternative \"index:3\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /v3/events",
+          "message": "property \"doNotInheritDefaultAppManagedRules\" was added",
+          "count": 2
+        },
+        {
+          "id": "response-property-one-of-branch-removed",
+          "severity": "info",
+          "subject": "PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}",
+          "message": "oneOf alternative \"index:3\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-one-of-branch-removed",
+          "severity": "info",
+          "subject": "PUT /v1/projects/{projectIdOrName}/feature-flags/flags",
+          "message": "oneOf alternative \"index:3\" was removed",
+          "count": 2
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "DELETE /v1/projects/{idOrName}/avatar",
+          "message": "property \"doNotInheritDefaultAppManagedRules\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /v1/global-config",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /v1/global-config/{edgeConfigId}",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /v1/microfrontends/groups/{groupId}/projects",
+          "message": "property \"doNotInheritDefaultAppManagedRules\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /v10/projects",
+          "message": "property \"doNotInheritDefaultAppManagedRules\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-added",
+          "severity": "info",
+          "subject": "GET /v2/sandboxes/snapshots",
+          "message": "response \"503\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /v9/projects/{idOrName}",
+          "message": "property \"doNotInheritDefaultAppManagedRules\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "PATCH /v1/projects/{projectId}/microfrontends",
+          "message": "property \"doNotInheritDefaultAppManagedRules\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PATCH /v1/projects/{projectId}/microfrontends",
+          "message": "property \"doNotInheritDefaultAppManagedRules\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PATCH /v9/projects/{idOrName}",
+          "message": "property \"doNotInheritDefaultAppManagedRules\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-required-property-added",
+          "severity": "info",
+          "subject": "POST /speed-insights/toggle",
+          "message": "required property \"changed\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v1/global-config",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /v1/projects/{idOrName}/avatar",
+          "message": "property \"doNotInheritDefaultAppManagedRules\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /v11/projects",
+          "message": "property \"doNotInheritDefaultAppManagedRules\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /v1/global-config/{edgeConfigId}",
+          "message": "the description changed",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
