@@ -1,7 +1,76 @@
 {
-  "generatedAt": "2026-11-27T06:59:53.209Z",
+  "generatedAt": "2026-11-28T06:55:01.366Z",
   "days": 90,
   "entries": [
+    {
+      "date": "2026-11-28",
+      "apis": [
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 14,
+          "total": 14
+        },
+        {
+          "id": "datadog",
+          "name": "Datadog API (v2)",
+          "breaking": 0,
+          "warning": 0,
+          "info": 3,
+          "total": 3
+        },
+        {
+          "id": "digitalocean",
+          "name": "DigitalOcean API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 18,
+          "total": 18
+        },
+        {
+          "id": "discourse",
+          "name": "Discourse API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 3,
+          "total": 3
+        },
+        {
+          "id": "docker-engine",
+          "name": "Docker Engine API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 4,
+          "total": 4
+        },
+        {
+          "id": "openai",
+          "name": "OpenAI API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 18,
+          "total": 18
+        },
+        {
+          "id": "supabase",
+          "name": "Supabase Management API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 21,
+          "total": 21
+        },
+        {
+          "id": "vercel",
+          "name": "Vercel REST API",
+          "breaking": 0,
+          "warning": 0,
+          "info": 2,
+          "total": 2
+        }
+      ]
+    },
     {
       "date": "2026-11-27",
       "apis": [

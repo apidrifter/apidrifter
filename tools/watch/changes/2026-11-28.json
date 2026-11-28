@@ -1,0 +1,695 @@
+{
+  "date": "2026-11-28",
+  "generatedAt": "2026-11-28T06:55:01.357Z",
+  "entries": [
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare API",
+      "homepage": "https://developers.cloudflare.com/api/",
+      "specUrl": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
+      "fetchedAt": "2026-11-28T06:54:37.348Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
+        "fetchedAt": "2026-11-27T06:59:35.530Z",
+        "version": "4.0.0"
+      },
+      "after": {
+        "version": "4.0.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 14
+      },
+      "total": 14,
+      "distinct": 14,
+      "changes": [
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "DELETE /accounts/{account_id}/ai-search/instances/{id}",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "DELETE /accounts/{account_id}/ai-search/namespaces/{namespace}/instances/{id}",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /accounts/{account_id}/ai-search/instances",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /accounts/{account_id}/ai-search/instances/{id}",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /accounts/{account_id}/ai-search/namespaces/{namespace}/instances",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /accounts/{account_id}/ai-search/namespaces/{namespace}/instances/{id}",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "POST /accounts/{account_id}/ai-search/instances",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /accounts/{account_id}/ai-search/instances",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "POST /accounts/{account_id}/ai-search/namespaces/{namespace}/instances",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /accounts/{account_id}/ai-search/namespaces/{namespace}/instances",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "PUT /accounts/{account_id}/ai-search/instances/{id}",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PUT /accounts/{account_id}/ai-search/instances/{id}",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "PUT /accounts/{account_id}/ai-search/namespaces/{namespace}/instances/{id}",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PUT /accounts/{account_id}/ai-search/namespaces/{namespace}/instances/{id}",
+          "message": "property \"browser_rendering_wait_until\" was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "datadog",
+      "name": "Datadog API (v2)",
+      "homepage": "https://docs.datadoghq.com/api/latest/",
+      "specUrl": "https://raw.githubusercontent.com/DataDog/datadog-api-client-typescript/master/.generator/schemas/v2/openapi.yaml",
+      "fetchedAt": "2026-11-28T06:54:41.222Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/DataDog/datadog-api-client-typescript/master/.generator/schemas/v2/openapi.yaml",
+        "fetchedAt": "2026-11-26T06:58:06.665Z",
+        "version": "1.0"
+      },
+      "after": {
+        "version": "1.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 3
+      },
+      "total": 3,
+      "distinct": 3,
+      "changes": [
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /api/v2/on-call/teams/{team_id}/routing-rules",
+          "message": "property \"customizable_content\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "PUT /api/v2/on-call/teams/{team_id}/routing-rules",
+          "message": "property \"customizable_content\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "PUT /api/v2/on-call/teams/{team_id}/routing-rules",
+          "message": "property \"customizable_content\" was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "digitalocean",
+      "name": "DigitalOcean API",
+      "homepage": "https://docs.digitalocean.com/reference/api/",
+      "specUrl": "https://api-engineering.nyc3.digitaloceanspaces.com/spec-ci/DigitalOcean-public.v2.yaml",
+      "fetchedAt": "2026-11-28T06:54:37.954Z",
+      "before": {
+        "url": "https://api-engineering.nyc3.digitaloceanspaces.com/spec-ci/DigitalOcean-public.v2.yaml",
+        "fetchedAt": "2026-11-26T06:58:01.419Z",
+        "version": "2.0"
+      },
+      "after": {
+        "version": "2.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 18
+      },
+      "total": 18,
+      "distinct": 18,
+      "changes": [
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "DELETE /v2/sandboxes/templates/{template_id}",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "DELETE /v2/sandboxes/{sandbox_id}",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /v2/sandboxes",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /v2/sandboxes/templates",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /v2/sandboxes/templates/{template_id}",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /v2/sandboxes/templates/{template_id}/builds",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /v2/sandboxes/templates/{template_id}/builds/{build_id}",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /v2/sandboxes/{sandbox_id}",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /v2/sandboxes/{sandbox_id}/commands",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "GET /v2/sandboxes/{sandbox_id}/commands/{pid}/stream",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "POST /v2/sandboxes",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "POST /v2/sandboxes/templates",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "POST /v2/sandboxes/{sandbox_id}/commands",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "POST /v2/sandboxes/{sandbox_id}/commands/{pid}/signal",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "POST /v2/sandboxes/{sandbox_id}/commands/{pid}/stdin",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "POST /v2/sandboxes/{sandbox_id}/pause",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "POST /v2/sandboxes/{sandbox_id}/resume",
+          "message": "operation was added",
+          "count": 1
+        },
+        {
+          "id": "endpoint-added",
+          "severity": "info",
+          "subject": "PUT /v2/sandboxes/templates/{template_id}",
+          "message": "operation was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "discourse",
+      "name": "Discourse API",
+      "homepage": "https://docs.discourse.org/",
+      "specUrl": "https://docs.discourse.org/openapi.json",
+      "fetchedAt": "2026-11-28T06:54:46.966Z",
+      "before": {
+        "url": "https://docs.discourse.org/openapi.json",
+        "fetchedAt": "2026-11-25T06:59:08.364Z",
+        "version": "latest"
+      },
+      "after": {
+        "version": "latest"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 3
+      },
+      "total": 3,
+      "distinct": 3,
+      "changes": [
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /u/by-external/{external_id}.json",
+          "message": "property \"staff_only_settings\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /u/by-external/{provider}/{external_id}.json",
+          "message": "property \"staff_only_settings\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /u/{username}.json",
+          "message": "property \"staff_only_settings\" was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "docker-engine",
+      "name": "Docker Engine API",
+      "homepage": "https://docs.docker.com/reference/api/engine/",
+      "specUrl": "https://raw.githubusercontent.com/moby/moby/master/api/swagger.yaml",
+      "fetchedAt": "2026-11-28T06:54:39.195Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/moby/moby/master/api/swagger.yaml",
+        "fetchedAt": "2026-11-04T06:54:33.034Z",
+        "version": "1.57"
+      },
+      "after": {
+        "version": "1.57"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 4
+      },
+      "total": 4,
+      "distinct": 3,
+      "changes": [
+        {
+          "id": "request-property-description-changed",
+          "severity": "info",
+          "subject": "POST /containers/create",
+          "message": "the description changed",
+          "count": 2
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /containers/{id}/json",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /info",
+          "message": "the description changed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI API",
+      "homepage": "https://platform.openai.com/docs/api-reference",
+      "specUrl": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
+      "fetchedAt": "2026-11-28T06:54:35.432Z",
+      "before": {
+        "url": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
+        "fetchedAt": "2026-11-25T06:58:55.380Z",
+        "version": "2.3.0"
+      },
+      "after": {
+        "version": "2.3.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 18
+      },
+      "total": 18,
+      "distinct": 7,
+      "changes": [
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /agents/sessions",
+          "message": "property \"access_programs\" was added",
+          "count": 7
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /agents/sessions/{session_id}/events",
+          "message": "property \"access_programs\" was added",
+          "count": 6
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /agents/sessions",
+          "message": "property \"access_programs\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "GET /agents/sessions/{session_id}",
+          "message": "property \"access_programs\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "POST /agents/sessions",
+          "message": "property \"access_programs\" was added",
+          "count": 1
+        },
+        {
+          "id": "request-property-property-added",
+          "severity": "info",
+          "subject": "POST /agents/sessions/{session_id}",
+          "message": "property \"access_programs\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-property-added",
+          "severity": "info",
+          "subject": "POST /agents/sessions/{session_id}",
+          "message": "property \"access_programs\" was added",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase Management API",
+      "homepage": "https://supabase.com/docs/reference/api/introduction",
+      "specUrl": "https://api.supabase.com/api/v1-json",
+      "fetchedAt": "2026-11-28T06:54:45.719Z",
+      "before": {
+        "url": "https://api.supabase.com/api/v1-json",
+        "fetchedAt": "2026-11-20T06:57:10.233Z",
+        "version": "1.0.0"
+      },
+      "after": {
+        "version": "1.0.0"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 21
+      },
+      "total": 21,
+      "distinct": 21,
+      "changes": [
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /v1/projects/{ref}/database/backups/schedule",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "GET /v1/projects/{ref}/vanity-subdomain",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /v1/branches/{branch_id_or_ref}",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /v1/projects/{ref}/api-keys/{id}",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /v1/projects/{ref}/config/auth",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /v1/projects/{ref}/config/storage",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PATCH /v1/projects/{ref}/database/backups/schedule",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v1/projects",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v1/projects/{ref}/api-keys",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v1/projects/{ref}/branches",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v1/projects/{ref}/config/auth/sso/providers",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v1/projects/{ref}/config/disk",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-added",
+          "severity": "info",
+          "subject": "POST /v1/projects/{ref}/database/backups/restore-pitr",
+          "message": "response \"400\" was added",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v1/projects/{ref}/functions",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v1/projects/{ref}/functions/deploy",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v1/projects/{ref}/read-replicas/setup",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v1/projects/{ref}/restore",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v1/projects/{ref}/vanity-subdomain/activate",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /v1/projects/{ref}/vanity-subdomain/check-availability",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /v1/projects/{ref}/config/auth/sso/providers/{provider_id}",
+          "message": "the description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "PUT /v1/projects/{ref}/functions",
+          "message": "the description changed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel REST API",
+      "homepage": "https://vercel.com/docs/rest-api",
+      "specUrl": "https://openapi.vercel.sh/",
+      "fetchedAt": "2026-11-28T06:54:39.558Z",
+      "before": {
+        "url": "https://openapi.vercel.sh/",
+        "fetchedAt": "2026-11-27T06:59:37.403Z",
+        "version": "0.0.1"
+      },
+      "after": {
+        "version": "0.0.1"
+      },
+      "summary": {
+        "breaking": 0,
+        "warning": 0,
+        "info": 2
+      },
+      "total": 2,
+      "distinct": 2,
+      "changes": [
+        {
+          "id": "endpoint-description-changed",
+          "severity": "info",
+          "subject": "PATCH /v1/teams/{teamId}/members/{uid}",
+          "message": "description changed",
+          "count": 1
+        },
+        {
+          "id": "response-property-description-changed",
+          "severity": "info",
+          "subject": "POST /projects/{idOrName}/transfer-request",
+          "message": "the description changed",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
