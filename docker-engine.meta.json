@@ -1,11 +1,11 @@
 {
   "id": "docker-engine",
   "url": "https://raw.githubusercontent.com/moby/moby/master/api/swagger.yaml",
-  "fetchedAt": "2026-11-04T06:54:33.034Z",
-  "checkedAt": "2026-11-27T06:59:36.896Z",
-  "sha256": "2287d976b270d44517fdfca79e4f9ec18a2cd33917b0415ba4e65885348d9811",
-  "bytes": 474129,
-  "etag": "W/\"9a06f27451e031d94c5c4fcaed96ac3a9d9e74f1600535d3962ebdccfdb8bc87\"",
+  "fetchedAt": "2026-11-28T06:54:39.195Z",
+  "checkedAt": "2026-11-28T06:54:39.195Z",
+  "sha256": "11a4ef3cd5955b4ff1053c20c6b49976800fe8b972b1561059b1c196345f6252",
+  "bytes": 474532,
+  "etag": "W/\"d35320e6b1cbe47df00cd35047f18a464a902db6efff04d90eb2d9f08719cc49\"",
   "contentType": "text/plain; charset=utf-8",
   "sourceFormat": "swagger-2.0",
   "version": "1.57"
